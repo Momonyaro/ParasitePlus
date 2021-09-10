@@ -13,7 +13,7 @@ namespace Dungeon
         {
             Vector3 focusPos = nodeFocus.position;
             
-            Gizmos.DrawIcon(focusPos, "AvatarSelector@2x", true);
+            //Gizmos.DrawIcon(focusPos, "AvatarSelector@2x", true);
             
             Vector3 sample = Vector3.forward;
             RaycastHit hit;

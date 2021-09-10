@@ -9173,7 +9173,7 @@ MonoBehaviour:
     think you're going!?
   triggerActive: 0
   disabled: 0
-  postBattleSceneName: SwanDungeonFloor1
+  postBattleSceneName: SwanFloor1
   generateNewGUID: 0
   guid: 4c4e9c0c-99e9-4114-bbda-0c425216b979
   enemyRoster:

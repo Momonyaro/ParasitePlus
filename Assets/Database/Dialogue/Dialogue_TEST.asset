@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae13be0447a66ed48befacfeeb4b52a4, type: 3}
+  m_Name: Dialogue_TEST
+  m_EditorClassIdentifier: 
+  speakers:
+  - speakerName: Yoel
+    speakerReference: _yoel
+    speakerPhoto: {fileID: 21300000, guid: fea15ebf63ca72347b0f708fd9141a7d, type: 3}
+  - speakerName: Jack Frost
+    speakerReference: _jFrost
+    speakerPhoto: {fileID: 21300000, guid: df33328a7b265bb48893276328895d89, type: 3}
+  components:
+  - id: 0
+  - id: 1
+  - id: 2
+  - id: 3
+  - id: 4
+  references:
+    version: 1
+    00000000:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _test1
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -500}
+        errorAttempts: 99
+        dialogueBoxes:
+        - speakerReference: _yoel
+          text: A dialogue box here for "Thine Ambrose Somnambulisms"
+          buildTime: 0.105
+        - speakerReference: _jFrost
+          text: "I'm real slow so that you're tempted to skip the writing part of
+            the dialogue...  ... ... \nSeriously, why haven't you skipped yet?...
+            ... ... ... ... Well suit yourself if you didn't skip this."
+          buildTime: 0.264
+    00000001:
+      type: {class: SpawnObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnObjComp1
+        objectPrefab: {fileID: 5409424943077282094, guid: a29056babc5d04f4791a5acc330886f3, type: 3}
+        screenPosition: {x: -300, y: 250}
+        errorAttempts: 99
+    00000002:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp2
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        waitTime: 5
+    00000003:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp3
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        refToDestroy: _spawnObjComp1
+    00000004:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp4
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        refToDestroy: _test1

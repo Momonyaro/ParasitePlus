@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4babfdde60bfbc14ba6b65fc1276f07e, type: 3}
+  m_Name: playerRun
+  m_EditorClassIdentifier: 
+  towards:
+  - {fileID: -1667625698563046750, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  - {fileID: 4192982359799689514, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  - {fileID: 2787236172027410674, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  - {fileID: 6145140463845330121, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  - {fileID: 3984521695388093003, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  - {fileID: 1620696844512542193, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  away:
+  - {fileID: 8135024846366147618, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  - {fileID: 912193977963416486, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  - {fileID: 5805529551533118964, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  - {fileID: -582527309986327451, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  - {fileID: -2608407999816798959, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  - {fileID: -194232198760123225, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  left:
+  - {fileID: -894182008035880444, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  - {fileID: 4205040015425402561, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  - {fileID: 5636830871262879905, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  - {fileID: -7636567743176873448, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  - {fileID: 8941750775946336996, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  - {fileID: -8069396426562115682, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  right:
+  - {fileID: -3514657133860964462, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  - {fileID: -3462115116307242847, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  - {fileID: -8383122282797722782, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  - {fileID: -8697584023714987194, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  - {fileID: 6913402417101060011, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  - {fileID: 7759687046207306436, guid: cf60a7e17b73aec4881ba4b9cd043452, type: 3}
+  lastMaxSpeed: 0.1

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4babfdde60bfbc14ba6b65fc1276f07e, type: 3}
+  m_Name: playerIdle
+  m_EditorClassIdentifier: 
+  towards:
+  - {fileID: -7372005211205223241, guid: ec1e57d6ac796d74f96340114e9cc556, type: 3}
+  towardsSpeed: 0.2
+  away:
+  - {fileID: 8750412040735944437, guid: ec1e57d6ac796d74f96340114e9cc556, type: 3}
+  awaySpeed: 0.2
+  left:
+  - {fileID: 280426548943759909, guid: ec1e57d6ac796d74f96340114e9cc556, type: 3}
+  leftSpeed: 0.2
+  right:
+  - {fileID: -5590205848240804797, guid: ec1e57d6ac796d74f96340114e9cc556, type: 3}
+  rightSpeed: 0.2

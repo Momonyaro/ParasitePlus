@@ -9169,8 +9169,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combatThroughPrompt: 1
-  promptMessage: <color=red>Security Guard:</color> Stop right there! Where do you
-    think you're going!?
+  promptMessage:
+  - <color=red>Security Guard:</color> Hey you! Stop right there!
   triggerActive: 0
   disabled: 0
   postBattleSceneName: SwanFloor1

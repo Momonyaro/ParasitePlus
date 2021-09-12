@@ -86,6 +86,15 @@ namespace CORE
                             dungeonManager.encounterTriggers[j].gameObject.SetActive(false);
                         }
                     }
+                    
+                    for (int j = 0; j < dungeonManager.eventTriggers.Count; j++)
+                    {
+                        if (dungeonManager.eventTriggers[j].guid.Equals(currentSlimData.usedGroundItems[i]))
+                        {
+                            dungeonManager.eventTriggers[j].disabled = true;
+                            dungeonManager.eventTriggers[j].gameObject.SetActive(false);
+                        }
+                    }
                 }
             }
         }

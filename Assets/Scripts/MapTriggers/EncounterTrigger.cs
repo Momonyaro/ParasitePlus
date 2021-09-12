@@ -9,7 +9,7 @@ namespace MapTriggers
     public class EncounterTrigger : MonoBehaviour
     {
         public bool combatThroughPrompt = false;
-        public string promptMessage = "";
+        public string[] promptMessage = new string[0];
         public bool triggerActive = false;
         public bool disabled = false;
         public string postBattleSceneName = "";

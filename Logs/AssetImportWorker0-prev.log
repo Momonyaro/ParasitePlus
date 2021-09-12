@@ -1,82 +1,87 @@
 Using pre-set license
-Built from '2020.3/staging' branch; Version is '2020.3.13f1 (71691879b7f5) revision 7432472'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Pro; OS build 22000.176; Version 2009; 64bit' Language: 'en' Physical Memory: 16272 MB
-BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+Gtk-Message: 19:35:10.558: Failed to load module "appmenu-gtk-module"
+Gtk-Message: 19:35:10.622: Failed to load module "canberra-gtk-module"
+Gtk-Message: 19:35:10.623: Failed to load module "canberra-gtk-module"
+Desktop is 4480 x 1440 @ 60 Hz
 
  COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2020.3.13f1\Editor\Unity.exe
+Unity
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-E:/Projects/ParasitePlus
+/media/momonyaro/ExtDrive/Projects/ParasitePlus
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-54284
-Successfully changed project path to: E:/Projects/ParasitePlus
-E:/Projects/ParasitePlus
+42923
+Successfully changed project path to: /media/momonyaro/ExtDrive/Projects/ParasitePlus
+/media/momonyaro/ExtDrive/Projects/ParasitePlus
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 36.27 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 142.75 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.13f1 (71691879b7f5)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path E:/Projects/ParasitePlus/Assets
-GfxDevice: creating device client; threaded=0
-Direct3D:
-    Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 970 (ID=0x13c2)
-    Vendor:   
-    VRAM:     4043 MB
-    Driver:   30.0.14.7141
+[Subsystems] Discovering subsystems at path /home/momonyaro/Unity/Hub/Editor/2020.3.13f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /media/momonyaro/ExtDrive/Projects/ParasitePlus/Assets
+GLX Extensions: GLX_ARB_create_context GLX_ARB_create_context_no_error GLX_ARB_create_context_profile GLX_ARB_create_context_robustness GLX_ARB_fbconfig_float GLX_ARB_framebuffer_sRGB GLX_ARB_get_proc_address GLX_ARB_multisample GLX_EXT_buffer_age GLX_EXT_create_context_es2_profile GLX_EXT_create_context_es_profile GLX_EXT_fbconfig_packed_float GLX_EXT_framebuffer_sRGB GLX_EXT_import_context GLX_EXT_swap_control GLX_EXT_swap_control_tear GLX_EXT_texture_from_pixmap GLX_EXT_visual_info GLX_EXT_visual_rating GLX_INTEL_swap_event GLX_MESA_copy_sub_buffer GLX_MESA_query_renderer GLX_MESA_swap_control GLX_OML_swap_method GLX_OML_sync_control GLX_SGIS_multisample GLX_SGIX_fbconfig GLX_SGIX_pbuffer GLX_SGIX_visual_select_group GLX_SGI_make_current_read GLX_SGI_swap_control GLX_SGI_video_sync 
+Renderer: AMD Radeon(TM) Vega 8 Graphics (RAVEN, DRM 3.40.0, 5.11.0-7633-generic, LLVM 11.1.0)
+Vendor:   AMD
+Version:  4.6 (Core Profile) Mesa 21.1.7 (git-a09f5d9294)
+GLES:     0
+ GL_AMD_conservative_depth GL_AMD_depth_clamp_separate GL_AMD_draw_buffers_blend GL_AMD_framebuffer_multisample_advanced GL_AMD_gpu_shader_int64 GL_AMD_multi_draw_indirect GL_AMD_performance_monitor GL_AMD_pinned_memory GL_AMD_query_buffer_object GL_AMD_seamless_cubemap_per_texture GL_AMD_shader_stencil_export GL_AMD_shader_trinary_minmax GL_AMD_texture_texture4 GL_AMD_vertex_shader_layer GL_AMD_vertex_shader_viewport_index GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_ARB_ES2_compatibility GL_ARB_ES3_1_compatibility GL_ARB_ES3_2_compatibility GL_ARB_ES3_compatibility GL_ARB_arrays_of_arrays GL_ARB_base_instance GL_ARB_bindless_texture GL_ARB_blend_func_extended GL_ARB_buffer_storage GL_ARB_clear_buffer_object GL_ARB_clear_texture GL_ARB_clip_control GL_ARB_color_buffer_float GL_ARB_compressed_texture_pixel_storage GL_ARB_compute_shader GL_ARB_compute_variable_group_size GL_ARB_conditional_render_inverted GL_ARB_conservative_depth GL_ARB_copy_buffer GL_ARB_copy_image GL_ARB_cull_dist
+ance GL_ARB_debug_output GL_ARB_depth_buffer_float GL_ARB_depth_clamp GL_ARB_derivative_control GL_ARB_direct_state_access GL_ARB_draw_buffers GL_ARB_draw_buffers_blend GL_ARB_draw_elements_base_vertex GL_ARB_draw_indirect GL_ARB_draw_instanced GL_ARB_enhanced_layouts GL_ARB_explicit_attrib_location GL_ARB_explicit_uniform_location GL_ARB_fragment_coord_conventions GL_ARB_fragment_layer_viewport GL_ARB_fragment_shader GL_ARB_framebuffer_no_attachments GL_ARB_framebuffer_object GL_ARB_framebuffer_sRGB GL_ARB_get_program_binary GL_ARB_get_texture_sub_image GL_ARB_gl_spirv GL_ARB_gpu_shader5 GL_ARB_gpu_shader_fp64 GL_ARB_gpu_shader_int64 GL_ARB_half_float_pixel GL_ARB_half_float_vertex GL_ARB_indirect_parameters GL_ARB_instanced_arrays GL_ARB_internalformat_query GL_ARB_internalformat_query2 GL_ARB_invalidate_subdata GL_ARB_map_buffer_alignment GL_ARB_map_buffer_range GL_ARB_multi_bind GL_ARB_multi_draw_indirect GL_ARB_occlusion_query2 GL_ARB_parallel_shader_compile GL_ARB_pipeline_statistics_query GL_ARB_pixel
+_buffer_object GL_ARB_point_sprite GL_ARB_polygon_offset_clamp GL_ARB_program_interface_query GL_ARB_provoking_vertex GL_ARB_query_buffer_object GL_ARB_robust_buffer_access_behavior GL_ARB_robustness GL_ARB_sample_shading GL_ARB_sampler_objects GL_ARB_seamless_cube_map GL_ARB_seamless_cubemap_per_texture GL_ARB_separate_shader_objects GL_ARB_shader_atomic_counter_ops GL_ARB_shader_atomic_counters GL_ARB_shader_ballot GL_ARB_shader_bit_encoding GL_ARB_shader_clock GL_ARB_shader_draw_parameters GL_ARB_shader_group_vote GL_ARB_shader_image_load_store GL_ARB_shader_image_size GL_ARB_shader_objects GL_ARB_shader_precision GL_ARB_shader_stencil_export GL_ARB_shader_storage_buffer_object GL_ARB_shader_subroutine GL_ARB_shader_texture_image_samples GL_ARB_shader_texture_lod GL_ARB_shader_viewport_layer_array GL_ARB_shading_language_420pack GL_ARB_shading_language_include GL_ARB_shading_language_packing GL_ARB_sparse_buffer GL_ARB_spirv_extensions GL_ARB_stencil_texturing GL_ARB_sync GL_ARB_tessellation_shader GL_ARB
+_texture_barrier GL_ARB_texture_buffer_object GL_ARB_texture_buffer_object_rgb32 GL_ARB_texture_buffer_range GL_ARB_texture_compression_bptc GL_ARB_texture_compression_rgtc GL_ARB_texture_cube_map_array GL_ARB_texture_filter_anisotropic GL_ARB_texture_float GL_ARB_texture_gather GL_ARB_texture_mirror_clamp_to_edge GL_ARB_texture_multisample GL_ARB_texture_non_power_of_two GL_ARB_texture_query_levels GL_ARB_texture_query_lod GL_ARB_texture_rectangle GL_ARB_texture_rg GL_ARB_texture_rgb10_a2ui GL_ARB_texture_stencil8 GL_ARB_texture_storage GL_ARB_texture_storage_multisample GL_ARB_texture_swizzle GL_ARB_texture_view GL_ARB_timer_query GL_ARB_transform_feedback2 GL_ARB_transform_feedback3 GL_ARB_transform_feedback_instanced GL_ARB_transform_feedback_overflow_query GL_ARB_uniform_buffer_object GL_ARB_vertex_array_bgra GL_ARB_vertex_array_object GL_ARB_vertex_attrib_64bit GL_ARB_vertex_attrib_binding GL_ARB_vertex_buffer_object GL_ARB_vertex_shader GL_ARB_vertex_type_10f_11f_11f_rev GL_ARB_vertex_type_2_10_10_10_
+rev GL_ARB_viewport_array GL_ATI_blend_equation_separate GL_ATI_meminfo GL_ATI_texture_float GL_ATI_texture_mirror_once GL_EXT_EGL_image_storage GL_EXT_EGL_sync GL_EXT_abgr GL_EXT_blend_equation_separate GL_EXT_demote_to_helper_invocation GL_EXT_depth_bounds_test GL_EXT_draw_buffers2 GL_EXT_draw_instanced GL_EXT_framebuffer_blit GL_EXT_framebuffer_multisample GL_EXT_framebuffer_multisample_blit_scaled GL_EXT_framebuffer_object GL_EXT_framebuffer_sRGB GL_EXT_memory_object GL_EXT_memory_object_fd GL_EXT_packed_depth_stencil GL_EXT_packed_float GL_EXT_pixel_buffer_object GL_EXT_polygon_offset_clamp GL_EXT_provoking_vertex GL_EXT_semaphore GL_EXT_semaphore_fd GL_EXT_shader_image_load_formatted GL_EXT_shader_image_load_store GL_EXT_shader_integer_mix GL_EXT_shader_samples_identical GL_EXT_texture_array GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc GL_EXT_texture_filter_anisotropic GL_EXT_texture_integer GL_EXT_texture_mirror_clamp GL_EXT_texture_sRGB GL_EXT_textur
+e_sRGB_R8 GL_EXT_texture_sRGB_decode GL_EXT_texture_shadow_lod GL_EXT_texture_shared_exponent GL_EXT_texture_snorm GL_EXT_texture_swizzle GL_EXT_timer_query GL_EXT_transform_feedback GL_EXT_vertex_array_bgra GL_EXT_vertex_attrib_64bit GL_EXT_window_rectangles GL_IBM_multimode_draw_arrays GL_INTEL_blackhole_render GL_KHR_blend_equation_advanced GL_KHR_context_flush_control GL_KHR_debug GL_KHR_no_error GL_KHR_parallel_shader_compile GL_KHR_robust_buffer_access_behavior GL_KHR_robustness GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_sliced_3d GL_MESA_framebuffer_flip_y GL_MESA_pack_invert GL_MESA_shader_integer_functions GL_MESA_texture_signed_rgba GL_NVX_gpu_memory_info GL_NV_alpha_to_coverage_dither_control GL_NV_compute_shader_derivatives GL_NV_conditional_render GL_NV_copy_image GL_NV_depth_clamp GL_NV_packed_depth_stencil GL_NV_shader_atomic_int64 GL_NV_texture_barrier GL_NV_vdpau_interop GL_OES_EGL_image GL_S3_s3tc
+OPENGL LOG: Creating OpenGL 4.6 graphics device ; Context level  <OpenGL 4.5> ; Context handle -648895696
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56004
+Mono path[0] = '/home/momonyaro/Unity/Hub/Editor/2020.3.13f1/Editor/Data/Managed'
+Mono path[1] = '/home/momonyaro/Unity/Hub/Editor/2020.3.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = '/home/momonyaro/Unity/Hub/Editor/2020.3.13f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56480
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
-Registered in 0.001402 seconds.
+Register platform support module: /home/momonyaro/Unity/Hub/Editor/2020.3.13f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: /home/momonyaro/Unity/Hub/Editor/2020.3.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: /home/momonyaro/Unity/Hub/Editor/2020.3.13f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Registered in 0.002124 seconds.
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
-Refreshing native plugins compatible for Editor in 39.87 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 88.32 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.666 seconds
+- Completed reload, in  1.473 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002552 seconds.
+Registered in 0.099168 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
-Refreshing native plugins compatible for Editor in 38.25 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 81.22 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.741 seconds
+- Completed reload, in  2.454 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 0.48 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler after 0.01 seconds
+Refreshing native plugins compatible for Editor in 0.84 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3093 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 137.6 MB.
-System memory in use after: 134.9 MB.
+System memory in use before: 129.0 MB.
+System memory in use after: 127.1 MB.
 
 Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 3500.
-Total: 2.737800 ms (FindLiveObjects: 0.208200 ms CreateObjectMapping: 0.063200 ms MarkObjects: 1.586200 ms  DeleteObjects: 0.879600 ms)
+Total: 13.171716 ms (FindLiveObjects: 0.846965 ms CreateObjectMapping: 0.609714 ms MarkObjects: 8.544172 ms  DeleteObjects: 3.157594 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
@@ -87,245 +92,81 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Models/swan_escape_map_assets0 1.blend
-  artifactKey: Guid(9a342d8be882bfa48b9902c840134fcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/swan_escape_map_assets0 1.blend using Guid(9a342d8be882bfa48b9902c840134fcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e73782f0ea301479f757b9f754543a38') in 0.208580 seconds 
-  Import took 0.212184 seconds .
+  path: Assets/Scenes/Maps/SwanDivision/SwanFloor1/Lightmap-0_comp_dir.png
+  artifactKey: Guid(f8bfdd0987b9d2643b711d7a5f97ecd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Maps/SwanDivision/SwanFloor1/Lightmap-0_comp_dir.png using Guid(f8bfdd0987b9d2643b711d7a5f97ecd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f085047343b1cde30ba43fb00b3b2fe') in 0.117164 seconds 
+  Import took 0.126354 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.761787 seconds.
-  path: Assets/Models/swan_escape_map_assets0 1.blend1
-  artifactKey: Guid(45154326fceddbf40ab7e989826f66a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/swan_escape_map_assets0 1.blend1 using Guid(45154326fceddbf40ab7e989826f66a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '251b6996db3d668768e8395ec9bc7233') in 0.004471 seconds 
-  Import took 0.008044 seconds .
+  Time since last request: 0.000391 seconds.
+  path: Assets/Scenes/Maps/SwanDivision/SwanFloor1/ReflectionProbe-0.exr
+  artifactKey: Guid(c9163eeb7a567b64cb855f04f81192be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Maps/SwanDivision/SwanFloor1/ReflectionProbe-0.exr using Guid(c9163eeb7a567b64cb855f04f81192be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e36a278b8c66e884b7812809f39a6250') in 0.127884 seconds 
+  Import took 0.137996 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 5.328035 seconds.
-  path: Assets/Models/swan_escape_map_assets0.blend1
-  artifactKey: Guid(dbf00b97d55497e40bdd2a1d39a6efcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/swan_escape_map_assets0.blend1 using Guid(dbf00b97d55497e40bdd2a1d39a6efcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cfeb3961b02e08f1f15313470a92405') in 0.008837 seconds 
-  Import took 0.012688 seconds .
+  Time since last request: 0.000620 seconds.
+  path: Assets/Scenes/Maps/SwanDivision/SwanFloor1/Lightmap-1_comp_dir.png
+  artifactKey: Guid(339b74e23617eaf4f93deb6f3d8cd928) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Maps/SwanDivision/SwanFloor1/Lightmap-1_comp_dir.png using Guid(339b74e23617eaf4f93deb6f3d8cd928) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49ce3bb542d0000fae24ce3e94902757') in 0.036920 seconds 
+  Import took 0.051099 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.873687 seconds.
-  path: Assets/Models/swan_escape_map_assets1 1.blend
-  artifactKey: Guid(711a7a29d6404e14a9059fc9b34dbc04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/swan_escape_map_assets1 1.blend using Guid(711a7a29d6404e14a9059fc9b34dbc04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '028114d06f0dd211594855d5394b2479') in 1.102282 seconds 
-  Import took 1.105886 seconds .
+  Time since last request: 0.000669 seconds.
+  path: Assets/Scenes/Maps/SwanDivision/SwanFloor1/Lightmap-2_comp_light.exr
+  artifactKey: Guid(0a4184f8b48a8f8ce9294edac61c631e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Maps/SwanDivision/SwanFloor1/Lightmap-2_comp_light.exr using Guid(0a4184f8b48a8f8ce9294edac61c631e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cddc47d0ec592801b1db34443ebb22af') in 0.074424 seconds 
+  Import took 0.090276 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.314043 seconds.
-  path: Assets/Models/swan_escape_map_assets1.blend1
-  artifactKey: Guid(8776b691f0c750d45b295ff100b3914b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/swan_escape_map_assets1.blend1 using Guid(8776b691f0c750d45b295ff100b3914b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc6b357a96cb0231841d06f3676456c4') in 0.006903 seconds 
-  Import took 0.010552 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.929180 seconds.
-  path: Assets/Models/swan_escape_map_assets2.blend1
-  artifactKey: Guid(05f52c02c1f22db4c94909450bcfa82b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/swan_escape_map_assets2.blend1 using Guid(05f52c02c1f22db4c94909450bcfa82b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2eba72c74d8b36db518fd16a0abbcd6') in 0.006504 seconds 
-  Import took 0.009938 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.399024 seconds.
-  path: Assets/Models/swan_escape_map_assets3.blend1
-  artifactKey: Guid(fe69f6c9237bf384fafa922eb5f2d78c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/swan_escape_map_assets3.blend1 using Guid(fe69f6c9237bf384fafa922eb5f2d78c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a9c381571c13eaa41c14bc4404427c9') in 0.005652 seconds 
-  Import took 0.009141 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.311714 seconds.
-  path: Assets/Models/swan_escape_map_assets4.blend1
-  artifactKey: Guid(9b4ab50c150e8624e8fd58a28500ce59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/swan_escape_map_assets4.blend1 using Guid(9b4ab50c150e8624e8fd58a28500ce59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8481587a86361556471a8549fed096e2') in 0.005835 seconds 
-  Import took 0.009397 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.446268 seconds.
-  path: Assets/Models/swan_floor_1.blend1
-  artifactKey: Guid(4c380c42cd399c748ad6fd198e77cc54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/swan_floor_1.blend1 using Guid(4c380c42cd399c748ad6fd198e77cc54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7906c91a685cb403852162aba4091ad9') in 0.005410 seconds 
-  Import took 0.008867 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 58.143172 seconds.
-  path: Assets/InputSystem.inputsettings.asset
-  artifactKey: Guid(46472d8cef444da4d841f68f6280e3ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/InputSystem.inputsettings.asset using Guid(46472d8cef444da4d841f68f6280e3ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ae1c62de5e93a248ba594144eb9d480') in 0.030696 seconds 
-  Import took 0.035128 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 27.859861 seconds.
-  path: Assets/Scenes/Maps/Tutorial
-  artifactKey: Guid(81da16f0552d66541ba9882735492304) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Maps/Tutorial using Guid(81da16f0552d66541ba9882735492304) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e581b0db6f2de4e203f4dd263e40903') in 0.005139 seconds 
-  Import took 0.008765 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.276088 seconds.
-  path: Assets/Scenes/Maps/TownScene/LightingData.asset
-  artifactKey: Guid(33844270aa4287148bbf2683e259ae5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Maps/TownScene/LightingData.asset using Guid(33844270aa4287148bbf2683e259ae5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12ca7a4d9c94df804af999c94ecb7e67') in 0.006389 seconds 
-  Import took 0.010058 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000121 seconds.
-  path: Assets/Scenes/Maps/TownScene/Lightmap-0_comp_light.exr
-  artifactKey: Guid(96e74391609b6f541b077373ed815f0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Maps/TownScene/Lightmap-0_comp_light.exr using Guid(96e74391609b6f541b077373ed815f0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8bb6e46d87b143b2ceba7f1be5b00b7e') in 0.021097 seconds 
-  Import took 0.024357 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000130 seconds.
-  path: Assets/Scenes/Maps/TownScene/Lightmap-0_comp_dir.png
-  artifactKey: Guid(a31fb0086b8e62445a4c9ea170f884ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Maps/TownScene/Lightmap-0_comp_dir.png using Guid(a31fb0086b8e62445a4c9ea170f884ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '037379819ca9780f636ce6bd5caac058') in 0.013798 seconds 
-  Import took 0.017096 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000118 seconds.
-  path: Assets/Scenes/Maps/TownScene/Lightmap-1_comp_dir.png
-  artifactKey: Guid(06b86870a402fb846b60799ea6ecf290) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Maps/TownScene/Lightmap-1_comp_dir.png using Guid(06b86870a402fb846b60799ea6ecf290) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab8f7b317240c70e6094877ac213a2ef') in 0.009186 seconds 
-  Import took 0.012344 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000137 seconds.
-  path: Assets/Scenes/Maps/TownScene/Lightmap-0_comp_dir.png
-  artifactKey: Guid(a31fb0086b8e62445a4c9ea170f884ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Maps/TownScene/Lightmap-0_comp_dir.png using Guid(a31fb0086b8e62445a4c9ea170f884ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '037379819ca9780f636ce6bd5caac058') in 0.008632 seconds 
-  Import took 0.011834 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000140 seconds.
-  path: Assets/Scenes/Maps/TownScene/Lightmap-1_comp_dir.png
-  artifactKey: Guid(06b86870a402fb846b60799ea6ecf290) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Maps/TownScene/Lightmap-1_comp_dir.png using Guid(06b86870a402fb846b60799ea6ecf290) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab8f7b317240c70e6094877ac213a2ef') in 0.005804 seconds 
-  Import took 0.008638 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000154 seconds.
-  path: Assets/Scenes/Maps/TownScene/ReflectionProbe-0.exr
-  artifactKey: Guid(c017a2f47568fea44a4c271d1b64f586) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Maps/TownScene/ReflectionProbe-0.exr using Guid(c017a2f47568fea44a4c271d1b64f586) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3012a9ea39a1e8e83007d70d23d19794') in 0.017622 seconds 
-  Import took 0.020907 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000134 seconds.
-  path: Assets/Scenes/Maps/TownScene/Lightmap-1_comp_light.exr
-  artifactKey: Guid(714a7950fe2deb34c8a1cf33a243b440) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Maps/TownScene/Lightmap-1_comp_light.exr using Guid(714a7950fe2deb34c8a1cf33a243b440) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c62878991df87040fc6f35592cbc8c9') in 0.009220 seconds 
-  Import took 0.012355 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.784228 seconds.
-  path: Assets/Scenes/Maps/SwanDivision
-  artifactKey: Guid(c2f26a98e31a0cc439ba86785ef5e0a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Maps/SwanDivision using Guid(c2f26a98e31a0cc439ba86785ef5e0a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd233a9a627a9c9101ec84a273f8e19ff') in 0.005950 seconds 
-  Import took 0.009455 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 31.409847 seconds.
+  Time since last request: 0.000478 seconds.
   path: Assets/Scenes/Maps/SwanDivision/SwanFloor1.unity
   artifactKey: Guid(2454c83b86d92fe45b30c872debb2d89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Maps/SwanDivision/SwanFloor1.unity using Guid(2454c83b86d92fe45b30c872debb2d89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aeb3148729293a5833c5b51deb744b58') in 0.005677 seconds 
-  Import took 0.009251 seconds .
+Start importing Assets/Scenes/Maps/SwanDivision/SwanFloor1.unity using Guid(2454c83b86d92fe45b30c872debb2d89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '421da26ae739b82cc1472ffb290aae64') in 0.018571 seconds 
+  Import took 0.033954 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 27.935396 seconds.
-  path: Assets/Audio/Strangers - Portishead.mp3
-  artifactKey: Guid(277ad09baeba1964ea2fe1037d48c7f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Audio/Strangers - Portishead.mp3 using Guid(277ad09baeba1964ea2fe1037d48c7f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09055f55c38f79587122a41194ec7269') in 0.013777 seconds 
-  Import took 0.017897 seconds .
+  Time since last request: 0.000695 seconds.
+  path: Assets/Scenes/Maps/SwanDivision/SwanFloor1/Lightmap-1_comp_light.exr
+  artifactKey: Guid(5d2d787ad80356d41999e01019a3c19c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Maps/SwanDivision/SwanFloor1/Lightmap-1_comp_light.exr using Guid(5d2d787ad80356d41999e01019a3c19c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0be01e31230e31d27a91b91e3c057c5f') in 0.057876 seconds 
+  Import took 0.072016 seconds .
 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002768 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for OSXStandalone target not found
-Refreshing native plugins compatible for Editor in 0.50 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.699 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.50 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3001 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 138.4 MB.
-System memory in use after: 135.7 MB.
+Received Import Request.
+  Time since last request: 0.000488 seconds.
+  path: Assets/Scenes/Maps/SwanDivision/SwanFloor1/LightingData.asset
+  artifactKey: Guid(533886becb24e4a40958ba2d04e14c95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Maps/SwanDivision/SwanFloor1/LightingData.asset using Guid(533886becb24e4a40958ba2d04e14c95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0396ee239e9f4f23911dccf4bc6343d3') in 0.034675 seconds 
+  Import took 0.048943 seconds .
 
-Unloading 49 unused Assets to reduce memory usage. Loaded Objects now: 3592.
-Total: 2.909600 ms (FindLiveObjects: 0.179400 ms CreateObjectMapping: 0.060800 ms MarkObjects: 1.722000 ms  DeleteObjects: 0.946800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002714 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for OSXStandalone target not found
-Refreshing native plugins compatible for Editor in 0.51 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.722 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.83 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3001 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 138.5 MB.
-System memory in use after: 135.8 MB.
+Received Import Request.
+  Time since last request: 0.000443 seconds.
+  path: Assets/Scenes/Maps/SwanDivision/SwanFloor1/Lightmap-2_comp_dir.png
+  artifactKey: Guid(c89c69b66136ebc4c82ec0e75c97e967) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Maps/SwanDivision/SwanFloor1/Lightmap-2_comp_dir.png using Guid(c89c69b66136ebc4c82ec0e75c97e967) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63c3a28aec78c11f0e332b67c93b4056') in 0.044973 seconds 
+  Import took 0.063231 seconds .
 
-Unloading 49 unused Assets to reduce memory usage. Loaded Objects now: 3595.
-Total: 3.141300 ms (FindLiveObjects: 0.252300 ms CreateObjectMapping: 0.083600 ms MarkObjects: 1.762800 ms  DeleteObjects: 1.041600 ms)
+========================================================================
+Received Import Request.
+  Time since last request: 0.000378 seconds.
+  path: Assets/Scenes/Maps/SwanDivision/SwanFloor1
+  artifactKey: Guid(da6262c026156c24d9e10fa734e2fe5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Maps/SwanDivision/SwanFloor1 using Guid(da6262c026156c24d9e10fa734e2fe5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9abe69c5abb5f488f2aa29747a1ad3ea') in 0.019894 seconds 
+  Import took 0.034508 seconds .
 
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000531 seconds.
+  path: Assets/Scenes/Maps/SwanDivision/SwanFloor1/Lightmap-0_comp_light.exr
+  artifactKey: Guid(67daa7276e42ce24d93d91b4c939e774) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Maps/SwanDivision/SwanFloor1/Lightmap-0_comp_light.exr using Guid(67daa7276e42ce24d93d91b4c939e774) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd72f6c7ee653c54aaffccafd4e865b8c') in 0.073684 seconds 
+  Import took 0.090277 seconds .
+
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

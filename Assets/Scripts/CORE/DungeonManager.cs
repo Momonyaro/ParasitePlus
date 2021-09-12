@@ -23,6 +23,7 @@ namespace CORE
         public List<DoorInteractable> doorInteractables = new List<DoorInteractable>();
         public bool enterOnUnlock = true;
         public List<EncounterTrigger> encounterTriggers = new List<EncounterTrigger>();
+        public List<EventTrigger> eventTriggers = new List<EventTrigger>();
 
         private FPSGridPlayer currentPlayer;
         private MapManager mapManager;
@@ -34,6 +35,14 @@ namespace CORE
                 if (encounterTriggers[i].triggerActive)
                 {
                     StartCoroutine(TransitionToBattle(encounterTriggers[i]));
+                }
+            }
+            for (int i = 0; i < eventTriggers.Count; i++)
+            {
+                if (eventTriggers[i].triggerActive)
+                {
+                    eventTriggers[i].triggerActive = false;
+                    mapManager.currentSlimData.usedGroundItems.Add(eventTriggers[i].guid);
                 }
             }
         }
@@ -91,12 +100,12 @@ namespace CORE
 
                             string itemKeyword = $"<color=yellow>[{keyItem.name}]</color>";
                             string treatedMsg = locked.onUnlockMessage.Replace("$ITEM", itemKeyword);
-                            InfoPrompt.Instance.CreatePrompt(treatedMsg);
+                            InfoPrompt.Instance.CreatePrompt(new []{treatedMsg});
                             if (!enterOnUnlock) break;
                         }
                         else
                         {
-                            InfoPrompt.Instance.CreatePrompt(locked.isLockedMessage);
+                            InfoPrompt.Instance.CreatePrompt(new []{locked.isLockedMessage});
                             break;
                         }
                     }
@@ -142,7 +151,7 @@ namespace CORE
                     if (items.Count >= mapManager.config.inventorySpaces)
                     {
                         //Create prompt and exit: "Your inventory is full."
-                        InfoPrompt.Instance.CreatePrompt("Your inventory is full.");
+                        InfoPrompt.Instance.CreatePrompt(new [] {"Your inventory is full."});
                         break;
                     }
 
@@ -151,7 +160,7 @@ namespace CORE
                     if (newItem != null)
                     {
                         //Create prompt: $"You found <b><color=yellow>[{newItem.name}]</color></b>."
-                        InfoPrompt.Instance.CreatePrompt($"You found <b><color=yellow>[{newItem.name}]</color></b>.");
+                        InfoPrompt.Instance.CreatePrompt(new [] {$"You found <b><color=yellow>[{newItem.name}]</color></b>."});
                         
                         items.Add(newItem);
                         mapManager.OverwritePlayerInventory(items);

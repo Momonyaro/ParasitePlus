@@ -58,7 +58,12 @@ MonoBehaviour:
   - id: 22
   - id: 23
   - id: 24
+  - id: 25
+  - id: 26
+  - id: 27
   transitionToOnEof: {fileID: 11400000, guid: fb597036a293df946be8fb9bcc2ba45c, type: 2}
+  goToSceneOnEof: 0
+  destinationSceneOnEof: 
   references:
     version: 1
     00000000:
@@ -72,6 +77,25 @@ MonoBehaviour:
         reveal: 0
         waitTime: 1
     00000001:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp1
+        groupRef: _default
+        objectPrefab: {fileID: 692451909443057400, guid: bc347fae1ac2be54c81c0237ec5ae165, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 0
+    00000002:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp2
+        groupRef: _default
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 0
+        waitTime: 1.2
+    00000003:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _leadInTextBox0
@@ -88,7 +112,7 @@ MonoBehaviour:
           text: Both arms bound to the armrests of the chair you find yourself in.
           buildTime: 0.036
         perSentenceWriteToScreen: 1
-    00000002:
+    00000004:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp2
@@ -98,7 +122,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 0
         refToDestroy: _leadInTextBox0
-    00000003:
+    00000005:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox3
@@ -117,17 +141,25 @@ MonoBehaviour:
             recognize as your belongings.
           buildTime: 0.036
         perSentenceWriteToScreen: 1
-    00000004:
-      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+    00000006:
+      type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
-        reference: _destroyComp4
-        groupRef: _waking
+        reference: _destroyAll6
+        groupRef: _default
         objectPrefab: {fileID: 0}
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 0
-        refToDestroy: _diagBox3
-    00000005:
+    00000007:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp7
+        groupRef: 
+        objectPrefab: {fileID: 3150822491109766775, guid: 8c7a9af49c10f92408e000b99c715f4e, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+    00000008:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox5
@@ -143,7 +175,7 @@ MonoBehaviour:
             room.
           buildTime: 0.036
         perSentenceWriteToScreen: 1
-    00000006:
+    00000009:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp6
@@ -153,7 +185,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 0
         refToDestroy: _diagBox5
-    00000007:
+    0000000A:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox7
@@ -179,7 +211,7 @@ MonoBehaviour:
             was your name again?
           buildTime: 0.026
         perSentenceWriteToScreen: 1
-    00000008:
+    0000000B:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp8
@@ -189,7 +221,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 0
         refToDestroy: _diagBox7
-    00000009:
+    0000000C:
       type: {class: CharNameBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _charNameBox
@@ -198,7 +230,7 @@ MonoBehaviour:
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 0
-    0000000A:
+    0000000D:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp10
@@ -208,7 +240,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 0
         refToDestroy: _charNameBox
-    0000000B:
+    0000000E:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox11
@@ -226,7 +258,7 @@ MonoBehaviour:
             you of your fate.
           buildTime: 0.036
         perSentenceWriteToScreen: 1
-    0000000C:
+    0000000F:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp12
@@ -236,7 +268,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 0
         refToDestroy: _diagBox11
-    0000000D:
+    00000010:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox13
@@ -255,7 +287,7 @@ MonoBehaviour:
             Parasites.
           buildTime: 0.036
         perSentenceWriteToScreen: 1
-    0000000E:
+    00000011:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp14
@@ -265,7 +297,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 0
         refToDestroy: _diagBox13
-    0000000F:
+    00000012:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox15
@@ -291,7 +323,7 @@ MonoBehaviour:
             this and so I will give you a choice.
           buildTime: 0.036
         perSentenceWriteToScreen: 1
-    00000010:
+    00000013:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp16
@@ -301,7 +333,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 0
         refToDestroy: _diagBox15
-    00000011:
+    00000014:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox16
@@ -326,7 +358,7 @@ MonoBehaviour:
           text: I think you know what I am insinuating.
           buildTime: 0.036
         perSentenceWriteToScreen: 1
-    00000012:
+    00000015:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp18
@@ -336,7 +368,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 0
         refToDestroy: _diagBox16
-    00000013:
+    00000016:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox17
@@ -344,7 +376,7 @@ MonoBehaviour:
         objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
         screenPosition: {x: 0, y: -400}
         errorAttempts: 99
-        reveal: 1
+        reveal: 0
         dialogueBoxes:
         - speakerReference: _magnusCarnaby
           text: The restraints will unlock after we leave the room. You can think
@@ -355,7 +387,7 @@ MonoBehaviour:
             couldn't have held it a second longer.
           buildTime: 0.036
         perSentenceWriteToScreen: 1
-    00000014:
+    00000017:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp18
@@ -365,15 +397,15 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 0
         refToDestroy: _diagBox17
-    00000015:
+    00000018:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox21
-        groupRef: 
+        groupRef: _default
         objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
         screenPosition: {x: 0, y: -400}
         errorAttempts: 99
-        reveal: 1
+        reveal: 0
         dialogueBoxes:
         - speakerReference: _narrator
           text: The wheelchair bound man gives you another quick look, seemingly
@@ -407,38 +439,38 @@ MonoBehaviour:
           text: You knew that it was time to choose.
           buildTime: 0.051
         perSentenceWriteToScreen: 1
-    00000016:
+    00000019:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp22
-        groupRef: 
+        groupRef: _default
         objectPrefab: {fileID: 0}
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
-        reveal: 1
+        reveal: 0
         refToDestroy: _diagBox21
-    00000017:
+    0000001A:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox23
-        groupRef: 
+        groupRef: _default
         objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
-        reveal: 1
+        reveal: 0
         dialogueBoxes:
         - speakerReference: _narrator
           text: '[The choice would be here but for now, let''s assume you shoot the
             window]'
           buildTime: 0
         perSentenceWriteToScreen: 1
-    00000018:
+    0000001B:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp24
-        groupRef: 
+        groupRef: _default
         objectPrefab: {fileID: 0}
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
-        reveal: 1
+        reveal: 0
         refToDestroy: _diagBox23

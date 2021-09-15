@@ -30,6 +30,8 @@ namespace CORE
 
         private void Update()
         {
+            if (currentPlayer.lockPlayer) return;
+            
             for (int i = 0; i < encounterTriggers.Count; i++)
             {
                 if (encounterTriggers[i].triggerActive)
@@ -42,7 +44,9 @@ namespace CORE
                 if (eventTriggers[i].triggerActive)
                 {
                     eventTriggers[i].triggerActive = false;
+                    eventTriggers[i].disabled = true;
                     mapManager.currentSlimData.usedGroundItems.Add(eventTriggers[i].guid);
+                    eventTriggers[i].PlayEvent();
                 }
             }
         }

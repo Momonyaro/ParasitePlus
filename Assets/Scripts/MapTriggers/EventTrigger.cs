@@ -1,6 +1,7 @@
 ﻿using System;
 using CORE;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace MapTriggers
 {
@@ -12,6 +13,7 @@ namespace MapTriggers
         public bool disabled = false;
         public bool generateNewGUID = false;
         public string guid = Guid.NewGuid().ToString();
+        public UnityEvent onEvent = new UnityEvent();
         
         private void OnValidate()
         {
@@ -22,12 +24,18 @@ namespace MapTriggers
             }
         }
 
+        public void PlayEvent()
+        {
+            onEvent?.Invoke();
+            InfoPrompt.Instance.CreatePrompt(promptMessage);
+        }
+
         private void OnTriggerEnter(Collider other)
         {
-            if (disabled || !triggerActive) return;
+            if (disabled) return;
             if (other.CompareTag("Player"))
             {
-                InfoPrompt.Instance.CreatePrompt(promptMessage);
+                triggerActive = true;
             }
         }
 

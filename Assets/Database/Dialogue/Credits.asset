@@ -1,0 +1,326 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae13be0447a66ed48befacfeeb4b52a4, type: 3}
+  m_Name: Credits
+  m_EditorClassIdentifier: 
+  speakers:
+  - speakerName: Narrator
+    speakerReference: _narrator
+    speakerPhoto: {fileID: 21300000, guid: c1dfedd557563514699ddf8d45e86139, type: 3}
+  groups:
+  - groupName: Default
+    visible: 1
+    groupReference: _default
+  - groupName: Opening
+    visible: 1
+    groupReference: _opening
+  - groupName: Helpers
+    visible: 1
+    groupReference: _helpers
+  components:
+  - id: 0
+  - id: 1
+  - id: 2
+  - id: 3
+  - id: 4
+  - id: 5
+  - id: 6
+  - id: 7
+  - id: 8
+  - id: 9
+  - id: 10
+  - id: 11
+  - id: 12
+  - id: 13
+  - id: 14
+  - id: 15
+  - id: 16
+  - id: 17
+  - id: 18
+  - id: 19
+  transitionToOnEof: {fileID: 0}
+  goToSceneOnEof: 0
+  destinationSceneOnEof: 
+  references:
+    version: 1
+    00000000:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp0
+        groupRef: _opening
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 0
+        waitTime: 8
+    00000001:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _gameBy
+        groupRef: _opening
+        objectPrefab: {fileID: 2316696765809871121, guid: 54613a939defbea468ac4a1a484ec76a, type: 3}
+        screenPosition: {x: 0, y: 350}
+        errorAttempts: 99
+        reveal: 0
+        dialogueBoxes:
+        - speakerReference: _narrator
+          text: A Game by
+          buildTime: 0
+        perSentenceWriteToScreen: 1
+        requireContinueInput: 0
+    00000002:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox2
+        groupRef: _default
+        objectPrefab: {fileID: 2926996683339534475, guid: 99566f18f902c9e4da4f85a997a651e7, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 0
+        dialogueBoxes:
+        - speakerReference: _narrator
+          text: Sebastian Alkstrand
+          buildTime: 0
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 0
+    00000003:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp3
+        groupRef: _default
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 0
+        waitTime: 6.3
+    00000004:
+      type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyAll4
+        groupRef: _default
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 0
+    00000005:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _jonte
+        groupRef: _default
+        objectPrefab: {fileID: 2316696765809871121, guid: 54613a939defbea468ac4a1a484ec76a, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 0
+        dialogueBoxes:
+        - speakerReference: _narrator
+          text: "With Help From\n\nJonathan Ormark Hallin\nChristoffer Cederfeldt\nAlbin
+            Dahlheim\nHirad Salmend\nBenjamin Larsson\nValter Torring\nAdam Sandstr\xF6m"
+          buildTime: 0
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 0
+    00000006:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp7
+        groupRef: _default
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 0
+        waitTime: 9.6
+    00000007:
+      type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyAll8
+        groupRef: _default
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 0
+    00000008:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox8
+        groupRef: _default
+        objectPrefab: {fileID: 2316696765809871121, guid: 54613a939defbea468ac4a1a484ec76a, type: 3}
+        screenPosition: {x: 0, y: 500}
+        errorAttempts: 99
+        reveal: 0
+        dialogueBoxes:
+        - speakerReference: _narrator
+          text: Special Thanks
+          buildTime: 0
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 0
+    00000009:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp9
+        groupRef: _default
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 6.3
+    0000000A:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _familyBox
+        groupRef: _default
+        objectPrefab: {fileID: 2316696765809871121, guid: 54613a939defbea468ac4a1a484ec76a, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 0
+        dialogueBoxes:
+        - speakerReference: _narrator
+          text: 'My Family
+
+            Lasse, Linda, Ebba, Oscar
+
+            &
+            Alfons
+
+
+            <3'
+          buildTime: 0
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 0
+    0000000B:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp11
+        groupRef: _default
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 6.3
+    0000000C:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp12
+        groupRef: _default
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 0
+        refToDestroy: _familyBox
+    0000000D:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _grandparentBox
+        groupRef: _default
+        objectPrefab: {fileID: 2316696765809871121, guid: 54613a939defbea468ac4a1a484ec76a, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 0
+        dialogueBoxes:
+        - speakerReference: _narrator
+          text: 'My Grandparents
+
+
+            Kurt & Siw Nilsson
+
+            Janne
+            & Berit Alkstrand'
+          buildTime: 0
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 0
+    0000000E:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp14
+        groupRef: _default
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 0
+        waitTime: 6.4
+    0000000F:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp15
+        groupRef: _default
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 0
+        refToDestroy: _grandparentBox
+    00000010:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _cousinBox
+        groupRef: _default
+        objectPrefab: {fileID: 2316696765809871121, guid: 54613a939defbea468ac4a1a484ec76a, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 0
+        dialogueBoxes:
+        - speakerReference: _narrator
+          text: 'My Cousins
+
+
+            Linus Alfredsson
+
+            Andrea &
+            Filip Willner
+
+            Elvira, Elliot & Liam Alkstrand'
+          buildTime: 0
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 0
+    00000011:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp17
+        groupRef: _default
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 6.4
+    00000012:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp18
+        groupRef: _default
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 0
+        refToDestroy: _cousinBox
+    00000013:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _uncleAuntBox
+        groupRef: _default
+        objectPrefab: {fileID: 2316696765809871121, guid: 54613a939defbea468ac4a1a484ec76a, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 0
+        dialogueBoxes:
+        - speakerReference: _narrator
+          text: 'Other Relatives
+
+
+            Peter & Pernilla Alkstrand
+
+            Mojsan
+            Alkstrand
+
+            Pelle & Monika Willner
+
+            Monika & Anders
+            Alfredsson'
+          buildTime: 0
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 0

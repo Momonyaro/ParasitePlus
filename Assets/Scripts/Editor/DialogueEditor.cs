@@ -300,6 +300,8 @@ namespace Editor
             boxComponent.reference = EditorGUILayout.TextField("Component Reference: ", boxComponent.reference);
             boxComponent.perSentenceWriteToScreen = EditorGUILayout.Toggle("Write per Sentence: ",
                 boxComponent.perSentenceWriteToScreen);
+            boxComponent.requireContinueInput =
+                EditorGUILayout.Toggle("Require Player Input: ", boxComponent.requireContinueInput);
             EditorGUILayout.BeginHorizontal();
             boxComponent.objectPrefab =
                 (GameObject) EditorGUILayout.ObjectField("Prefab: ", boxComponent.objectPrefab, typeof(GameObject), false);

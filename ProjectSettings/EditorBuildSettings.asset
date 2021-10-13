@@ -20,4 +20,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Maps/SwanDivision/SwanFloor1.unity
     guid: 2454c83b86d92fe45b30c872debb2d89
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 46472d8cef444da4d841f68f6280e3ef, type: 2}

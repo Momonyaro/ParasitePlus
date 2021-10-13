@@ -38,7 +38,8 @@ namespace BattleSystem
                         party[i].entityName, 
                         party[i].throwawayId, 
                         party[i].entitySpeed, 
-                        false)); //False since we're reading the party's data
+                        false, //False since we're reading the party's data
+                        0)); 
                     
                     //Debug.Log($"[TurnQueue] : Gave entity {i} with name: {party[i].entityName}, ID: [{party[i].throwawayId}]");
                 }
@@ -54,7 +55,8 @@ namespace BattleSystem
                         enemies[i].entityName, 
                         enemies[i].throwawayId, 
                         enemies[i].entitySpeed, 
-                        true)); //True since we're reading the enemy data
+                        true, //True since we're reading the enemy data
+                        0)); 
                     
                     //Debug.Log($"[TurnQueue] : Gave entity {i} with name: {enemies[i].entityName}, ID: [{enemies[i].throwawayId}]");
                 }
@@ -104,7 +106,7 @@ namespace BattleSystem
 
         public TurnItem GetFirstInLine()
         {
-            if (turnQueue.Count == 0) return new TurnItem("QUEUE EMPTY", -512, 0, false);
+            if (turnQueue.Count == 0) return new TurnItem("QUEUE EMPTY", -512, 0, false, -1);
             
             return turnQueue[0];
         }
@@ -123,8 +125,10 @@ namespace BattleSystem
         {
             TurnItem last = turnQueue[0];
 
+            last.turnsTaken++;
+
             //Reset it's score, I'm doing it by just re-creating the item.
-            last = new TurnItem(last.entityName, last.entityId, last.entityAgility, last.enemyTag);
+            last = new TurnItem(last.entityName, last.entityId, last.entityAgility, last.enemyTag, last.turnsTaken);
             
             turnQueue.RemoveAt(0);
             turnQueue.Add(last);
@@ -173,15 +177,17 @@ namespace BattleSystem
         public int entityId;
         public int entityAgility;
         public int score;
+        public int turnsTaken;
         public bool enemyTag;
 
-        public TurnItem(string entityName, int entityId, int entityAgility, bool enemyTag)
+        public TurnItem(string entityName, int entityId, int entityAgility, bool enemyTag, int turnsTaken)
         {
             this.entityName = entityName;
             this.entityId = entityId;
             this.entityAgility = entityAgility;
             this.score = Mathf.Max(0, entityAgility + Random.Range(-RandomPointOffset, RandomPointOffset));
             this.enemyTag = enemyTag;
+            this.turnsTaken = turnsTaken;
         }
     }
 }

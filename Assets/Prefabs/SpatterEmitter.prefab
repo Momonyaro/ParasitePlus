@@ -68,7 +68,7 @@ MonoBehaviour:
   m_text: aa
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 630ceb736ea0a044695e1065c8676a14, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 28162f15541569f4aa6e2cab255ce970, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: db2adfc930a30db4ca06727ab0845584, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -185,7 +185,7 @@ MonoBehaviour:
   damageText: {fileID: 6503286764573578645}
   spatterRadius: 90
   spatterSize: 200
-  spatterAmount: 10
+  spatterAmount: 2
   spawnDelay: 0.008
   spatterSprite: {fileID: 21300000, guid: 8e72d2058a1f28a4f96fd2ceb750d524, type: 3}
   fadeDelay: 0.5

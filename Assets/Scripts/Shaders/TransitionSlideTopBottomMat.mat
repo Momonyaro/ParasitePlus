@@ -38,8 +38,8 @@ Material:
     m_Floats:
     - _ColorMask: 15
     - _EnableExternalAlpha: 0
-    - _FillAmount: 0.18283008
-    - _Stencil: 1.48
+    - _FillAmount: 0
+    - _Stencil: 1.46
     - _StencilComp: 8
     - _StencilOp: -57.8
     - _StencilReadMask: 255

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using Scriptables;
 using TMPro;
 using UnityEngine;
@@ -14,6 +15,7 @@ namespace BattleSystem.UI
         
         public Animator topAnimator;
         public Image backgroundPanel;
+        public AnimationCurve shakeLerpCurve = new AnimationCurve();
         public float backgroundFadeSpeed = 10f;
         public bool finishedFoldingOut = false;
         [SerializeField] private UICard[] partyCards = new UICard[3];
@@ -54,9 +56,14 @@ namespace BattleSystem.UI
             StartCoroutine(FadeBackground(visibility));
         }
 
+        public void ShakePlayerCard(int cardIndex)
+        {
+            StartCoroutine(ShakeCardPortrait(cardIndex, 2.0f, 300f));
+        }
+
         private IEnumerator FadeBackground(bool visibility)
         {
-            float finalAlpha = (visibility) ? .9f : .0f;
+            float finalAlpha = (visibility) ? .8f : .0f;
             
             Color finalColor = new Color(0, 0, 0, finalAlpha);
             Color currentColor = backgroundPanel.color;
@@ -102,12 +109,42 @@ namespace BattleSystem.UI
                 searchIndex += movementDelta; // move it another step in the direction we want if we did not find anything.
             }
         }
+
+        private IEnumerator ShakeCardPortrait(int cardIndex, float timeScale, float magnitude)
+        {
+            UICard current = partyCards[cardIndex];
+            RectTransform portraitTransform = current.portraitParent;
+            Vector2 origo = portraitTransform.anchoredPosition;
+
+            float timePassed = 0;
+            float lerpCurveLastX = shakeLerpCurve.keys[shakeLerpCurve.length - 1].time;
+            portraitTransform.anchoredPosition = origo;
+
+            while (timePassed < lerpCurveLastX)
+            {
+                Vector2 shakeVec = new Vector2(shakeLerpCurve.Evaluate(timePassed), 0);
+
+                var currentCamPos = portraitTransform.anchoredPosition;
+                Vector3 lerped = Vector2.Lerp(currentCamPos, origo + (shakeVec * magnitude), 0.5f);
+
+                portraitTransform.anchoredPosition = lerped;
+
+                timePassed += Time.deltaTime * 2.0f;
+                timePassed = Mathf.Clamp(timePassed, 0, lerpCurveLastX);
+                yield return new WaitForEndOfFrame();
+            }
+
+            portraitTransform.anchoredPosition = origo;
+
+            yield break;
+        }
         
         
         [System.Serializable]
         private struct UICard
         {
             public GameObject parent;
+            public RectTransform portraitParent;
             
             public Image hpBarFill;
             public Image apBarFill;

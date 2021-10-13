@@ -199,6 +199,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7918335002988649766, guid: bb1156c4a0a7a1d47baab5ec951bea9a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 43c2dc42c8801b04b81348946b5a0966, type: 2}
+    - target: {fileID: -7029948723529949830, guid: bb1156c4a0a7a1d47baab5ec951bea9a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 882129737928793925, guid: bb1156c4a0a7a1d47baab5ec951bea9a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -206,6 +214,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bb1156c4a0a7a1d47baab5ec951bea9a, type: 3}
       propertyPath: m_Name
       value: map_stairs_node
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bb1156c4a0a7a1d47baab5ec951bea9a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148817236446094103, guid: bb1156c4a0a7a1d47baab5ec951bea9a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb1156c4a0a7a1d47baab5ec951bea9a, type: 3}

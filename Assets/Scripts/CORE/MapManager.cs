@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Items;
 using MOVEMENT;
+using SAMSARA.Scripts;
 using Scriptables;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -19,6 +20,7 @@ namespace CORE
         private bool _hasDungeonManager = false;
         public DungeonManager dungeonManager;
         public GameConfig config;
+        public string mapBMGReference = "";
 
         public const int BattleSceneIndex = 1;
 
@@ -97,15 +99,16 @@ namespace CORE
                     }
                 }
             }
+
+            SamsaraMaster.Instance.SetNextMusicTrackFromRef(mapBMGReference, out bool success);
+            if (success)
+                SamsaraMaster.Instance.SwapMusicTrack(SamsaraTwinChannel.TransitionTypes.CrossFade, 0.4f, out success);
         }
 
-        public void LoadTestBattle(InputAction.CallbackContext ctx)
+        public void LoadRandomBattle()
         {
-            if (ctx.started)
-            {
-                currentSlimData.enemyField = monsterManifest.GetRandomEncounter().GetEnemies();
-                SwitchSceneToBattle(SceneManager.GetActiveScene().name); //Try loading into the battle
-            }
+            currentSlimData.enemyField = monsterManifest.GetRandomEncounter().GetEnemies();
+            SwitchSceneToBattle(SceneManager.GetActiveScene().name); //Try loading into the battle
         }
 
         public void SwitchSceneToBattle(string slimDestinationScene)

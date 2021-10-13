@@ -1,0 +1,35 @@
+How do we wanna do this?
+
+Kan vara bra att ha en socket för AI i varje entity. Det skulle tillåta mig att ha en AIScriptable som håller i alla olika komponenter och
+låter mig att configuerera den för varje fiende? Fast det känns onödigt att göra den till en scriptable... Kanska bara lägga in den
+som en icke-monobehavior klass i entity så att den alltid finns där och så kan man bara konfigurera den i entity inspektören.
+
+I denna EntityAIComponent så kan den hålla i två primära delar. En "Move Select Personality" och en "Targeting Personality".
+Dessa är listor av barnklasser för respektive "personality" och tillåter designers att i en dropdown meny välja vilka som är relevanta
+för den valda entityn.
+
+
+Move Select Personalities:
+ * Random
+	Pick a random ability, if the entity has AP for it, use it. If no ability can be used, use the default attack.
+ * Support
+	Prefer attacks that affect the entity's team. Healing abilities should be weighed the highest. 
+	Perhaps also check if anyone is hurt and if not, use buffs or a random offensive ability.
+ * Plague
+	Similar to support but instead pick debuffs and attacks with additional effects tied to them. If no AP,
+	default to basic attack.
+ * Burst
+	Pick the attack that costs the most AP.
+
+
+Targeting Personalities:
+ * Random
+	Picks a target at random, every enemy has equal weight in the decision.
+ * Bully
+	Picks the enemy with the least HP, else it weighs them equally
+ * Vengeful
+	Picks the enemy that attacked them first during the battle. If this entity is attacked and the target of it's revenge is dead
+	the new attacker becomes the target for this entities revenge.
+ * Kingslayer
+	Picks the enemy with the comparatively highest level and HP. this can be weighed by some simple calculation like (level * currentHP)
+

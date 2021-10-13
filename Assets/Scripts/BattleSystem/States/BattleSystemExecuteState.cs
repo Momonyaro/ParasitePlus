@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using BattleSystem.UI;
+using Scriptables;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,8 +11,7 @@ namespace BattleSystem.States
     {
 
         private CameraControl cameraControl;
-        private TargetingUI targetingUI;
-        
+        private AttackPromptUI attackPrompt;
         public float camTimeScale = 2.0f;
         public float camHoldTime = 1.2f;
         public float camShakeTimeScale = 5.0f;
@@ -27,11 +27,18 @@ namespace BattleSystem.States
             timer = delay;
             
             cameraControl = FindObjectOfType<CameraControl>();
-            targetingUI = FindObjectOfType<TargetingUI>();
+            attackPrompt = FindObjectOfType<AttackPromptUI>();
 
             List<int> targetIndices = parent.targetedEntities;
             
             Debug.Log($"[StateManager] : [{stateName}] found {targetIndices.Count} targets.");
+
+            AbilityScriptable lastAttack = parent.lastAbility;
+            EntityScriptable currentEntity = battleCore.GetNextEntity();
+
+            attackPrompt.ShowAttackPrompt($"<color=yellow>{currentEntity.entityName}</color> used <color=yellow>{lastAttack.abilityName}</color>", duration: 1.2f);
+
+            bool isEnemy = battleCore.turnOrderComponent.GetFirstInLine().enemyTag;
 
             if (!parent.targetingParty) // Targeting Enemy field
             {
@@ -41,7 +48,6 @@ namespace BattleSystem.States
             {
                 PartyExecution(targetIndices);
             }
-            
             
             initialized = true;
         }

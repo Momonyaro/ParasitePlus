@@ -11,6 +11,7 @@ namespace Scriptables
         [TextArea(2, 5)]
         public string abilityDesc;
         [Space]
+        public string abilityEffectRef;
         public bool targetAll;
         public bool targetFriendlies;
         public int abilityLevelReq; //This is the level the entity needs to be to be able to use the ability.

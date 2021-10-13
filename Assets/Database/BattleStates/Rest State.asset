@@ -17,7 +17,21 @@ MonoBehaviour:
   initialized: 0
   battleCore: {fileID: 0}
   parent:
-    systemStates: []
-    currentIndex: 0
-    module: {fileID: 0}
-  startTimer: 1.077
+    systemStates:
+    - {fileID: 11400000, guid: 901bbff2202f5b84bb09ea343fd062b3, type: 2}
+    - {fileID: 11400000, guid: be3c4ce369ae4684a90af192ed36dfa3, type: 2}
+    - {fileID: 11400000, guid: 2588cf1bd35d8bf4280e1eb0f9dbeabf, type: 2}
+    - {fileID: 11400000, guid: 3880a84438f2c274e9d2d0d7e94c9d42, type: 2}
+    - {fileID: 11400000, guid: 55bcd767db317a34b98f8ba1dbfac8e2, type: 2}
+    - {fileID: 11400000, guid: 863c80b9f1ec42c469c3176f250ecf14, type: 2}
+    - {fileID: 11400000}
+    - {fileID: 11400000, guid: abf0e3893e4177d4a9396b60ff2aea34, type: 2}
+    - {fileID: 11400000, guid: e071411de4e75d04d9b980013834ed0b, type: 2}
+    - {fileID: 11400000, guid: 9081080bec84c0f44b9a14594edfe490, type: 2}
+    - {fileID: 11400000, guid: da50a6697d244104dab35dccf6a6d7cf, type: 2}
+    currentIndex: 4
+    lastAbility: {fileID: 11400000, guid: 00be9c6c0665f664fb5c95bf1a66b36f, type: 2}
+    targetedEntities: 01000000
+    targetingParty: 1
+    module: {fileID: -944628639613478452, guid: 7d30e05cf43b6e54387d92a909d874f3, type: 3}
+  startTimer: 1.09

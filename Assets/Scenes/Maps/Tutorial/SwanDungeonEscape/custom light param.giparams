@@ -9,12 +9,12 @@ LightmapParameters:
   m_Name: custom light param
   serializedVersion: 3
   resolution: 1
-  clusterResolution: 0.5
-  irradianceBudget: 128
+  clusterResolution: 0.478
+  irradianceBudget: 177
   irradianceQuality: 8192
-  backFaceTolerance: 0.653
+  backFaceTolerance: 0.306
   isTransparent: 0
-  modellingTolerance: 0.01
+  modellingTolerance: 0.054
   systemTag: -1
   edgeStitching: 1
   blurRadius: 2

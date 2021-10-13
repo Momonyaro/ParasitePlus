@@ -15,14 +15,39 @@ MonoBehaviour:
   entityName: Gummo
   entityLevel: 1
   entityId: _gummo
-  entitySpeed: 12
+  entitySpeed: 13
   throwawayId: 0
-  healthPts: {x: 14, y: 14}
-  actionPts: {x: 6, y: 8}
+  healthPts: {x: 22, y: 22}
+  actionPts: {x: 18, y: 18}
   entityXp: 0
   entityXpThreshold: 14
   defaultAttack: {fileID: 11400000, guid: 00be9c6c0665f664fb5c95bf1a66b36f, type: 2}
+  lastAttacker: {fileID: 0}
+  entityAI:
+    randID: -1
+    personalityNodes:
+    - healthPercentLessThan: 1
+      roundsPassed: 0
+      trigger: 
+      onFirstLoopInterjects: []
+      hasReadFirstLoop: 0
+      moveSelect:
+        id: 0
+      targetComp:
+        id: 1
   deadTrigger: 0
   stats: 
-  abilityScriptables: []
+  abilityScriptables:
+  - {fileID: 11400000, guid: e2f917f02455925409309ebbf5e0711b, type: 2}
   entityEffectBuffer: []
+  references:
+    version: 1
+    00000000:
+      type: {class: MoveSelectCompRandom, ns: BattleSystem.AI, asm: Assembly-CSharp}
+      data:
+        componentName: Random
+    00000001:
+      type: {class: TargetCompRandom, ns: BattleSystem.AI, asm: Assembly-CSharp}
+      data:
+        owner: {fileID: 0}
+        componentName: Random

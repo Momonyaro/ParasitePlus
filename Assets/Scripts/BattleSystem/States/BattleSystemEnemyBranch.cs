@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using BattleSystem.UI;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace BattleSystem.States
@@ -6,11 +7,13 @@ namespace BattleSystem.States
     [CreateAssetMenu(fileName = "Enemy Branch State", order = 1, menuName = "Battle States/Enemy Branch State")]
     public class BattleSystemEnemyBranch : BattleSystemStateBase
     {
+        private TopPanelUI topPanelUI;
         private bool nextIsEnemy = false;
         private bool entityDead = false;
         
         public override void Init()
         {
+            topPanelUI = FindObjectOfType<TopPanelUI>();
             //Basically check if the next entity in line is tagged as an enemy or not, if it is we go to the enemy AI states.
             // else we go to the player's UI based states.
 
@@ -18,6 +21,8 @@ namespace BattleSystem.States
             
             //Check if the entity is dead and if so, we just skip straight to the next entity.
             entityDead = battleCore.GetNextEntity().deadTrigger;
+            
+            topPanelUI.PopulatePartyCards(battleCore.partyField, battleCore.turnOrderComponent.GetFirstInLine().entityId);
             
             initialized = true;
         }
@@ -37,13 +42,12 @@ namespace BattleSystem.States
 
             if (entityDead)
             {
-                Debug.Log("Entity dead");
                 parent.SwitchActiveState("_cycleState");
                 return;
             }
             
-            if (nextIsEnemy) 
-                parent.SwitchActiveState("_restState");
+            if (nextIsEnemy) //Replace later with enemy target state!
+                parent.SwitchActiveState("_aiTargetState");
             else
                 parent.SwitchActiveState("_selectionState");
         }

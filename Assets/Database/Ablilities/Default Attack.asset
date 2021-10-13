@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f39828721a6734fa89c2faa80c33ca, type: 3}
   m_Name: Default Attack
   m_EditorClassIdentifier: 
-  abilityName: Default Attack
+  abilityName: Strike
   abilityId: _defaultAtk
   abilityDesc: This is the default attack.
+  abilityEffectRef: _swordSlash
   targetAll: 0
   targetFriendlies: 0
   abilityLevelReq: 0

@@ -80,7 +80,10 @@ namespace BattleSystem.States
                     AbilityScriptable test = battleCore.GetNextEntity().defaultAttack;
                     parent.lastAbility = test;
                     Debug.Log(battleCore.GetNextEntity().entityName);
-                    passTargetEnemy = true;
+                    if (test.targetFriendlies)
+                        passTargetParty = true;
+                    else
+                        passTargetEnemy = true;
                     return;
                 case "_viewSkills":
                     ConstructSkillMenu();
@@ -102,7 +105,13 @@ namespace BattleSystem.States
                 string cropped = input.Replace("_skillKey", "");
                 //cropped should now contain the abilityId of what we selected. Proceed to targeting mode based on the ability
 
-                parent.lastAbility = battleCore.GetNextEntity().GetAbilityByID(cropped);
+                AbilityScriptable toConsider = battleCore.GetNextEntity().GetAbilityByID(cropped);
+                EntityScriptable currentEntity = battleCore.GetNextEntity();
+
+                if (currentEntity.GetEntityAP().x < toConsider.abilityCosts.x) //Too expensive, last resort measure. Show this in the ui as well.
+                    return;
+
+                parent.lastAbility = toConsider;
                 
                 passTargetParty = parent.lastAbility.targetFriendlies;
                 passTargetEnemy = !passTargetParty;

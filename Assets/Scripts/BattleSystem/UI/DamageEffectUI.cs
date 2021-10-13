@@ -24,5 +24,16 @@ namespace BattleSystem.UI
             if (damageNumber == 0)
                 comp.damageText.text = "Miss";
         }
+
+        public void CreateAbilityEffect(Vector2 canvasPos, string effectRef)
+        {
+            GameObject effect = Instantiate(Resources.Load<GameObject>($"Effects/{effectRef}"), transform);
+            RectTransform rect = effect.GetComponent<RectTransform>();
+
+            rect.position = canvasPos;
+
+            Debug.Log(effect.name);
+
+        }
     }
 }

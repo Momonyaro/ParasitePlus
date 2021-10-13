@@ -12,6 +12,7 @@ namespace Dialogue
     {
         public List<DialogueBox> dialogueBoxes = new List<DialogueBox>();
         public bool perSentenceWriteToScreen = true;
+        public bool requireContinueInput = true;
         private int currentIndex = 0;
         private int currentChar = 0;
         private float buildTimer = 0;
@@ -45,6 +46,13 @@ namespace Dialogue
             if (AtEndOfLife()) { endOfLife = true; return; }
             
             SlowWriteToReciever();
+
+            if (!requireContinueInput && !buildingText)
+            {
+                currentIndex++;
+                currentIndex = Mathf.Clamp(currentIndex, 0, dialogueBoxes.Count);
+                canBuild = true;
+            }
             
             endOfLife = false;
         }
@@ -67,7 +75,8 @@ namespace Dialogue
                 
                 if (IsNull()) return;
                 DialogueBoxReciever reciever = GetCurrentInstance().GetComponent<DialogueBoxReciever>();
-                reciever.continuePrompt.SetActive(false);
+                if (reciever.continuePrompt != null)
+                    reciever.continuePrompt.SetActive(false);
             }
         }
 
@@ -94,8 +103,10 @@ namespace Dialogue
             currentText = currentText.Replace(PlayerNameMacro, playerName);
             
             Speaker currentSpeaker = GetCurrentSpeaker();
-            reciever.speakerPhoto.sprite = currentSpeaker.speakerPhoto;
-            reciever.speakerName.text = currentSpeaker.speakerName;
+            if (reciever.speakerPhoto != null)
+                reciever.speakerPhoto.sprite = currentSpeaker.speakerPhoto;
+            if (reciever.speakerName != null)
+                reciever.speakerName.text = currentSpeaker.speakerName;
             
             // How do make string builder? Me 2 dumb?
             if (skipBuild)
@@ -160,7 +171,8 @@ namespace Dialogue
             }
             else
             {
-                reciever.continuePrompt.SetActive(true);
+                if (reciever.continuePrompt != null)
+                    reciever.continuePrompt.SetActive(true);
             }
         }
 

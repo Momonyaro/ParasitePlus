@@ -26,6 +26,11 @@ public class InfoPrompt : MonoBehaviour
 
     public void CreatePrompt(string[] promptMessage)
     {
+        if (promptMessage.Length == 0)
+        {
+            return;
+        }
+        
         FindObjectOfType<FPSGridPlayer>().lockPlayer = true;
         currentMessage = new Queue<string>(promptMessage);
         

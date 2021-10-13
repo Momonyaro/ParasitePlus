@@ -28,7 +28,7 @@ namespace BattleSystem.UI
         private void Update()
         {
             if (implode)
-                Destroy(gameObject);
+                Destroy(transform.parent.gameObject);
         }
 
         private IEnumerator SpawnSpatterAndFadeOut()

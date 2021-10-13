@@ -2,6 +2,7 @@
 using System.Collections;
 using CORE;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace MOVEMENT
@@ -16,6 +17,8 @@ namespace MOVEMENT
 
         public AnimationCurve turnLerpCurve = new AnimationCurve();
         public AnimationCurve moveLerpCurve = new AnimationCurve();
+        
+        public UnityEvent onSuccessfulMove;
 
         public bool lockPlayer = false;
         private bool turning = false;
@@ -131,6 +134,12 @@ namespace MOVEMENT
                 finalPos += transform.forward * (moveDir.y * 2.0f);
             else
                 finalPos += transform.right * (moveDir.x * 2.0f);
+
+            if (Vector3.Distance(pos, finalPos) > 0.8f)
+            {
+                //We actually moved, let's fire the event to increase the encounterProgress.
+                onSuccessfulMove?.Invoke();
+            }
 
             while (timePassed < maxTime)
             {

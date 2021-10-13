@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using Items;
 using MapTriggers;
 using MOVEMENT;
+using SAMSARA.Scripts;
 using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 namespace CORE
 {
@@ -24,9 +26,18 @@ namespace CORE
         public bool enterOnUnlock = true;
         public List<EncounterTrigger> encounterTriggers = new List<EncounterTrigger>();
         public List<EventTrigger> eventTriggers = new List<EventTrigger>();
-
+        public float encounterProgress = 0; // When this reaches 1, start a random encounter.
+        private bool startedEncounter = false;
+        public bool randomEncounters = true;
+        public float encounterProgressRange = 0.1f; // Add a random amount that's from 0 - the range max
+        
         private FPSGridPlayer currentPlayer;
         private MapManager mapManager;
+
+        private void Start()
+        {
+            currentPlayer.onSuccessfulMove.AddListener(IncrementEncounterProgress);
+        }
 
         private void Update()
         {
@@ -49,6 +60,12 @@ namespace CORE
                     eventTriggers[i].PlayEvent();
                 }
             }
+
+            if (encounterProgress >= 1 && !startedEncounter)
+            {
+                startedEncounter = true;
+                StartCoroutine(TransitionToRandomBattle());
+            }
         }
 
         public void TransitionToBattleFromTrigger(EncounterTrigger trigger)
@@ -69,6 +86,19 @@ namespace CORE
             while (!fadeToBlackImage.finished) { yield return null; }
             
             mapManager.SwitchSceneToBattle(trigger.postBattleSceneName);
+            
+            yield break;
+        }
+        
+        private IEnumerator TransitionToRandomBattle()
+        {
+            FadeToBlackImage fadeToBlackImage = FindObjectOfType<FadeToBlackImage>();
+            
+            fadeToBlackImage.FadeToBlack(0.3f, .5f, true);
+            
+            while (!fadeToBlackImage.finished) { yield return null; }
+            
+            mapManager.LoadRandomBattle();
             
             yield break;
         }
@@ -215,6 +245,23 @@ namespace CORE
         {
             currentPlayer.transform.position = newPosition;
             currentPlayer.transform.rotation = Quaternion.Euler(newEulers);
+        }
+
+        public void IncrementEncounterProgress()
+        {
+            if (randomEncounters)
+            {
+                encounterProgress += Random.Range(0, encounterProgressRange);
+            }
+            else
+            {
+                encounterProgress = 0;
+            }
+        }
+
+        public void SetRandomEncounters(bool randomEncounter)
+        {
+            randomEncounters = randomEncounter;
         }
         
     }

@@ -11,19 +11,21 @@ namespace BattleSystem.States
     {
         private BattleSystemEnemyField enemyField;
         private DamageEffectUI damageEffectUI;
+        private TopPanelUI topPanelUI;
 
         public float enemyShakeTimeScale = 5.0f;
         public float enemyShakeMagnitude = 0.5f;
         
         [Space()]
         
-        public float delay = 0.5f;
+        public float delay = 0.9f;
         private float timer;
         
         public override void Init()
         {
             enemyField = FindObjectOfType<BattleSystemEnemyField>();
             damageEffectUI = FindObjectOfType<DamageEffectUI>();
+            topPanelUI = FindObjectOfType<TopPanelUI>();
             timer = delay;
 
             List<int> targetIndices = parent.targetedEntities;
@@ -53,6 +55,15 @@ namespace BattleSystem.States
         {
             AbilityScriptable abilityInUse = parent.lastAbility;
             EntityScriptable currentEntity = battleCore.GetNextEntity();
+
+            Vector2Int currentAP = currentEntity.GetEntityAP();
+            Vector2Int currentHP = currentEntity.GetEntityHP();
+            currentAP.x -= abilityInUse.abilityCosts.x;
+            currentHP.x -= abilityInUse.abilityCosts.y;
+            
+            currentEntity.SetEntityAP(currentAP);
+            currentEntity.SetEntityHP(currentHP);
+            
             bool isEnemy = battleCore.turnOrderComponent.GetFirstInLine().enemyTag;
             for (int i = 0; i < indices.Count; i++)
             {
@@ -60,10 +71,8 @@ namespace BattleSystem.States
 
                 float damScale = abilityInUse.levelScalingDamage * currentEntity.entityLevel;
                 int scaledDam = Mathf.FloorToInt(abilityInUse.abilityDamage.x + damScale);
-                int scaledDamOffset = Mathf.FloorToInt(Random.Range(-abilityInUse.abilityDamage.y + damScale,
-                    abilityInUse.abilityDamage.y + damScale));
                 
-                damage = scaledDam + scaledDamOffset;
+                damage = scaledDam;
                 bool crit = (Random.value < abilityInUse.abilityCritChance);
                 bool miss = (Random.value < abilityInUse.abilityMissChance) && !crit;
 
@@ -110,9 +119,23 @@ namespace BattleSystem.States
                 }
 
                 Vector2Int hp = target.GetEntityHP();
-                target.SetEntityHP(new Vector2Int(hp.x - damage, hp.y));
+                target.SetEntityHP(new Vector2Int(Mathf.Clamp(hp.x - damage, 0, hp.y), hp.y));
+                target.lastAttacker = currentEntity;
+
+                Vector2 targetScreenPos;
+
+                if (!targetEnemies) //Target Party
+                {
+                    targetScreenPos = topPanelUI.GetCardPosition(indices[i], out bool exists);
+                    topPanelUI.ShakePlayerCard(indices[i]);
+                }
+                else
+                {
+                    targetScreenPos = enemyField.GetEntityPosAsScreenPos(indices[i]);
+                }
                 
-                damageEffectUI.CreateDamageSpatter(enemyField.GetEntityPosAsScreenPos(indices[i]), damage, crit);
+                damageEffectUI.CreateAbilityEffect(targetScreenPos, abilityInUse.abilityEffectRef);
+                damageEffectUI.CreateDamageSpatter(targetScreenPos, damage, crit);
                 
                 //Check if the enemy is dead?
                 if (!target.deadTrigger)

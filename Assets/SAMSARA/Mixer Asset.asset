@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f7566ddbf84863b7b332dc37e99d57, type: 3}
+  m_Name: Mixer Asset
+  m_EditorClassIdentifier: 
+  masterVolume: 1
+  events:
+  - reference: _victoryTheme
+    audioClip: {fileID: 8300000, guid: b7e1daf768963bf40b7f2a1d21afbbe3, type: 3}
+    loop: 1
+    volume: 0.302
+    pitch: 1
+    randomPitchOffset: 0
+    delay: 0
+    randomDelayOffset: 0
+  - reference: _swanDivisionBGM
+    audioClip: {fileID: 8300000, guid: 6feedd6782be9df41bc7765d81ad51c2, type: 3}
+    loop: 1
+    volume: 0.472
+    pitch: 1
+    randomPitchOffset: 0
+    delay: 0
+    randomDelayOffset: 0
+  - reference: _worldMapBGM
+    audioClip: {fileID: 8300000, guid: eeff933ed963df44db75f7278253dc62, type: 3}
+    loop: 1
+    volume: 0.534
+    pitch: 1
+    randomPitchOffset: 0
+    delay: 0
+    randomDelayOffset: 0
+  - reference: _creditsTheme
+    audioClip: {fileID: 8300000, guid: 27979b1176f614c4a97929de39ed5773, type: 3}
+    loop: 1
+    volume: 0.219
+    pitch: 1
+    randomPitchOffset: 0
+    delay: 0
+    randomDelayOffset: 0
+  - reference: _battleBGMCanonball
+    audioClip: {fileID: 8300000, guid: 630979a98537b334d9c77592941fab52, type: 3}
+    loop: 1
+    volume: 0.219
+    pitch: 1
+    randomPitchOffset: 0
+    delay: 0
+    randomDelayOffset: 0

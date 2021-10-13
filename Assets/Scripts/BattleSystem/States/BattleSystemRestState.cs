@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using BattleSystem.UI;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace BattleSystem.States
@@ -6,7 +7,7 @@ namespace BattleSystem.States
     [CreateAssetMenu(fileName = "Rest State", order = 3, menuName = "Battle States/Rest State")]
     public class BattleSystemRestState : BattleSystemStateBase
     {
-
+        private TopPanelUI topPanelUI;
         [Range(0.1f, 2.0f)]
         public float startTimer = 1.2f;
 
@@ -14,7 +15,12 @@ namespace BattleSystem.States
         
         public override void Init()
         {
+            topPanelUI = FindObjectOfType<TopPanelUI>();
             timer = startTimer;
+            
+            topPanelUI.SetFoldoutState(false);
+            
+            topPanelUI.PopulatePartyCards(battleCore.partyField, battleCore.turnOrderComponent.GetFirstInLine().entityId);
             
             initialized = true;
         }

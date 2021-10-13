@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using CORE;
 using Items;
+using SAMSARA.Scripts;
 using Scriptables;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -44,6 +45,10 @@ namespace BattleSystem
             turnOrderComponent.Init(ref partyField, ref enemyField); // Create the turn queue
             
             systemStateManager.Init(this); // Start the state machine.
+            
+            SamsaraMaster.Instance.SetNextMusicTrackFromRef("_battleBGMCanonball", out bool success);
+            if (success)
+                SamsaraMaster.Instance.SwapMusicTrack(SamsaraTwinChannel.TransitionTypes.CrossFade, 0.4f, out success);
         }
 
         // Update is called once per frame
@@ -175,6 +180,29 @@ namespace BattleSystem
             }
 
             return toReturn.ToArray();
+        }
+
+        public TurnItem GetEntityTurnItem(EntityScriptable entity)
+        {
+            Queue<TurnItem> queue = new Queue<TurnItem>(turnOrderComponent.turnQueue);
+            TurnItem toReturn = new TurnItem();
+
+            while (queue.Count > 0)
+            {
+                TurnItem turnItem = queue.Dequeue();
+
+                EntityScriptable[] toSearch = (turnItem.enemyTag) ? enemyField : partyField;
+
+                for (int i = 0; i < toSearch.Length; i++)
+                {
+                    if (toSearch[i] == null) { continue; }
+
+                    if (toSearch[i].throwawayId == turnItem.entityId)
+                        toReturn = turnItem;
+                }
+            }
+
+            return toReturn;
         }
     }
 }

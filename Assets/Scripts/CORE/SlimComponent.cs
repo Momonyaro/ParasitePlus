@@ -40,7 +40,6 @@ namespace CORE
         public void ReadVolatileSlim(out SlimData slimData)
         {
             slimData = sInstance.internalSlimData;
-            Debug.Log("reading slimData: " + sInstance.internalSlimData);
             Destroy(sInstance.gameObject);
         }
 

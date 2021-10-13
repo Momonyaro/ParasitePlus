@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using BattleSystem;
+using BattleSystem.AI;
 using CORE;
 using UnityEngine;
 
@@ -25,9 +27,11 @@ namespace Scriptables
         private Vector2Int healthPts;    //The X component is the current value and the Y component is the max value
         [SerializeField]
         private Vector2Int actionPts;    //The X component is the current value and the Y component is the max value
-        public int entityXp;            // For enemies, this value will be the xp reward for beating it.
+        public int entityXp;            // For enemies, this value will be the xp reward for beating it.a
         public int entityXpThreshold;   // Going over this threshold registers as a levelup.
         public AbilityScriptable defaultAttack;
+        public EntityScriptable lastAttacker;
+        [SerializeField] private EntityAIComponent entityAI = new EntityAIComponent();
         public bool deadTrigger;
 
         public enum STAT
@@ -167,6 +171,24 @@ namespace Scriptables
             entityXpThreshold = entityLevel * 14;
         }
 
+        public EntityAIComponent GetAIComponent()
+        {
+            return entityAI;
+        }
+
+        public void OverwriteAIComponent(EntityAIComponent newAIComp)
+        {
+            entityAI = newAIComp;
+            for (int i = 0; i < entityAI.personalityNodes.Count; i++)
+            {
+                entityAI.personalityNodes[i].hasReadFirstLoop = false;
+                entityAI.personalityNodes[i].onFirstLoopInterjects =
+                    new List<InterjectBase>(newAIComp.personalityNodes[i].onFirstLoopInterjects);
+                entityAI.personalityNodes[i].targetComp = newAIComp.personalityNodes[i].targetComp;
+                entityAI.personalityNodes[i].moveSelect = newAIComp.personalityNodes[i].moveSelect;
+            }
+        }
+
         public EntityScriptable Copy()
         {
             EntityScriptable es = CreateInstance<EntityScriptable>();
@@ -182,6 +204,7 @@ namespace Scriptables
             es.entityLevel = entityLevel;
             es.entityXp = entityXp;
             es.entityXpThreshold = entityXpThreshold;
+            es.OverwriteAIComponent(entityAI);
 
             return es;
         }

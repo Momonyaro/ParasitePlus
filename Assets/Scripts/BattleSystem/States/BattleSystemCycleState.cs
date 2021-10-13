@@ -9,7 +9,6 @@ namespace BattleSystem.States
     public class BattleSystemCycleState : BattleSystemStateBase
     {
         private BottomPanelUI bottomPanelUI;
-        private TopPanelUI topPanelUI;
         private TurnCounterUI turnCounterUI;
         private BattleSystemEnemyField enemyField;
 
@@ -17,7 +16,6 @@ namespace BattleSystem.States
         {
             //Perhaps use this to contact the appropriate UI?
             bottomPanelUI = FindObjectOfType<BottomPanelUI>();
-            topPanelUI = FindObjectOfType<TopPanelUI>();
             turnCounterUI = FindObjectOfType<TurnCounterUI>();
             enemyField = FindObjectOfType<BattleSystemEnemyField>();
 
@@ -39,10 +37,6 @@ namespace BattleSystem.States
             {
                 new SelectableWheelOption("", "", ""), 
             }, 0);
-            
-            topPanelUI.SetFoldoutState(false);
-            
-            topPanelUI.PopulatePartyCards(battleCore.partyField, battleCore.turnOrderComponent.GetFirstInLine().entityId);
 
             turnCounterUI.PopulateTurnQueueUI(battleCore.GetTurnQueueAsEntities());
             

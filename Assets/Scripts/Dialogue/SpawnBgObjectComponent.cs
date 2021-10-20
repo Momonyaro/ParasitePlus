@@ -5,6 +5,8 @@ namespace Dialogue
 {
     public class SpawnBgObjectComponent : DialogueComponent
     {
+        public Sprite backgroundImage;
+        
         public override void Init(DialogueScriptable parent, out GameObject componentPrefab)
         {
             componentPrefab = objectPrefab;
@@ -12,6 +14,13 @@ namespace Dialogue
 
         public override void Update(out bool endOfLife)
         {
+            GameObject obj = GetCurrentInstance();
+
+            if (obj.GetComponent<BackgroundReciever>() != null)
+            {
+                obj.GetComponent<BackgroundReciever>().backgroundImage.sprite = backgroundImage;
+            }
+
             endOfLife = true;
         }
 

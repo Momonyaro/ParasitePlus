@@ -13,9 +13,9 @@
         
         [Header(Sin Settings)]
         [MaterialToggle] _SinTogglePrimary ("Use Sin", float) = 0
-        _SinScalePrimary  ("Sin Scale", float) = 0
-        _SinFreqPrimary   ("Sin Freq", float) = 0
-        _SinAmpPrimary   ("Sin Amp", float) = 0
+        [ShowAsVector2] _SinScalePrimary  ("Sin Scale", Vector) = (0,0,0,0)
+        [ShowAsVector2] _SinFreqPrimary   ("Sin Freq", Vector) = (0,0,0,0)
+        [ShowAsVector2] _SinAmpPrimary   ("Sin Amp", Vector) = (0,0,0,0)
         
         [Header(Pattern B Properties)]
         _SecondTex ("Pattern B", 2D) = "white" {}
@@ -24,9 +24,9 @@
         
         [Header(Sin Settings)]
         [MaterialToggle] _SinToggleSecondary ("Use Sin", float) = 0
-        _SinScaleSecondary  ("Sin Scale", float) = 0
-        _SinFreqSecondary   ("Sin Freq", float) = 0
-        _SinAmpSecondary   ("Sin Amp", float) = 0
+        [ShowAsVector2] _SinScaleSecondary  ("Sin Scale", Vector) = (0,0,0,0)
+        [ShowAsVector2] _SinFreqSecondary   ("Sin Freq", Vector) = (0,0,0,0)
+        [ShowAsVector2] _SinAmpSecondary   ("Sin Amp", Vector) = (0,0,0,0)
     }
     SubShader
     {
@@ -63,14 +63,14 @@
             fixed4 _SecondColLow;
             fixed4 _SecondColHigh;
             
-            float _SinScalePrimary;
-            float _SinFreqPrimary;
-            float _SinAmpPrimary;
+            fixed2 _SinScalePrimary;
+            fixed2 _SinFreqPrimary;
+            fixed2 _SinAmpPrimary;
             int _SinTogglePrimary;
             
-            float _SinScaleSecondary;
-            float _SinFreqSecondary;
-            float _SinAmpSecondary;
+            fixed2 _SinScaleSecondary;
+            fixed2 _SinFreqSecondary;
+            fixed2 _SinAmpSecondary;
             int _SinToggleSecondary;
 
             int _ModuloX;
@@ -85,14 +85,20 @@
                 return o;
             }
 
-            v2f sinWave(float amp, float freq, float scale, v2f i)
+            v2f sinWave(fixed2 amp, fixed2 freq, fixed2 scale, v2f i)
             {
-                float sinX = sin((freq * i.uv.y) + (scale * _Time)); // Range : -1 - 1
+                float sinX = sin((freq.x * i.uv.y) + (scale.x * _Time)); // Range : -1 - 1
                 sinX *= 0.5; // Range : -.5 - .5
                 sinX *= 0.5; // Range : -.25 - .25
-                //sinX += 0.5; // Range : 0.25 - 0.75
-                sinX *= amp;
-                i.uv += float2(sinX, 1.); // I'm fucking stupid, jesus christ... Of course addition would work.
+
+                float sinY = sin((freq.y * i.uv.x) + (scale.y * _Time));
+                sinY *= 0.5; // Range : -.5 - .5
+                sinY *= 0.5; // Range : -.25 - .25
+                
+                sinX *= amp.x;
+                sinY *= amp.y;
+                
+                i.uv += float2(sinX, sinY); // I'm fucking stupid, jesus christ... Of course addition would work.
 
                 return i;
             }

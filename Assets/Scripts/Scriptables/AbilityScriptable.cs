@@ -19,7 +19,12 @@ namespace Scriptables
         [Range(0, 1)] public float abilityCritChance;
         [Range(0, 1)] public float abilityMissChance;
         public Vector2Int abilityCosts;     // The X component is AP cost and the Y component is HP cost.
-        public Vector2Int abilityDamage;    // The X component is total damage / healing and the Y component is the tickover.
+        public Vector2Int abilityDamage;    // The X component is total damage / healing and the Y component is the ap drain to the enemy.
+
+        public float[] damageType = new float[4] // Magic, Blunt, Pierce, Slash
+        {
+            1, 1, 1, 1
+        };
 
         public EffectScriptable[] abilityEffects;
     

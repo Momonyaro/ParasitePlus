@@ -54,3 +54,11 @@ MonoBehaviour:
     randomPitchOffset: 0
     delay: 0
     randomDelayOffset: 0
+  - reference: _keyPress
+    audioClip: {fileID: 8300000, guid: 149e773077aa3324aabb963f04e7712b, type: 3}
+    loop: 0
+    volume: 0.219
+    pitch: 1
+    randomPitchOffset: 0.048
+    delay: 0
+    randomDelayOffset: 0

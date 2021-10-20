@@ -32,7 +32,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ad45c1341e44da44aad0b457cbac6240, type: 3}
+        m_Texture: {fileID: 2800000, guid: 955d4573b3e11264dbfc3c3676c80020, type: 3}
         m_Scale: {x: 2, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -96,10 +96,18 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MainColHigh: {r: 0.10588234, g: 0.90588236, b: 0.20892952, a: 1}
+    - _MainColHigh: {r: 0.5, g: 0.28991964, b: 0.06367925, a: 1}
     - _MainColLow: {r: 0, g: 0, b: 0, a: 1}
-    - _SecondColHigh: {r: 0.5385232, g: 0.12322002, b: 0.6698113, a: 1}
+    - _SecondColHigh: {r: 0.26125985, g: 0.0034709943, b: 0.735849, a: 1}
     - _SecondColLow: {r: 0, g: 0, b: 0, a: 1}
+    - _SinAmpPrimary: {r: 0, g: 0.2, b: 0, a: 0}
+    - _SinAmpSecondary: {r: 0.01, g: 0, b: 0, a: 0}
+    - _SinFreqPrimary: {r: 0, g: 7.8, b: 0, a: 0}
+    - _SinFreqSecondary: {r: 16.7, g: 0, b: 0, a: 0}
+    - _SinScalePrimary: {r: 0, g: 17.84, b: 0, a: 0}
+    - _SinScaleSecondary: {r: 19.97, g: 0, b: 0, a: 0}
+    - _SinTogglePrimary: {r: 0, g: 0, b: 0, a: 0}
+    - _SinToggleSecondary: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &1138032660734201257

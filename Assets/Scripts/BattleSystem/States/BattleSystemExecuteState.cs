@@ -92,12 +92,7 @@ namespace BattleSystem.States
 
         private void MultiTarget(List<int> indices)
         {
-            int median = 0;
-            for (int i = 0; i < indices.Count; i++)
-            {
-                median += indices[i];
-            }
-            median /= indices.Count;
+            int median = 2;
             
             cameraControl.CloseUpOnEnemy(median, camTimeScale, camHoldTime);
         }

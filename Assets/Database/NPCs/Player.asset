@@ -19,12 +19,27 @@ MonoBehaviour:
   throwawayId: 0
   healthPts: {x: 20, y: 20}
   actionPts: {x: 25, y: 25}
+  weaknesses:
+  - 0.5
+  - 1
+  - 1
+  - 1
   entityXp: 0
   entityXpThreshold: 14
-  defaultAttack: {fileID: 11400000, guid: 00be9c6c0665f664fb5c95bf1a66b36f, type: 2}
+  defaultAttack: {fileID: 11400000, guid: 9f52a2e1516901144b267ae8a71c5313, type: 2}
   lastAttacker: {fileID: 0}
   entityAI:
-    id: 0
+    randID: -1
+    personalityNodes:
+    - healthPercentLessThan: 1
+      roundsPassed: 0
+      trigger: 
+      onFirstLoopInterjects: []
+      hasReadFirstLoop: 0
+      moveSelect:
+        id: 0
+      targetComp:
+        id: 1
   deadTrigger: 0
   stats: 
   abilityScriptables: []
@@ -32,15 +47,11 @@ MonoBehaviour:
   references:
     version: 1
     00000000:
-      type: {class: EntityAIComponent, ns: BattleSystem.AI, asm: Assembly-CSharp}
-      data:
-        moveSelectComp:
-          id: 1
-        targetComp:
-          id: 2
-    00000001:
       type: {class: MoveSelectCompRandom, ns: BattleSystem.AI, asm: Assembly-CSharp}
-    00000002:
+      data:
+        componentName: Random
+    00000001:
       type: {class: TargetCompRandom, ns: BattleSystem.AI, asm: Assembly-CSharp}
       data:
         owner: {fileID: 0}
+        componentName: Random

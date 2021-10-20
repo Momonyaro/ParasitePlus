@@ -24,4 +24,9 @@ MonoBehaviour:
   abilityMissChance: 0.101
   abilityCosts: {x: 0, y: 0}
   abilityDamage: {x: 2, y: 0}
+  damageType:
+  - 0
+  - 1
+  - 0
+  - 0
   abilityEffects: []

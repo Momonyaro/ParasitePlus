@@ -117,6 +117,22 @@ namespace BattleSystem.States
                         targetEnemies = true;
                     }
                 }
+                
+                //Find weakness/resistances
+                int attackTypeIndex = 0;
+                for (int j = 0; j < abilityInUse.damageType.Length; j++)
+                {
+                    if (abilityInUse.damageType[j] > 0.5f)
+                    {
+                        attackTypeIndex = j;
+                    }
+                }
+
+                float targetResistance = target.weaknesses[attackTypeIndex];
+                bool resist = (targetResistance < 0.9f);
+                bool weak = (targetResistance > 1.1f);
+
+                damage = Mathf.FloorToInt(damage * targetResistance);
 
                 Vector2Int hp = target.GetEntityHP();
                 target.SetEntityHP(new Vector2Int(Mathf.Clamp(hp.x - damage, 0, hp.y), hp.y));
@@ -135,7 +151,7 @@ namespace BattleSystem.States
                 }
                 
                 damageEffectUI.CreateAbilityEffect(targetScreenPos, abilityInUse.abilityEffectRef);
-                damageEffectUI.CreateDamageSpatter(targetScreenPos, damage, crit);
+                damageEffectUI.CreateDamageSpatter(targetScreenPos, damage, crit, weak, resist);
                 
                 //Check if the enemy is dead?
                 if (!target.deadTrigger)

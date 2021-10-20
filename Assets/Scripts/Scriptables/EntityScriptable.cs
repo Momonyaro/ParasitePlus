@@ -27,6 +27,12 @@ namespace Scriptables
         private Vector2Int healthPts;    //The X component is the current value and the Y component is the max value
         [SerializeField]
         private Vector2Int actionPts;    //The X component is the current value and the Y component is the max value
+
+        public float[] weaknesses = new float[4]  // Magic, Blunt, Pierce, Slash
+        {
+            1, 1, 1, 1
+        };
+        
         public int entityXp;            // For enemies, this value will be the xp reward for beating it.a
         public int entityXpThreshold;   // Going over this threshold registers as a levelup.
         public AbilityScriptable defaultAttack;
@@ -205,6 +211,7 @@ namespace Scriptables
             es.entityXp = entityXp;
             es.entityXpThreshold = entityXpThreshold;
             es.OverwriteAIComponent(entityAI);
+            es.weaknesses = weaknesses;
 
             return es;
         }

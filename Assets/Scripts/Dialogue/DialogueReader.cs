@@ -122,6 +122,7 @@ namespace Dialogue
             {
                 dialogueData = dialogueData.transitionToOnEof;
                 
+                WipeOldData();
                 StartDialogue();
                 return;
             }
@@ -137,9 +138,8 @@ namespace Dialogue
         private void InitComponent(ref DialogueComponent component)
         {
             Debug.Log($"Initializing Component of type: {component.GetComponentType()}, with ref: {component.reference}");
-            
-            GameObject toInstantiate;
-            component.Init(dialogueData, out toInstantiate);
+
+            component.Init(dialogueData, out var toInstantiate);
 
             if (toInstantiate != null)
             {
@@ -153,6 +153,18 @@ namespace Dialogue
                 rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
                 rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
                 component.SetNewInstance(instance);
+            }
+        }
+
+        private void WipeOldData()
+        {
+            for (int i = 0; i < allFather.transform.childCount; i++)
+            {
+                Destroy(allFather.transform.GetChild(i).gameObject);
+            }
+            for (int i = 0; i < backgroundFather.transform.childCount; i++)
+            {
+                Destroy(backgroundFather.transform.GetChild(i).gameObject);
             }
         }
 

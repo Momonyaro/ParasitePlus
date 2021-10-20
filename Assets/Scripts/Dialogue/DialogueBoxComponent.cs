@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using CORE;
 using Dialogue.UI;
+using SAMSARA.Scripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -13,6 +14,7 @@ namespace Dialogue
         public List<DialogueBox> dialogueBoxes = new List<DialogueBox>();
         public bool perSentenceWriteToScreen = true;
         public bool requireContinueInput = true;
+        public string writingSoundEvent = "";
         private int currentIndex = 0;
         private int currentChar = 0;
         private float buildTimer = 0;
@@ -131,6 +133,7 @@ namespace Dialogue
                 buildTimer -= Time.deltaTime;
                 if (buildTimer <= 0.0f)
                 {
+                    bool playSound = true;
                     if (perSentenceWriteToScreen)
                     {
                         string nextSection = "";
@@ -144,7 +147,11 @@ namespace Dialogue
                             currentChar++;
 
                             if (nextChar == '.' || nextChar == ' ')
+                            {
+                                buildTimer += current.buildTime;
+                                playSound = false;
                                 break;
+                            }
 
                             if (currentChar >= currentText.Length)
                                 break;
@@ -155,12 +162,32 @@ namespace Dialogue
                     else
                     {
                         //Place character
-                        reciever.dialogueText.text += currentText.ToCharArray()[currentChar];
+                        char next = currentText.ToCharArray()[currentChar];
+                        reciever.dialogueText.text += next;
                         currentChar++;
 
+                        if (next == '<')
+                        {
+                            while (true)
+                            {
+                                next = currentText.ToCharArray()[currentChar];
+                                reciever.dialogueText.text += next;
+                                currentChar++;
+                                if (next == '>') break;
+                            }
+                        }
+
                         buildTimer = current.buildTime;
+                        
+                        if (next == '.' || next == ' ' || next == ',')
+                        {
+                            playSound = false;
+                            buildTimer = current.buildTime * 1.5f;
+                        }
                     }
                     
+                    if (playSound)
+                        SamsaraMaster.Instance.PlaySFXFromReference(writingSoundEvent, out bool success);
 
                     if (currentChar >= currentText.Length)
                     {

@@ -6,7 +6,7 @@ namespace BattleSystem.UI
     {
         public GameObject damageEffectPrefab;
     
-        public void CreateDamageSpatter(Vector2 canvasPos, int damageNumber, bool crit)
+        public void CreateDamageSpatter(Vector2 canvasPos, int damageNumber, bool crit, bool weak, bool resist)
         {
             GameObject damageEffect = Instantiate(damageEffectPrefab, transform);
             
@@ -21,6 +21,8 @@ namespace BattleSystem.UI
             comp.damageText.rectTransform.sizeDelta = new Vector2(sizeDelta.x, (crit) ? 180 : 140);
             
             comp.damageText.text = damageNumber.ToString();
+            comp.weakText.gameObject.SetActive(weak);
+            comp.resistText.gameObject.SetActive(resist);
             if (damageNumber == 0)
                 comp.damageText.text = "Miss";
         }

@@ -6582,6 +6582,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 524553444423031834, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
+      propertyPath: field of view
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 524553444423031834, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
       propertyPath: m_BackGroundColor.b
       value: 0
       objectReference: {fileID: 0}
@@ -8315,14 +8319,26 @@ MonoBehaviour:
     encounters:
     - enemies:
       - {fileID: 0}
-      - {fileID: 11400000, guid: 540bdebe1ba62404b8ec92b713d12625, type: 2}
+      - {fileID: 11400000, guid: 043f562807947a944b4bba6576812e93, type: 2}
       - {fileID: 0}
-      - {fileID: 11400000, guid: 540bdebe1ba62404b8ec92b713d12625, type: 2}
+      - {fileID: 11400000, guid: 043f562807947a944b4bba6576812e93, type: 2}
       - {fileID: 0}
     - enemies:
       - {fileID: 0}
       - {fileID: 0}
-      - {fileID: 11400000, guid: 540bdebe1ba62404b8ec92b713d12625, type: 2}
+      - {fileID: 11400000, guid: 9c39519643d902946b0f1896d643a68f, type: 2}
+      - {fileID: 0}
+      - {fileID: 0}
+    - enemies:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 11400000, guid: 043f562807947a944b4bba6576812e93, type: 2}
+      - {fileID: 0}
+      - {fileID: 0}
+    - enemies:
+      - {fileID: 0}
+      - {fileID: 11400000, guid: 043f562807947a944b4bba6576812e93, type: 2}
+      - {fileID: 11400000, guid: 9c39519643d902946b0f1896d643a68f, type: 2}
       - {fileID: 0}
       - {fileID: 0}
 --- !u!4 &454105793
@@ -27357,6 +27373,10 @@ PrefabInstance:
     - target: {fileID: 4930026094537315170, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: sensor.x
       value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930026094537315170, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
+      propertyPath: sensor.y
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4930026094537315170, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: sensor.z

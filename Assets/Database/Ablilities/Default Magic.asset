@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85f39828721a6734fa89c2faa80c33ca, type: 3}
-  m_Name: Default Attack
+  m_Name: Default Magic
   m_EditorClassIdentifier: 
-  abilityName: Strike
+  abilityName: Flare
   abilityId: _defaultAtk
-  abilityDesc: This is the default attack.
+  abilityDesc: Strike your enemy with your flames.
   abilityEffectRef: _swordSlash
   targetAll: 0
   targetFriendlies: 0
@@ -23,5 +23,10 @@ MonoBehaviour:
   abilityCritChance: 0.2
   abilityMissChance: 0.101
   abilityCosts: {x: 0, y: 0}
-  abilityDamage: {x: 5, y: 1}
+  abilityDamage: {x: 5, y: 0}
+  damageType:
+  - 1
+  - 0
+  - 0
+  - 0
   abilityEffects: []

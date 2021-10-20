@@ -14,17 +14,10 @@ namespace Editor
         public override void OnInspectorGUI()
         {
             lastInstance = (DialogueScriptable) target;
-            bool lateDirty = false;
+            
+            EditorGUI.BeginChangeCheck();
             
             EditorGUIUtility.labelWidth = 150;
-            
-            Color fallback = GUI.backgroundColor;
-            GUI.backgroundColor = new Color(0.14f, 0.93f, 0.15f);
-            if (GUILayout.Button("Mark Dirty", GUILayout.Height(40)))
-            {
-                lateDirty = true;
-            }
-            GUI.backgroundColor = fallback;
 
             EditorGUILayout.BeginVertical("HelpBox");
             lastInstance.transitionToOnEof = (DialogueScriptable) 
@@ -49,13 +42,16 @@ namespace Editor
             
             DrawComponents();
             
-            if (lateDirty)
+            EditorGUILayout.Space(100);
+            if (EditorGUI.EndChangeCheck())
+            {
                 EditorUtility.SetDirty(target);
+            }
         }
 
         private void DrawComponents()
         {
-            EditorGUILayout.BeginVertical("HelpBox");
+            EditorGUILayout.BeginVertical("Box");
             
             if (lastInstance.components.Count > 0)
                 if (InsertComponent(0)) return;
@@ -64,7 +60,7 @@ namespace Editor
             {
                 DialogueComponent current = lastInstance.components[i];
                 if (!GetGroupVisible(current.groupRef)) continue;
-                EditorGUILayout.Space(15);
+                EditorGUILayout.Space(45);
                 bool deleteFlag = false;
                 switch (current.GetComponentType())
                 {
@@ -149,7 +145,7 @@ namespace Editor
                         break;
                 }
                 lastInstance.components[i] = current;
-                EditorGUILayout.Space(10);
+                EditorGUILayout.Space(30);
                 if (InsertComponent(i + 1)) return;
             }
             
@@ -161,7 +157,7 @@ namespace Editor
 
         private void DrawDefaultProperties(DialogueComponent current, out bool deleteThis)
         {
-            EditorGUILayout.BeginVertical("Box");
+            EditorGUILayout.BeginVertical("HelpBox");
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.BeginHorizontal("HelpBox");
             current.reveal = EditorGUILayout.Toggle(current.reveal);
@@ -238,6 +234,8 @@ namespace Editor
             EditorGUILayout.BeginHorizontal();
             spawnBgObjectComponent.objectPrefab =
                 (GameObject) EditorGUILayout.ObjectField("Prefab: ", spawnBgObjectComponent.objectPrefab, typeof(GameObject), false);
+            spawnBgObjectComponent.backgroundImage = 
+                (Sprite) EditorGUILayout.ObjectField("Background Img: ", spawnBgObjectComponent.backgroundImage, typeof(Sprite), false);
             EditorGUIUtility.labelWidth = 80;
             spawnBgObjectComponent.screenPosition = EditorGUILayout.Vector2Field("Screen Pos: ", spawnBgObjectComponent.screenPosition);
             EditorGUIUtility.labelWidth = 150;
@@ -309,6 +307,8 @@ namespace Editor
             boxComponent.screenPosition = EditorGUILayout.Vector2Field("Screen Pos: ", boxComponent.screenPosition);
             EditorGUIUtility.labelWidth = 150;
             EditorGUILayout.EndHorizontal();
+            boxComponent.writingSoundEvent =
+                EditorGUILayout.TextField("Writing SFX Event: ", boxComponent.writingSoundEvent);
             
             EditorGUILayout.BeginVertical("HelpBox");
 

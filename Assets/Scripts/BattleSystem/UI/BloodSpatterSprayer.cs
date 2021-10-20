@@ -10,6 +10,8 @@ namespace BattleSystem.UI
     public class BloodSpatterSprayer : MonoBehaviour
     {
         public TextMeshProUGUI damageText;
+        public TextMeshProUGUI weakText;
+        public TextMeshProUGUI resistText;
         public float spatterRadius;
         public float spatterSize;
         public int spatterAmount;

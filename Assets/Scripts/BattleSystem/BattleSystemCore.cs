@@ -153,7 +153,10 @@ namespace BattleSystem
             for (int i = 0; i < enemyField.Length; i++)
             {
                 if (enemyField[i] != null)
-                    toReturn.Add(i);
+                {
+                    if (!enemyField[i].deadTrigger)
+                        toReturn.Add(i);
+                }
             }
 
             return toReturn;

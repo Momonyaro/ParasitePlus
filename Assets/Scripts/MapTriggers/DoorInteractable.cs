@@ -24,8 +24,11 @@ namespace MapTriggers
         public bool locked = false;
         public bool singleUseKey = false;
         public string keyItemID = "";
+        public bool goToScene = false;
+        public string sceneName = "";
         public string isLockedMessage = "The door is locked.";
         public string onUnlockMessage = "Unlocked the door using $ITEM.";
+        public string interactPromptMsg = "Open Door";
 
         private void OnValidate()
         {

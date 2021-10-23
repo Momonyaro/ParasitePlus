@@ -6035,7 +6035,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 372734432489691280, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1112030615615215499, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: m_IsActive
@@ -6059,7 +6059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1698492130704746969, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1729867443731251435, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: sensor.x
@@ -8153,6 +8153,7 @@ MonoBehaviour:
   keyItemID: 
   isLockedMessage: Won't budge... Wonder what's back there.
   onUnlockMessage: Unlocked the door using $ITEM.
+  interactPromptMsg: Open Door
 --- !u!1001 &715865676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22024,6 +22025,10 @@ PrefabInstance:
     - target: {fileID: 2772924696105542055, guid: e52e51fc642ddfb48953039c84911174, type: 3}
       propertyPath: interactRange
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772924696105542055, guid: e52e51fc642ddfb48953039c84911174, type: 3}
+      propertyPath: interactPromptMsg
+      value: Go Down
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e52e51fc642ddfb48953039c84911174, type: 3}

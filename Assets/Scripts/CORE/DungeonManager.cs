@@ -109,6 +109,11 @@ namespace CORE
             mapManager = manager;
         }
 
+        public FPSGridPlayer GetPlayer()
+        {
+            return currentPlayer;
+        }
+
         public void CheckToEnterDoorTrigger()
         {
             for (int i = 0; i < doorInteractables.Count; i++)
@@ -150,11 +155,29 @@ namespace CORE
                 }
             }
         }
+
+        public DoorInteractable CheckForActiveDoor()
+        {
+            for (int i = 0; i < doorInteractables.Count; i++)
+            {
+                if (doorInteractables[i] == null) continue;
+
+                if (doorInteractables[i].triggerActive)
+                {
+                    return doorInteractables[i];
+                }
+            }
+
+            return null;
+        }
         
         private IEnumerator WaitForDoorTranstion(int currentIndex)
         {
             FadeToBlackImage fadeToBlackImage = FindObjectOfType<FadeToBlackImage>();
-            currentPlayer.lockPlayer = true;
+            bool skipPlayerLock = currentPlayer.lockPlayer;
+
+            if (!skipPlayerLock)
+                currentPlayer.lockPlayer = true;
             
             fadeToBlackImage.FadeToBlack(0.3f, .8f);
             
@@ -165,7 +188,8 @@ namespace CORE
             
             while (!fadeToBlackImage.finished) { yield return null; }
             
-            currentPlayer.lockPlayer = false;
+            if (!skipPlayerLock)
+                currentPlayer.lockPlayer = false;
             
             yield break;
         }
@@ -205,6 +229,21 @@ namespace CORE
                     break;
                 }
             }
+        }
+        
+        public GroundItem CheckForActiveGroundItem()
+        {
+            for (int i = 0; i < groundItems.Count; i++)
+            {
+                if (groundItems[i] == null) continue;
+
+                if (groundItems[i].triggerActive)
+                {
+                    return groundItems[i];
+                }
+            }
+
+            return null;
         }
 
         private bool CheckValidKeyForItemLock(string lockId, List<Item> inventory, bool destroyKeyOnUse)

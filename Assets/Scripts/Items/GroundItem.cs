@@ -15,11 +15,9 @@ namespace Items
         // Start is called before the first frame update
         public bool regenGuid = false;
         public string guid = Guid.NewGuid().ToString();
-        public Animator beamAnimator;
         public bool triggerActive = false;
         public string itemID = "";
-
-        private static string _animPromptVariable = "ShowPrompt";
+        public string interactPromptMsg = "Pick Up";
 
         private void OnValidate()
         {
@@ -34,7 +32,6 @@ namespace Items
         {
             if (other.GetComponent<FPSGridPlayer>())
             {
-                beamAnimator.SetBool(_animPromptVariable, true);
                 triggerActive = true;
             }
         }
@@ -43,7 +40,6 @@ namespace Items
         {
             if (other.GetComponent<FPSGridPlayer>())
             {
-                beamAnimator.SetBool(_animPromptVariable, false);
                 triggerActive = false;
             }
         }

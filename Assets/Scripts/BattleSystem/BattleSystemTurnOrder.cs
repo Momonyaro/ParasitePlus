@@ -121,6 +121,34 @@ namespace BattleSystem
             }
         }
 
+        public void AddEntityToTurnQueue(ref EntityScriptable entityScriptable)
+        {
+            entityScriptable.throwawayId = GetUniqueID();
+                    
+            turnQueue.Add(new TurnItem(
+                entityScriptable.entityName, 
+                entityScriptable.throwawayId, 
+                entityScriptable.entitySpeed, 
+                true, //False since we're reading the party's data
+                0)); 
+
+            SortAndParseTurnQueue();
+        }
+
+        public void RemoveEntityFromQueue(int throwawayId)
+        {
+            for (int i = 0; i < turnQueue.Count; i++)
+            {
+                if (turnQueue[i].entityId == throwawayId)
+                {
+                    turnQueue.RemoveAt(i);
+                    break;
+                }
+            }
+
+            SortAndParseTurnQueue();
+        }
+
         public void CycleTurnQueue()
         {
             TurnItem last = turnQueue[0];

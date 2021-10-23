@@ -80,6 +80,7 @@ namespace BattleSystem.AI
             public int roundsPassed = 0;
             public string trigger;
             private bool triggered = false;
+            public List<AbilityScriptable> stateAbilities = new List<AbilityScriptable>();
 
             [Header("Node Interjects")]
             [HideInInspector] [SerializeReference] public List<InterjectBase> onFirstLoopInterjects = new List<InterjectBase>();

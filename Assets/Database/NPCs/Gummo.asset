@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Gummo
   m_EditorClassIdentifier: 
   entityName: Gummo
-  entityLevel: 1
+  entityLevel: 3
   entityId: _gummo
   entitySpeed: 13
   throwawayId: 0
-  healthPts: {x: 22, y: 22}
+  healthPts: {x: 45, y: 45}
   actionPts: {x: 18, y: 18}
   weaknesses:
   - 1
@@ -34,6 +34,7 @@ MonoBehaviour:
     - healthPercentLessThan: 1
       roundsPassed: 0
       trigger: 
+      stateAbilities: []
       onFirstLoopInterjects: []
       hasReadFirstLoop: 0
       moveSelect:

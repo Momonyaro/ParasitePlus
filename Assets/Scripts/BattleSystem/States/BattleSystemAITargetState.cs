@@ -11,6 +11,7 @@ namespace BattleSystem.States
     {
         private CameraControl cameraControl;
         private TopPanelUI topPanelUI;
+        private BottomPanelUI bottomPanelUI;
         private readonly float delay = 0.9f;
         private float timer = 0;
         
@@ -18,11 +19,13 @@ namespace BattleSystem.States
         {
             cameraControl = FindObjectOfType<CameraControl>();
             topPanelUI = FindObjectOfType<TopPanelUI>();
+            bottomPanelUI = FindObjectOfType<BottomPanelUI>();
             timer = delay;
             
             
             //The process for this state should be to first calculate the targets, then show the relevant ui
             // before passing it on to the execution state
+            bottomPanelUI.SetMenuVisibility(false);
 
             EntityScriptable current = battleCore.GetNextEntity();
             var personalityNode = current.GetAIComponent().GetCurrentPersonalityNode(current, battleCore.GetEntityTurnItem(current).turnsTaken);
@@ -37,7 +40,16 @@ namespace BattleSystem.States
                 }
             }
 
-            AbilityScriptable selectedAbility = personalityNode.moveSelect.Evaluate(current);
+            AbilityScriptable selectedAbility = personalityNode.moveSelect.Evaluate(current, personalityNode.stateAbilities);
+            selectedAbility.abilityCooldown.x = selectedAbility.abilityCooldown.y;
+
+            for (int i = 0; i < selectedAbility.abilityInterjects.Count; i++)
+            {
+                if (selectedAbility.abilityInterjects[i] != null)
+                {
+                    parent.SendInterject(selectedAbility.abilityInterjects[i]);
+                }
+            }
 
             List<int> targetIndices = new List<int>();
 
@@ -57,7 +69,8 @@ namespace BattleSystem.States
             parent.targetingParty = !selectedAbility.targetFriendlies;
             parent.lastAbility = selectedAbility;
             
-            topPanelUI.SetFoldoutState(true);
+            if (parent.targetingParty)
+                topPanelUI.SetFoldoutState(true);
 
             int index = 0;
             for (int i = 0; i < battleCore.enemyField.Length; i++)

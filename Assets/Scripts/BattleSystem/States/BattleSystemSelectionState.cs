@@ -20,6 +20,8 @@ namespace BattleSystem.States
         public override void Init()
         {
             bottomPanelUI = FindObjectOfType<BottomPanelUI>();
+            
+            bottomPanelUI.SetMenuVisibility(true);
 
             ConstructMainMenu();
             

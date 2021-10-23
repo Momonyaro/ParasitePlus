@@ -9,7 +9,7 @@ namespace BattleSystem.AI
     {
         public string componentName;
 
-        public abstract AbilityScriptable Evaluate(EntityScriptable entity);
+        public abstract AbilityScriptable Evaluate(EntityScriptable entity, List<AbilityScriptable> nodeAbilities);
 
         public virtual string GetComponentName()
         {
@@ -24,15 +24,21 @@ namespace BattleSystem.AI
 
     public class MoveSelectCompRandom : MoveSelectCompBase
     {
-        public override AbilityScriptable Evaluate(EntityScriptable entity)
+        public override AbilityScriptable Evaluate(EntityScriptable entity, List<AbilityScriptable> nodeAbilities)
         {
             List<AbilityScriptable> abilities = new List<AbilityScriptable>(entity.GetEntityAbilities());
+            abilities.AddRange(nodeAbilities);
             abilities.Add(entity.defaultAttack);
 
             for (int i = 0; i < abilities.Count; i++)
             {
+                abilities[i].abilityCooldown.x = Mathf.FloorToInt(Mathf.Clamp(abilities[i].abilityCooldown.x - 1, 0, 100));
+            }
+            
+            for (int i = 0; i < abilities.Count; i++)
+            {
                 int randomTest = Random.Range(0, abilities.Count);
-                if (abilities[randomTest].abilityCosts.x < entity.GetEntityAP().x)
+                if (abilities[randomTest].abilityCosts.x < entity.GetEntityAP().x && abilities[randomTest].abilityCooldown.x == 0)
                 {
                     return abilities[randomTest];
                 }
@@ -54,13 +60,14 @@ namespace BattleSystem.AI
 
     public class MoveSelectCompBurst : MoveSelectCompBase
     {
-        public override AbilityScriptable Evaluate(EntityScriptable entity)
+        public override AbilityScriptable Evaluate(EntityScriptable entity, List<AbilityScriptable> nodeAbilities)
         {
             List<AbilityScriptable> abilities = new List<AbilityScriptable>(entity.GetEntityAbilities());
+            abilities.AddRange(nodeAbilities);
             AbilityScriptable mostExpensive = entity.defaultAttack;
             for (int i = 0; i < abilities.Count; i++)
             {
-                if ((abilities[i].abilityCosts.x < entity.GetEntityAP().x) && abilities[i].abilityCosts.x >= mostExpensive.abilityCosts.x)
+                if ((abilities[i].abilityCosts.x < entity.GetEntityAP().x) && abilities[i].abilityCosts.x >= mostExpensive.abilityCosts.x  && abilities[i].abilityCooldown.x == 0)
                 {
                     mostExpensive = abilities[i];
                 }

@@ -22,6 +22,7 @@ namespace BattleSystem
         // The entity data
         public EntityScriptable[] partyField = new EntityScriptable[4]; // With new system, ignore fourth item
         public EntityScriptable[] enemyField = new EntityScriptable[5]; // With new system, ignore items 6 - 9
+        public List<EntityScriptable> holdingCells = new List<EntityScriptable>();
         
         // Data to be Serialized
         public List<Item> partyInventory = new List<Item>();
@@ -31,6 +32,7 @@ namespace BattleSystem
         public Vector3 lastPlayerEulers = Vector3.zero;
         public int lastDungeonIndex = 0;
         public string playerName = "Yoel";
+        public string bgmReference;
         
         public string destinationScene = "TownScene";
         public string lastTransformScene = "";
@@ -46,7 +48,7 @@ namespace BattleSystem
             
             systemStateManager.Init(this); // Start the state machine.
             
-            SamsaraMaster.Instance.SetNextMusicTrackFromRef("_battleBGMCanonball", out bool success);
+            SamsaraMaster.Instance.SetNextMusicTrackFromRef(bgmReference, out bool success);
             if (success)
                 SamsaraMaster.Instance.SwapMusicTrack(SamsaraTwinChannel.TransitionTypes.CrossFade, 0.4f, out success);
         }
@@ -206,6 +208,66 @@ namespace BattleSystem
             }
 
             return toReturn;
+        }
+
+        public void AddEntityToBattle(int index, EntityScriptable entity, bool overwriteExisting = true)
+        {
+            if (enemyField[index] != null)
+            {
+                if (overwriteExisting || enemyField[index].deadTrigger)
+                {
+                    int tempId = enemyField[index].throwawayId;
+                    turnOrderComponent.RemoveEntityFromQueue(tempId);
+
+                    turnOrderComponent.AddEntityToTurnQueue(ref entity);
+                    enemyField[index] = entity;
+                }
+            }
+            else
+            {
+                turnOrderComponent.AddEntityToTurnQueue(ref entity);
+                enemyField[index] = entity;
+            }
+        }
+
+        public void RemoveEntityFromBattle(int throwawayId)
+        {
+            int index = 0;
+            for (int i = 0; i < enemyField.Length; i++)
+            {
+                if (enemyField[i] == null) continue;
+                if (enemyField[i].throwawayId == throwawayId)
+                {
+                    index = i;
+                    break;
+                }
+            }
+            
+            int tempId = enemyField[index].throwawayId;
+            turnOrderComponent.RemoveEntityFromQueue(tempId);
+
+            enemyField[index] = null;
+        }
+
+        public void PlaceEntityInHoldingCell(EntityScriptable es)
+        {
+            holdingCells.Add(es);
+        }
+
+        public EntityScriptable RetrieveEntityFromHoldingCell(string entityId)
+        {
+            for (int i = 0; i < holdingCells.Count; i++)
+            {
+                if (holdingCells[i] == null) continue;
+                if (holdingCells[i].entityId.Equals(entityId))
+                {
+                    EntityScriptable es = holdingCells[i];
+                    holdingCells.RemoveAt(i);
+                    return es;
+                }
+            }
+
+            return null;
         }
     }
 }

@@ -95,6 +95,7 @@ namespace Editor
                 personalityNode.roundsPassed = EditorGUILayout.IntField("Rounds Passed", personalityNode.roundsPassed);
                 personalityNode.trigger = EditorGUILayout.TextField("Node Trigger", personalityNode.trigger);
 
+                DrawNodeAbilityEditor(ref personalityNode);
                 DrawNodeInterjectEditor(ref personalityNode);
                 
                 EditorGUILayout.EndVertical();
@@ -112,59 +113,40 @@ namespace Editor
                 GUILayout.Label("On First Loop");
                 for (int i = 0; i < personalityNode.onFirstLoopInterjects.Count; i++)
                 {
-                    EditorGUILayout.BeginVertical("HelpBox");
-                    InterjectBase interject = personalityNode.onFirstLoopInterjects[i];
-
                     EditorGUILayout.BeginHorizontal();
-                    interject.stateId = EditorGUILayout.TextField("State Ref: ", interject.stateId);
-                    if (GUILayout.Button("Remove Interject"))
+                    personalityNode.onFirstLoopInterjects[i] = (InterjectBase) EditorGUILayout.ObjectField("Interject: ", personalityNode.onFirstLoopInterjects[i], typeof(InterjectBase), false);
+                    if (GUILayout.Button("Remove"))
                     {
                         personalityNode.onFirstLoopInterjects.RemoveAt(i);
                         break;
                     }
                     EditorGUILayout.EndHorizontal();
-                    
-                    interject.prevStateId = EditorGUILayout.TextField("Previous State Ref: ", interject.prevStateId);
-
-                    if (interject.GetType() == typeof(DialogueInterject))
-                    {
-                        //Add dialogue editor
-                        for (int j = 0; j < interject.dialogueNodes.Count; j++)
-                        {
-                            EditorGUILayout.BeginVertical("HelpBox");
-                            if (GUILayout.Button("Remove Dialogue Node"))
-                            {
-                                interject.dialogueNodes.RemoveAt(j);
-                                return;
-                            }
-                            EditorGUILayout.BeginHorizontal();
-                            float width = EditorGUIUtility.labelWidth;
-                            EditorGUIUtility.labelWidth = 140;
-                            interject.dialogueNodes[j].speakerPortrait = (Sprite) EditorGUILayout.ObjectField("Sprite", interject.dialogueNodes[j].speakerPortrait, typeof(Sprite), true);
-                            interject.dialogueNodes[j].backgroundColor =
-                                EditorGUILayout.ColorField("Background Color", interject.dialogueNodes[j].backgroundColor);
-                            EditorGUILayout.EndHorizontal();
-                            interject.dialogueNodes[j].buildDelay =
-                                EditorGUILayout.Slider("Build Delay", interject.dialogueNodes[j].buildDelay, 0, 0.1f);
-                            EditorStyles.textField.wordWrap = true;
-                            interject.dialogueNodes[j].text =
-                                EditorGUILayout.TextField("Text", interject.dialogueNodes[j].text, GUILayout.Height(50));
-                            EditorGUIUtility.labelWidth = width;
-                            EditorGUILayout.EndVertical();
-                        }
-                        if (GUILayout.Button("Add Dialogue Node"))
-                        {
-                            interject.dialogueNodes.Add(new DialogueNode());
-                        }
-                    }
-                    
-                    EditorGUILayout.EndVertical();
-                    personalityNode.onFirstLoopInterjects[i] = interject;
                 }
 
                 if (GUILayout.Button("Add Interject"))
                 {
                     personalityNode.onFirstLoopInterjects.Add(new DialogueInterject());
+                }
+            }
+            
+            void DrawNodeAbilityEditor(ref EntityAIComponent.PersonalityNode personalityNode)
+            {
+                GUILayout.Label("Abilities");
+                for (int i = 0; i < personalityNode.stateAbilities.Count; i++)
+                {
+                    EditorGUILayout.BeginHorizontal();
+                    personalityNode.stateAbilities[i] = (AbilityScriptable) EditorGUILayout.ObjectField("Interject: ", personalityNode.stateAbilities[i], typeof(AbilityScriptable), false);
+                    if (GUILayout.Button("Remove"))
+                    {
+                        personalityNode.stateAbilities.RemoveAt(i);
+                        break;
+                    }
+                    EditorGUILayout.EndHorizontal();
+                }
+
+                if (GUILayout.Button("Add Ability"))
+                {
+                    personalityNode.stateAbilities.Add(null);
                 }
             }
 

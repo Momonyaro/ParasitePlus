@@ -1,4 +1,6 @@
-﻿using BATTLE;
+﻿using System.Collections.Generic;
+using BATTLE;
+using BattleSystem;
 using UnityEngine;
 
 namespace Scriptables
@@ -20,6 +22,8 @@ namespace Scriptables
         [Range(0, 1)] public float abilityMissChance;
         public Vector2Int abilityCosts;     // The X component is AP cost and the Y component is HP cost.
         public Vector2Int abilityDamage;    // The X component is total damage / healing and the Y component is the ap drain to the enemy.
+        public Vector2Int abilityCooldown; // The X component is the current Cooldown, Y is the max cooldown time.
+        public List<InterjectBase> abilityInterjects = new List<InterjectBase>();
 
         public float[] damageType = new float[4] // Magic, Blunt, Pierce, Slash
         {
@@ -35,7 +39,10 @@ namespace Scriptables
         /*                                                                   */
         /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * Sebastian */
 
-        
+        public void ResetValues()
+        {
+            abilityCooldown.x = 0;
+        }
         
         //DEPRECATED, DO NOT USE
         public bool Execute(EntityScriptable active, EntityScriptable[] targets, Transform[] targetTransforms, int selectorIndex, BattleManager battleManager) { return true; }

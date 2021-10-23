@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d871fc198f04df4989eb7794efde4f6, type: 3}
+  m_Name: KillAllEnemiesInterject
+  m_EditorClassIdentifier: 
+  stateName: 
+  stateId: 
+  prevStateId: _reportState
+  initialized: 0
+  dialogueNodes: []
+  battleCore: {fileID: 0}
+  parent:
+    systemStates: []
+    systemInterjects: []
+    currentIndex: 0
+    lastAbility: {fileID: 0}
+    targetedEntities: 
+    targetingParty: 0
+    module: {fileID: 0}

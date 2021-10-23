@@ -5,24 +5,29 @@ namespace BattleSystem.UI
     public class DamageEffectUI : MonoBehaviour
     {
         public GameObject damageEffectPrefab;
+        public GameObject healEffectPrefab;
     
         public void CreateDamageSpatter(Vector2 canvasPos, int damageNumber, bool crit, bool weak, bool resist)
         {
-            GameObject damageEffect = Instantiate(damageEffectPrefab, transform);
+            GameObject effect = (damageNumber >= 0) ? Instantiate(damageEffectPrefab, transform) : Instantiate(healEffectPrefab, transform);
             
-            RectTransform imageTransform = damageEffect.GetComponent<RectTransform>();
+            RectTransform imageTransform = effect.GetComponent<RectTransform>();
             imageTransform.position = canvasPos;
 
-            BloodSpatterSprayer comp = damageEffect.transform.GetChild(0).GetComponent<BloodSpatterSprayer>();
+            BloodSpatterSprayer comp = effect.transform.GetChild(0).GetComponent<BloodSpatterSprayer>();
 
             comp.damageText.color = (crit) ? Color.red : Color.white;
 
             Vector2 sizeDelta = comp.damageText.rectTransform.sizeDelta;
             comp.damageText.rectTransform.sizeDelta = new Vector2(sizeDelta.x, (crit) ? 180 : 140);
             
-            comp.damageText.text = damageNumber.ToString();
-            comp.weakText.gameObject.SetActive(weak);
-            comp.resistText.gameObject.SetActive(resist);
+            comp.damageText.text = Mathf.Abs(damageNumber).ToString();
+            
+            if (comp.weakText != null)
+                comp.weakText.gameObject.SetActive(weak);
+            if (comp.resistText != null)
+                comp.resistText.gameObject.SetActive(resist);
+            
             if (damageNumber == 0)
                 comp.damageText.text = "Miss";
         }

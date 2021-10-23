@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2b4dd13298447a3a228f70d757ab1e2, type: 3}
+  m_Name: BessieShadowSummon
+  m_EditorClassIdentifier: 
+  stateName: BessieShadowSummon
+  stateId: _shadowSummon
+  prevStateId: _reportState
+  initialized: 0
+  dialogueNodes: []
+  battleCore: {fileID: 0}
+  parent:
+    systemStates:
+    - {fileID: 11400000, guid: 901bbff2202f5b84bb09ea343fd062b3, type: 2}
+    - {fileID: 11400000, guid: be3c4ce369ae4684a90af192ed36dfa3, type: 2}
+    - {fileID: 11400000, guid: 2588cf1bd35d8bf4280e1eb0f9dbeabf, type: 2}
+    - {fileID: 11400000, guid: 3880a84438f2c274e9d2d0d7e94c9d42, type: 2}
+    - {fileID: 11400000, guid: 55bcd767db317a34b98f8ba1dbfac8e2, type: 2}
+    - {fileID: 11400000, guid: 863c80b9f1ec42c469c3176f250ecf14, type: 2}
+    - {fileID: 11400000, guid: 10d815eed7c74154cafd66b99297fcfa, type: 2}
+    - {fileID: 11400000, guid: abf0e3893e4177d4a9396b60ff2aea34, type: 2}
+    - {fileID: 11400000, guid: e071411de4e75d04d9b980013834ed0b, type: 2}
+    - {fileID: 11400000, guid: 9081080bec84c0f44b9a14594edfe490, type: 2}
+    - {fileID: 11400000, guid: da50a6697d244104dab35dccf6a6d7cf, type: 2}
+    systemInterjects: []
+    currentIndex: 4
+    lastAbility: {fileID: 11400000, guid: 9f52a2e1516901144b267ae8a71c5313, type: 2}
+    targetedEntities: 02000000
+    targetingParty: 0
+    module: {fileID: -944628639613478452, guid: 7d30e05cf43b6e54387d92a909d874f3, type: 3}
+  reinforcements:
+  - {fileID: 11400000, guid: 3e12d26682545674fbee96897ec18101, type: 2}
+  - {fileID: 11400000, guid: 3e12d26682545674fbee96897ec18101, type: 2}
+  - {fileID: 11400000, guid: 695b1bc2163bf7c45a85db179b71156a, type: 2}
+  - {fileID: 11400000, guid: 3e12d26682545674fbee96897ec18101, type: 2}
+  - {fileID: 11400000, guid: 3e12d26682545674fbee96897ec18101, type: 2}
+  toPlaceInHolding: 02000000
+  scrambleEntityOrder: 1

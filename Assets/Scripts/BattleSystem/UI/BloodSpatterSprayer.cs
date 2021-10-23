@@ -17,6 +17,7 @@ namespace BattleSystem.UI
         public int spatterAmount;
         public float spawnDelay;
         public Sprite spatterSprite;
+        public bool randomRotation = true;
         public float fadeDelay;
         public float fadeSpeed;
         public CanvasGroup canvasGroup;
@@ -55,7 +56,8 @@ namespace BattleSystem.UI
                 rectTransform.SetParent(transform);
                 rectTransform.position = new Vector3(posX, posY, 0);
                 rectTransform.sizeDelta = new Vector2(spatterSize, spatterSize);
-                rectTransform.Rotate(Vector3.forward, Random.Range(0, 360));
+                if (randomRotation)
+                    rectTransform.Rotate(Vector3.forward, Random.Range(0, 360));
                 
                 toSpawn--;
                 yield return new WaitForSecondsRealtime(spawnDelay);

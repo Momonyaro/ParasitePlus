@@ -1,4 +1,5 @@
-﻿using BattleSystem.UI;
+﻿using System.Collections;
+using BattleSystem.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,14 +12,16 @@ namespace BattleSystem.States
         [Range(0.1f, 2.0f)]
         public float startTimer = 1.2f;
 
+        public bool folded = false;
+
         private float timer = 0;
         
         public override void Init()
         {
             topPanelUI = FindObjectOfType<TopPanelUI>();
             timer = startTimer;
-            
-            topPanelUI.SetFoldoutState(false);
+
+            folded = false;
             
             topPanelUI.PopulatePartyCards(battleCore.partyField, battleCore.turnOrderComponent.GetFirstInLine().entityId);
             
@@ -29,6 +32,12 @@ namespace BattleSystem.States
         {
             timer -= Time.deltaTime;
 
+            if (timer < startTimer * 0.5f && !folded)
+            {
+                topPanelUI.SetFoldoutState(false);
+                folded = true;
+            }
+
             endOfLife = (timer <= 0);
         }
 
@@ -36,6 +45,8 @@ namespace BattleSystem.States
         {
             timer = 0;
 
+            folded = false;
+            
             initialized = false;
             
             //Transfer to next state

@@ -23,6 +23,8 @@ namespace BattleSystem
 
         public void PopulateField(EntityScriptable[] enemies)
         {
+            WipeField();
+            
             for (int i = 0; i < enemies.Length; i++)
             {
                 if (enemies[i] == null) 
@@ -192,12 +194,17 @@ namespace BattleSystem
 
         private IEnumerator EnemyDeathFadeout(SpriteRenderer spriteRenderer, int index)
         {
+            if (spriteRenderer == null)
+                yield break;
+            
             Color startCol = spriteRenderer.color;
             SpriteRenderer shadowRenderer = fieldPositions[index].GetChild(1).GetComponent<SpriteRenderer>();
 
             float timePassed = 0;
             while (startCol.a > 0)
             {
+                if (spriteRenderer == null)
+                    yield break;
                 startCol.a = enemyFadeoutCurve.Evaluate(Mathf.Clamp(timePassed, 0.0f, 1.0f));
                 spriteRenderer.color = startCol;
                 shadowRenderer.color = startCol;

@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 namespace BattleSystem
 {
     [System.Serializable]
-    public abstract class InterjectBase
+    public abstract class InterjectBase : ScriptableObject
     {
         public string stateName;
         public string stateId;

@@ -70,7 +70,8 @@ namespace BattleSystem.States
                 int damage = 0;
 
                 float damScale = abilityInUse.levelScalingDamage * currentEntity.entityLevel;
-                int scaledDam = Mathf.FloorToInt(abilityInUse.abilityDamage.x + damScale);
+                float sign = Mathf.Sign(abilityInUse.abilityDamage.x);
+                int scaledDam = Mathf.FloorToInt((Mathf.Abs(abilityInUse.abilityDamage.x) + damScale) * sign);
                 
                 damage = scaledDam;
                 bool crit = (Random.value < abilityInUse.abilityCritChance);
@@ -117,22 +118,27 @@ namespace BattleSystem.States
                         targetEnemies = true;
                     }
                 }
-                
-                //Find weakness/resistances
-                int attackTypeIndex = 0;
-                for (int j = 0; j < abilityInUse.damageType.Length; j++)
+
+                bool resist = false;
+                bool weak = false;
+                if (!abilityInUse.targetFriendlies)
                 {
-                    if (abilityInUse.damageType[j] > 0.5f)
+                    //Find weakness/resistances
+                    int attackTypeIndex = 0;
+                    for (int j = 0; j < abilityInUse.damageType.Length; j++)
                     {
-                        attackTypeIndex = j;
+                        if (abilityInUse.damageType[j] > 0.5f)
+                        {
+                            attackTypeIndex = j;
+                        }
                     }
+
+                    float targetResistance = target.weaknesses[attackTypeIndex];
+                    resist = (targetResistance < 0.9f);
+                    weak = (targetResistance > 1.1f);
+                    damage = Mathf.FloorToInt(damage * targetResistance);
                 }
-
-                float targetResistance = target.weaknesses[attackTypeIndex];
-                bool resist = (targetResistance < 0.9f);
-                bool weak = (targetResistance > 1.1f);
-
-                damage = Mathf.FloorToInt(damage * targetResistance);
+                
 
                 Vector2Int hp = target.GetEntityHP();
                 target.SetEntityHP(new Vector2Int(Mathf.Clamp(hp.x - damage, 0, hp.y), hp.y));
@@ -157,7 +163,14 @@ namespace BattleSystem.States
                 if (!target.deadTrigger)
                     DoEnemyDamageShake(indices[i], targetEnemies);
                 else
+                {
                     DoEnemyDeathFade(indices[i], targetEnemies);
+                    for (int j = 0; j < target.onDeathInterjects.Count; j++)
+                    {
+                        if (target.onDeathInterjects[j] == null) continue;
+                        parent.SendInterject(target.onDeathInterjects[j]);
+                    }
+                }
             }
         }
 

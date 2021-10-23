@@ -29,9 +29,10 @@ MonoBehaviour:
     - {fileID: 11400000, guid: e071411de4e75d04d9b980013834ed0b, type: 2}
     - {fileID: 11400000, guid: 9081080bec84c0f44b9a14594edfe490, type: 2}
     - {fileID: 11400000, guid: da50a6697d244104dab35dccf6a6d7cf, type: 2}
+    systemInterjects: []
     currentIndex: 4
     lastAbility: {fileID: 11400000, guid: 00be9c6c0665f664fb5c95bf1a66b36f, type: 2}
-    targetedEntities: 03000000
+    targetedEntities: 02000000
     targetingParty: 0
     module: {fileID: -944628639613478452, guid: 7d30e05cf43b6e54387d92a909d874f3, type: 3}
-  startTimer: 1.63
+  startTimer: 2

@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Scriptables
 {
-    [CreateAssetMenu(fileName = "EntityScriptable", menuName = "ScriptableObjects/Entities", order = 1)]
+    [CreateAssetMenu(fileName = "EntityScriptable", menuName = "Entities", order = 1)]
     public class EntityScriptable : ScriptableObject
     {
         /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -38,6 +38,7 @@ namespace Scriptables
         public AbilityScriptable defaultAttack;
         public EntityScriptable lastAttacker;
         [SerializeField] private EntityAIComponent entityAI = new EntityAIComponent();
+        public List<InterjectBase> onDeathInterjects = new List<InterjectBase>();
         public bool deadTrigger;
 
         public enum STAT
@@ -212,6 +213,7 @@ namespace Scriptables
             es.entityXpThreshold = entityXpThreshold;
             es.OverwriteAIComponent(entityAI);
             es.weaknesses = weaknesses;
+            es.onDeathInterjects = onDeathInterjects;
 
             return es;
         }

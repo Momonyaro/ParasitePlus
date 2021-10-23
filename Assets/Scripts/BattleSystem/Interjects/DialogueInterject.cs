@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 namespace BattleSystem.Interjects
 {
     [System.Serializable]
+    [CreateAssetMenu(fileName = "DialogueInterject", menuName = "Interjects/DialogueInterject", order = 1)]
     public class DialogueInterject : InterjectBase
     {
         DialogueScreenUI dialogueScreen;

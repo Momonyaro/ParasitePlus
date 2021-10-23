@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   entityName: Yoel
-  entityLevel: 1
+  entityLevel: 3
   entityId: _player
   entitySpeed: 12
   throwawayId: 0
-  healthPts: {x: 20, y: 20}
+  healthPts: {x: 40, y: 40}
   actionPts: {x: 25, y: 25}
   weaknesses:
   - 0.5
@@ -34,6 +34,7 @@ MonoBehaviour:
     - healthPercentLessThan: 1
       roundsPassed: 0
       trigger: 
+      stateAbilities: []
       onFirstLoopInterjects: []
       hasReadFirstLoop: 0
       moveSelect:
@@ -42,7 +43,8 @@ MonoBehaviour:
         id: 1
   deadTrigger: 0
   stats: 
-  abilityScriptables: []
+  abilityScriptables:
+  - {fileID: 11400000, guid: 96a2ead7d7f11d244bf5191c1dec87a6, type: 2}
   entityEffectBuffer: []
   references:
     version: 1

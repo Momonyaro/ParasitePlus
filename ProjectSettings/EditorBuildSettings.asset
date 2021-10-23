@@ -12,11 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/NEW_BATTLE_SCENE.unity
     guid: 91c0dea3f7cb40249a722da347ad5c6b
   - enabled: 1
+    path: Assets/Scenes/Cutscenes/Intro.unity
+    guid: e70f82a30ec083c4da050355744093e6
+  - enabled: 1
     path: Assets/Scenes/Maps/Tutorial/SwanDungeonEscape.unity
     guid: 909330bfede8ee64b94375345aaa1759
   - enabled: 1
-    path: Assets/Scenes/DIALOGUE_TEMPLATE.unity
-    guid: ab77a68f914a83345a4707fedc0cf347
+    path: Assets/Scenes/Cutscenes/PostTutorial.unity
+    guid: 9999692b96d46ae4f89a385f51716ebe
   - enabled: 1
     path: Assets/Scenes/Maps/SwanDivision/SwanFloor1.unity
     guid: 2454c83b86d92fe45b30c872debb2d89

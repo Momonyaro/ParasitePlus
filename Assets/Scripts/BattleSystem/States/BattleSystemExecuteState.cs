@@ -12,6 +12,7 @@ namespace BattleSystem.States
 
         private CameraControl cameraControl;
         private AttackPromptUI attackPrompt;
+        private BottomPanelUI bottomPanelUI;
         public float camTimeScale = 2.0f;
         public float camHoldTime = 1.2f;
         public float camShakeTimeScale = 5.0f;
@@ -28,6 +29,7 @@ namespace BattleSystem.States
             
             cameraControl = FindObjectOfType<CameraControl>();
             attackPrompt = FindObjectOfType<AttackPromptUI>();
+            bottomPanelUI = FindObjectOfType<BottomPanelUI>();
 
             List<int> targetIndices = parent.targetedEntities;
             
@@ -48,6 +50,8 @@ namespace BattleSystem.States
             {
                 PartyExecution(targetIndices);
             }
+
+            bottomPanelUI.SetMenuVisibility(false);
             
             initialized = true;
         }

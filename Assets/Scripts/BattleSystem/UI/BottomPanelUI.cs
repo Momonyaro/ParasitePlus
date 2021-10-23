@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 
 namespace BattleSystem.UI
@@ -15,6 +16,9 @@ namespace BattleSystem.UI
         public TextMeshProUGUI[] optionText;
 
         public TextMeshProUGUI descriptionContainer;
+        
+        private const float revealYPos = 169f;
+        private const float hiddenYPos = -120f;
 
         public void PopulateOptions(SelectableWheelOption[] newOptions, int startIndex = 0)
         {
@@ -55,6 +59,31 @@ namespace BattleSystem.UI
             }
 
             descriptionContainer.text = options[currentlySelected].description;
+        }
+
+        public void SetMenuVisibility(bool visibility)
+        {
+            StartCoroutine(MenuVisibilityEnumerator(visibility));
+        }
+
+        private IEnumerator MenuVisibilityEnumerator(bool visibility)
+        {
+            float finalY = visibility ? revealYPos : hiddenYPos;
+            Vector3 startPos = transform.position;
+            Vector3 finalPos = startPos;
+            finalPos.y = finalY;
+            float timer = .6f;
+
+            while (timer > 0)
+            {
+                transform.position = Vector3.Lerp(finalPos, startPos, timer);
+                timer -= Time.deltaTime * 2;
+                yield return new WaitForEndOfFrame();
+            }
+
+            transform.position = finalPos;
+            
+            yield break;
         }
     }
 

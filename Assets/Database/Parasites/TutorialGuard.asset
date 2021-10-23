@@ -19,6 +19,11 @@ MonoBehaviour:
   throwawayId: 0
   healthPts: {x: 30, y: 30}
   actionPts: {x: 12, y: 12}
+  weaknesses:
+  - 1
+  - 1
+  - 1
+  - 1
   entityXp: 20
   entityXpThreshold: 0
   defaultAttack: {fileID: 11400000, guid: c0dfa5d5c1ce96a489f9b7b91e57f401, type: 2}
@@ -39,7 +44,7 @@ MonoBehaviour:
       roundsPassed: 0
       trigger: 
       onFirstLoopInterjects:
-      - id: 2
+      - {fileID: 11400000, guid: bf646be59424ede42896d8c098ee04ae, type: 2}
       hasReadFirstLoop: 0
       moveSelect:
         id: 0
@@ -60,35 +65,3 @@ MonoBehaviour:
       data:
         owner: {fileID: 0}
         componentName: Random
-    00000002:
-      type: {class: DialogueInterject, ns: BattleSystem.Interjects, asm: Assembly-CSharp}
-      data:
-        stateName: 
-        stateId: 
-        prevStateId: _cycleState
-        initialized: 0
-        dialogueNodes:
-        - speakerPortrait: {fileID: 21300000, guid: a98ec7ac1fc7a464b8cba8d4f45ed988, type: 3}
-          backgroundColor: {r: 0.3225347, g: 0.371989, b: 0.4528302, a: 1}
-          text: 'Security Guard: Don''t think you''ve won just yet kid!'
-          buildDelay: 0.0376
-        battleCore: {fileID: 0}
-        parent:
-          systemStates:
-          - {fileID: 11400000, guid: 901bbff2202f5b84bb09ea343fd062b3, type: 2}
-          - {fileID: 11400000, guid: be3c4ce369ae4684a90af192ed36dfa3, type: 2}
-          - {fileID: 11400000, guid: 2588cf1bd35d8bf4280e1eb0f9dbeabf, type: 2}
-          - {fileID: 11400000, guid: 3880a84438f2c274e9d2d0d7e94c9d42, type: 2}
-          - {fileID: 11400000, guid: 55bcd767db317a34b98f8ba1dbfac8e2, type: 2}
-          - {fileID: 11400000, guid: 863c80b9f1ec42c469c3176f250ecf14, type: 2}
-          - {fileID: 11400000, guid: 10d815eed7c74154cafd66b99297fcfa, type: 2}
-          - {fileID: 11400000, guid: abf0e3893e4177d4a9396b60ff2aea34, type: 2}
-          - {fileID: 11400000, guid: e071411de4e75d04d9b980013834ed0b, type: 2}
-          - {fileID: 11400000, guid: 9081080bec84c0f44b9a14594edfe490, type: 2}
-          - {fileID: 11400000, guid: da50a6697d244104dab35dccf6a6d7cf, type: 2}
-          systemInterjects: []
-          currentIndex: 4
-          lastAbility: {fileID: 11400000, guid: 00be9c6c0665f664fb5c95bf1a66b36f, type: 2}
-          targetedEntities: 02000000
-          targetingParty: 0
-          module: {fileID: -944628639613478452, guid: 7d30e05cf43b6e54387d92a909d874f3, type: 3}

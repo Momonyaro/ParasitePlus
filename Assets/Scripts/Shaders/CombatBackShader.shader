@@ -52,6 +52,7 @@
             struct v2f
             {
                 float2 uv : TEXCOORD0;
+                float2 uv2 : TEXCOORD1;
                 UNITY_FOG_COORDS(1)
                 float4 vertex : SV_POSITION;
             };
@@ -76,45 +77,47 @@
             int _ModuloX;
             int _ModuloY;
             float4 _MainTex_ST;
+            float4 _SecondTex_ST;
 
             v2f vert (appdata v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                o.uv2 = TRANSFORM_TEX(v.uv, _SecondTex);
                 return o;
             }
 
-            v2f sinWave(fixed2 amp, fixed2 freq, fixed2 scale, v2f i)
+            fixed2 sinWave(fixed2 amp, fixed2 freq, fixed2 scale, fixed2 uv)
             {
-                float sinX = sin((freq.x * i.uv.y) + (scale.x * _Time)); // Range : -1 - 1
+                float sinX = sin((freq.x * uv.y) + (scale.x * _Time)); // Range : -1 - 1
                 sinX *= 0.5; // Range : -.5 - .5
                 sinX *= 0.5; // Range : -.25 - .25
 
-                float sinY = sin((freq.y * i.uv.x) + (scale.y * _Time));
+                float sinY = sin((freq.y * uv.x) + (scale.y * _Time));
                 sinY *= 0.5; // Range : -.5 - .5
                 sinY *= 0.5; // Range : -.25 - .25
                 
                 sinX *= amp.x;
                 sinY *= amp.y;
                 
-                i.uv += float2(sinX, sinY); // I'm fucking stupid, jesus christ... Of course addition would work.
+                uv += float2(sinX, sinY); // I'm fucking stupid, jesus christ... Of course addition would work.
 
-                return i;
+                return uv;
             }
 
             fixed4 frag (v2f i) : SV_Target
             {
-                v2f u = i;
-                v2f v = i;
+                fixed2 u = i.uv;
+                fixed2 v = i.uv2;
 
                 if (_SinTogglePrimary == 1) u = sinWave(_SinAmpPrimary, _SinFreqPrimary, _SinScalePrimary, u);
                 if (_SinToggleSecondary == 1) v = sinWave(_SinAmpSecondary,_SinScaleSecondary, _SinFreqSecondary, v);
                 
                 // sample the texture
-                fixed4 aCol = tex2D(_MainTex, u.uv);
+                fixed4 aCol = tex2D(_MainTex, u.xy);
                 aCol = lerp(_MainColLow, _MainColHigh, aCol);
-                fixed4 bCol = tex2D(_SecondTex, v.uv);
+                fixed4 bCol = tex2D(_SecondTex, v.xy);
                 bCol = lerp(_SecondColLow, _SecondColHigh, bCol);
                 
                 fixed4 col = (aCol + bCol) * 0.5;

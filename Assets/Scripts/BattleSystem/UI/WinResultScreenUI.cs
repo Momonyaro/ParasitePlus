@@ -57,6 +57,13 @@ namespace BattleSystem.UI
                 int originalXpThreshold = party[i].entityXpThreshold;
                 levelDifference[i] = originalLevel;
                 party[i].AddXpToEntity(xpToAdd[i]);
+
+                for (int j = 0; j < party[i].abilityScriptables.Length; j++)
+                {
+                    if  (party[i] == null) continue;
+                    party[i].abilityScriptables[j].ResetValues();
+                }
+                
                 levelDifference[i] = party[i].entityLevel - levelDifference[i]; // Should yield the amount of levels gained this level-up.
                 
                 Debug.Log($"start: {originalLevel}, end: {party[i].entityLevel}, diff: {levelDifference[i]}");

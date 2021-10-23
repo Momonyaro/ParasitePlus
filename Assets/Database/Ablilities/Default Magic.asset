@@ -15,7 +15,7 @@ MonoBehaviour:
   abilityName: Flare
   abilityId: _defaultAtk
   abilityDesc: Strike your enemy with your flames.
-  abilityEffectRef: _swordSlash
+  abilityEffectRef: _flare
   targetAll: 0
   targetFriendlies: 0
   abilityLevelReq: 0

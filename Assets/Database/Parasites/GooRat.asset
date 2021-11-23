@@ -34,15 +34,18 @@ MonoBehaviour:
     - healthPercentLessThan: 1
       roundsPassed: 0
       trigger: 
+      stateAbilities: []
       onFirstLoopInterjects: []
       hasReadFirstLoop: 0
       moveSelect:
         id: 0
       targetComp:
         id: 1
+  onDeathInterjects: []
   deadTrigger: 0
   stats: 000000000000000000000000000000000000000000000000
-  abilityScriptables: []
+  abilityScriptables:
+  - {fileID: 11400000, guid: 5a713ac6777b4414aad888b5fd0b0b11, type: 2}
   entityEffectBuffer: []
   references:
     version: 1
@@ -51,7 +54,7 @@ MonoBehaviour:
       data:
         componentName: Random
     00000001:
-      type: {class: TargetCompRandom, ns: BattleSystem.AI, asm: Assembly-CSharp}
+      type: {class: TargetCompKingslayer, ns: BattleSystem.AI, asm: Assembly-CSharp}
       data:
         owner: {fileID: 0}
-        componentName: Random
+        componentName: Kingslayer

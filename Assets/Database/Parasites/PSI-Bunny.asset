@@ -34,24 +34,27 @@ MonoBehaviour:
     - healthPercentLessThan: 1
       roundsPassed: 0
       trigger: 
+      stateAbilities: []
       onFirstLoopInterjects: []
       hasReadFirstLoop: 0
       moveSelect:
         id: 0
       targetComp:
         id: 1
+  onDeathInterjects: []
   deadTrigger: 0
   stats: 000000000000000000000000000000000000000000000000
-  abilityScriptables: []
+  abilityScriptables:
+  - {fileID: 11400000, guid: 96a2ead7d7f11d244bf5191c1dec87a6, type: 2}
   entityEffectBuffer: []
   references:
     version: 1
     00000000:
-      type: {class: MoveSelectCompRandom, ns: BattleSystem.AI, asm: Assembly-CSharp}
+      type: {class: MoveSelectCompSupport, ns: BattleSystem.AI, asm: Assembly-CSharp}
       data:
-        componentName: Random
+        componentName: Support
     00000001:
-      type: {class: TargetCompRandom, ns: BattleSystem.AI, asm: Assembly-CSharp}
+      type: {class: TargetCompBully, ns: BattleSystem.AI, asm: Assembly-CSharp}
       data:
         owner: {fileID: 0}
-        componentName: Random
+        componentName: Bully

@@ -16,6 +16,7 @@ public class InfoPrompt : MonoBehaviour
     public Queue<string> currentMessage = new Queue<string>();
     private bool combatOnClear = false;
     private EncounterTrigger cachedTrigger = null;
+    private bool isRunning = false;
 
     private static string _infoPromptAnimatorVarName = "ShowPrompt";
     
@@ -26,6 +27,7 @@ public class InfoPrompt : MonoBehaviour
 
     public void CreatePrompt(string[] promptMessage)
     {
+        isRunning = true;
         if (promptMessage.Length == 0)
         {
             return;
@@ -41,6 +43,7 @@ public class InfoPrompt : MonoBehaviour
 
     public void CreatePromptForCombat(string[] promptMessage, EncounterTrigger trigger)
     {
+        isRunning = true;
         FindObjectOfType<FPSGridPlayer>().lockPlayer = true;
         currentMessage = new Queue<string>(promptMessage);
         
@@ -62,11 +65,17 @@ public class InfoPrompt : MonoBehaviour
         FindObjectOfType<FPSGridPlayer>().lockPlayer = false;
 
         promptAnimator.SetBool(_infoPromptAnimatorVarName, false);
+        isRunning = false;
 
         if (combatOnClear)
         {
             combatOnClear = false;
             FindObjectOfType<DungeonManager>().TransitionToBattleFromTrigger(cachedTrigger);
         }
+    }
+
+    public bool PromptActive()
+    {
+        return isRunning;
     }
 }

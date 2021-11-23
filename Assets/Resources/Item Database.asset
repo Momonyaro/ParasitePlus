@@ -234,3 +234,16 @@ MonoBehaviour:
     stackable: 0
     maxStackSize: 0
     storeItem: 0
+  - name: New DB Entry
+    guid: 993174de-f959-4343-b953-920d32992136
+    msrp: 0
+    type: 4
+    minLevelReq: 0
+    minFriendshipReq: 0
+    damage: 0
+    defense: 0
+    critChance: 0
+    dodgeChance: 0
+    stackable: 1
+    maxStackSize: 99
+    storeItem: 1

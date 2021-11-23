@@ -14,6 +14,7 @@ namespace MOVEMENT
         private InputAction walkAction;
         private InputAction turnAction;
         private InputAction interactAction;
+        private InputAction pauseAction;
 
         public AnimationCurve turnLerpCurve = new AnimationCurve();
         public AnimationCurve moveLerpCurve = new AnimationCurve();
@@ -31,10 +32,12 @@ namespace MOVEMENT
             walkAction = actionMap.FindAction("Move");
             turnAction = actionMap.FindAction("Look");
             interactAction = actionMap.FindAction("Interact");
+            pauseAction = actionMap.FindAction("StatusMenu");
 
             turnAction.started += OnTurnKey;
             walkAction.performed += OnMoveKey;
             interactAction.started += OnInteractKey;
+            pauseAction.started += OnPauseKey;
         }
 
         private void OnDisable()
@@ -78,17 +81,26 @@ namespace MOVEMENT
         {
             DungeonManager dm = FindObjectOfType<DungeonManager>();
             if (!context.started) return;
-                if (lockPlayer)
+                if (lockPlayer && InfoPrompt.Instance.PromptActive())
                 {
                     //This should be the infoPrompt so clear it
                     InfoPrompt.Instance.ClearPrompt();
                 }
-                else
+                else if (!lockPlayer)
                 {
                     //Check for interactable:s instead
                     dm.CheckToEnterDoorTrigger();
                     dm.CheckToPickUpGroundItem();
                 }
+        }
+        
+        private void OnPauseKey(InputAction.CallbackContext ctx)
+        {
+            if (lockPlayer) return;
+
+            lockPlayer = true;
+            
+            UIManager.Instance.onUIMessage.Invoke("_toggleStatusMenu");
         }
 
         private IEnumerator TurnPlayer(Vector2 turnDir)

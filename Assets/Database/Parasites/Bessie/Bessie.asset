@@ -49,7 +49,7 @@ MonoBehaviour:
       onFirstLoopInterjects: []
       hasReadFirstLoop: 0
       moveSelect:
-        id: 0
+        id: 2
       targetComp:
         id: 1
     - healthPercentLessThan: 0.18

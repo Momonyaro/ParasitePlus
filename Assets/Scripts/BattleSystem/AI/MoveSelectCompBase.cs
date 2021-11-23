@@ -86,4 +86,33 @@ namespace BattleSystem.AI
             return "Selects the most expensive skill that the entity has AP for. When we don't have any more AP for skills, default to the normal attack.";
         }
     }
+
+    public class MoveSelectCompSupport : MoveSelectCompBase
+    {
+        public override AbilityScriptable Evaluate(EntityScriptable entity, List<AbilityScriptable> nodeAbilities)
+        {
+            List<AbilityScriptable> abilities = new List<AbilityScriptable>(entity.GetEntityAbilities());
+            abilities.AddRange(nodeAbilities);
+            AbilityScriptable leastDamaging = entity.defaultAttack;
+            for (int i = 0; i < abilities.Count; i++)
+            {
+                if ((abilities[i].abilityCosts.x < entity.GetEntityAP().x) && abilities[i].abilityDamage.x <= leastDamaging.abilityDamage.x  && abilities[i].abilityCooldown.x == 0)
+                {
+                    leastDamaging = abilities[i];
+                }
+            }
+
+            return leastDamaging;
+        }
+
+        public override string GetComponentName()
+        {
+            return "Support";
+        }
+
+        public override string GetComponentTooltip()
+        {
+            return "Selects the ability that deals the 'least' amount of damage. Defaults to normal attack.";
+        }
+    }
 }

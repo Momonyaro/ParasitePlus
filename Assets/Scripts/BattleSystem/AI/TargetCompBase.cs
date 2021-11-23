@@ -99,7 +99,7 @@ namespace BattleSystem.AI
         {
             if (owner == null) { Debug.LogError("No Owner set?"); return new List<int>(); }
             
-            if (owner.lastAttacker != null && !owner.lastAttacker.deadTrigger)
+            if (owner.lastAttacker != null)
             {
                 for (int i = 0; i < targets.Length; i++)
                 {

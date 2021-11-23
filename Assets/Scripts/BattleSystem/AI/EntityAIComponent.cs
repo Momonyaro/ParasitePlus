@@ -14,6 +14,7 @@ namespace BattleSystem.AI
         {
             new MoveSelectCompRandom(),
             new MoveSelectCompBurst(),
+            new MoveSelectCompSupport(),
         };
 
         private List<TargetCompBase> allTargetingComponents = new List<TargetCompBase>()

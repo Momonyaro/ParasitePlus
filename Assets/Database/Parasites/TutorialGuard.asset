@@ -34,6 +34,7 @@ MonoBehaviour:
     - healthPercentLessThan: 1
       roundsPassed: 0
       trigger: 
+      stateAbilities: []
       onFirstLoopInterjects: []
       hasReadFirstLoop: 0
       moveSelect:
@@ -43,6 +44,7 @@ MonoBehaviour:
     - healthPercentLessThan: 0.629
       roundsPassed: 0
       trigger: 
+      stateAbilities: []
       onFirstLoopInterjects:
       - {fileID: 11400000, guid: bf646be59424ede42896d8c098ee04ae, type: 2}
       hasReadFirstLoop: 0
@@ -50,6 +52,7 @@ MonoBehaviour:
         id: 0
       targetComp:
         id: 1
+  onDeathInterjects: []
   deadTrigger: 0
   stats: 000000000000000000000000000000000000000000000000
   abilityScriptables: []

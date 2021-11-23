@@ -26,7 +26,7 @@ namespace BattleSystem.UI
                 GetComponent<Image>().materialForRendering.SetFloat("_FillAmount", transitionValue);
                 
 
-                transitionValue -= Time.deltaTime;
+                transitionValue -= Time.deltaTime * 2.0f;
                 yield return new WaitForEndOfFrame();
             }
 

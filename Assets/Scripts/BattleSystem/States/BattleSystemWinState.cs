@@ -1,4 +1,5 @@
 ﻿using BattleSystem.UI;
+using SAMSARA;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,8 +17,7 @@ namespace BattleSystem.States
             winResultScreenUI = FindObjectOfType<WinResultScreenUI>();
             
             // SamsaraMaster.Instance.SetNextMusicTrackFromRef("_victoryTheme", out bool success);
-            // if (success)
-            //     SamsaraMaster.Instance.SwapMusicTrack(SamsaraTwinChannel.TransitionTypes.SmoothFade, 0.2f, out success);
+            Samsara.Instance.MusicPlayLayered("_victoryTheme", TransitionType.CrossFade, 0.5f, out bool success);
 
             int enemyXp = 0;
 

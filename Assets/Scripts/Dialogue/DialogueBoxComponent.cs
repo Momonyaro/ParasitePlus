@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using CORE;
 using Dialogue.UI;
+using SAMSARA;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -185,8 +186,8 @@ namespace Dialogue
                         }
                     }
                     
-                    // if (playSound)
-                    //     SamsaraMaster.Instance.PlaySFXFromReference(writingSoundEvent, out bool success);
+                    if (playSound)
+                        Samsara.Instance.PlaySFXRandomTrack(writingSoundEvent, out bool success);
 
                     if (currentChar >= currentText.Length)
                     {

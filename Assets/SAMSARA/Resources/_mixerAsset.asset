@@ -13,26 +13,85 @@ MonoBehaviour:
   m_Name: _mixerAsset
   m_EditorClassIdentifier: 
   audioEvents:
-  - reference: _newClip
+  - reference: _swanDivisionBGM
     trackContainer:
       lerpValue: 0
-      ratio: 0.5
+      ratio: 1
       trackLerpOverlap: 1
-      volumeGroupRef: _general
-      volume: 1
+      volumeGroupRef: _music
+      volume: 0.8
       pitch: 1
       randomPitchOffset: 0
+      delay: 0
+      loop: 1
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 6feedd6782be9df41bc7765d81ad51c2, type: 3}
+  - reference: _battleBGMWolves
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _music
+      volume: 0.8
+      pitch: 1
+      randomPitchOffset: 0
+      delay: 0
+      loop: 1
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 0f0e025bb4400424a812c13129ded77d, type: 3}
+  - reference: _battleBGMCanonball
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _music
+      volume: 0.8
+      pitch: 1
+      randomPitchOffset: 0
+      delay: 0
+      loop: 1
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 630979a98537b334d9c77592941fab52, type: 3}
+  - reference: _victoryTheme
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _music
+      volume: 0.6
+      pitch: 1
+      randomPitchOffset: 0
+      delay: 0
+      loop: 1
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: b7e1daf768963bf40b7f2a1d21afbbe3, type: 3}
+  - reference: _keyPress
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.5
+      pitch: 1
+      randomPitchOffset: 0.161
       delay: 0
       loop: 0
       introClip: {fileID: 0}
       outroClip: {fileID: 0}
       tracks:
-      - AudioClip: {fileID: 0}
-      - AudioClip: {fileID: 0}
+      - AudioClip: {fileID: 8300000, guid: 149e773077aa3324aabb963f04e7712b, type: 3}
   volumeGroups:
   - reference: _general
     groupVolume: 1
   - reference: _vocal
     groupVolume: 1
   - reference: _music
-    groupVolume: 1
+    groupVolume: 0.75

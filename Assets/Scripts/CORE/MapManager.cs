@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Items;
 using MOVEMENT;
+using SAMSARA;
 using Scriptables;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -99,9 +100,7 @@ namespace CORE
                 }
             }
 
-            // SamsaraMaster.Instance.SetNextMusicTrackFromRef(mapBMGReference, out bool success);
-            // if (success)
-            //     SamsaraMaster.Instance.SwapMusicTrack(SamsaraTwinChannel.TransitionTypes.CrossFade, 0.4f, out success);
+            Samsara.Instance.MusicPlayLayered(mapBMGReference, TransitionType.CrossFade, 1.2f, out bool success);
         }
 
         public void LoadRandomBattle()

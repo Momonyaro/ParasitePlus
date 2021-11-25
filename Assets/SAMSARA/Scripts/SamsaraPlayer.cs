@@ -1,219 +1,189 @@
-﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using SAMSARA.Scriptables;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using UnityEngine.UIElements;
 
-namespace SAMSARA.Scripts
+namespace SAMSARA
 {
+    public enum TransitionType
+    {
+        Cut,
+        CrossFade,
+        SmoothFade,
+        OutroToIntro,
+    }
+    
     public class SamsaraPlayer : MonoBehaviour
     {
-        //Here is where we host the channel management.
-        public int sfxChannelCount = 8;
+        // We need this class to manage the music and ambiance that's being played.
+        public SamsaraAudioChannel currentMusicChannel;
+        private bool _transitionInProgress = false;
+        public SamsaraAudioChannel currentAmbianceChannel;
 
-        public List<AudioSource> sfxAudioChannels;
-        public SamsaraTwinChannel musicTwinChannel;
-        public SamsaraTwinChannel ambianceTwinChannel;
-
-        private const string PlayingPrefix = "Playing -> ";
-
-        private void Awake()
+        public void MusicPlayNext(AudioEvent audioEvent, TransitionType transitionType, float transitionDuration, out bool success)
         {
-            sfxAudioChannels = new List<AudioSource>();
-            for (int i = 0; i < sfxChannelCount; i++)
+            success = !_transitionInProgress;
+
+            switch (transitionType)
             {
-                sfxAudioChannels.Add(CreateAudioChannel(transform));
+                case TransitionType.Cut:
+                    StartCoroutine(CrossFadeEnumerator(audioEvent, 0));
+                    break;
+                case TransitionType.CrossFade:
+                    StartCoroutine(CrossFadeEnumerator(audioEvent, transitionDuration));
+                    break;
+                case TransitionType.SmoothFade:
+                    StartCoroutine(SmoothFadeEnumerator(audioEvent, transitionDuration));
+                    break;
+                case TransitionType.OutroToIntro:
+                    StartCoroutine(IntroOutroFadeEnumerator(audioEvent, transitionDuration));
+                    break;
             }
 
-            for (int i = 0; i < sfxAudioChannels.Count; i++)
-            {
-                sfxAudioChannels[i].playOnAwake = false;
-                sfxAudioChannels[i].loop = false;
-            }
-
-            CreateMusicChannel(transform, out musicTwinChannel);
-            CreateAmbientChannel(transform, out ambianceTwinChannel);
+            // Use a transition IEnumerator to swap to a new track.
+            // The enumerators should according to the type, fade out the existing track (if one is set)
+            //     and then fade in the new track (if one is set).
         }
-
-        private void Update()
+        
+        private IEnumerator CrossFadeEnumerator(AudioEvent nextEvent, float transitionDuration)
         {
-            for (int i = 0; i < sfxAudioChannels.Count; i++)
+            if (_transitionInProgress) yield break;
+            
+            _transitionInProgress = true;
+            SamsaraAudioChannel current = currentMusicChannel;
+            SamsaraAudioChannel next = CreateAudioChannel(nextEvent);
+
+            float lastVolume = 0;
+            float nextVolume = 0;
+
+            if (current != null)
             {
-                if (!sfxAudioChannels[i].isPlaying)
-                    sfxAudioChannels[i].name = "Not Playing...";
+                lastVolume = current.channelVolume;
             }
-        }
-
-        /// <summary>
-        /// Please consider using SamsaraMaster.Instance.PlaySFXFromReference() instead.
-        /// </summary>
-        public void PlayOnSFXChannel(SamsaraSoundStruct sound, out bool success)
-        {
-            //Debug.Log("Sources on this mono:" + this + " count for:" + SamsaraMaster.Instance.samsaraPlayer.sfxAudioChannels.Count);
-            for (int i = 0; i < sfxAudioChannels.Count; i++)
+            
+            if (next != null)
             {
-                if (!sfxAudioChannels[i].isPlaying)
+                nextVolume = next.channelVolume;
+                next.channelVolume = 0;
+            }
+
+            float timePassed = 0;
+            while (timePassed < transitionDuration)
+            {
+                float percentage = timePassed / transitionDuration;
+
+                if (current != null)
+                    current.channelVolume = lastVolume * (1.0f - percentage); // From high to 0
+                if (next != null)
+                    next.channelVolume = nextVolume * (0.0f + percentage); // From 0 to high
+                
+                timePassed += Time.deltaTime;
+                yield return new WaitForEndOfFrame();
+            }
+
+            if (next != null)
+                next.channelVolume = nextVolume;
+            
+            if (current != null)
+                current.KillChannel();
+
+            currentMusicChannel = next;
+            
+            _transitionInProgress = false;
+            
+            yield break;
+        }
+        
+        private IEnumerator SmoothFadeEnumerator(AudioEvent nextEvent, float transitionDuration)
+        {
+            if (_transitionInProgress) yield break;
+            
+            _transitionInProgress = true;
+            SamsaraAudioChannel current = currentMusicChannel;
+            SamsaraAudioChannel next = CreateAudioChannel(nextEvent);
+
+            float lastVolume = 0;
+            float nextVolume = 0;
+
+            if (current != null)
+            {
+                lastVolume = current.channelVolume;
+            }
+            
+            if (next != null)
+            {
+                nextVolume = next.channelVolume;
+                next.channelVolume = 0;
+            }
+
+            float timePassed = 0;
+            float halfTime = transitionDuration * 0.5f;
+            if (current != null)
+            {
+                while (timePassed < halfTime)
                 {
-                    sfxAudioChannels[i].clip = sound.audioClip;
-                    sfxAudioChannels[i].loop = sound.loop;
-                    sfxAudioChannels[i].volume = sound.volume * SamsaraMaster.Instance.mixerAsset.masterVolume;
-                    sfxAudioChannels[i].pitch = Mathf.Clamp(sound.pitch + Random.Range(-sound.randomPitchOffset, sound.randomPitchOffset), -3, 3);
-                    sfxAudioChannels[i].name = PlayingPrefix + sound.reference;
+                    timePassed += Time.deltaTime;
+                    
+                    float percentage = timePassed / halfTime;
 
-                    sfxAudioChannels[i].PlayDelayed(sound.delay + Random.Range(0, sound.randomDelayOffset));
+                    current.channelVolume = lastVolume * (1.0f - percentage); // From high to 0
+                    yield return new WaitForEndOfFrame();
+                }
 
-                    success = true;
-                    return;
+                current.channelVolume = 0;
+            }
+
+            timePassed = halfTime;
+            if (next != null)
+            {
+                while (timePassed > 0)
+                {
+                    timePassed -= Time.deltaTime;
+                    
+                    float percentage = timePassed / halfTime;
+
+                    next.channelVolume = nextVolume * (1.0f - percentage); // From 0 to high
+                    yield return new WaitForEndOfFrame();
                 }
             }
-            success = false;
+
+            next.channelVolume = nextVolume;
+
+            if (next != null)
+                next.channelVolume = nextVolume;
+            
+            if (current != null)
+                current.KillChannel();
+
+            currentMusicChannel = next;
+            _transitionInProgress = false;
+            
+            yield break;
         }
 
-        /// <summary>
-        /// Please consider using SamsaraMaster.Instance.StopSFXFromReference() instead.
-        /// </summary>
-        public void StopSFX(string reference, out bool success)
+        private IEnumerator IntroOutroFadeEnumerator(AudioEvent nextEvent, float deadAirDuration)
         {
-            success = false;
-            for (int i = 0; i < sfxAudioChannels.Count; i++)
-            {
-                if (sfxAudioChannels[i].isPlaying)
+            //trigger current music track to play it's outro, when the event dies
+            // start the new track so that it's intro plays.
+            
+            yield break;
+        }
+        
+        
+        public SamsaraAudioChannel CreateAudioChannel(AudioEvent audioEvent)
+        {
+            string channelName = "Playing -> " + audioEvent.reference;
+            
+            GameObject channel = new GameObject(channelName,
+                new []
                 {
-                    string croppedName = sfxAudioChannels[i].name.Replace(PlayingPrefix, "");
-                    if (croppedName.Equals(reference))
-                    {
-                        sfxAudioChannels[i].Stop();
+                    typeof(SamsaraAudioChannel)
+                });
 
-                        success = true;
-                        return;
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// Please consider using SamsaraMaster.Instance.SetNextMusicTrackFromRef() instead.
-        /// </summary>
-        public void SetInactiveMusicTrack(SamsaraSoundStruct soundStruct)
-        {
-            musicTwinChannel.SetInactiveChannelTrack(soundStruct);
-        }
-
-        /// <summary>
-        /// Please consider using SamsaraMaster.Instance.SetNextMusicTrackFromRef() instead.
-        /// </summary>
-        public void SwapActiveMusicTrack(SamsaraTwinChannel.TransitionTypes transitionTypes, float transitionDuration, out bool success)
-        {
-            success = false;
-            switch (transitionTypes)
-            {
-                case SamsaraTwinChannel.TransitionTypes.CrossFade:
-                    StartCoroutine(musicTwinChannel.CrossFadeEnumerator(transitionDuration));
-                    success = true;
-                    break;
-                case SamsaraTwinChannel.TransitionTypes.SmoothFade:
-                    StartCoroutine(musicTwinChannel.SmoothFadeEnumerator(transitionDuration));
-                    break;
-                default:
-                    StartCoroutine(musicTwinChannel.CrossFadeEnumerator(0.0f)); // Simulates cut by instantly switching.
-                    break;
-            }
-        }
-
-        /// <summary>
-        /// Please consider using SamsaraMaster.Instance.SetNextAmbientTrackFromRef() instead.
-        /// </summary>
-        public void SetInactiveAmbianceTrack(SamsaraSoundStruct soundStruct)
-        {
-            ambianceTwinChannel.SetInactiveChannelTrack(soundStruct);
-        }
-
-        /// <summary>
-        /// Please consider using SamsaraMaster.Instance.SwapAmbientTrack() instead.
-        /// </summary>
-        public void SwapActiveAmbientTrack(SamsaraTwinChannel.TransitionTypes transitionTypes, float transitionDuration, out bool success)
-        {
-            success = false;
-            switch (transitionTypes)
-            {
-                case SamsaraTwinChannel.TransitionTypes.CrossFade:
-                    StartCoroutine(ambianceTwinChannel.CrossFadeEnumerator(transitionDuration));
-                    success = true;
-                    break;
-                case SamsaraTwinChannel.TransitionTypes.SmoothFade:
-                    StartCoroutine(ambianceTwinChannel.SmoothFadeEnumerator(transitionDuration));
-                    break;
-                default:
-                    StartCoroutine(ambianceTwinChannel.CrossFadeEnumerator(0.0f)); // Simulates cut by instantly switching.
-                    break;
-            }
-        }
-
-
-
-
-
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        private AudioSource CreateAudioChannel(Transform parent)
-        {
-            GameObject newChannel = new GameObject("Audio Channel", new[]
-            {
-                typeof(AudioSource)
-            });
-
-            newChannel.transform.parent = parent;
-
-            return newChannel.GetComponent<AudioSource>();
-        }
-
-        private void CreateMusicChannel(Transform parent, out SamsaraTwinChannel twinChannel)
-        {
-            GameObject host = new GameObject("Music Channels", new[]
-            {
-                typeof(SamsaraTwinChannel)
-            });
-
-            twinChannel = host.GetComponent<SamsaraTwinChannel>();
-            host.transform.parent = parent.transform;
-
-            GameObject channelA = new GameObject("Channel A", new[]
-            {
-                typeof(AudioSource)
-            });
-
-            channelA.transform.parent = host.transform;
-
-            GameObject channelB = new GameObject("Channel B", new[]
-            {
-                typeof(AudioSource)
-            });
-
-            channelB.transform.parent = host.transform;
-        }
-
-        private void CreateAmbientChannel(Transform parent, out SamsaraTwinChannel twinChannel)
-        {
-            GameObject host = new GameObject("Ambient Channels", new[]
-            {
-                typeof(SamsaraTwinChannel)
-            });
-
-            twinChannel = host.GetComponent<SamsaraTwinChannel>();
-            host.transform.parent = parent.transform;
-
-            GameObject channelA = new GameObject("Channel A", new[]
-            {
-                typeof(AudioSource)
-            });
-
-            channelA.transform.parent = host.transform;
-
-            GameObject channelB = new GameObject("Channel B", new[]
-            {
-                typeof(AudioSource)
-            });
-
-            channelB.transform.parent = host.transform;
+            channel.transform.parent = transform;
+            channel.GetComponent<SamsaraAudioChannel>().InitChannel(audioEvent);
+            return channel.GetComponent<SamsaraAudioChannel>();
         }
     }
 }

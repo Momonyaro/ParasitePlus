@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using CORE;
 using Items;
-using SAMSARA.Scripts;
 using Scriptables;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -48,9 +47,9 @@ namespace BattleSystem
             
             systemStateManager.Init(this); // Start the state machine.
             
-            SamsaraMaster.Instance.SetNextMusicTrackFromRef(bgmReference, out bool success);
-            if (success)
-                SamsaraMaster.Instance.SwapMusicTrack(SamsaraTwinChannel.TransitionTypes.CrossFade, 0.4f, out success);
+            // SamsaraMaster.Instance.SetNextMusicTrackFromRef(bgmReference, out bool success);
+            // if (success)
+            //     SamsaraMaster.Instance.SwapMusicTrack(SamsaraTwinChannel.TransitionTypes.CrossFade, 0.4f, out success);
         }
 
         // Update is called once per frame

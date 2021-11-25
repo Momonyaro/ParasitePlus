@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8dadc7f25e46de4bb67f1dcdd1a3a88, type: 3}
+  m_Name: _mixerAsset
+  m_EditorClassIdentifier: 
+  audioEvents:
+  - reference: _newClip
+    trackContainer:
+      lerpValue: 0
+      ratio: 0.5
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 1
+      pitch: 1
+      randomPitchOffset: 0
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 0}
+      - AudioClip: {fileID: 0}
+  volumeGroups:
+  - reference: _general
+    groupVolume: 1
+  - reference: _vocal
+    groupVolume: 1
+  - reference: _music
+    groupVolume: 1

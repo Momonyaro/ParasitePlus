@@ -62,6 +62,7 @@ namespace CORE
                 currentSlimData.wallet = slimData.wallet;
                 currentSlimData.usedGroundItems = slimData.usedGroundItems;
                 currentSlimData.playerName = slimData.playerName;
+                currentSlimData.loadSceneVariable = slimData.loadSceneVariable;
             }
             
                 
@@ -98,6 +99,15 @@ namespace CORE
                         }
                     }
                 }
+
+                for (int i = 0; i < dungeonManager.sceneLoadVariables.Count; i++)
+                {
+                    if (dungeonManager.sceneLoadVariables[i].reference.Equals(currentSlimData.loadSceneVariable))
+                    {
+                        dungeonManager.WarpPlayer(dungeonManager.sceneLoadVariables[i].playerPosition, dungeonManager.sceneLoadVariables[i].playerRotation);
+                        break;
+                    }
+                }
             }
 
             Samsara.Instance.MusicPlayLayered(mapBMGReference, TransitionType.CrossFade, 1.2f, out bool success);
@@ -125,12 +135,38 @@ namespace CORE
                 wallet = currentSlimData.wallet,
                 usedGroundItems = currentSlimData.usedGroundItems,
                 playerName = currentSlimData.playerName,
+                loadSceneVariable = currentSlimData.loadSceneVariable,
             };
             
             SlimComponent.Instance.PopulateAndSendSlim(slimData);
             //Perhaps trigger some script that plays a transition between the scenes using dontDestroyOnLoad?
             Debug.Log("Loading scene: "+ currentSlimData.destinationScene);
             SceneManager.LoadScene(BattleSceneIndex);
+        }
+
+        public void SwitchScene(string destinationReference)
+        {
+            //Create slim here before we load the scene.
+
+            SlimComponent.SlimData slimData = new SlimComponent.SlimData()
+            {
+                destinationScene = destinationReference,
+                lastTransformScene = SceneManager.GetActiveScene().name,
+                partyField = currentSlimData.partyField,
+                enemyField = currentSlimData.enemyField,
+                inventory = currentSlimData.inventory,
+                playerLastPos = player.transform.position,
+                playerLastEuler = player.transform.rotation.eulerAngles,
+                wallet = currentSlimData.wallet,
+                usedGroundItems = currentSlimData.usedGroundItems,
+                playerName = currentSlimData.playerName,
+                loadSceneVariable = currentSlimData.loadSceneVariable,
+            };
+            
+            SlimComponent.Instance.PopulateAndSendSlim(slimData);
+            //Perhaps trigger some script that plays a transition between the scenes using dontDestroyOnLoad?
+            Debug.Log("Loading scene: "+ currentSlimData.destinationScene);
+            SceneManager.LoadScene(destinationReference);
         }
 
         public List<Item> RequestPlayerInventory()

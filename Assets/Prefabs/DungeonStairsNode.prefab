@@ -146,8 +146,11 @@ MonoBehaviour:
   locked: 0
   singleUseKey: 0
   keyItemID: 
+  goToScene: 0
+  sceneName: 
   isLockedMessage: The door is locked.
   onUnlockMessage: Unlocked the door using $ITEM.
+  interactPromptMsg: Open Door
 --- !u!1001 &3886302535315890929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -211,6 +214,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f64dd69e0292fb741a14657926e5fa5e, type: 2}
+    - target: {fileID: 882129737928793925, guid: bb1156c4a0a7a1d47baab5ec951bea9a, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 43c2dc42c8801b04b81348946b5a0966, type: 2}
     - target: {fileID: 919132149155446097, guid: bb1156c4a0a7a1d47baab5ec951bea9a, type: 3}
       propertyPath: m_Name
       value: map_stairs_node

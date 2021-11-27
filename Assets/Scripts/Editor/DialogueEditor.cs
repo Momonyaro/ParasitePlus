@@ -130,6 +130,17 @@ namespace Editor
                         
                         break;
                     
+                    case ComponentTypes.PLAY_SFX:
+                        DrawDefaultProperties(current, out deleteFlag);
+
+                        if (deleteFlag)
+                        {
+                            lastInstance.components.RemoveAt(i);
+                            return;
+                        }
+
+                        break;
+                    
                     case ComponentTypes.PLAYER_NAME_BOX:
                         DrawDefaultProperties(current, out deleteFlag);
                         
@@ -193,6 +204,9 @@ namespace Editor
                         break;
                     case ComponentTypes.PLAYER_NAME_BOX:
                         current = DrawNameBoxEditor((CharNameBoxComponent) current);
+                        break;
+                    case ComponentTypes.PLAY_SFX:
+                        current = DrawPlaySFXEditor((PlaySoundComponent) current);
                         break;
                 }
             }
@@ -281,6 +295,21 @@ namespace Editor
             destroyComponent.refToDestroy = GetComponentReference(destroyComponent.refToDestroy);
 
             return destroyComponent;
+        }
+        
+        private PlaySoundComponent DrawPlaySFXEditor(PlaySoundComponent playSoundComponent)
+        {
+            playSoundComponent.reference = EditorGUILayout.TextField("Component Reference: ", playSoundComponent.reference);
+            EditorGUILayout.Space(10);
+            EditorGUILayout.HelpBox("Using reSamsara, this component will request a sound to be played.", MessageType.Info);
+            EditorGUILayout.Space(10);
+            playSoundComponent.soundEventRef =
+                EditorGUILayout.TextField("Sound Event Reference: ", playSoundComponent.soundEventRef);
+            playSoundComponent.playLayered = EditorGUILayout.Toggle("Play Layered: ", playSoundComponent.playLayered);
+            if (!playSoundComponent.playLayered)
+                playSoundComponent.trackLayer = EditorGUILayout.IntField("Track Layer: ", playSoundComponent.trackLayer);
+
+            return playSoundComponent;
         }
         
         private DestroyAllComponent DrawDestroyAllEditor(DestroyAllComponent destroyComponent)
@@ -455,6 +484,13 @@ namespace Editor
                     WaitComponent waitComponent = new WaitComponent();
                     waitComponent.reference = "_waitComp" + index;
                     lastInstance.components.Insert(index, waitComponent);
+                    EditorUtility.SetDirty(target);
+                    return true;
+                
+                case ComponentTypes.PLAY_SFX:
+                    PlaySoundComponent sfxComponent = new PlaySoundComponent();
+                    sfxComponent.reference = "_sfxEventComp" + index;
+                    lastInstance.components.Insert(index, sfxComponent);
                     EditorUtility.SetDirty(target);
                     return true;
                 

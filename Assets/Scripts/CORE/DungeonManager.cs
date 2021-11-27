@@ -25,6 +25,7 @@ namespace CORE
         public bool enterOnUnlock = true;
         public List<EncounterTrigger> encounterTriggers = new List<EncounterTrigger>();
         public List<EventTrigger> eventTriggers = new List<EventTrigger>();
+        public List<SceneLoadVariable> sceneLoadVariables = new List<SceneLoadVariable>();
         public float encounterProgress = 0; // When this reaches 1, start a random encounter.
         private bool startedEncounter = false;
         public bool randomEncounters = true;
@@ -75,6 +76,7 @@ namespace CORE
         private IEnumerator TransitionToBattle(EncounterTrigger trigger)
         {
             mapManager.SetEnemyField(trigger.enemyRoster);
+            currentPlayer.lockPlayer = true;
             trigger.triggerActive = false;
             mapManager.currentSlimData.usedGroundItems.Add(trigger.guid);
             
@@ -149,7 +151,16 @@ namespace CORE
                     }
                     
                     Debug.Log("Walking through Door at pos:" + doorInteractables[i].transform.position);
-                    StartCoroutine(WaitForDoorTranstion(i));
+
+                    if (doorInteractables[i].goToScene)
+                    {
+                        mapManager.currentSlimData.loadSceneVariable = doorInteractables[i].loadSceneVariable;
+                        StartCoroutine(WaitForSceneTransition(doorInteractables[i].sceneName));
+                    }
+                    else
+                    {
+                        StartCoroutine(WaitForDoorTranstion(i));
+                    }
                     break;
                 }
             }
@@ -184,6 +195,28 @@ namespace CORE
             
             Vector3 camEulers = currentPlayer.transform.rotation.eulerAngles;
             WarpPlayer(doorInteractables[currentIndex].warpDest, camEulers);
+            
+            while (!fadeToBlackImage.finished) { yield return null; }
+            
+            if (!skipPlayerLock)
+                currentPlayer.lockPlayer = false;
+            
+            yield break;
+        }
+
+        private IEnumerator WaitForSceneTransition(string newSceneRef)
+        {
+            FadeToBlackImage fadeToBlackImage = FindObjectOfType<FadeToBlackImage>();
+            bool skipPlayerLock = currentPlayer.lockPlayer;
+
+            if (!skipPlayerLock)
+                currentPlayer.lockPlayer = true;
+            
+            fadeToBlackImage.FadeToBlack(0.3f, .8f);
+            
+            while (!fadeToBlackImage.screenBlack) { yield return null; }
+            
+            mapManager.SwitchScene(newSceneRef);
             
             while (!fadeToBlackImage.finished) { yield return null; }
             
@@ -301,6 +334,14 @@ namespace CORE
         {
             randomEncounters = randomEncounter;
         }
-        
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.magenta;
+            for (int i = 0; i < sceneLoadVariables.Count; i++)
+            {
+                Gizmos.DrawLine(sceneLoadVariables[i].playerPosition, sceneLoadVariables[i].playerPosition + (Quaternion.Euler(sceneLoadVariables[i].playerRotation) * Vector3.forward) * 0.5f);
+            }
+        }
     }
 }

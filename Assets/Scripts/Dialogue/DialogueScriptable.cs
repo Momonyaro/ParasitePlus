@@ -14,6 +14,7 @@ namespace Dialogue
         SPAWN_OBJECT_BG,
         DESTROY_ALL,
         PLAYER_NAME_BOX,
+        PLAY_SFX,
     }
     
     [CreateAssetMenu(fileName = "DialogueAsset", menuName = "Dialogue/DialogueAsset")]

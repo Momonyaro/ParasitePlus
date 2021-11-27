@@ -6577,26 +6577,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 524553444423031834, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 524553444423031834, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
-      propertyPath: field of view
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 524553444423031834, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 524553444423031834, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 524553444423031834, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 524553445826855404, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -6644,26 +6624,6 @@ PrefabInstance:
     - target: {fileID: 524553445826855406, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
       propertyPath: m_Name
       value: FPSGridPlayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 524553446123627334, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
-      propertyPath: orthographic size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 524553446123627334, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
-      propertyPath: m_OcclusionCulling
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 524553446123627334, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 55
-      objectReference: {fileID: 0}
-    - target: {fileID: 524553446123627384, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
-      propertyPath: m_RenderShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 524553446123627384, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
-      propertyPath: m_RenderPostProcessing
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
@@ -7566,7 +7526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8689232491230138568, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: locked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8689232491230138568, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: sensor.x
@@ -8270,6 +8230,10 @@ MonoBehaviour:
   - {fileID: 1670883995}
   - {fileID: 1389334031}
   - {fileID: 2145509795}
+  sceneLoadVariables:
+  - reference: StairsA
+    playerPosition: {x: -22, y: 1, z: -4}
+    playerRotation: {x: 0, y: 270, z: 0}
   encounterProgress: 0
   randomEncounters: 1
   encounterProgressRange: 0.1
@@ -8312,6 +8276,7 @@ MonoBehaviour:
     ignoreTransformReadFlag: 0
     playerLastPos: {x: 0, y: -3, z: 0}
     playerLastEuler: {x: 0, y: 180, z: 0}
+    loadSceneVariable: 
     lastDungeonIndex: 0
   dungeonManager: {fileID: 454105791}
   config: {fileID: 11400000, guid: f19491cb78d45e04ca9bacb7aac3d494, type: 2}
@@ -24241,6 +24206,7 @@ GameObject:
   - component: {fileID: 1670883994}
   - component: {fileID: 1670883996}
   - component: {fileID: 1670883995}
+  - component: {fileID: 1670883997}
   m_Layer: 0
   m_Name: LampPulser
   m_TagString: Untagged
@@ -24274,13 +24240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0159483441944d9a988e560006d3296c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage:
-  - '[Alarms start blaring as you enter the hallway. Red light pulsing menacingly.]'
-  - '[The door behind you locks with a heavy thunk.]'
-  - <color="yellow">Announcer:</color> There has been a containment breach on floor
-    1, please evacuate according to procedure.
-  - <color="yellow">Gummo:</color> Well, Shit... We're boxed in so I'm guessing we've
-    gotta keep going.
+  promptMessage: []
   triggerActive: 0
   disabled: 0
   generateNewGUID: 0
@@ -24291,6 +24251,18 @@ MonoBehaviour:
       - m_Target: {fileID: 789153035}
         m_TargetAssemblyTypeName: MapTriggers.LampPulser, Assembly-CSharp
         m_MethodName: StartPulser
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1670883997}
+        m_TargetAssemblyTypeName: MapTriggers.CutsceneEventTrigger, Assembly-CSharp
+        m_MethodName: TriggerEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24313,6 +24285,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1670883997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670883993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1cd4acb1882e04480ded0cea73b588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData: {fileID: 11400000, guid: 2819c505e9d090545b39a7836490f367, type: 2}
 --- !u!1001 &1679616328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24571,6 +24556,14 @@ PrefabInstance:
       value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 2772924696105542055, guid: e52e51fc642ddfb48953039c84911174, type: 3}
+      propertyPath: goToScene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772924696105542055, guid: e52e51fc642ddfb48953039c84911174, type: 3}
+      propertyPath: sceneName
+      value: SwanFloor2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772924696105542055, guid: e52e51fc642ddfb48953039c84911174, type: 3}
       propertyPath: warpDest.x
       value: -18
       objectReference: {fileID: 0}
@@ -24581,6 +24574,14 @@ PrefabInstance:
     - target: {fileID: 2772924696105542055, guid: e52e51fc642ddfb48953039c84911174, type: 3}
       propertyPath: warpDest.z
       value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772924696105542055, guid: e52e51fc642ddfb48953039c84911174, type: 3}
+      propertyPath: interactRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772924696105542055, guid: e52e51fc642ddfb48953039c84911174, type: 3}
+      propertyPath: loadSceneVariable
+      value: StairsA
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e52e51fc642ddfb48953039c84911174, type: 3}
@@ -26226,6 +26227,10 @@ PrefabInstance:
     - target: {fileID: 2772924696105542055, guid: e52e51fc642ddfb48953039c84911174, type: 3}
       propertyPath: warpDest.z
       value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772924696105542055, guid: e52e51fc642ddfb48953039c84911174, type: 3}
+      propertyPath: interactRange
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e52e51fc642ddfb48953039c84911174, type: 3}

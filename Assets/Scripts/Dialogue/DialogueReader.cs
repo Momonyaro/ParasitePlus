@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using MOVEMENT;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -22,6 +23,7 @@ namespace Dialogue
         private DialogueComponent lastComponent = null;
         
         [SerializeField] private InputActionAsset module;
+        [SerializeField] private FPSGridPlayer player;
         private InputActionMap inputActionMap;
         private InputAction submit;
         private InputAction cancel;
@@ -66,6 +68,9 @@ namespace Dialogue
             Debug.Log($"Dialogue: Started Read of [" + dialogueData.name + "]");
             InitComponent(ref lastComponent);
             dialogueRunning = true;
+
+            if (player != null)
+                player.lockPlayer = true;
         }
 
         private void CycleComponent()
@@ -131,6 +136,9 @@ namespace Dialogue
             {
                 SceneManager.LoadScene(dialogueData.destinationSceneOnEof);
             }
+            
+            if (player != null)
+                player.lockPlayer = false;
             
             Debug.Log($"Dialogue: End of Read");
         }

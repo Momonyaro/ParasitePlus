@@ -62,6 +62,7 @@ namespace CORE
             public bool ignoreTransformReadFlag = false;
             public Vector3 playerLastPos = Vector3.zero;
             public Vector3 playerLastEuler = Vector3.zero;
+            public string loadSceneVariable = "";
             public int lastDungeonIndex = 0; // Default to first piece of the dungeon
         }
     }

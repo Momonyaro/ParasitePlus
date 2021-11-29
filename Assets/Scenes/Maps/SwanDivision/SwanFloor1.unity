@@ -24580,6 +24580,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2772924696105542055, guid: e52e51fc642ddfb48953039c84911174, type: 3}
+      propertyPath: interactPromptMsg
+      value: Go to Floor 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772924696105542055, guid: e52e51fc642ddfb48953039c84911174, type: 3}
       propertyPath: loadSceneVariable
       value: StairsA
       objectReference: {fileID: 0}

@@ -42,6 +42,7 @@ namespace SAMSARA
         private SamsaraPlayer _samsaraPlayer;
 
         public Dictionary<string, AudioEvent> eventData;
+        public List<string> eventGroups = new List<string>();
         //Here we are once again, this class again is responsible for the majority of user interaction.
         // Playing, swapping, stopping and modifying is all handled from here and sent to the correct components.
 
@@ -64,6 +65,8 @@ namespace SAMSARA
             {
                 eventData.Add(cached[i].reference, cached[i]);
             }
+
+            eventGroups = new List<string>(mixerAsset.eventGroups);
 
             _samsaraPlayer = GetComponent<SamsaraPlayer>();
             

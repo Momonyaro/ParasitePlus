@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioEvents:
   - reference: _swanDivisionBGM
+    groupIndex: 1
     trackContainer:
       lerpValue: 0
       ratio: 1
@@ -29,6 +30,7 @@ MonoBehaviour:
       tracks:
       - AudioClip: {fileID: 8300000, guid: 6feedd6782be9df41bc7765d81ad51c2, type: 3}
   - reference: _battleBGMWolves
+    groupIndex: 0
     trackContainer:
       lerpValue: 0
       ratio: 1
@@ -44,6 +46,7 @@ MonoBehaviour:
       tracks:
       - AudioClip: {fileID: 8300000, guid: 0f0e025bb4400424a812c13129ded77d, type: 3}
   - reference: _battleBGMCanonball
+    groupIndex: 0
     trackContainer:
       lerpValue: 0
       ratio: 1
@@ -59,6 +62,7 @@ MonoBehaviour:
       tracks:
       - AudioClip: {fileID: 8300000, guid: 630979a98537b334d9c77592941fab52, type: 3}
   - reference: _victoryTheme
+    groupIndex: 0
     trackContainer:
       lerpValue: 0
       ratio: 1
@@ -74,12 +78,13 @@ MonoBehaviour:
       tracks:
       - AudioClip: {fileID: 8300000, guid: b7e1daf768963bf40b7f2a1d21afbbe3, type: 3}
   - reference: _keyPress
+    groupIndex: 2
     trackContainer:
       lerpValue: 0
       ratio: 1
       trackLerpOverlap: 1
       volumeGroupRef: _general
-      volume: 0.5
+      volume: 0.2
       pitch: 1
       randomPitchOffset: 0.161
       delay: 0
@@ -88,6 +93,10 @@ MonoBehaviour:
       outroClip: {fileID: 0}
       tracks:
       - AudioClip: {fileID: 8300000, guid: 149e773077aa3324aabb963f04e7712b, type: 3}
+  eventGroups:
+  - Battle Music
+  - Dungeon BGM
+  - UI SFX
   volumeGroups:
   - reference: _general
     groupVolume: 1

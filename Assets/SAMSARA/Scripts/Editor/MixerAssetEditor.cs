@@ -15,6 +15,7 @@ namespace SAMSARA.Editor
         private MixerAssetScriptable currentAsset;
         private int selectedEvent = 0;
         private string selectedRuntimeEvent = "";
+        private List<bool> eventGroupFoldoutStates = new List<bool>();
 
         //Create a two-split window with a list of all events and a larger space for changing event properties.
         [MenuItem("SAMSARA/Mixer Asset Editor")]
@@ -88,6 +89,15 @@ namespace SAMSARA.Editor
             
             if (currentAsset == null) return;
             
+            if (eventGroupFoldoutStates.Count != currentAsset.eventGroups.Count)
+            {
+                eventGroupFoldoutStates.Clear();
+                for (int i = 0; i < currentAsset.eventGroups.Count; i++)
+                {
+                    eventGroupFoldoutStates.Add(false);
+                }
+            }
+
             EditorGUILayout.BeginHorizontal();
             
             scrollPos = EditorGUILayout.BeginScrollView(scrollPos, new []{GUILayout.MaxWidth(300), GUILayout.MinWidth(200), GUILayout.ExpandHeight(true)});
@@ -152,32 +162,69 @@ namespace SAMSARA.Editor
             GUILayout.Label("Asset Events", new GUIStyle() {fontStyle = FontStyle.Bold, padding = new RectOffset(5, 5, 5, 5), normal = new GUIStyleState() {textColor = Color.white}});
             if (GUILayout.Button("+", new []{GUILayout.Width(20)}))
             {
-                currentAsset.audioEvents.Add(new AudioEvent()
-                {
-                    reference = "_newEvent",
-                    trackContainer = new EventTrackContainer()
-                    {
-                        volume = 1,
-                        pitch = 1,
-                    }
-                });
+                currentAsset.eventGroups.Add("New Group");
+                eventGroupFoldoutStates.Add(false);
+                return;
             }
             EditorGUILayout.EndHorizontal();
 
-            for (int i = 0; i < currentAsset.audioEvents.Count; i++)
+
+            for (int i = 0; i < currentAsset.eventGroups.Count; i++)
             {
+                EditorGUILayout.BeginVertical("HelpBox");
                 EditorGUILayout.BeginHorizontal();
-                if (GUILayout.Button(currentAsset.audioEvents[i].reference))
+                EditorGUIUtility.labelWidth = 20;
+                eventGroupFoldoutStates[i] = EditorGUILayout.Foldout(eventGroupFoldoutStates[i], "", true);
+                EditorGUIUtility.labelWidth = 75;
+                currentAsset.eventGroups[i] = EditorGUILayout.TextField(currentAsset.eventGroups[i]);
+                if (GUILayout.Button("+", new[] { GUILayout.Width(20) }))
                 {
-                    selectedEvent = i;
-                }
-                if (GUILayout.Button("-", new []{GUILayout.Width(20)}))
-                {
-                    currentAsset.audioEvents.RemoveAt(i);
+                    currentAsset.audioEvents.Add(new AudioEvent()
+                    {
+                        groupIndex = i,
+                        reference = "_newEvent",
+                        trackContainer = new EventTrackContainer()
+                        {
+                            volume = 1,
+                            pitch = 1,
+                        }
+                    });
                     return;
                 }
+                if (GUILayout.Button("-", new[] { GUILayout.Width(20) }))
+                {
+                    currentAsset.eventGroups.RemoveAt(i);
+                    eventGroupFoldoutStates.RemoveAt(i);
+                    break;
+                }
+
                 EditorGUILayout.EndHorizontal();
+
+                if (eventGroupFoldoutStates[i])
+                {
+                    for (int j = 0; j < currentAsset.audioEvents.Count; j++)
+                    {
+                        if (currentAsset.audioEvents[j].groupIndex == i)
+                        {
+                            EditorGUILayout.BeginHorizontal();
+                            if (GUILayout.Button(currentAsset.audioEvents[j].reference))
+                            {
+                                selectedEvent = j;
+                            }
+                            if (GUILayout.Button("-", new[] { GUILayout.Width(20) }))
+                            {
+                                currentAsset.audioEvents.RemoveAt(j);
+                                break;
+                            }
+                            EditorGUILayout.EndHorizontal();
+                        }
+                    }
+                }
+
+                EditorGUILayout.EndVertical();
             }
+
+
             EditorGUILayout.EndVertical();
         }
 
@@ -223,9 +270,12 @@ namespace SAMSARA.Editor
             EditorGUILayout.Space(30);
 
             EditorGUILayout.BeginVertical("HelpBox");
+            EditorGUILayout.BeginHorizontal();
             GUILayout.Label("Event Properties", new GUIStyle() {fontStyle = FontStyle.Bold, padding = new RectOffset(5, 5, 5, 5), normal = new GUIStyleState() {textColor = Color.white}});
+            DrawEventGroupDropdown(ref current);
+            EditorGUILayout.EndHorizontal();
 
-                EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.BeginHorizontal();
 
                 current.trackContainer.volume = EditorGUILayout.Slider("Volume", current.trackContainer.volume, 0, 1);
                 EditorGUIUtility.labelWidth = 125;
@@ -287,6 +337,19 @@ namespace SAMSARA.Editor
 
             currentIndex= EditorGUILayout.Popup("Event Volume Group: ", currentIndex, options.ToArray());
             current.trackContainer.volumeGroupRef = options[currentIndex];
+        }
+
+        private void DrawEventGroupDropdown(ref AudioEvent current)
+        {
+            current.groupIndex = Mathf.Clamp(current.groupIndex, 0, currentAsset.eventGroups.Count - 1);
+
+            List<string> options = new List<string>();
+            for (int i = 0; i < currentAsset.eventGroups.Count; i++)
+            {
+                options.Add(currentAsset.eventGroups[i]);
+            }
+
+            current.groupIndex = EditorGUILayout.Popup("Event Group: ", current.groupIndex, options.ToArray());
         }
 
         private void DrawTrackListing(ref AudioEvent current)

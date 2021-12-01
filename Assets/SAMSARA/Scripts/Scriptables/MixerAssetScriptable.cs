@@ -10,6 +10,10 @@ namespace SAMSARA.Scriptables
     {
         //Have the master copy the contents of this into a dictionary.
         public List<AudioEvent> audioEvents = new List<AudioEvent>();
+        public List<string> eventGroups = new List<string>()
+        {
+            "Default Group",
+        };
         public List<SamsaraVolumeGroup> volumeGroups = new List<SamsaraVolumeGroup>()
         {
             new SamsaraVolumeGroup()
@@ -32,6 +36,7 @@ namespace SAMSARA.Scriptables
     public class AudioEvent
     {
         public string reference;
+        public int groupIndex;
         public EventTrackContainer trackContainer;
         //Here we need to keep the reference to the clips/layers with their intros and stuff.
 

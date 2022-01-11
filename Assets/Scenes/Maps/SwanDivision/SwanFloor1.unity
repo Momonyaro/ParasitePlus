@@ -24577,7 +24577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2772924696105542055, guid: e52e51fc642ddfb48953039c84911174, type: 3}
       propertyPath: interactRange
-      value: 2
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 2772924696105542055, guid: e52e51fc642ddfb48953039c84911174, type: 3}
       propertyPath: interactPromptMsg

@@ -68,7 +68,7 @@ namespace Editor
             EditorGUILayout.BeginVertical("Box");
             EditorGUILayout.BeginHorizontal();
             if (GUILayout.Button("NW", new[] { GUILayout.Width(btnSize), GUILayout.Height(btnSize) })) { deltaPos += new Vector3(-2, 0, 2); }
-            if (GUILayout.Button("N", new[] { GUILayout.Width(btnSize), GUILayout.Height(btnSize) })) { deltaPos += new Vector3(-2, 0, 2); }
+            if (GUILayout.Button("N", new[] { GUILayout.Width(btnSize), GUILayout.Height(btnSize) })) { deltaPos += new Vector3(0, 0, 2); }
             if (GUILayout.Button("NE", new[] { GUILayout.Width(btnSize), GUILayout.Height(btnSize) })) { deltaPos += new Vector3(2, 0, 2); }
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.BeginHorizontal();

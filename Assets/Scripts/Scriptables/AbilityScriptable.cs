@@ -14,6 +14,8 @@ namespace Scriptables
         public string abilityDesc;
         [Space]
         public string abilityEffectRef;
+        public string abilitySoundEffect;
+        public bool hideDamageText = false;
         public bool targetAll;
         public bool targetFriendlies;
         public int abilityLevelReq; //This is the level the entity needs to be to be able to use the ability.

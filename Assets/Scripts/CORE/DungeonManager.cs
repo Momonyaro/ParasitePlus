@@ -64,6 +64,7 @@ namespace CORE
             if (encounterProgress >= 1 && !startedEncounter)
             {
                 startedEncounter = true;
+                currentPlayer.lockPlayer = true;
                 StartCoroutine(TransitionToRandomBattle());
             }
         }

@@ -20,7 +20,7 @@ MonoBehaviour:
       ratio: 1
       trackLerpOverlap: 1
       volumeGroupRef: _music
-      volume: 0.8
+      volume: 0.625
       pitch: 1
       randomPitchOffset: 0
       delay: 0
@@ -36,7 +36,7 @@ MonoBehaviour:
       ratio: 1
       trackLerpOverlap: 1
       volumeGroupRef: _music
-      volume: 0.8
+      volume: 0.602
       pitch: 1
       randomPitchOffset: 0
       delay: 0
@@ -93,10 +93,98 @@ MonoBehaviour:
       outroClip: {fileID: 0}
       tracks:
       - AudioClip: {fileID: 8300000, guid: 149e773077aa3324aabb963f04e7712b, type: 3}
+  - reference: _playerStepTile
+    groupIndex: 3
+    trackContainer:
+      lerpValue: 0
+      ratio: 0.2
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.277
+      pitch: 1
+      randomPitchOffset: 0.033
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 4892896ee3b0b3c41966ee6d3ee3d442, type: 3}
+      - AudioClip: {fileID: 8300000, guid: b30c103aba5693c47b6ba5fea1c5b891, type: 3}
+      - AudioClip: {fileID: 8300000, guid: 3071e48810c58d7439736f9ce386c764, type: 3}
+      - AudioClip: {fileID: 8300000, guid: ab12a74b1f1f6154ab0f507500039932, type: 3}
+      - AudioClip: {fileID: 8300000, guid: 0b04c929b8a3d524da80879178abcd81, type: 3}
+  - reference: _bloodSpatter
+    groupIndex: 4
+    trackContainer:
+      lerpValue: 0
+      ratio: 0.5
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 1
+      pitch: 1
+      randomPitchOffset: 0.054
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: a6d0d1fbf3858ba419a883f64b886bc9, type: 3}
+      - AudioClip: {fileID: 8300000, guid: 8875ed22cf033f54fa0dbcaeed2f8024, type: 3}
+  - reference: _healSpatter
+    groupIndex: 4
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 1
+      pitch: 1
+      randomPitchOffset: 0
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 26f38391b68e97146a854b34bbddbf09, type: 3}
+  - reference: _msDoorOpen
+    groupIndex: 3
+    trackContainer:
+      lerpValue: 0
+      ratio: 0
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 1
+      pitch: 1
+      randomPitchOffset: 0
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks: []
+  - reference: _meleeBash
+    groupIndex: 4
+    trackContainer:
+      lerpValue: 0
+      ratio: 0.33333334
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 1
+      pitch: 1
+      randomPitchOffset: 0
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 1092d7acf0c3dc34aaad956c4550da99, type: 3}
+      - AudioClip: {fileID: 8300000, guid: f0161dc92e6036c4fafa949a148ffd2c, type: 3}
+      - AudioClip: {fileID: 8300000, guid: 118f805b6f5e13741ab55af7d930ee2c, type: 3}
   eventGroups:
   - Battle Music
   - Dungeon BGM
   - UI SFX
+  - Dungeon SFX
+  - Battle SFX
   volumeGroups:
   - reference: _general
     groupVolume: 1

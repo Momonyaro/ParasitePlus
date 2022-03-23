@@ -155,9 +155,11 @@ namespace BattleSystem.States
                 {
                     targetScreenPos = enemyField.GetEntityPosAsScreenPos(indices[i]);
                 }
-                
+
+                SAMSARA.Samsara.Instance.PlaySFXRandomTrack(abilityInUse.abilitySoundEffect, out bool success);
+
                 damageEffectUI.CreateAbilityEffect(targetScreenPos, abilityInUse.abilityEffectRef);
-                damageEffectUI.CreateDamageSpatter(targetScreenPos, damage, crit, weak, resist);
+                damageEffectUI.CreateDamageSpatter(targetScreenPos, damage, crit, weak, resist, !abilityInUse.hideDamageText);
                 
                 //Check if the enemy is dead?
                 if (!target.deadTrigger)

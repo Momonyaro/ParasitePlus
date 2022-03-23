@@ -16,14 +16,18 @@ MonoBehaviour:
   abilityId: _defaultAtk
   abilityDesc: Strike your enemy with your flames.
   abilityEffectRef: _flare
+  abilitySoundEffect: 
+  hideDamageText: 0
   targetAll: 0
   targetFriendlies: 0
   abilityLevelReq: 0
-  levelScalingDamage: 1.5
+  levelScalingDamage: 1.2
   abilityCritChance: 0.2
   abilityMissChance: 0.101
   abilityCosts: {x: 0, y: 0}
   abilityDamage: {x: 5, y: 0}
+  abilityCooldown: {x: 0, y: 0}
+  abilityInterjects: []
   damageType:
   - 1
   - 0

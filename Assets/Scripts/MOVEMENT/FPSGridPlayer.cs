@@ -150,6 +150,7 @@ namespace MOVEMENT
             if (Vector3.Distance(pos, finalPos) > 0.8f)
             {
                 //We actually moved, let's fire the event to increase the encounterProgress.
+                SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_playerStepTile", out bool success);
                 onSuccessfulMove?.Invoke();
             }
 

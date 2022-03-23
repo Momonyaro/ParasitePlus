@@ -16,9 +16,9 @@ namespace BattleSystem.UI
         public TextMeshProUGUI[] optionText;
 
         public TextMeshProUGUI descriptionContainer;
-        
-        private const float revealYPos = 169f;
-        private const float hiddenYPos = -120f;
+
+        private const float revealYPos = 145.63f;
+        private const float hiddenYPos = -106;
 
         public void PopulateOptions(SelectableWheelOption[] newOptions, int startIndex = 0)
         {
@@ -68,20 +68,21 @@ namespace BattleSystem.UI
 
         private IEnumerator MenuVisibilityEnumerator(bool visibility)
         {
+            RectTransform rectTransform = transform.GetComponent<RectTransform>();
             float finalY = visibility ? revealYPos : hiddenYPos;
-            Vector3 startPos = transform.position;
+            Vector3 startPos = rectTransform.anchoredPosition;
             Vector3 finalPos = startPos;
             finalPos.y = finalY;
             float timer = .6f;
 
             while (timer > 0)
             {
-                transform.position = Vector3.Lerp(finalPos, startPos, timer);
+                rectTransform.anchoredPosition = Vector3.Lerp(finalPos, startPos, timer);
                 timer -= Time.deltaTime * 2;
                 yield return new WaitForEndOfFrame();
             }
 
-            transform.position = finalPos;
+            rectTransform.anchoredPosition = finalPos;
             
             yield break;
         }

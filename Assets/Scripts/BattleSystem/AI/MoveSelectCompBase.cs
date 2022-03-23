@@ -65,6 +65,12 @@ namespace BattleSystem.AI
             List<AbilityScriptable> abilities = new List<AbilityScriptable>(entity.GetEntityAbilities());
             abilities.AddRange(nodeAbilities);
             AbilityScriptable mostExpensive = entity.defaultAttack;
+
+            for (int i = 0; i < abilities.Count; i++)
+            {
+                abilities[i].abilityCooldown.x = Mathf.FloorToInt(Mathf.Clamp(abilities[i].abilityCooldown.x - 1, 0, 100));
+            }
+
             for (int i = 0; i < abilities.Count; i++)
             {
                 if ((abilities[i].abilityCosts.x < entity.GetEntityAP().x) && abilities[i].abilityCosts.x >= mostExpensive.abilityCosts.x  && abilities[i].abilityCooldown.x == 0)
@@ -94,6 +100,12 @@ namespace BattleSystem.AI
             List<AbilityScriptable> abilities = new List<AbilityScriptable>(entity.GetEntityAbilities());
             abilities.AddRange(nodeAbilities);
             AbilityScriptable leastDamaging = entity.defaultAttack;
+
+            for (int i = 0; i < abilities.Count; i++)
+            {
+                abilities[i].abilityCooldown.x = Mathf.FloorToInt(Mathf.Clamp(abilities[i].abilityCooldown.x - 1, 0, 100));
+            }
+
             for (int i = 0; i < abilities.Count; i++)
             {
                 if ((abilities[i].abilityCosts.x < entity.GetEntityAP().x) && abilities[i].abilityDamage.x <= leastDamaging.abilityDamage.x  && abilities[i].abilityCooldown.x == 0)

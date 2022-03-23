@@ -17,6 +17,7 @@ MonoBehaviour:
   abilityDesc: Lunge at the enemy, dealing higher than average damage with a higher
     chance to miss.
   abilityEffectRef: _dash
+  abilitySoundEffect: _meleeBash
   targetAll: 0
   targetFriendlies: 0
   abilityLevelReq: 0
@@ -25,6 +26,8 @@ MonoBehaviour:
   abilityMissChance: 0.3
   abilityCosts: {x: 4, y: 0}
   abilityDamage: {x: 6, y: 0}
+  abilityCooldown: {x: 0, y: 0}
+  abilityInterjects: []
   damageType:
   - 0
   - 1

@@ -121,6 +121,7 @@ namespace SAMSARA
         public void PlaySFXRandomTrack(string reference, out bool success)
         {
             success = false;
+            if (reference == null || reference.Equals("")) return;
 
             AudioEvent fetched = GetAudioEventFromReference(reference, out bool foundEvent);
             if (foundEvent)
@@ -150,6 +151,12 @@ namespace SAMSARA
             }
         }
 
+        public void StopSFXEvent(string reference, out bool success)
+        {
+            _samsaraPlayer.DestroyAudioChannel(reference);
+            success = true;
+        }
+
         public void MusicPlayLayered(string reference, TransitionType transitionType, float transitionDuration, out bool success)
         {
             success = false;
@@ -159,6 +166,12 @@ namespace SAMSARA
             {
                 _samsaraPlayer.MusicPlayNext(fetched, transitionType, transitionDuration, out success);
             }
+        }
+
+        public void MusicStopPlaying(TransitionType transitionType, float transitionDuration, out bool success)
+        {
+            success = false;
+            _samsaraPlayer.MusicFadeOut(transitionType, transitionDuration, out success);
         }
 
         public AudioEvent GetAudioEventFromReference(string reference, out bool success)

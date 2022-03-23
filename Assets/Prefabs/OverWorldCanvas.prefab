@@ -17135,6 +17135,7 @@ GameObject:
   - component: {fileID: 7941720007458394311}
   - component: {fileID: 179791767292949071}
   - component: {fileID: 8168364345135870148}
+  - component: {fileID: 8247933712509849891}
   m_Layer: 5
   m_Name: MenuOption (1)
   m_TagString: Untagged
@@ -17257,6 +17258,51 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 179791767292949071}
+--- !u!114 &8247933712509849891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6434691016415485536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5209882318562552893}
+          m_TargetAssemblyTypeName: UI.UIButton, Assembly-CSharp
+          m_MethodName: SendMessage
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: _showItemScreen
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 15
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5209882318562552893}
+          m_TargetAssemblyTypeName: UI.UIButton, Assembly-CSharp
+          m_MethodName: SendMessage
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: _showItemScreen
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &6458638097706300229
 GameObject:
   m_ObjectHideFlags: 0

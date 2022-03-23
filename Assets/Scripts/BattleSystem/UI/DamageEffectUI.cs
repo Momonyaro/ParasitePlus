@@ -7,7 +7,7 @@ namespace BattleSystem.UI
         public GameObject damageEffectPrefab;
         public GameObject healEffectPrefab;
     
-        public void CreateDamageSpatter(Vector2 canvasPos, int damageNumber, bool crit, bool weak, bool resist)
+        public void CreateDamageSpatter(Vector2 canvasPos, int damageNumber, bool crit, bool weak, bool resist, bool showDamageNum = true)
         {
             GameObject effect = (damageNumber >= 0) ? Instantiate(damageEffectPrefab, transform) : Instantiate(healEffectPrefab, transform);
             
@@ -21,6 +21,11 @@ namespace BattleSystem.UI
             Vector2 sizeDelta = comp.damageText.rectTransform.sizeDelta;
             comp.damageText.rectTransform.sizeDelta = new Vector2(sizeDelta.x, (crit) ? 180 : 140);
             
+            if (damageNumber > 0)
+                SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_bloodSpatter", out bool success);
+            else if (damageNumber < 0)
+                SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_healSpatter", out bool success);
+
             comp.damageText.text = Mathf.Abs(damageNumber).ToString();
             
             if (comp.weakText != null)
@@ -30,6 +35,9 @@ namespace BattleSystem.UI
             
             if (damageNumber == 0)
                 comp.damageText.text = "Miss";
+
+            if (!showDamageNum)
+                comp.damageText.text = "";
         }
 
         public void CreateAbilityEffect(Vector2 canvasPos, string effectRef)

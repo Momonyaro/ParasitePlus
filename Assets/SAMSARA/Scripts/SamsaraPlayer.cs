@@ -45,14 +45,41 @@ namespace SAMSARA
             // The enumerators should according to the type, fade out the existing track (if one is set)
             //     and then fade in the new track (if one is set).
         }
-        
+
+        public void MusicFadeOut(TransitionType transitionType, float transitionDuration, out bool success)
+        {
+            success = !_transitionInProgress;
+
+            switch (transitionType)
+            {
+                case TransitionType.Cut:
+                    StartCoroutine(CrossFadeEnumerator(null, 0));
+                    break;
+                case TransitionType.CrossFade:
+                    StartCoroutine(CrossFadeEnumerator(null, transitionDuration));
+                    break;
+                case TransitionType.SmoothFade:
+                    StartCoroutine(SmoothFadeEnumerator(null, transitionDuration));
+                    break;
+                case TransitionType.OutroToIntro:
+                    StartCoroutine(IntroOutroFadeEnumerator(null, transitionDuration));
+                    break;
+            }
+
+            // Use a transition IEnumerator to swap to a new track.
+            // The enumerators should according to the type, fade out the existing track (if one is set)
+            //     and then fade in the new track (if one is set).
+        }
+
         private IEnumerator CrossFadeEnumerator(AudioEvent nextEvent, float transitionDuration)
         {
             if (_transitionInProgress) yield break;
             
             _transitionInProgress = true;
             SamsaraAudioChannel current = currentMusicChannel;
-            SamsaraAudioChannel next = CreateAudioChannel(nextEvent);
+            SamsaraAudioChannel next = null;
+            if (nextEvent != null)
+                next = CreateAudioChannel(nextEvent);
 
             float lastVolume = 0;
             float nextVolume = 0;
@@ -101,7 +128,9 @@ namespace SAMSARA
             
             _transitionInProgress = true;
             SamsaraAudioChannel current = currentMusicChannel;
-            SamsaraAudioChannel next = CreateAudioChannel(nextEvent);
+            SamsaraAudioChannel next = null;
+            if (nextEvent != null)
+                next = CreateAudioChannel(nextEvent);
 
             float lastVolume = 0;
             float nextVolume = 0;
@@ -184,6 +213,28 @@ namespace SAMSARA
             channel.transform.parent = transform;
             channel.GetComponent<SamsaraAudioChannel>().InitChannel(audioEvent);
             return channel.GetComponent<SamsaraAudioChannel>();
+        }
+
+        public void DestroyAudioChannel(string reference)
+        {
+            SamsaraAudioChannel channel = TryGetAudioChannel(reference);
+
+            if (channel == null) return;
+
+            Destroy(channel.gameObject);
+        }
+
+        public SamsaraAudioChannel TryGetAudioChannel(string reference)
+        {
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                GameObject child = transform.GetChild(i).gameObject;
+                SamsaraAudioChannel audioChannel = child.GetComponent<SamsaraAudioChannel>();
+
+                if (audioChannel.storedAudioEvent.reference.Equals(reference))
+                    return audioChannel;
+            }
+            return null;
         }
     }
 }

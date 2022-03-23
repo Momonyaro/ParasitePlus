@@ -187,7 +187,7 @@ MonoBehaviour:
   resistText: {fileID: 0}
   spatterRadius: 200
   spatterSize: 200
-  spatterAmount: 3
+  spatterAmount: 6
   spawnDelay: 0.008
   spatterSprite: {fileID: 21300000, guid: 2500026cbf1e6e7439ec18a029bd5a79, type: 3}
   randomRotation: 0

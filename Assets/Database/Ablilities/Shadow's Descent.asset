@@ -16,6 +16,8 @@ MonoBehaviour:
   abilityId: _shadowsDescent
   abilityDesc: Bessie fucks off while her minions take charge.
   abilityEffectRef: _flare
+  abilitySoundEffect: 
+  hideDamageText: 1
   targetAll: 0
   targetFriendlies: 1
   abilityLevelReq: 0
@@ -24,7 +26,7 @@ MonoBehaviour:
   abilityMissChance: 0
   abilityCosts: {x: 10, y: 10}
   abilityDamage: {x: 0, y: 0}
-  abilityCooldown: {x: 0, y: 3}
+  abilityCooldown: {x: 1, y: 3}
   abilityInterjects:
   - {fileID: 11400000, guid: 7b88bd585093f9341a05fdd9a1cb4e9e, type: 2}
   damageType:

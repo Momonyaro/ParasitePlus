@@ -41,7 +41,7 @@ MonoBehaviour:
         id: 0
       targetComp:
         id: 1
-    - healthPercentLessThan: 0.713
+    - healthPercentLessThan: 0.95
       roundsPassed: 0
       trigger: 
       stateAbilities:

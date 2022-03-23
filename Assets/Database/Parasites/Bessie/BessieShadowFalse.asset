@@ -41,6 +41,7 @@ MonoBehaviour:
         id: 0
       targetComp:
         id: 1
+  onDeathInterjects: []
   deadTrigger: 0
   stats: 000000000000000000000000000000000000000000000000
   abilityScriptables: []

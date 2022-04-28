@@ -234,7 +234,9 @@ namespace CORE
                 if (groundItems[i].gameObject.activeInHierarchy && groundItems[i].triggerActive)
                 {
                     groundItems[i].triggerActive = false;
-                    groundItems[i].gameObject.SetActive(false);
+
+                    if (groundItems[i].hasAnimator)
+                        groundItems[i].objAnimator.SetBool(groundItems[i].animParamName, true);
                     
                     //Add the item to the player inventory
                     List<Item> items = mapManager.RequestPlayerInventory();
@@ -243,6 +245,8 @@ namespace CORE
                     {
                         //Create prompt and exit: "Your inventory is full."
                         InfoPrompt.Instance.CreatePrompt(new [] {"Your inventory is full."});
+                        if (groundItems[i].hasAnimator)
+                            groundItems[i].objAnimator.SetBool(groundItems[i].animParamName, false);
                         break;
                     }
 
@@ -252,6 +256,7 @@ namespace CORE
                     {
                         //Create prompt: $"You found <b><color=yellow>[{newItem.name}]</color></b>."
                         InfoPrompt.Instance.CreatePrompt(new [] {$"You found <b><color=yellow>[{newItem.name}]</color></b>."});
+                        groundItems[i].lockTrigger = true;
                         
                         items.Add(newItem);
                         mapManager.OverwritePlayerInventory(items);

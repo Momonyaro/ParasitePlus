@@ -113,8 +113,7 @@ MonoBehaviour:
           text: An audible thunk is heard behind you.
           buildTime: 0.0456
         - speakerReference: _gummo
-          text: They locked the door back. We're gonna have to find a way through
-            instead...
+          text: Did they just lock the door?! What good that key did, ey?
           buildTime: 0.0456
         perSentenceWriteToScreen: 0
         requireContinueInput: 1

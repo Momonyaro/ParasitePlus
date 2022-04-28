@@ -77,7 +77,9 @@ namespace CORE
                         if (dungeonManager.groundItems[j].guid.Equals(currentSlimData.usedGroundItems[i]))
                         {
                             dungeonManager.groundItems[j].triggerActive = false;
-                            dungeonManager.groundItems[j].gameObject.SetActive(false);
+                            dungeonManager.groundItems[j].lockTrigger = true;
+                            if (dungeonManager.groundItems[j].hasAnimator)
+                                dungeonManager.groundItems[j].objAnimator.SetBool(dungeonManager.groundItems[j].animParamName, true);
                         }
                     }
 

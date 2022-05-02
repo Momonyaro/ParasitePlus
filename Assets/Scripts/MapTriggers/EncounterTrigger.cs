@@ -26,6 +26,16 @@ namespace MapTriggers
             }
         }
 
+        private void Start()
+        {
+            DungeonManager dm = FindObjectOfType<DungeonManager>();
+
+            if (dm.encounterTriggers.Contains(this))
+                return;
+
+            dm.encounterTriggers.Add(this);
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (disabled) return;

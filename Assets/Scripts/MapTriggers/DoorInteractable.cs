@@ -16,6 +16,8 @@ namespace MapTriggers
         public Vector3 warpDest = new Vector3();
         public float interactAngleOffset = 0.1f;
         public float interactRange = .5f;
+        public bool generateNewGUID = false;
+        public string guid = Guid.NewGuid().ToString();
 
         private Transform playerTransform;
         
@@ -46,6 +48,9 @@ namespace MapTriggers
                 calcDefaultSensorPos = false;
                 sensor = transform.position + dir;
             }
+
+            if (guid == String.Empty)
+                guid = Guid.NewGuid().ToString();
         }
 
         private void Awake()
@@ -56,13 +61,9 @@ namespace MapTriggers
         private void Start()
         {
             DungeonManager dm = FindObjectOfType<DungeonManager>();
-            List<DoorInteractable> list = dm.doorInteractables;
 
-            for (int i = 0; i < list.Count; i++)
-            {
-                if (list[i] == this)
-                    return;
-            }
+            if (dm.doorInteractables.Contains(this))
+                return;
             
             dm.doorInteractables.Add(this);
         }

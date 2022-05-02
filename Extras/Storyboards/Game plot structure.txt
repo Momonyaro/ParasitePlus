@@ -1,0 +1,9 @@
+Intro plot
+	Magnus Carnaby hints that the director is not in his right mind.
+
+Swan Division plot
+	Containment breach, experiments are out.
+	The director (Emil Carnaby) is yelling at staff about their inability to contain the situation
+		Noticing you, he get's more enraged and threatens you while you demand the [Stabilizing Fluid].
+	Finally cornering Emil, he orders Bessie to attack you but the beast turns on Emil and sends him flying.
+		After defeating the beast, you manage to get ahold of the vial of the fluid. Emil is nowhere to be seen.

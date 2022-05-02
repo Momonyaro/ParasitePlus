@@ -33,7 +33,12 @@ namespace BattleSystem
         public int lastDungeonIndex = 0;
         public string playerName = "Yoel";
         public string bgmReference;
-        
+
+        //Persistant Data storage
+        public HashSet<string> eventTriggers = new HashSet<string>();
+        public HashSet<string> containerStates = new HashSet<string>();
+        public Dictionary<string, bool> interactableStates = new Dictionary<string, bool>();
+
         public string destinationScene = "TownScene";
         public string lastTransformScene = "";
 
@@ -104,7 +109,9 @@ namespace BattleSystem
                 lastPlayerPos = slimData.playerLastPos;
                 lastPlayerEulers = slimData.playerLastEuler;
                 lastDungeonIndex = slimData.lastDungeonIndex;
-                usedGroundItems = slimData.usedGroundItems;
+                containerStates = slimData.containerStates;
+                eventTriggers = slimData.eventTriggers;
+                interactableStates = slimData.interactableStates;
                 playerName = slimData.playerName;
             }
         }
@@ -122,7 +129,9 @@ namespace BattleSystem
                 playerLastPos = lastPlayerPos,
                 playerLastEuler = lastPlayerEulers,
                 lastDungeonIndex = lastDungeonIndex,
-                usedGroundItems = usedGroundItems,
+                containerStates = containerStates,
+                eventTriggers = eventTriggers,
+                interactableStates = interactableStates,
                 playerName = playerName,
             };
             

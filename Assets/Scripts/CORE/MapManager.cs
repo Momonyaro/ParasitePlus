@@ -17,12 +17,13 @@ namespace CORE
         public SlimComponent.SlimData currentSlimData = new SlimComponent.SlimData();
 
         private FPSGridPlayer player;
-        private bool _hasDungeonManager = false;
         public DungeonManager dungeonManager;
         public GameConfig config;
         public string mapBMGReference = "";
 
         public const int BattleSceneIndex = 1;
+
+        public bool HasDungeonManager => dungeonManager != null;
 
         [Space]
         
@@ -32,8 +33,7 @@ namespace CORE
         {
             config = Resources.Load<GameConfig>("Game Config");
             player = FindObjectOfType<FPSGridPlayer>();
-            _hasDungeonManager = !(dungeonManager == null);
-            if (_hasDungeonManager)
+            if (HasDungeonManager)
             {
                 dungeonManager.SetPlayer(this, player);
             }
@@ -60,21 +60,23 @@ namespace CORE
                 }
                 currentSlimData.inventory = slimData.inventory;
                 currentSlimData.wallet = slimData.wallet;
-                currentSlimData.usedGroundItems = slimData.usedGroundItems;
+                currentSlimData.containerStates = slimData.containerStates;
+                currentSlimData.eventTriggers = slimData.eventTriggers;
+                currentSlimData.interactableStates = slimData.interactableStates;
                 currentSlimData.playerName = slimData.playerName;
                 currentSlimData.loadSceneVariable = slimData.loadSceneVariable;
             }
             
                 
             //Load the dungeonIndex into the dungeonManager if one is available.
-            if (_hasDungeonManager && !currentSlimData.ignoreTransformReadFlag)
+            if (HasDungeonManager && !currentSlimData.ignoreTransformReadFlag)
             {
                 dungeonManager.WarpPlayer(currentSlimData.playerLastPos, currentSlimData.playerLastEuler);
-                for (int i = 0; i < currentSlimData.usedGroundItems.Count; i++)
+                for (int i = 0; i < currentSlimData.containerStates.Count; i++)
                 {
                     for (int j = 0; j < dungeonManager.groundItems.Count; j++)
                     {
-                        if (dungeonManager.groundItems[j].guid.Equals(currentSlimData.usedGroundItems[i]))
+                        if (currentSlimData.containerStates.Contains(dungeonManager.groundItems[j].guid))
                         {
                             dungeonManager.groundItems[j].triggerActive = false;
                             dungeonManager.groundItems[j].lockTrigger = true;
@@ -85,7 +87,7 @@ namespace CORE
 
                     for (int j = 0; j < dungeonManager.encounterTriggers.Count; j++)
                     {
-                        if (dungeonManager.encounterTriggers[j].guid.Equals(currentSlimData.usedGroundItems[i]))
+                        if (currentSlimData.eventTriggers.Contains(dungeonManager.encounterTriggers[j].guid))
                         {
                             dungeonManager.encounterTriggers[j].disabled = true;
                             dungeonManager.encounterTriggers[j].gameObject.SetActive(false);
@@ -94,10 +96,27 @@ namespace CORE
                     
                     for (int j = 0; j < dungeonManager.eventTriggers.Count; j++)
                     {
-                        if (dungeonManager.eventTriggers[j].guid.Equals(currentSlimData.usedGroundItems[i]))
+                        if (currentSlimData.eventTriggers.Contains(dungeonManager.eventTriggers[j].guid))
                         {
                             dungeonManager.eventTriggers[j].disabled = true;
                             dungeonManager.eventTriggers[j].gameObject.SetActive(false);
+                        }
+                    }
+
+                    for (int j = 0; j < dungeonManager.doorInteractables.Count; j++)
+                    {
+                        if (currentSlimData.interactableStates.ContainsKey(dungeonManager.doorInteractables[j].guid))
+                        {
+                            dungeonManager.doorInteractables[j].locked = currentSlimData.interactableStates[dungeonManager.doorInteractables[j].guid];
+                        }
+                    }
+
+                    for (int j = 0; j < dungeonManager.mapInteractables.Count; j++)
+                    {
+                        if (currentSlimData.interactableStates.ContainsKey(dungeonManager.mapInteractables[j].guid))
+                        {
+                            dungeonManager.mapInteractables[j].activeState = currentSlimData.interactableStates[dungeonManager.mapInteractables[j].guid];
+                            dungeonManager.mapInteractables[j].UpdateLightStates();
                         }
                     }
                 }
@@ -135,7 +154,9 @@ namespace CORE
                 playerLastPos = player.transform.position,
                 playerLastEuler = player.transform.rotation.eulerAngles,
                 wallet = currentSlimData.wallet,
-                usedGroundItems = currentSlimData.usedGroundItems,
+                containerStates = currentSlimData.containerStates,
+                eventTriggers = currentSlimData.eventTriggers,
+                interactableStates = currentSlimData.interactableStates,
                 playerName = currentSlimData.playerName,
                 loadSceneVariable = currentSlimData.loadSceneVariable,
             };
@@ -160,7 +181,9 @@ namespace CORE
                 playerLastPos = player.transform.position,
                 playerLastEuler = player.transform.rotation.eulerAngles,
                 wallet = currentSlimData.wallet,
-                usedGroundItems = currentSlimData.usedGroundItems,
+                containerStates = currentSlimData.containerStates,
+                eventTriggers = currentSlimData.eventTriggers,
+                interactableStates = currentSlimData.interactableStates,
                 playerName = currentSlimData.playerName,
                 loadSceneVariable = currentSlimData.loadSceneVariable,
             };

@@ -22,6 +22,7 @@ namespace CORE
 
         public List<GroundItem> groundItems = new List<GroundItem>();
         public List<DoorInteractable> doorInteractables = new List<DoorInteractable>();
+        public List<MapInteractable> mapInteractables = new List<MapInteractable>();
         public bool enterOnUnlock = true;
         public List<EncounterTrigger> encounterTriggers = new List<EncounterTrigger>();
         public List<EventTrigger> eventTriggers = new List<EventTrigger>();
@@ -56,7 +57,7 @@ namespace CORE
                 {
                     eventTriggers[i].triggerActive = false;
                     eventTriggers[i].disabled = true;
-                    mapManager.currentSlimData.usedGroundItems.Add(eventTriggers[i].guid);
+                    mapManager.currentSlimData.eventTriggers.Add(eventTriggers[i].guid);
                     eventTriggers[i].PlayEvent();
                 }
             }
@@ -79,7 +80,7 @@ namespace CORE
             mapManager.SetEnemyField(trigger.enemyRoster);
             currentPlayer.lockPlayer = true;
             trigger.triggerActive = false;
-            mapManager.currentSlimData.usedGroundItems.Add(trigger.guid);
+            mapManager.currentSlimData.eventTriggers.Add(trigger.guid);
             
             FadeToBlackImage fadeToBlackImage = FindObjectOfType<FadeToBlackImage>();
             
@@ -181,7 +182,39 @@ namespace CORE
 
             return null;
         }
-        
+
+        public void CheckToUseInteractable()
+        {
+            MapInteractable active = CheckForInteractable();
+
+            if (active == null) return;
+
+            active.PlayEvent();
+            active.triggerActive = false;
+
+            if (mapManager.currentSlimData.interactableStates.ContainsKey(active.guid))
+                mapManager.currentSlimData.interactableStates[active.guid] = active.activeState;
+            else
+                mapManager.currentSlimData.interactableStates.Add(active.guid, active.activeState);
+            
+            InfoPrompt.Instance.CreatePrompt(new[] { active.onUseMsg });
+        }
+
+        public MapInteractable CheckForInteractable()
+        {
+            for (int i = 0; i < mapInteractables.Count; i++)
+            {
+                if (mapInteractables[i] == null) continue;
+
+                if (mapInteractables[i].triggerActive)
+                {
+                    return mapInteractables[i];
+                }
+            }
+
+            return null;
+        }
+
         private IEnumerator WaitForDoorTranstion(int currentIndex)
         {
             FadeToBlackImage fadeToBlackImage = FindObjectOfType<FadeToBlackImage>();
@@ -260,7 +293,7 @@ namespace CORE
                         
                         items.Add(newItem);
                         mapManager.OverwritePlayerInventory(items);
-                        mapManager.currentSlimData.usedGroundItems.Add(groundItems[i].guid);
+                        mapManager.currentSlimData.containerStates.Add(groundItems[i].guid);
                     }
                     
                     

@@ -90,6 +90,7 @@ namespace MOVEMENT
                 {
                     //Check for interactable:s instead
                     dm.CheckToEnterDoorTrigger();
+                    dm.CheckToUseInteractable();
                     dm.CheckToPickUpGroundItem();
                 }
         }

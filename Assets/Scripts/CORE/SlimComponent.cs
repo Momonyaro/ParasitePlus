@@ -57,13 +57,17 @@ namespace CORE
             public EntityScriptable[] partyField = new EntityScriptable[0];
             public EntityScriptable[] enemyField = new EntityScriptable[0];
             public List<Item> inventory = new List<Item>();
-            public List<string> usedGroundItems = new List<string>();
             public int wallet = 0;
             public bool ignoreTransformReadFlag = false;
             public Vector3 playerLastPos = Vector3.zero;
             public Vector3 playerLastEuler = Vector3.zero;
             public string loadSceneVariable = "";
             public int lastDungeonIndex = 0; // Default to first piece of the dungeon
+
+            //Persistant Data storage
+            public HashSet<string> eventTriggers = new HashSet<string>();
+            public HashSet<string> containerStates = new HashSet<string>();
+            public Dictionary<string, bool> interactableStates = new Dictionary<string, bool>();
         }
     }
 }

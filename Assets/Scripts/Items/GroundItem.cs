@@ -33,6 +33,16 @@ namespace Items
             }
         }
 
+        private void Awake()
+        {
+            CORE.DungeonManager dm = FindObjectOfType<CORE.DungeonManager>();
+
+            if (dm.groundItems.Contains(this))
+                return;
+
+            dm.groundItems.Add(this);
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (lockTrigger) return;

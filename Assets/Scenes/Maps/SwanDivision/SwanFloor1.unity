@@ -8300,10 +8300,7 @@ MonoBehaviour:
   doorInteractables: []
   enterOnUnlock: 1
   encounterTriggers: []
-  eventTriggers:
-  - {fileID: 1670883995}
-  - {fileID: 1389334031}
-  - {fileID: 2145509795}
+  eventTriggers: []
   sceneLoadVariables:
   - reference: StairsA
     playerPosition: {x: -22, y: 1, z: -4}
@@ -8345,7 +8342,6 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     inventory: []
-    usedGroundItems: []
     wallet: 0
     ignoreTransformReadFlag: 0
     playerLastPos: {x: 0, y: -3, z: 0}

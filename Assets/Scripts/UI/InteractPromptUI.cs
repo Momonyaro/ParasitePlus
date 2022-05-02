@@ -30,6 +30,14 @@ namespace UI
                 promptText.text = doorFound.interactPromptMsg;
                 promptActive = true;
             }
+            MapInteractable interactableFound = dm.CheckForInteractable();
+
+            if (interactableFound != null)
+            {
+                promptText.text = interactableFound.interactPromptMsg;
+                promptActive = true;
+            }
+
 
             GroundItem itemFound = dm.CheckForActiveGroundItem();
             if (itemFound != null)

@@ -24,6 +24,16 @@ namespace MapTriggers
             }
         }
 
+        private void Start()
+        {
+            DungeonManager dm = FindObjectOfType<DungeonManager>();
+
+            if (dm.eventTriggers.Contains(this))
+                return;
+
+            dm.eventTriggers.Add(this);
+        }
+
         public void PlayEvent()
         {
             onEvent?.Invoke();

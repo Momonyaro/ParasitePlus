@@ -29,6 +29,9 @@ MonoBehaviour:
   - id: 5
   - id: 6
   - id: 7
+  - id: 8
+  - id: 9
+  - id: 10
   transitionToOnEof: {fileID: 0}
   goToSceneOnEof: 1
   destinationSceneOnEof: SwanDungeonEscape
@@ -47,14 +50,22 @@ MonoBehaviour:
         - speakerReference: _narrator
           text: You carefully aim the gun at the window, and slowly but surely...
           buildTime: 0.0456
-        - speakerReference: _narrator
-          text: '[DEV NOTE] * PLAY GUN SHOT ALONG WITH GLASS SHATTERING HERE INSTEAD
-            OF THIS DIALOGUE BOX *'
-          buildTime: 0.0456
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
     00000001:
+      type: {class: PlaySoundComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _playGunshotComponent
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        soundEventRef: _gunshot
+        playLayered: 0
+        trackLayer: -1
+    00000002:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp1
@@ -64,7 +75,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         refToDestroy: _diagBox0
-    00000002:
+    00000003:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp1
@@ -74,7 +85,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         waitTime: 1
-    00000003:
+    00000004:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox2
@@ -91,7 +102,7 @@ MonoBehaviour:
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
-    00000004:
+    00000005:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp4
@@ -101,7 +112,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         refToDestroy: _diagBox2
-    00000005:
+    00000006:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox5
@@ -117,13 +128,36 @@ MonoBehaviour:
         - speakerReference: _narrator
           text: Only one thought echoed in your mind.
           buildTime: 0.0456
-        - speakerReference: _narrator
-          text: '"Let''s get the hell out of here."'
-          buildTime: 0.0456
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
-    00000006:
+    00000007:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp7
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox5
+    00000008:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox7
+        groupRef: 
+        objectPrefab: {fileID: 2316696765809871121, guid: 54613a939defbea468ac4a1a484ec76a, type: 3}
+        screenPosition: {x: 0, y: -400}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _narrator
+          text: '"Let''s get the hell out of here."'
+          buildTime: 0.0272
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 0
+        writingSoundEvent: 
+    00000009:
       type: {class: SpawnObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _spawnObjComp6
@@ -132,7 +166,7 @@ MonoBehaviour:
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 1
-    00000007:
+    0000000A:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp7

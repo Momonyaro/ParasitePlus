@@ -27,9 +27,11 @@ public class MapController : MonoBehaviour
     private Vector3 mapStartPos = Vector2.zero;
     private Vector3 percentage = Vector2.zero;
 
-    const float maxMapWiggleDist = 50;
+    [SerializeField] float maxMapWiggleDist = 50;
     private int halfWindowWidth = 1920 / 2;
     private int halfWindowHeight = 1080 / 2;
+
+    public Vector3 GetCursorScreenPos => cursorPos;
 
     private void Awake()
     {

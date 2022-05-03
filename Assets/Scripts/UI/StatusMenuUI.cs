@@ -88,6 +88,9 @@ namespace UI
                     PopulateMenu();
                     lockMenu = false;
                     break;
+                case "_quitToMainMenu":
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("MAIN_MENU");
+                    break;
             }
         }
 

@@ -135,12 +135,11 @@ MonoBehaviour:
         reveal: 1
         dialogueBoxes:
         - speakerReference: _narrator
-          text: You come to in an unfamiliar room, your hands and legs are bound
-            to the chair you're sitting in.
+          text: You come to in an unfamiliar room, hands and legs bound to the chair.
           buildTime: 0.0456
         - speakerReference: _narrator
-          text: You're too busy taking in the situation your in to notice the other
-            people in the room.
+          text: You're too busy taking in the situation to notice the other people
+            in the room.
           buildTime: 0.0456
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
@@ -196,11 +195,13 @@ MonoBehaviour:
         reveal: 1
         dialogueBoxes:
         - speakerReference: _mCarnaby
-          text: Ah, our guest has come around. I know this situation must be terribly
-            confusing but I'm here personally to help clear most things.
+          text: Our guest has come around.
           buildTime: 0.0456
         - speakerReference: _mCarnaby
-          text: May I first however ask for your name?
+          text: I gather you may have many questions but first, I have one for you.
+          buildTime: 0.0456
+        - speakerReference: _mCarnaby
+          text: May I ask for your name?
           buildTime: 0.0456
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
@@ -259,8 +260,10 @@ MonoBehaviour:
             into a bit of trouble.
           buildTime: 0.0456
         - speakerReference: _mCarnaby
-          text: You see, we research parasitic beings that can aid humanity. Increase
-            life expectancy, strength, vigor, all that.
+          text: We research parasites and symbiotic relationships between organisms.
+          buildTime: 0.0456
+        - speakerReference: _mCarnaby
+          text: The goal is to enhance the human experience.
           buildTime: 0.0456
         - speakerReference: _mCarnaby
           text: One of these parasites unfortunately escaped, due to an... incident
@@ -268,11 +271,11 @@ MonoBehaviour:
           buildTime: 0.0456
         - speakerReference: _mCarnaby
           text: While wandering home you unfortunately came into contact with it
-            and it has now infested you.
+            and it has now intertwined with you.
           buildTime: 0.0456
         - speakerReference: _mCarnaby
           text: If you don't get the <color=yellow>[Stabilizing Fluid]</color> within
-            a week at most, you'll become a beast beyond reckoning.
+            a week at most, things are going to go bad, fast.
           buildTime: 0.0456
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
@@ -308,19 +311,22 @@ MonoBehaviour:
         reveal: 1
         dialogueBoxes:
         - speakerReference: _mCarnaby
-          text: '*Sigh* While the safest choice for us would be to hold you at this
-            facility until we could find a solution, I will give you another option.'
+          text: '*Sigh* While we should hold you at the facility until we can separate
+            you, I cannot guarantee your safety here.'
+          buildTime: 0.0456
+        - speakerReference: _mCarnaby
+          text: I lack the means here to aid you and so there is a less pleasant
+            solution...
           buildTime: 0.0456
         - speakerReference: _narrator
           text: Magnus signals his bodyguard who without hesitation removes his gun
             from it's holster and places it on a table in front of you.
           buildTime: 0.0456
         - speakerReference: _mCarnaby
-          text: I think everyone deserves the option to die human...
+          text: Everyone should have the chance to die human...
           buildTime: 0.0456
         - speakerReference: _mCarnaby
-          text: We'll leave you to your thoughts and be back a while later to see
-            what you ended up choosing.
+          text: We'll leave you to your thoughts.
           buildTime: 0.0456
         - speakerReference: _mCarnaby
           text: Goodbye $Player.
@@ -429,7 +435,7 @@ MonoBehaviour:
           text: Left alone in a small room with such a dreary decision to make.
           buildTime: 0.0456
         - speakerReference: _narrator
-          text: Yet, sooner rather than later, you must make it.
+          text: You take the cold gun into your hands.
           buildTime: 0.0456
         perSentenceWriteToScreen: 0
         requireContinueInput: 1

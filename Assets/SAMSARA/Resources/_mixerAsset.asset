@@ -179,12 +179,46 @@ MonoBehaviour:
       - AudioClip: {fileID: 8300000, guid: 1092d7acf0c3dc34aaad956c4550da99, type: 3}
       - AudioClip: {fileID: 8300000, guid: f0161dc92e6036c4fafa949a148ffd2c, type: 3}
       - AudioClip: {fileID: 8300000, guid: 118f805b6f5e13741ab55af7d930ee2c, type: 3}
+  - reference: _tempOblique
+    groupIndex: 5
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _music
+      volume: 0.15
+      pitch: 1
+      randomPitchOffset: 0
+      delay: 0.1
+      loop: 1
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: e3463069924749046901e0d5db199ca6, type: 3}
+  - reference: _gunshot
+    groupIndex: 6
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.56
+      pitch: 1
+      randomPitchOffset: 0
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: a7506ebb5188cfd4ca9c096b93541658, type: 3}
   eventGroups:
   - Battle Music
   - Dungeon BGM
   - UI SFX
   - Dungeon SFX
   - Battle SFX
+  - MapScreen SFX
+  - Cutscene SFX
   volumeGroups:
   - reference: _general
     groupVolume: 1

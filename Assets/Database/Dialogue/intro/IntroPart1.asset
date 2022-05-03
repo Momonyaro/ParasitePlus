@@ -139,12 +139,8 @@ MonoBehaviour:
         reveal: 1
         dialogueBoxes:
         - speakerReference: _narrator
-          text: It was a warm summer night, the college year had just wrapped up
-            and you and your friends had spent the evening drinking and celebrating.
-          buildTime: 0.0505
-        - speakerReference: _narrator
-          text: By now the drinks were since long gone though and instead of slowly
-            sobering up together, you all chose to make your ways back home.
+          text: After a night of celebrating with your friends, you found yourself
+            staggering through the park.
           buildTime: 0.0505
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
@@ -238,12 +234,11 @@ MonoBehaviour:
         reveal: 1
         dialogueBoxes:
         - speakerReference: _narrator
-          text: Walking through Gothenburgs winding forest paths, late at night somehow
-            always soothes you.
+          text: Walking the winding paths, you float home.
           buildTime: 0.0505
         - speakerReference: _narrator
-          text: You spend a while listening to the silence until a rustling noise
-            piques your interest...
+          text: The whispering wood is interrupted by a rustling noise that gets
+            your interest...
           buildTime: 0.0505
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
@@ -322,7 +317,7 @@ MonoBehaviour:
           buildTime: 0.0505
         - speakerReference: _narrator
           text: As you pull some of the bushes aside, you see something that looks
-            like a small bug,   when suddenly...
+            like a small bug, when suddenly...
           buildTime: 0.0495
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
@@ -398,7 +393,7 @@ MonoBehaviour:
             and silhouettes running towards you.
           buildTime: 0.0456
         - speakerReference: _narrator
-          text: Unconciousness washes over you.
+          text: The world goes dark...
           buildTime: 0.0708
         perSentenceWriteToScreen: 0
         requireContinueInput: 1

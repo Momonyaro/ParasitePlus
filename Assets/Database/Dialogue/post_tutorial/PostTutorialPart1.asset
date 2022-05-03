@@ -39,9 +39,7 @@ MonoBehaviour:
   - id: 15
   - id: 16
   - id: 17
-  - id: 18
-  - id: 19
-  transitionToOnEof: {fileID: 0}
+  transitionToOnEof: {fileID: 11400000, guid: 1bccce077329fa641a1cbe4205b422a2, type: 2}
   goToSceneOnEof: 0
   destinationSceneOnEof: 
   references:
@@ -133,12 +131,12 @@ MonoBehaviour:
         reveal: 1
         dialogueBoxes:
         - speakerReference: _narrator
-          text: The fact that your hands suddenly became shrouded in flames could've
-            ended up with him as charcoal after all.
+          text: The fire that now surrounded your hands could've burnt him to a crisp
+            after all.
           buildTime: 0.0456
         - speakerReference: _narrator
-          text: There was no time to consider the logistics of this, you could hear
-            footsteps rapidly approaching and so made your escape into the night.
+          text: You could hear footsteps approaching rapidly and so, made your escape
+            into the night.
           buildTime: 0.0456
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
@@ -206,8 +204,10 @@ MonoBehaviour:
             if they were watching the building?
           buildTime: 0.0456
         - speakerReference: _narrator
-          text: You had no idea how powerful they were and so may have set up some
-            sort of ambush.
+          text: Without thinking twice, you shifted and ran in a different direction.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: Towards the one person who you you could trust in this situation
           buildTime: 0.0456
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
@@ -223,42 +223,6 @@ MonoBehaviour:
         reveal: 1
         refToDestroy: _diagBox11
     0000000F:
-      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
-      data:
-        reference: _waitComp13
-        groupRef: 
-        objectPrefab: {fileID: 0}
-        screenPosition: {x: 0, y: 0}
-        errorAttempts: 99
-        reveal: 1
-        waitTime: 1
-    00000010:
-      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
-      data:
-        reference: _diagBox14
-        groupRef: 
-        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
-        screenPosition: {x: 0, y: -550}
-        errorAttempts: 99
-        reveal: 1
-        dialogueBoxes:
-        - speakerReference: _narrator
-          text: You stopped to think, what to do? Is there somewhere I could go?
-          buildTime: 0.0456
-        - speakerReference: _narrator
-          text: Your parents live too far away to be able to get there within a reasonable
-            amount of time, what to do?
-          buildTime: 0.0456
-        - speakerReference: _narrator
-          text: Suddenly you remember, there is someone who would help you regardless.
-          buildTime: 0.0456
-        - speakerReference: _narrator
-          text: With a new goal, you bolt in another direction and didn't stop running.
-          buildTime: 0.0456
-        perSentenceWriteToScreen: 0
-        requireContinueInput: 1
-        writingSoundEvent: _keyPress
-    00000011:
       type: {class: SpawnObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _spawnObjComp15
@@ -267,7 +231,7 @@ MonoBehaviour:
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 1
-    00000012:
+    00000010:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp16
@@ -277,7 +241,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         waitTime: 1
-    00000013:
+    00000011:
       type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyAll17

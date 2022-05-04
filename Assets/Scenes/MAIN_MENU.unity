@@ -872,6 +872,98 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 428355330}
   m_CullTransparentMesh: 1
+--- !u!1 &587834272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 587834273}
+  - component: {fileID: 587834276}
+  - component: {fileID: 587834275}
+  - component: {fileID: 587834274}
+  m_Layer: 5
+  m_Name: FadeToBlack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &587834273
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587834272}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.7498874, y: 0.7498874, z: 0.7498874}
+  m_Children: []
+  m_Father: {fileID: 2085071157}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -0.0012207031}
+  m_SizeDelta: {x: 2560, y: 1439.7302}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &587834274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587834272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &587834275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587834272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f92c46a71d796d0449198b6cc72088fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 587834274}
+  finished: 1
+  screenBlack: 0
+  playOnStart: 1
+--- !u!222 &587834276
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587834272}
+  m_CullTransparentMesh: 0
 --- !u!1 &591247867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1627,15 +1719,15 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: 2
-      outSlope: 2
+      inSlope: 1.8147594
+      outSlope: 1.8147594
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.044805426
     - serializedVersion: 3
       time: 1.35
-      value: 3.0000026
+      value: 2
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1648,7 +1740,7 @@ MonoBehaviour:
   colorGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 0.88529414}
+    key1: {r: 0, g: 0.025922537, b: 1, a: 0.88529414}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1979,7 +2071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 7d30e05cf43b6e54387d92a909d874f3, type: 3}
   m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
+  m_UIInputModule: {fileID: 1327736642}
   m_DeviceLostEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2003,7 +2095,19 @@ MonoBehaviour:
     m_ActionId: 76e20017-e65b-4c5c-8d70-95962c8c842e
     m_ActionName: Player/DEBUG_START_BATTLE[/Keyboard/z]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1398881843}
+        m_TargetAssemblyTypeName: WorldManager, Assembly-CSharp
+        m_MethodName: OnSubmit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 0bbf39af-ac14-4249-80f9-f5d1999987e5
     m_ActionName: Player/Interact[/Keyboard/space]
   - m_PersistentCalls:
@@ -2035,7 +2139,19 @@ MonoBehaviour:
     m_ActionId: 14a3728d-3f40-4dce-835d-7b0511c27e7b
     m_ActionName: UI/Point[/Mouse/position]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1398881843}
+        m_TargetAssemblyTypeName: WorldManager, Assembly-CSharp
+        m_MethodName: OnMouseSubmit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 4b710460-1b01-4f6c-8a1c-6cf21cf4d5d2
     m_ActionName: UI/Click[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -2094,7 +2210,7 @@ MonoBehaviour:
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1096419266}
 --- !u!1 &1287234480
 GameObject:
   m_ObjectHideFlags: 0
@@ -2295,6 +2411,7 @@ GameObject:
   - component: {fileID: 1398881841}
   - component: {fileID: 1398881840}
   - component: {fileID: 1398881842}
+  - component: {fileID: 1398881843}
   m_Layer: 0
   m_Name: MapController
   m_TagString: Untagged
@@ -2345,6 +2462,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac4e3adeb8f54b37a2c5b7c04d5f680b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1398881843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398881839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1efd97af19f4a6d4ba28d78008123778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1446837974
@@ -3368,15 +3497,15 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: 2
-      outSlope: 2
+      inSlope: 1.8147594
+      outSlope: 1.8147594
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.044805426
     - serializedVersion: 3
       time: 1.35
-      value: 3.0000026
+      value: 2
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3389,7 +3518,7 @@ MonoBehaviour:
   colorGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 0.88529414}
+    key1: {r: 0, g: 0.025922537, b: 1, a: 0.88529414}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -3512,15 +3641,15 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: 2
-      outSlope: 2
+      inSlope: 1.364346
+      outSlope: 1.364346
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.058902565
     - serializedVersion: 3
       time: 1.35
-      value: 3.0000026
+      value: 1.8
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3533,16 +3662,16 @@ MonoBehaviour:
   colorGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 0.88529414}
-    key2: {r: 0, g: 0, b: 0, a: 0}
+    key1: {r: 1, g: 0.24411762, b: 0.24411762, a: 0.88529414}
+    key2: {r: 1, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 65535
-    ctime2: 0
+    ctime1: 34888
+    ctime2: 65535
     ctime3: 0
     ctime4: 0
     ctime5: 0
@@ -3557,7 +3686,7 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 0
-    m_NumColorKeys: 2
+    m_NumColorKeys: 3
     m_NumAlphaKeys: 3
   repeatPulse: 1
   delayBetweenPulses: 5
@@ -4147,6 +4276,7 @@ RectTransform:
   - {fileID: 968866884}
   - {fileID: 1553379727}
   - {fileID: 1585215419}
+  - {fileID: 587834273}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

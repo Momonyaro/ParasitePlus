@@ -21,6 +21,8 @@ public class WorldNode : MonoBehaviour
 
     Coroutine transition;
 
+    public bool IsSelected => selected;
+
     private void Start()
     {
         mapController = FindObjectOfType<MapController>();
@@ -51,6 +53,7 @@ public class WorldNode : MonoBehaviour
     public void ProcessBtnPress()
     {
         CORE.UIManager.Instance.onUIMessage.Invoke(OnPressUIMsg);
+        Debug.Log("Sending message: " + OnPressUIMsg + " to UI Manager!");
     }
 
     private IEnumerable IEOnStart()

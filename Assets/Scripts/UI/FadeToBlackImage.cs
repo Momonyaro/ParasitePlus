@@ -9,10 +9,24 @@ namespace UI
         public Image image;
         public bool finished = true;
         public bool screenBlack = false;
+        public bool playOnStart = false;
+
+        private void Start()
+        {
+            if (playOnStart)
+            {
+                FadeFromBlack(3f);
+            }
+        }
 
         public void FadeToBlack(float fadeTime, float blackScreenTime, bool cancelHalfway = false)
         {
             StartCoroutine(FadeToBlackEnumerator(fadeTime, blackScreenTime, cancelHalfway));
+        }
+
+        public void FadeFromBlack(float fadeTime)
+        {
+            StartCoroutine(FadeFromBlackEnumerator(fadeTime));
         }
 
         private IEnumerator FadeToBlackEnumerator(float fadeTime, float blackScreenTime, bool cancelHalfway = false)
@@ -51,6 +65,26 @@ namespace UI
                 yield return new WaitForEndOfFrame();
             }
             
+            image.color = new Color(0, 0, 0, 0);
+
+            finished = true;
+            yield break;
+        }
+
+        private IEnumerator FadeFromBlackEnumerator(float fadeTime)
+        {
+            if (!finished) yield break; // We're already running one of these.
+
+            finished = false;
+            float timePassed = 0;
+            while (timePassed < fadeTime)
+            {
+                image.color = new Color(0, 0, 0, 1 - (timePassed / fadeTime));
+                timePassed += Time.deltaTime;
+
+                yield return new WaitForEndOfFrame();
+            }
+
             image.color = new Color(0, 0, 0, 0);
 
             finished = true;

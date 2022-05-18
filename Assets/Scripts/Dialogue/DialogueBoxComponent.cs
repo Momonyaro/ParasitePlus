@@ -36,7 +36,7 @@ namespace Dialogue
 
             dialogueScriptable = parent;
 
-            playerName = SlimComponent.Instance.ReadNonVolatilePlayerName();
+            playerName = SlimComponent.Instance.ReadNonVolatilePlayerName;
             
             componentPrefab = objectPrefab;
         }

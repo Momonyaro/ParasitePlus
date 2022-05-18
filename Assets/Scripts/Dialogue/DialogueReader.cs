@@ -30,6 +30,8 @@ namespace Dialogue
         private InputAction move;
         private InputAction start;
 
+        public bool IsRunning => dialogueRunning;
+
         private void Awake()
         {
             inputActionMap = module.FindActionMap("UI");
@@ -134,7 +136,10 @@ namespace Dialogue
 
             if (dialogueData.goToSceneOnEof)
             {
-                SceneManager.LoadScene(dialogueData.destinationSceneOnEof);
+                SceneParser.ParseSceneChange(dialogueData.destinationSceneOnEof, out string slimDestination, out string destination);
+
+                CORE.SlimComponent.Instance.SetNonVolatileDestination(slimDestination);
+                SceneManager.LoadScene(destination);
             }
             
             if (player != null)

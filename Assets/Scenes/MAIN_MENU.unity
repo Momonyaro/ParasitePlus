@@ -923,7 +923,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -953,6 +953,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 587834274}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  startFadeInTime: 1
   finished: 1
   screenBlack: 0
   playOnStart: 1
@@ -2434,7 +2436,7 @@ MonoBehaviour:
   playerCursor: {fileID: 1585215420}
   map: {fileID: 968866885}
   mapCamera: {fileID: 1096419266}
-  joystickSensitivity: 600
+  joystickSensitivity: 800
   playerInput: {fileID: 1096419269}
   blockCursorMovement: 0
   maxMapWiggleDist: 5
@@ -2476,6 +2478,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1efd97af19f4a6d4ba28d78008123778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nodeMessages:
+  - id: _newGame
+    type: 2
+    stringValue: Intro
+    intValue: 0
+    targetObject: {fileID: 0}
+  - id: _quitGame
+    type: 3
+    stringValue: 
+    intValue: 0
+    targetObject: {fileID: 0}
 --- !u!1 &1446837974
 GameObject:
   m_ObjectHideFlags: 0
@@ -3375,7 +3388,9 @@ MonoBehaviour:
   extInfoTab: {fileID: 1462354808}
   interactRange: 40
   selected: 0
+  hidden: 0
   OnPressUIMsg: _quitGame
+  ButtonLayer: 0
   hoverStartScale: {x: 0.8, y: 0.8, z: 0.8}
   hoverTargetScale: {x: 1, y: 1, z: 1}
   lerpCurve:
@@ -3919,7 +3934,9 @@ MonoBehaviour:
   extInfoTab: {fileID: 80253568}
   interactRange: 80
   selected: 0
+  hidden: 0
   OnPressUIMsg: 
+  ButtonLayer: 0
   hoverStartScale: {x: 1.2, y: 1.2, z: 1.2}
   hoverTargetScale: {x: 1.35, y: 1.35, z: 1.35}
   lerpCurve:
@@ -4116,7 +4133,9 @@ MonoBehaviour:
   extInfoTab: {fileID: 976297325}
   interactRange: 80
   selected: 0
+  hidden: 0
   OnPressUIMsg: _newGame
+  ButtonLayer: 0
   hoverStartScale: {x: 1.2, y: 1.2, z: 1.2}
   hoverTargetScale: {x: 1.35, y: 1.35, z: 1.35}
   lerpCurve:

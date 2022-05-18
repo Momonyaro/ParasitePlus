@@ -9,8 +9,10 @@ public class WorldNode : MonoBehaviour
     [SerializeField] WorldNodeExtInfo extInfoTab;
     [SerializeField] float interactRange = 50;
     [SerializeField] bool selected = false;
+    [SerializeField] bool hidden = false;
 
     public string OnPressUIMsg = "";
+    public int ButtonLayer = 0;
 
     private MapController mapController;
 
@@ -27,9 +29,6 @@ public class WorldNode : MonoBehaviour
     {
         mapController = FindObjectOfType<MapController>();
 
-        if (alwaysShowExtInfo)
-            extInfoTab.SetVisibility(true);
-
         SwitchTransition(IEOnStart().GetEnumerator());
     }
 
@@ -38,6 +37,17 @@ public class WorldNode : MonoBehaviour
         Vector3 cursorPos = mapController.GetCursorScreenPos;
 
         float distance = Vector3.Distance(cursorPos, transform.position);
+
+        if (!hidden && WorldManager.CurrentSelectionLayer != ButtonLayer)
+        {
+            SwitchTransition(IEOnHide().GetEnumerator());
+            return;
+        }
+        else if (hidden && WorldManager.CurrentSelectionLayer == ButtonLayer)
+        {
+            SwitchTransition(IEOnStart().GetEnumerator());
+            return;
+        }
 
 
         if (!selected && distance <= interactRange)
@@ -58,6 +68,11 @@ public class WorldNode : MonoBehaviour
 
     private IEnumerable IEOnStart()
     {
+        if (alwaysShowExtInfo)
+            extInfoTab.SetVisibility(true);
+
+        hidden = false;
+
         yield return null;
     }
 
@@ -66,6 +81,9 @@ public class WorldNode : MonoBehaviour
         float timer = 0;
         selected = true;
         float maxTimer = lerpCurve.keys[lerpCurve.length - 1].time;
+
+        if (!alwaysShowExtInfo)
+            extInfoTab.SetVisibility(true);
 
         while (timer < maxTimer)
         {
@@ -88,6 +106,9 @@ public class WorldNode : MonoBehaviour
         selected = false;
         float maxTimer = lerpCurve.keys[lerpCurve.length - 1].time;
 
+        if (!alwaysShowExtInfo)
+            extInfoTab.SetVisibility(false);
+
         while (timer < maxTimer)
         {
             float lerp = lerpCurve.Evaluate(timer);
@@ -99,6 +120,16 @@ public class WorldNode : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         transform.localScale = hoverStartScale;
+
+        yield return null;
+    }
+
+    private IEnumerable IEOnHide()
+    {
+        if (alwaysShowExtInfo)
+            extInfoTab.SetVisibility(false);
+
+        hidden = true;
 
         yield return null;
     }

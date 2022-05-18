@@ -27,7 +27,7 @@ MonoBehaviour:
   - id: 0
   transitionToOnEof: {fileID: 0}
   goToSceneOnEof: 1
-  destinationSceneOnEof: SwanFloor1
+  destinationSceneOnEof: MapMenu
   references:
     version: 1
     00000000:

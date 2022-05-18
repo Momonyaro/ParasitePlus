@@ -154,6 +154,10 @@ namespace MOVEMENT
                 SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_playerStepTile", out bool success);
                 onSuccessfulMove?.Invoke();
             }
+            else if (Vector3.Distance(pos, finalPos) < 0.3f)
+            {
+                moving = false;
+            }
 
             while (timePassed < maxTime)
             {

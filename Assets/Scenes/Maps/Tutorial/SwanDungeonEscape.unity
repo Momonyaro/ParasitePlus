@@ -450,7 +450,6 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     inventory: []
-    usedGroundItems: []
     wallet: 500
     ignoreTransformReadFlag: 0
     playerLastPos: {x: 4, y: 1, z: 6}
@@ -474,7 +473,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &63013664
 MonoBehaviour:
@@ -498,6 +497,7 @@ MonoBehaviour:
   - {fileID: 2001878024}
   - {fileID: 353902902}
   - {fileID: 427074165}
+  mapInteractables: []
   enterOnUnlock: 1
   encounterTriggers:
   - {fileID: 838892631}
@@ -8784,6 +8784,8 @@ MonoBehaviour:
   warpDest: {x: 6, y: 1, z: 2}
   interactAngleOffset: 0.1
   interactRange: 1.3
+  generateNewGUID: 0
+  guid: e69134bb-3dd5-4551-a9b4-fcba6ee4fc89
   triggerActive: 0
   dot: 0
   locked: 1
@@ -13865,7 +13867,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1342097928
 PrefabInstance:

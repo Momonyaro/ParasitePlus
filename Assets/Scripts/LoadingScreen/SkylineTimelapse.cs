@@ -22,9 +22,12 @@ public class SkylineTimelapse : MonoBehaviour
     [SerializeField] Gradient groundGradient;
     [SerializeField] Gradient waterGradient;
 
+    private UI.FadeToBlackImage fadeToBlackImage;
+
     private void Start()
     {
         StartCoroutine(IESkyline().GetEnumerator());
+        fadeToBlackImage = FindObjectOfType<UI.FadeToBlackImage>();
     }
 
 
@@ -44,5 +47,17 @@ public class SkylineTimelapse : MonoBehaviour
             timer += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
+
+        Color original = fadeToBlackImage.color;
+        fadeToBlackImage.color = Color.black;
+        yield return fadeToBlackImage.FadeToBlackEnumerator(0.3f, 0.5f, true);
+        fadeToBlackImage.color = original;
+
+        GotoDestination();
+    }
+
+    private void GotoDestination()
+    {
+        CORE.UIManager.Instance.onUIMessage.Invoke("_loadNextScene");
     }
 }

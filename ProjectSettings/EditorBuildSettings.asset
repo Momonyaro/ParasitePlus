@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Cutscenes/Intro.unity
     guid: e70f82a30ec083c4da050355744093e6
   - enabled: 1
+    path: Assets/Scenes/MapMenu/MapMenu.unity
+    guid: 5ae18baca6f7a714ea292e0de2a00923
+  - enabled: 1
     path: Assets/Scenes/Maps/Tutorial/SwanDungeonEscape.unity
     guid: 909330bfede8ee64b94375345aaa1759
   - enabled: 1
@@ -29,5 +32,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Maps/SwanDivision/SwanFloor2.unity
     guid: 2e138afd4099f92459a8e1e521e4c169
+  - enabled: 1
+    path: Assets/Scenes/LoadingScreens/FiskekyrkaSundown.unity
+    guid: b51bf9a3cef8572469075cb62de1b28e
+  - enabled: 1
+    path: Assets/Scenes/LoadingScreens/FiskekyrkaSunrise.unity
+    guid: e200e8b0a3284504fb4a3dab9ab86e95
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 46472d8cef444da4d841f68f6280e3ef, type: 2}

@@ -233,7 +233,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000015259, y: -1546}
-  m_SizeDelta: {x: 150, y: 150}
+  m_SizeDelta: {x: 150, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &60794093
 MonoBehaviour:
@@ -255,7 +255,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b0403d71d54787d44b608ab1708c8d7d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd18f0df0f295124f80b501ebb150dfe, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1013,7 +1013,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000015259, y: 1546}
-  m_SizeDelta: {x: 150, y: 160}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &619104510
 MonoBehaviour:
@@ -1035,7 +1035,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cd18f0df0f295124f80b501ebb150dfe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b0403d71d54787d44b608ab1708c8d7d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1616,19 +1616,19 @@ MonoBehaviour:
     m_RotationOrder: 4
   skyGradient:
     serializedVersion: 2
-    key0: {r: 0, g: 0, b: 0, a: 1}
-    key1: {r: 0.03881682, g: 0.021788688, b: 0.026454512, a: 1}
-    key2: {r: 0.745283, g: 0.41834283, b: 0.50792664, a: 0}
-    key3: {r: 0.8207547, g: 0.6909073, b: 0.3987629, a: 0}
-    key4: {r: 0.2255137, g: 0.48096985, b: 0.73625207, a: 0}
-    key5: {r: 0.19607845, g: 0.47058827, b: 0.75294125, a: 0}
+    key0: {r: 0.19607845, g: 0.47058827, b: 0.75294125, a: 1}
+    key1: {r: 0.2255137, g: 0.48096985, b: 0.73625207, a: 1}
+    key2: {r: 0.8207547, g: 0.6909073, b: 0.3987629, a: 0}
+    key3: {r: 0.745283, g: 0.41834283, b: 0.50792664, a: 0}
+    key4: {r: 0.03881682, g: 0.021788688, b: 0.026454512, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 22745
-    ctime2: 29491
-    ctime3: 34695
-    ctime4: 41634
+    ctime1: 23323
+    ctime2: 30262
+    ctime3: 35273
+    ctime4: 40092
     ctime5: 65535
     ctime6: 0
     ctime7: 0
@@ -1645,18 +1645,18 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   groundGradient:
     serializedVersion: 2
-    key0: {r: 0.11372549, g: 0.21176471, b: 0.40392157, a: 1}
-    key1: {r: 0.112896055, g: 0.21305232, b: 0.4056604, a: 1}
+    key0: {r: 0.18431373, g: 0.3372549, b: 0.8784314, a: 1}
+    key1: {r: 0.18431373, g: 0.3372549, b: 0.8784314, a: 1}
     key2: {r: 0.1702118, g: 0.28860778, b: 0.7075472, a: 0}
-    key3: {r: 0.18431373, g: 0.3372549, b: 0.8784314, a: 0}
-    key4: {r: 0.18431373, g: 0.3372549, b: 0.8784314, a: 0}
+    key3: {r: 0.112896055, g: 0.21305232, b: 0.4056604, a: 0}
+    key4: {r: 0.11372549, g: 0.21176471, b: 0.40392157, a: 0}
     key5: {r: 0.18431373, g: 0.3372549, b: 0.8784314, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 24287
+    ctime1: 24672
     ctime2: 32189
-    ctime3: 40285
+    ctime3: 39899
     ctime4: 65535
     ctime5: 65535
     ctime6: 0
@@ -1674,18 +1674,18 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   waterGradient:
     serializedVersion: 2
-    key0: {r: 0.09411765, g: 0.19607843, b: 0.28627452, a: 1}
-    key1: {r: 0.092114635, g: 0.19505318, b: 0.2830189, a: 1}
+    key0: {r: 0.20392157, g: 0.41960785, b: 0.6039216, a: 1}
+    key1: {r: 0.20392157, g: 0.41960785, b: 0.6039216, a: 1}
     key2: {r: 0.12993948, g: 0.26335165, b: 0.3773585, a: 0}
-    key3: {r: 0.20392157, g: 0.41960785, b: 0.6039216, a: 0}
-    key4: {r: 0.20392157, g: 0.41960785, b: 0.6039216, a: 0}
+    key3: {r: 0.092114635, g: 0.19505318, b: 0.2830189, a: 0}
+    key4: {r: 0.09411765, g: 0.19607843, b: 0.28627452, a: 0}
     key5: {r: 0.18431373, g: 0.3372549, b: 0.8784314, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 24287
+    ctime1: 24672
     ctime2: 32189
-    ctime3: 40285
+    ctime3: 40092
     ctime4: 65535
     ctime5: 65535
     ctime6: 0

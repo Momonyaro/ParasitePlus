@@ -7,6 +7,8 @@ namespace UI
     public class FadeToBlackImage : MonoBehaviour
     {
         public Image image;
+        public Color color = Color.black;
+        public float startFadeInTime = 3;
         public bool finished = true;
         public bool screenBlack = false;
         public bool playOnStart = false;
@@ -15,7 +17,7 @@ namespace UI
         {
             if (playOnStart)
             {
-                FadeFromBlack(3f);
+                FadeFromBlack(startFadeInTime);
             }
         }
 
@@ -29,7 +31,7 @@ namespace UI
             StartCoroutine(FadeFromBlackEnumerator(fadeTime));
         }
 
-        private IEnumerator FadeToBlackEnumerator(float fadeTime, float blackScreenTime, bool cancelHalfway = false)
+        public IEnumerator FadeToBlackEnumerator(float fadeTime, float blackScreenTime, bool cancelHalfway = false)
         {
             if (!finished) yield break; // We're already running one of these.
             
@@ -37,14 +39,14 @@ namespace UI
             float timePassed = 0;
             while (timePassed < fadeTime)
             {
-                image.color = new Color(0, 0, 0, timePassed / fadeTime);
+                image.color = new Color(color.r, color.g, color.b, timePassed / fadeTime);
                 timePassed += Time.deltaTime;
 
                 yield return new WaitForEndOfFrame();
             }
 
             timePassed = 1;
-            image.color = new Color(0, 0, 0, timePassed);
+            image.color = new Color(color.r, color.g, color.b, timePassed);
 
             screenBlack = true;
             yield return new WaitForSeconds(blackScreenTime);
@@ -59,13 +61,13 @@ namespace UI
             
             while (timePassed > 0)
             {
-                image.color = new Color(0, 0, 0, timePassed / fadeTime);
+                image.color = new Color(color.r, color.g, color.b, timePassed / fadeTime);
                 timePassed -= Time.deltaTime;
 
                 yield return new WaitForEndOfFrame();
             }
             
-            image.color = new Color(0, 0, 0, 0);
+            image.color = new Color(color.r, color.g, color.b, 0);
 
             finished = true;
             yield break;
@@ -79,13 +81,13 @@ namespace UI
             float timePassed = 0;
             while (timePassed < fadeTime)
             {
-                image.color = new Color(0, 0, 0, 1 - (timePassed / fadeTime));
+                image.color = new Color(color.r, color.g, color.b, 1 - (timePassed / fadeTime));
                 timePassed += Time.deltaTime;
 
                 yield return new WaitForEndOfFrame();
             }
 
-            image.color = new Color(0, 0, 0, 0);
+            image.color = new Color(color.r, color.g, color.b, 0);
 
             finished = true;
             yield break;

@@ -43,10 +43,14 @@ namespace CORE
             Destroy(sInstance.gameObject);
         }
 
-        public string ReadNonVolatilePlayerName()
+        public string ReadNonVolatilePlayerName => internalSlimData.playerName;
+        public string ReadNonVolatileDesination => internalSlimData.destinationScene;
+
+        public void SetNonVolatileDestination(string destination)
         {
-            return internalSlimData.playerName;
+            internalSlimData.destinationScene = destination;
         }
+
 
         [System.Serializable]
         public class SlimData

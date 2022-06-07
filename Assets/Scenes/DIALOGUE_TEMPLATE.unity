@@ -551,11 +551,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8db9c9eddd3fc4faf8f66374d3b0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueData: {fileID: 11400000, guid: ecf7350a161dc5647b0d9ae1fdd1fb05, type: 2}
+  dialogueData: {fileID: 11400000, guid: 2819c505e9d090545b39a7836490f367, type: 2}
   initOnStart: 1
   backgroundFather: {fileID: 892642505}
   allFather: {fileID: 1731278029}
   module: {fileID: -944628639613478452, guid: 7d30e05cf43b6e54387d92a909d874f3, type: 3}
+  player: {fileID: 0}
 --- !u!114 &3610896030497349750
 MonoBehaviour:
   m_ObjectHideFlags: 0

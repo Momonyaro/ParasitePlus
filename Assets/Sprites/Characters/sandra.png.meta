@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: b2c6f7d2743f9fa49800fe16300f4e5d
+guid: 0fc419b9f5dc9ec47b590e6fc1f29bfe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4682570417295124934
-    second: gummo_0
+      213: -1917816709974232674
+    second: sandra_0
   - first:
-      213: 8335795263187683292
-    second: gummo_1
+      213: -8712306689713323440
+    second: sandra_1
   - first:
-      213: -5263421938431747717
-    second: gummo_2
+      213: -7481700744659933332
+    second: sandra_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +41,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 2
     mipBias: 0
     wrapU: 1
@@ -136,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gummo_0
+      name: sandra_0
       rect:
         serializedVersion: 2
         x: 0
@@ -144,20 +144,20 @@ TextureImporter:
         width: 49
         height: 68
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a361f59c30b240fb0800000000000000
-      internalID: -4682570417295124934
+      spriteID: e917da10ddb8265e0800000000000000
+      internalID: -1917816709974232674
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gummo_1
+      name: sandra_1
       rect:
         serializedVersion: 2
         x: 55
@@ -165,20 +165,20 @@ TextureImporter:
         width: 30
         height: 43
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd78fae70a1bea370800000000000000
-      internalID: 8335795263187683292
+      spriteID: 052c069b93ba71780800000000000000
+      internalID: -8712306689713323440
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gummo_2
+      name: sandra_2
       rect:
         serializedVersion: 2
         x: 92
@@ -192,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7917c042a194f6b0800000000000000
-      internalID: -5263421938431747717
+      spriteID: c67e4ceffc8ab2890800000000000000
+      internalID: -7481700744659933332
       vertices: []
       indices: 
       edges: []

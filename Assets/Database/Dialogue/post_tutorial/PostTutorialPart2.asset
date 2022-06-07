@@ -25,12 +25,47 @@ MonoBehaviour:
     groupReference: _unassigned
   components:
   - id: 0
-  transitionToOnEof: {fileID: 0}
-  goToSceneOnEof: 1
-  destinationSceneOnEof: MapMenu
+  - id: 1
+  - id: 2
+  - id: 3
+  - id: 4
+  - id: 5
+  - id: 6
+  - id: 7
+  - id: 8
+  - id: 9
+  - id: 10
+  - id: 11
+  - id: 12
+  - id: 13
+  - id: 14
+  - id: 15
+  transitionToOnEof: {fileID: 11400000, guid: c0cbabea91bf3f64ea97eb238f129fca, type: 2}
+  goToSceneOnEof: 0
+  destinationSceneOnEof: 
   references:
     version: 1
     00000000:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp0
+        groupRef: 
+        objectPrefab: {fileID: 516182194579558613, guid: b85856b991eac484abc859b90a2f4016, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        backgroundImage: {fileID: 21300000, guid: ef02e12a4bbdd874dae3d963c691e71b, type: 3}
+    00000001:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp1
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 0.8
+    00000002:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox0
@@ -47,6 +82,49 @@ MonoBehaviour:
           text: The enterance already open, you rushed into the elevator and pressed
             the button.
           buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    00000003:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp3
+        groupRef: 
+        objectPrefab: {fileID: 516182194579558613, guid: b85856b991eac484abc859b90a2f4016, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        backgroundImage: {fileID: 21300000, guid: 06e31251639f8604e91dd56138087e90, type: 3}
+    00000004:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp4
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _spawnBGObjComp0
+    00000005:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp5
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox0
+    00000006:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox4
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
         - speakerReference: _narrator
           text: Reaching the 8th floor, you walk down the hall and stop in front
             of one of the doors.
@@ -57,3 +135,103 @@ MonoBehaviour:
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
+    00000007:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp6
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox4
+    00000008:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp6
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    00000009:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp9
+        groupRef: 
+        objectPrefab: {fileID: 8370936115634730495, guid: 26791cb2b2860e44fb3c3960a550363b, type: 3}
+        screenPosition: {x: 0, y: -100}
+        errorAttempts: 99
+        reveal: 1
+        backgroundImage: {fileID: -4682570417295124934, guid: b2c6f7d2743f9fa49800fe16300f4e5d, type: 3}
+    0000000A:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp10
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    0000000B:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox11
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _gummo
+          text: Huh? $Player?
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: I thought you headed home?
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: You frantically try to explain the long night so far...
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    0000000C:
+      type: {class: SpawnObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnObjComp12
+        groupRef: 
+        objectPrefab: {fileID: 2831952547622704426, guid: 5a3baf689344a294e8907590f4b65189, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+    0000000D:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp13
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1.2
+    0000000E:
+      type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyAll13
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+    0000000F:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp14
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1

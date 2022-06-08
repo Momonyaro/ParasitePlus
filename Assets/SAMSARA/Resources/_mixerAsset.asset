@@ -100,7 +100,7 @@ MonoBehaviour:
       ratio: 0.2
       trackLerpOverlap: 1
       volumeGroupRef: _general
-      volume: 0.277
+      volume: 0.405
       pitch: 1
       randomPitchOffset: 0.033
       delay: 0
@@ -211,6 +211,55 @@ MonoBehaviour:
       outroClip: {fileID: 0}
       tracks:
       - AudioClip: {fileID: 8300000, guid: a7506ebb5188cfd4ca9c096b93541658, type: 3}
+  - reference: _pickup
+    groupIndex: 3
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.635
+      pitch: 1
+      randomPitchOffset: 0
+      delay: 0.4
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: d6f9d6153f5a6244f80fdf987d0e7099, type: 3}
+  - reference: _doorOpen
+    groupIndex: 3
+    trackContainer:
+      lerpValue: 0
+      ratio: 0.5
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.365
+      pitch: 1
+      randomPitchOffset: 0.027
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 6de7b50e9cdbf244ba2901c71b23e92c, type: 3}
+      - AudioClip: {fileID: 8300000, guid: 0237d9835c8e0514a87264c1f418fd62, type: 3}
+  - reference: _doorClose
+    groupIndex: 3
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.377
+      pitch: 1
+      randomPitchOffset: 0.03
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 8d3d8cda2f11b814b886527e82db0ddb, type: 3}
   eventGroups:
   - Battle Music
   - Dungeon BGM

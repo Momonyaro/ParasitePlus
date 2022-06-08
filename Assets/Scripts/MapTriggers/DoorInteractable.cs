@@ -27,6 +27,7 @@ namespace MapTriggers
         public bool singleUseKey = false;
         public string keyItemID = "";
         public bool goToScene = false;
+        public bool playSound = true;
         public string sceneName = "";
         public string loadSceneVariable = "";
         public string isLockedMessage = "The door is locked.";

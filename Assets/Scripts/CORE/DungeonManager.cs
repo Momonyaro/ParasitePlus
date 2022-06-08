@@ -153,6 +153,8 @@ namespace CORE
                     }
                     
                     Debug.Log("Walking through Door at pos:" + doorInteractables[i].transform.position);
+                    if (doorInteractables[i].playSound)
+                        SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_doorOpen", out bool success);
 
                     if (doorInteractables[i].goToScene)
                     {
@@ -161,7 +163,7 @@ namespace CORE
                     }
                     else
                     {
-                        StartCoroutine(WaitForDoorTranstion(i));
+                        StartCoroutine(WaitForDoorTranstion(i, doorInteractables[i].playSound));
                     }
                     break;
                 }
@@ -215,7 +217,7 @@ namespace CORE
             return null;
         }
 
-        private IEnumerator WaitForDoorTranstion(int currentIndex)
+        private IEnumerator WaitForDoorTranstion(int currentIndex, bool playSound)
         {
             FadeToBlackImage fadeToBlackImage = FindObjectOfType<FadeToBlackImage>();
             bool skipPlayerLock = currentPlayer.lockPlayer;
@@ -234,7 +236,10 @@ namespace CORE
             
             if (!skipPlayerLock)
                 currentPlayer.lockPlayer = false;
-            
+
+            if (playSound)
+                SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_doorClose", out bool success);
+
             yield break;
         }
 
@@ -290,7 +295,9 @@ namespace CORE
                         //Create prompt: $"You found <b><color=yellow>[{newItem.name}]</color></b>."
                         InfoPrompt.Instance.CreatePrompt(new [] {$"You found <b><color=yellow>[{newItem.name}]</color></b>."});
                         groundItems[i].lockTrigger = true;
-                        
+
+                        SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_pickup", out bool success);
+
                         items.Add(newItem);
                         mapManager.OverwritePlayerInventory(items);
                         mapManager.currentSlimData.containerStates.Add(groundItems[i].guid);

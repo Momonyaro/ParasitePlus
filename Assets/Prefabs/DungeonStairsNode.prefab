@@ -127,12 +127,15 @@ MonoBehaviour:
   warpDest: {x: 0, y: 0, z: 0}
   interactAngleOffset: 0.1
   interactRange: 2.5
+  generateNewGUID: 0
+  guid: 84cdd223-e2b5-4f95-a562-3ddc151743ea
   triggerActive: 0
   dot: 0
   locked: 0
   singleUseKey: 0
   keyItemID: 
   goToScene: 0
+  playSound: 0
   sceneName: 
   loadSceneVariable: 
   isLockedMessage: The door is locked.

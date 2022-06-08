@@ -41,7 +41,7 @@ namespace SAMSARA
             if (intro != null)
             {
                 //Create a channel and play the intro until it reads as !isPlaying.
-                AudioSource introSource = CreateTrack(intro);
+                AudioSource introSource = CreateTrack(intro, 0);
                 while (introSource.isPlaying)
                 {
                     introSource.volume = trackContainer.volume * TryGetVolumeGroupValue(trackContainer.volumeGroupRef) * channelVolume;
@@ -55,7 +55,7 @@ namespace SAMSARA
 
             for (int i = 0; i < trackContainer.tracks.Count; i++)
             {
-                CreateTrack(trackContainer.tracks[i].AudioClip);
+                CreateTrack(trackContainer.tracks[i].AudioClip, trackContainer.delay);
             }
 
             bool running = true;
@@ -112,7 +112,7 @@ namespace SAMSARA
             return 1;
         }
 
-        public AudioSource CreateTrack(AudioClip clip)
+        public AudioSource CreateTrack(AudioClip clip, float delay)
         {
             GameObject track = new GameObject("AudioTrack",
                 new []
@@ -124,7 +124,7 @@ namespace SAMSARA
             
             tracks.Add(track.GetComponent<AudioSource>());
             tracks[tracks.Count - 1].clip = clip;
-            tracks[tracks.Count - 1].Play();
+            tracks[tracks.Count - 1].PlayDelayed(delay);
 
             return track.GetComponent<AudioSource>();
         }

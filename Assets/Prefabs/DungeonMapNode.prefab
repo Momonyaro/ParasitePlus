@@ -19,13 +19,20 @@ MonoBehaviour:
   warpDest: {x: 0, y: 0, z: 0}
   interactAngleOffset: 0.05
   interactRange: 1.3
+  generateNewGUID: 0
+  guid: 696f9211-11f5-4567-a283-df72dac7e716
   triggerActive: 0
   dot: 0
   locked: 0
   singleUseKey: 0
   keyItemID: 
+  goToScene: 0
+  playSound: 1
+  sceneName: 
+  loadSceneVariable: 
   isLockedMessage: The door is locked.
   onUnlockMessage: Unlocked the door using $ITEM.
+  interactPromptMsg: Open Door
 --- !u!114 &8689232491230138568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,13 +52,20 @@ MonoBehaviour:
   warpDest: {x: 0, y: 0, z: 0}
   interactAngleOffset: 0.05
   interactRange: 1.3
+  generateNewGUID: 0
+  guid: 852d0c08-573e-41c3-8ba7-14f8959346f6
   triggerActive: 0
   dot: 0
   locked: 0
   singleUseKey: 0
   keyItemID: 
+  goToScene: 0
+  playSound: 1
+  sceneName: 
+  loadSceneVariable: 
   isLockedMessage: The door is locked.
   onUnlockMessage: Unlocked the door using $ITEM.
+  interactPromptMsg: Open Door
 --- !u!114 &1729867443731251435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,13 +85,20 @@ MonoBehaviour:
   warpDest: {x: 0, y: 1, z: 2}
   interactAngleOffset: 0.05
   interactRange: 1.3
+  generateNewGUID: 0
+  guid: 010ef558-85ca-444c-9393-a6956a91eb71
   triggerActive: 0
   dot: 0
   locked: 0
   singleUseKey: 0
   keyItemID: 
+  goToScene: 0
+  playSound: 1
+  sceneName: 
+  loadSceneVariable: 
   isLockedMessage: The door is locked.
   onUnlockMessage: Unlocked the door using $ITEM.
+  interactPromptMsg: Open Door
 --- !u!1 &2715558387404757030
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,13 +194,20 @@ MonoBehaviour:
   warpDest: {x: 0, y: 0, z: 0}
   interactAngleOffset: 0.05
   interactRange: 1.3
+  generateNewGUID: 0
+  guid: 8e5eb8db-1150-4579-9a33-86b621fe59d1
   triggerActive: 0
   dot: 0
   locked: 0
   singleUseKey: 0
   keyItemID: 
+  goToScene: 0
+  playSound: 1
+  sceneName: 
+  loadSceneVariable: 
   isLockedMessage: The door is locked.
   onUnlockMessage: Unlocked the door using $ITEM.
+  interactPromptMsg: Open Door
 --- !u!114 &1243870144901721965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,13 +227,20 @@ MonoBehaviour:
   warpDest: {x: 0, y: 0, z: 0}
   interactAngleOffset: 0.05
   interactRange: 1.3
+  generateNewGUID: 0
+  guid: dd0e0311-21e3-40d2-a3d3-e0990a0c021f
   triggerActive: 0
   dot: 0
   locked: 0
   singleUseKey: 0
   keyItemID: 
+  goToScene: 0
+  playSound: 1
+  sceneName: 
+  loadSceneVariable: 
   isLockedMessage: The door is locked.
   onUnlockMessage: Unlocked the door using $ITEM.
+  interactPromptMsg: Open Door
 --- !u!114 &2500495587382708785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,13 +260,20 @@ MonoBehaviour:
   warpDest: {x: 0, y: 0, z: 0}
   interactAngleOffset: 0.05
   interactRange: 1.3
+  generateNewGUID: 0
+  guid: 2cbb795b-6b73-4d76-b79d-d4403b75f4d9
   triggerActive: 0
   dot: 0
   locked: 0
   singleUseKey: 0
   keyItemID: 
+  goToScene: 0
+  playSound: 1
+  sceneName: 
+  loadSceneVariable: 
   isLockedMessage: The door is locked.
   onUnlockMessage: Unlocked the door using $ITEM.
+  interactPromptMsg: Open Door
 --- !u!114 &8342526681851149126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,13 +293,20 @@ MonoBehaviour:
   warpDest: {x: 0, y: 0, z: 0}
   interactAngleOffset: 0.05
   interactRange: 1.3
+  generateNewGUID: 0
+  guid: 3d8c8f54-fca0-4394-8eae-bf416e29de8c
   triggerActive: 0
   dot: 0
   locked: 0
   singleUseKey: 0
   keyItemID: 
+  goToScene: 0
+  playSound: 1
+  sceneName: 
+  loadSceneVariable: 
   isLockedMessage: The door is locked.
   onUnlockMessage: Unlocked the door using $ITEM.
+  interactPromptMsg: Open Door
 --- !u!114 &5516156125384714181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,13 +326,20 @@ MonoBehaviour:
   warpDest: {x: 0, y: 0, z: 0}
   interactAngleOffset: 0.05
   interactRange: 1.3
+  generateNewGUID: 0
+  guid: bbbafb8a-818e-47cc-9258-98946182334c
   triggerActive: 0
   dot: 0
   locked: 0
   singleUseKey: 0
   keyItemID: 
+  goToScene: 0
+  playSound: 1
+  sceneName: 
+  loadSceneVariable: 
   isLockedMessage: The door is locked.
   onUnlockMessage: Unlocked the door using $ITEM.
+  interactPromptMsg: Open Door
 --- !u!1001 &2715558386996659325
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ public class WorldManager : MonoBehaviour
 
     private void Start()
     {
-        worldNodes = FindObjectsOfType<WorldNode>();
+        worldNodes = FindObjectsOfType<WorldNode>(true);
         WorldManager.CurrentSelectionLayer = 0;
     }
 

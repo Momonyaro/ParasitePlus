@@ -49,7 +49,7 @@ namespace BattleSystem
             LoadSlim(); // Load external data, if it exists
             CreateCopies(); // Create internal copies (to avoid overwrites!)
             
-            turnOrderComponent.Init(ref partyField, ref enemyField); // Create the turn queue
+            turnOrderComponent.Init(GetPlayerParty(), ref enemyField); // Create the turn queue
             
             systemStateManager.Init(this); // Start the state machine.
             
@@ -143,7 +143,7 @@ namespace BattleSystem
         {
             TurnItem turnItem = turnOrderComponent.GetFirstInLine();
 
-            EntityScriptable[] toSearch = (turnItem.enemyTag) ? enemyField : partyField;
+            EntityScriptable[] toSearch = (turnItem.enemyTag) ? enemyField : GetPlayerParty();
 
             for (int i = 0; i < toSearch.Length; i++)
             {
@@ -203,7 +203,7 @@ namespace BattleSystem
             {
                 TurnItem turnItem = queue.Dequeue();
 
-                EntityScriptable[] toSearch = (turnItem.enemyTag) ? enemyField : partyField;
+                EntityScriptable[] toSearch = (turnItem.enemyTag) ? enemyField : GetPlayerParty();
 
                 for (int i = 0; i < toSearch.Length; i++)
                 {
@@ -275,6 +275,27 @@ namespace BattleSystem
             }
 
             return null;
+        }
+
+        public EntityScriptable[] GetPlayerParty()
+        {
+            List<EntityScriptable> toReturn = new List<EntityScriptable>();
+
+            for (int i = 0; i < partyField.Length; i++)
+            {
+                if (partyField[i] != null)
+                {
+                    if (partyField[i].inParty)
+                        toReturn.Add(partyField[i]);
+                }
+            }
+
+            int missingSlots = 4 - toReturn.Count;
+
+            for (int i = 0; i < missingSlots; i++)
+                toReturn.Add(null);
+
+            return toReturn.ToArray();
         }
     }
 }

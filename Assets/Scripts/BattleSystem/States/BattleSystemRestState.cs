@@ -23,7 +23,7 @@ namespace BattleSystem.States
 
             folded = false;
             
-            topPanelUI.PopulatePartyCards(battleCore.partyField, battleCore.turnOrderComponent.GetFirstInLine().entityId);
+            topPanelUI.PopulatePartyCards(battleCore.GetPlayerParty(), battleCore.turnOrderComponent.GetFirstInLine().entityId);
             
             initialized = true;
         }

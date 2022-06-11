@@ -22,7 +22,7 @@ namespace BattleSystem.States
             //Check if the entity is dead and if so, we just skip straight to the next entity.
             entityDead = battleCore.GetNextEntity().deadTrigger;
             
-            topPanelUI.PopulatePartyCards(battleCore.partyField, battleCore.turnOrderComponent.GetFirstInLine().entityId);
+            topPanelUI.PopulatePartyCards(battleCore.GetPlayerParty(), battleCore.turnOrderComponent.GetFirstInLine().entityId);
             
             initialized = true;
         }

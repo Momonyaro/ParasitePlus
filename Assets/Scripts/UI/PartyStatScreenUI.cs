@@ -69,8 +69,8 @@ namespace UI
                 for (int i = 0; i < listButtons.Length; i++)
                 {
                     bool exists = (mapManager.currentSlimData.partyField[i] != null);
-                    listButtons[i].SetActive(exists);
-                    if (exists)
+                    listButtons[i].SetActive(exists && mapManager.currentSlimData.partyField[i].inParty);
+                    if (exists && mapManager.currentSlimData.partyField[i].inParty)
                     {
                         Transform unselected = listButtons[i].transform.GetChild(0);
                         Transform selected = listButtons[i].transform.GetChild(1);

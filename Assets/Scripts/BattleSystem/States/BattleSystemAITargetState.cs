@@ -58,7 +58,7 @@ namespace BattleSystem.States
             if (selectedAbility.targetFriendlies)
                 allRelevantEntities = battleCore.enemyField;
             else
-                allRelevantEntities = battleCore.partyField;
+                allRelevantEntities = battleCore.GetPlayerParty();
             
             if (!selectedAbility.targetAll)
                 targetIndices = personalityNode.targetComp.Evaluate(allRelevantEntities);

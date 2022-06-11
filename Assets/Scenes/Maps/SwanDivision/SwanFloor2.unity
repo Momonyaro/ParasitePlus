@@ -1718,8 +1718,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 66001095}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0.0000029504295}
-  m_LocalPosition: {x: 0.0261, y: 1.0006, z: -1.068}
-  m_LocalScale: {x: 4.385301, y: 1.592211, z: 1}
+  m_LocalPosition: {x: -0.0248, y: 1.0006, z: -1.068}
+  m_LocalScale: {x: 4.4668674, y: 1.592211, z: 1}
   m_Children: []
   m_Father: {fileID: 1396006535}
   m_RootOrder: 2
@@ -10062,7 +10062,7 @@ MonoBehaviour:
     partyField:
     - {fileID: 11400000, guid: b87cabd1880fcb14fbd07bc27dd4400d, type: 2}
     - {fileID: 11400000, guid: 5867c1a531a1bfd4c9e7a2d934c1612d, type: 2}
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 30f66e8e01da6b64081f8dfa5d87b383, type: 2}
     - {fileID: 0}
     enemyField:
     - {fileID: 0}

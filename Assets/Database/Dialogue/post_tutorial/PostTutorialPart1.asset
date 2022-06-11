@@ -207,7 +207,7 @@ MonoBehaviour:
           text: Without thinking twice, you shifted and ran in a different direction.
           buildTime: 0.0456
         - speakerReference: _narrator
-          text: Towards the one person who you you could trust in this situation
+          text: Towards the one person who you could trust in this situation
           buildTime: 0.0456
         perSentenceWriteToScreen: 0
         requireContinueInput: 1

@@ -43,7 +43,7 @@ namespace BattleSystem.States
             enemyField.WipeField();
             enemyField.PopulateField(battleCore.enemyField);
 
-            topPanelUI.PopulatePartyCards(battleCore.partyField, battleCore.turnOrderComponent.GetFirstInLine().entityId);
+            topPanelUI.PopulatePartyCards(battleCore.GetPlayerParty(), battleCore.turnOrderComponent.GetFirstInLine().entityId);
             
             turnCounterUI.PopulateTurnQueueUI(battleCore.GetTurnQueueAsEntities());
             

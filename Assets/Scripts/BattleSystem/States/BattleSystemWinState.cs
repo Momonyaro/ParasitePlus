@@ -29,7 +29,7 @@ namespace BattleSystem.States
             }
             
             winResultScreenUI.transform.GetChild(0).gameObject.SetActive(true);
-            winResultScreenUI.DisplayLevelUp(battleCore.partyField, enemyXp, randomXpRange);
+            winResultScreenUI.DisplayLevelUp(battleCore.GetPlayerParty(), enemyXp, randomXpRange);
             
             initialized = true;
         }

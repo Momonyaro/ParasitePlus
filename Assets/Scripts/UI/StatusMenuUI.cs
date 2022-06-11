@@ -111,7 +111,7 @@ namespace UI
 
             for (int i = 0; i < party.Length; i++)
             {
-                if (party[i] == null) continue;
+                if (party[i] == null || !party[i].inParty) continue;
                 
                 AddPartyCard(party[i]);
             }

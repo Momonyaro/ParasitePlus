@@ -21,6 +21,7 @@ namespace Scriptables
         public string entityName;
         public int entityLevel;
         public string entityId;
+        public bool inParty = false;
         public int entitySpeed;
         public int throwawayId;          //This is a thing because if we have multiple versions of the same entity, it will fetch the first one.
         [SerializeField]
@@ -202,6 +203,7 @@ namespace Scriptables
             es.abilityScriptables = abilityScriptables;
             es.defaultAttack = defaultAttack;
             es.actionPts = actionPts;
+            es.inParty = inParty;
             es.entityEffectBuffer = entityEffectBuffer;
             es.entityId = entityId;
             es.entityName = entityName;

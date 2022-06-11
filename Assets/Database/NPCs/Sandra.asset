@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af39f2e96d88af64ea77e06a19ccbfff, type: 3}
-  m_Name: Player
+  m_Name: Sandra
   m_EditorClassIdentifier: 
-  entityName: Yoel
+  entityName: Sandra
   entityLevel: 1
-  entityId: _player
+  entityId: _sandra
   inParty: 1
-  entitySpeed: 12
-  throwawayId: 0
-  healthPts: {x: 20, y: 20}
-  actionPts: {x: 18, y: 18}
+  entitySpeed: 8
+  throwawayId: 220
+  healthPts: {x: 18, y: 18}
+  actionPts: {x: 10, y: 10}
   weaknesses:
-  - 0.5
+  - 0.75
   - 1
-  - 1
-  - 1
+  - 0.75
+  - 0.75
   entityXp: 0
   entityXpThreshold: 14
-  defaultAttack: {fileID: 11400000, guid: 9f52a2e1516901144b267ae8a71c5313, type: 2}
+  defaultAttack: {fileID: 11400000, guid: 467ec84786929b24d9e53ab9324f88d8, type: 2}
   lastAttacker: {fileID: 0}
   entityAI:
     randID: -1
@@ -44,9 +44,8 @@ MonoBehaviour:
         id: 1
   onDeathInterjects: []
   deadTrigger: 0
-  stats: 
-  abilityScriptables:
-  - {fileID: 11400000, guid: 96a2ead7d7f11d244bf5191c1dec87a6, type: 2}
+  stats: 000000000000000000000000000000000000000000000000
+  abilityScriptables: []
   entityEffectBuffer: []
   references:
     version: 1

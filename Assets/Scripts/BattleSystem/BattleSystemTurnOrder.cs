@@ -24,7 +24,7 @@ namespace BattleSystem
 
         private List<int> usedIDs = new List<int>();
         
-        public void Init(ref EntityScriptable[] party, ref EntityScriptable[] enemies)
+        public void Init(EntityScriptable[] party, ref EntityScriptable[] enemies)
         {
             usedIDs.Clear();
 

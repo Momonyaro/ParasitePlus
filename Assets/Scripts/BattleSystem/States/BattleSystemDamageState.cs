@@ -101,7 +101,7 @@ namespace BattleSystem.States
                     else
                     {
                         //Target party
-                        target = battleCore.partyField[indices[i]];
+                        target = battleCore.GetPlayerParty()[indices[i]];
                     }
                 }
                 else //The entity is a party member
@@ -109,7 +109,7 @@ namespace BattleSystem.States
                     if (abilityInUse.targetFriendlies)
                     {
                         //Target party
-                        target = battleCore.partyField[indices[i]];
+                        target = battleCore.GetPlayerParty()[indices[i]];
                     }
                     else
                     {

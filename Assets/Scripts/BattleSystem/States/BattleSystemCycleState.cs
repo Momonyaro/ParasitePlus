@@ -80,7 +80,7 @@ namespace BattleSystem.States
         
         private bool CheckPlayerLossCase()
         {
-            EntityScriptable[] playerParty = battleCore.partyField;
+            EntityScriptable[] playerParty = battleCore.GetPlayerParty();
 
             for (int i = 0; i < playerParty.Length; i++)
             {

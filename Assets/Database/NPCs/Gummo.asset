@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Gummo
   m_EditorClassIdentifier: 
   entityName: Gummo
-  entityLevel: 3
+  entityLevel: 1
   entityId: _gummo
+  inParty: 1
   entitySpeed: 13
   throwawayId: 0
-  healthPts: {x: 45, y: 45}
-  actionPts: {x: 18, y: 18}
+  healthPts: {x: 25, y: 25}
+  actionPts: {x: 12, y: 12}
   weaknesses:
   - 1
   - 0.5
@@ -41,6 +42,7 @@ MonoBehaviour:
         id: 0
       targetComp:
         id: 1
+  onDeathInterjects: []
   deadTrigger: 0
   stats: 
   abilityScriptables:

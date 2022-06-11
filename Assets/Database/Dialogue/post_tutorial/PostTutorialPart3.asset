@@ -30,6 +30,10 @@ MonoBehaviour:
   - id: 3
   - id: 4
   - id: 5
+  - id: 6
+  - id: 7
+  - id: 8
+  - id: 9
   transitionToOnEof: {fileID: 0}
   goToSceneOnEof: 1
   destinationSceneOnEof: MapMenu
@@ -104,6 +108,47 @@ MonoBehaviour:
           text: We've gotta keep an eye out, they're gonna keep coming after you
             if your as valuable to them as it sounds.
           buildTime: 0.0456
+        - speakerReference: _gummo
+          text: Let's chill out for now and we'll come up with a plan tomorrow.
+          buildTime: 0.0456
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
+    00000006:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp6
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    00000007:
+      type: {class: SpawnObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnObjComp7
+        groupRef: 
+        objectPrefab: {fileID: 2831952547622704426, guid: 5a3baf689344a294e8907590f4b65189, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+    00000008:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp8
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 2
+    00000009:
+      type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyAll9
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1

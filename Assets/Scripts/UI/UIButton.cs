@@ -26,7 +26,7 @@ namespace UI
             onHoverObject.SetActive(currentlySelected || hovering);
         }
 
-        public void SendMessage(string msg)
+        public new void SendMessage(string msg)
         {
             UIManager.Instance.onUIMessage.Invoke(msg);
         }

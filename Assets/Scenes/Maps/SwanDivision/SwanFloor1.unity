@@ -982,7 +982,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: itemID
-      value: aa6b26b6-d5a7-4ca9-a774-6898960fe1c5
+      value: swanFloor1/chest:door-key
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
@@ -24374,6 +24374,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: 2819c505e9d090545b39a7836490f367, type: 2}
+  storePersistant: 0
+  onDialogueFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  eventKey: 876ca54d-5d38-4dbb-90af-c37142e4347f
 --- !u!1001 &1679616328
 PrefabInstance:
   m_ObjectHideFlags: 0

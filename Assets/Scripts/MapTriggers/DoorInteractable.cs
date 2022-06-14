@@ -50,8 +50,11 @@ namespace MapTriggers
                 sensor = transform.position + dir;
             }
 
-            if (guid == String.Empty)
+            if (guid == String.Empty || generateNewGUID)
+            {
                 guid = Guid.NewGuid().ToString();
+                generateNewGUID = false;
+            }
         }
 
         private void Awake()

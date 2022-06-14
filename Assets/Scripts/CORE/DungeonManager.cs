@@ -245,6 +245,7 @@ namespace CORE
 
         private IEnumerator WaitForSceneTransition(string newSceneRef)
         {
+            SlimComponent.Instance.PopulateAndSendSlim(mapManager.currentSlimData);
             FadeToBlackImage fadeToBlackImage = FindObjectOfType<FadeToBlackImage>();
             bool skipPlayerLock = currentPlayer.lockPlayer;
 

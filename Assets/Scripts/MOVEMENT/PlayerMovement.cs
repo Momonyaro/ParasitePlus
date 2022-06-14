@@ -34,7 +34,7 @@ namespace MOVEMENT
 
         private Vector2 camRotDelta = Vector2.zero;
         private Vector3 mvmtDelta = Vector3.zero;
-        private Rigidbody rigidbody;
+        private new Rigidbody rigidbody;
 
         private void Awake()
         {

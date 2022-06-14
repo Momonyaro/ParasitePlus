@@ -5,7 +5,7 @@ namespace BattleSystem.UI
     public class ShadeCopier : MonoBehaviour
     {
         public SpriteRenderer toCopy;
-        public SpriteRenderer renderer; 
+        public new SpriteRenderer renderer; 
 
         // Update is called once per frame
         void Update()

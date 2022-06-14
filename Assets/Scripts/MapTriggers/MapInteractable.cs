@@ -44,13 +44,20 @@ public class MapInteractable : MonoBehaviour
     {
         playerTransform = FindObjectOfType<FPSGridPlayer>().transform;
         DungeonManager dm = FindObjectOfType<DungeonManager>();
+        CORE.MapManager mm = FindObjectOfType<CORE.MapManager>();
 
         if (dm.mapInteractables.Contains(this))
             return;
 
         dm.mapInteractables.Add(this);
 
+        bool updateState = mm.PersistantStateExists(guid);
+
+        if (updateState)
+            activeState = mm.GetPersistantState(guid);
+
         UpdateLightStates();
+        onActiveUpdate?.Invoke(activeState);
     }
 
     public void PlayEvent()

@@ -39,6 +39,8 @@ namespace CORE
 
         public void ReadVolatileSlim(out SlimData slimData)
         {
+            sInstance.internalSlimData.PrintPersistantData();
+
             slimData = sInstance.internalSlimData;
             Destroy(sInstance.gameObject);
         }
@@ -72,6 +74,30 @@ namespace CORE
             public HashSet<string> eventTriggers = new HashSet<string>();
             public HashSet<string> containerStates = new HashSet<string>();
             public Dictionary<string, bool> interactableStates = new Dictionary<string, bool>();
+
+            public void PrintPersistantData()
+            {
+                string interactableOutput = "[INTERACTABLES] ::--::";
+                foreach (string key in interactableStates.Keys)
+                {
+                    interactableOutput += $"\n[{key}: {interactableStates[key]}]";
+                }
+                Debug.Log(interactableOutput);
+
+                string eventTriggerOutput = "[EVENTS] ::--::";
+                foreach (string key in eventTriggers)
+                {
+                    eventTriggerOutput += $"\n[{key}]";
+                }
+                Debug.Log(eventTriggerOutput);
+
+                string containersOutput = "[CONTAINERS] ::--::";
+                foreach (string key in eventTriggers)
+                {
+                    containersOutput += $"\n[{key}]";
+                }
+                Debug.Log(containersOutput);
+            }
         }
     }
 }

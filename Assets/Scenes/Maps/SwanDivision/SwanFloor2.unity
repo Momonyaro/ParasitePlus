@@ -10036,7 +10036,7 @@ MonoBehaviour:
     playerPosition: {x: -22, y: 3, z: -6}
     playerRotation: {x: 0, y: 270, z: 0}
   - reference: StairsB
-    playerPosition: {x: 4, y: 0, z: 6}
+    playerPosition: {x: 4, y: 1, z: -6}
     playerRotation: {x: 0, y: 180, z: 0}
   encounterProgress: 0
   randomEncounters: 0
@@ -20728,7 +20728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3992327565571037043, guid: 4b973629dd1dccf4f81887b757c22f96, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.993
+      value: -12.6
       objectReference: {fileID: 0}
     - target: {fileID: 3992327565571037043, guid: 4b973629dd1dccf4f81887b757c22f96, type: 3}
       propertyPath: m_LocalRotation.w
@@ -21127,7 +21127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2772924696105542055, guid: e52e51fc642ddfb48953039c84911174, type: 3}
       propertyPath: goToScene
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2772924696105542055, guid: e52e51fc642ddfb48953039c84911174, type: 3}
       propertyPath: sceneName
@@ -38779,6 +38779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: 2819c505e9d090545b39a7836490f367, type: 2}
+  storePersistant: 1
   onDialogueFinished:
     m_PersistentCalls:
       m_Calls:
@@ -38794,6 +38795,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  eventKey: cutscene/emil:first-encounter
 --- !u!1001 &1783708228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46730,6 +46732,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 791514675}
     m_Modifications:
+    - target: {fileID: 5751458228028826835, guid: 318c61e1bb559cf48b7ece3922488940, type: 3}
+      propertyPath: guid
+      value: swanFloor2/console:door-control
+      objectReference: {fileID: 0}
     - target: {fileID: 5751458228028826835, guid: 318c61e1bb559cf48b7ece3922488940, type: 3}
       propertyPath: dir.x
       value: 0

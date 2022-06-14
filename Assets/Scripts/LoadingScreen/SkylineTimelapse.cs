@@ -17,7 +17,6 @@ public class SkylineTimelapse : MonoBehaviour
 
     [SerializeField] AnimationCurve sunMoonCurve;
     [SerializeField] AnimationCurve progressCurve;
-    private float direction = 1;
     [SerializeField] Gradient skyGradient;
     [SerializeField] Gradient groundGradient;
     [SerializeField] Gradient waterGradient;

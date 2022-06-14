@@ -11,7 +11,7 @@ namespace SAMSARA
         public float channelVolume = 1;
         public AudioEvent storedAudioEvent = null;
         private Coroutine _audioRoutine = null;
-        private bool playOutro = false;
+        //private bool playOutro = false;
         private float pitchOffset = 0;
 
         // This channel holds an audio event and plays it's tracks.

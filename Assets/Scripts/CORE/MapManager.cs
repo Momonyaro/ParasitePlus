@@ -226,6 +226,29 @@ namespace CORE
         {
             currentSlimData.enemyField = enemies;
         }
+
+        public void WritePersistantData(string key, bool state)
+        {
+            if (currentSlimData.interactableStates.ContainsKey(key))
+            {
+                currentSlimData.interactableStates[key] = state;
+            }
+            else
+                currentSlimData.interactableStates.Add(key, state);
+        }
+
+        public bool PersistantStateExists(string key)
+        {
+            return (currentSlimData.interactableStates.ContainsKey(key));
+        }
+
+        public bool GetPersistantState(string key)
+        {
+            if (!currentSlimData.interactableStates.ContainsKey(key))
+                return false;
+
+            return currentSlimData.interactableStates[key];
+        }
         
     }
 }

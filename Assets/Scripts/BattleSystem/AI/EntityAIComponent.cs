@@ -80,7 +80,6 @@ namespace BattleSystem.AI
             [Range(0, 1)] public float healthPercentLessThan = 1.0f;
             public int roundsPassed = 0;
             public string trigger;
-            private bool triggered = false;
             public List<AbilityScriptable> stateAbilities = new List<AbilityScriptable>();
 
             [Header("Node Interjects")]

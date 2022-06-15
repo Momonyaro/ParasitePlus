@@ -387,7 +387,7 @@ namespace CORE
             Gizmos.color = Color.magenta;
             for (int i = 0; i < sceneLoadVariables.Count; i++)
             {
-                Gizmos.DrawLine(sceneLoadVariables[i].playerPosition, sceneLoadVariables[i].playerPosition + (Quaternion.Euler(sceneLoadVariables[i].playerRotation) * Vector3.forward) * 0.5f);
+                Gizmos.DrawLine(sceneLoadVariables[i].playerPosition, sceneLoadVariables[i].playerPosition + new Vector3(0, -0.1f, 0) + (Quaternion.Euler(sceneLoadVariables[i].playerRotation) * Vector3.forward) * 0.3f);
             }
         }
     }

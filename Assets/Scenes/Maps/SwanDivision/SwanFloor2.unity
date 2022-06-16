@@ -10912,6 +10912,10 @@ PrefabInstance:
       propertyPath: warpDest.z
       value: -4
       objectReference: {fileID: 0}
+    - target: {fileID: 6387324389928360308, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6452006191675355259, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -38844,7 +38848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e1cd4acb1882e04480ded0cea73b588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueData: {fileID: 11400000, guid: 2819c505e9d090545b39a7836490f367, type: 2}
+  dialogueData: {fileID: 11400000, guid: 43cf37ffda9c8904c954bd13c2b6c3c1, type: 2}
   storePersistant: 1
   onDialogueFinished:
     m_PersistentCalls:

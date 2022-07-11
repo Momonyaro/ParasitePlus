@@ -18,7 +18,8 @@ namespace MOVEMENT
 
         public AnimationCurve turnLerpCurve = new AnimationCurve();
         public AnimationCurve moveLerpCurve = new AnimationCurve();
-        
+        public AnimationCurve moveFailLerpCurve = new AnimationCurve();
+
         public UnityEvent onSuccessfulMove;
 
         public bool lockPlayer = false;
@@ -130,14 +131,17 @@ namespace MOVEMENT
 
         private IEnumerator MovePlayer(Vector2 moveDir)
         {
-            // X-axis is strafe, Y-Axis is forwards and back
             moving = true;
+            Vector2 initialDir = moveDir;
+
             float timePassed = 0;
-            float maxTime = moveLerpCurve.keys[moveLerpCurve.keys.Length - 1].time;
             Vector3 pos = transform.position;
             Vector3 finalPos = pos;
+            AnimationCurve lerpCurve = moveLerpCurve;
+
             RelativeCollisionStruct collisionStruct = CheckMovementCollision();
 
+            //Check collision directions
             if ((collisionStruct.forwardBlocked && moveDir.y > 0) || (collisionStruct.backwardBlocked && moveDir.y < 0))
                 moveDir.y = 0;
             if ((collisionStruct.leftBlocked && moveDir.x < 0) || (collisionStruct.rightBlocked && moveDir.x > 0))
@@ -148,28 +152,47 @@ namespace MOVEMENT
             else
                 finalPos += transform.right * (moveDir.x * 2.0f);
 
-            if (Vector3.Distance(pos, finalPos) > 0.8f)
+
+
+            float maxTime = lerpCurve.keys[lerpCurve.keys.Length - 1].time;
+
+            if (Vector3.Distance(pos, finalPos) < 0.3f) 
             {
-                //We actually moved, let's fire the event to increase the encounterProgress.
+                lerpCurve = moveFailLerpCurve;
+
+                maxTime = lerpCurve.keys[lerpCurve.keys.Length - 1].time;
+
+                finalPos = pos;
+                finalPos += transform.right * initialDir.x;
+                finalPos += transform.forward * initialDir.y;
+
+                while (timePassed < maxTime)
+                {
+                    transform.position = Vector3.Lerp(pos, finalPos, lerpCurve.Evaluate(timePassed));
+                    timePassed += Time.deltaTime;
+                    yield return new WaitForEndOfFrame();
+                }
+
+                transform.position = pos;
+            }
+            else
+            {
+                //Made a successful move
                 SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_playerStepTile", out bool success);
                 onSuccessfulMove?.Invoke();
-            }
-            else if (Vector3.Distance(pos, finalPos) < 0.3f)
-            {
-                moving = false;
-            }
 
-            while (timePassed < maxTime)
-            {
-                transform.position = Vector3.Lerp(pos, finalPos, moveLerpCurve.Evaluate(timePassed));
-                timePassed += Time.deltaTime;
-                yield return new WaitForEndOfFrame();
+                while (timePassed < maxTime)
+                {
+                    transform.position = Vector3.Lerp(pos, finalPos, lerpCurve.Evaluate(timePassed));
+                    timePassed += Time.deltaTime;
+                    yield return new WaitForEndOfFrame();
+                }
+
+                transform.position = Vector3.Lerp(pos, finalPos, lerpCurve.Evaluate(maxTime));
             }
-            
-            transform.position = Vector3.Lerp(pos, finalPos, moveLerpCurve.Evaluate(maxTime));
 
             moving = false;
-            
+
             yield break;
         }
 

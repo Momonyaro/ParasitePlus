@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 533886becb24e4a40958ba2d04e14c95, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 70d2acd24cd7a434f8e0eafc42f783c3, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 4bef112376d34984989498a48009846a, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -8334,7 +8334,7 @@ MonoBehaviour:
     partyField:
     - {fileID: 11400000, guid: b87cabd1880fcb14fbd07bc27dd4400d, type: 2}
     - {fileID: 11400000, guid: 5867c1a531a1bfd4c9e7a2d934c1612d, type: 2}
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 30f66e8e01da6b64081f8dfa5d87b383, type: 2}
     - {fileID: 0}
     enemyField:
     - {fileID: 0}
@@ -20351,6 +20351,7 @@ GameObject:
   - component: {fileID: 1389334029}
   - component: {fileID: 1389334032}
   - component: {fileID: 1389334031}
+  - component: {fileID: 1389334030}
   m_Layer: 0
   m_Name: DisableRandomEncounterTrigger
   m_TagString: Untagged
@@ -20372,6 +20373,22 @@ Transform:
   m_Father: {fileID: 791514675}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1389334030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389334028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4522e96f36097e346af7b579d9ee327a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasPlayer: 1
+  hasGummo: 1
+  hasSandra: 0
+  hasSive: 0
 --- !u!114 &1389334031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20388,7 +20405,7 @@ MonoBehaviour:
   triggerActive: 0
   disabled: 0
   generateNewGUID: 0
-  guid: 3c6a5593-9f46-46e5-a404-1e668987aad9
+  guid: 478b8cba-d905-4e10-b953-b0d32a8ba3cb
   onEvent:
     m_PersistentCalls:
       m_Calls:
@@ -20396,6 +20413,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: CORE.DungeonManager, Assembly-CSharp
         m_MethodName: SetRandomEncounters
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1389334030}
+        m_TargetAssemblyTypeName: ModifyPartyTrigger, Assembly-CSharp
+        m_MethodName: TriggerEvent
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

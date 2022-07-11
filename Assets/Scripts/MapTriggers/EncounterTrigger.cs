@@ -9,6 +9,7 @@ namespace MapTriggers
     public class EncounterTrigger : MonoBehaviour
     {
         public bool combatThroughPrompt = false;
+        public bool useTrigger = true;
         public string[] promptMessage = new string[0];
         public bool triggerActive = false;
         public bool disabled = false;
@@ -36,18 +37,23 @@ namespace MapTriggers
             dm.encounterTriggers.Add(this);
         }
 
+        public void TriggerEvent()
+        {
+            if (combatThroughPrompt)
+            {
+                InfoPrompt.Instance.CreatePromptForCombat(promptMessage, this);
+            }
+            else
+                triggerActive = true;
+        }
+
         private void OnTriggerEnter(Collider other)
         {
-            if (disabled) return;
+            if (disabled || !useTrigger) return;
             Debug.Log(other.gameObject.name);
             if (other.CompareTag("Player"))
             {
-                if (combatThroughPrompt)
-                {
-                    InfoPrompt.Instance.CreatePromptForCombat(promptMessage, this);
-                }
-                else
-                    triggerActive = true;
+                TriggerEvent();
             }
         }
 

@@ -45,6 +45,13 @@ namespace CORE
             if (slimData == null || slimData.partyField.Length != 4) //Erroneous data, party should always be 4.
             {
                 //Don't replace the data, it's garbo! Use defaults
+                for (int i = 0; i < currentSlimData.partyField.Length; i++)
+                {
+                    if (currentSlimData.partyField[i] != null)
+                    {
+                        currentSlimData.partyField[i] = currentSlimData.partyField[i].Copy();
+                    }
+                }
             }
             else
             {
@@ -225,6 +232,17 @@ namespace CORE
         public void SetEnemyField(EntityScriptable[] enemies)
         {
             currentSlimData.enemyField = enemies;
+        }
+
+        public void OverwritePartyState(bool[] partyStates)
+        {
+            for (int i = 0; i < currentSlimData.partyField.Length; i++)
+            {
+                if (currentSlimData.partyField[i] != null)
+                {
+                    currentSlimData.partyField[i].inParty = partyStates[i];
+                }
+            }
         }
 
         public void WritePersistantData(string key, bool state)

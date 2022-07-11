@@ -99,14 +99,36 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         dialogueBoxes:
+        - speakerReference: _labTech
+          text: Director, Sir! We really should evacuate the facility!
+          buildTime: 0.0456
         - speakerReference: _emil
-          text: what
+          text: Is the experiment on floor 3 still in containment?!
           buildTime: 0.0456
         - speakerReference: _labTech
-          text: what
+          text: Yes, sir! But we don't know for how long without security staff there.
           buildTime: 0.0456
         - speakerReference: _gummo
-          text: what
+          text: Hey! What's going on here!
+          buildTime: 0.0456
+        - speakerReference: _emil
+          text: Why in hell are there intruders in the facility?! Are you two responsible
+            for this?!
+          buildTime: 0.0456
+        - speakerReference: _labTech
+          text: Director, that's the one that escaped yesterday.
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: Where is the <color=yellow>[Stabilizing Fluid]</color>!
+          buildTime: 0.0456
+        - speakerReference: _emil
+          text: ...
+          buildTime: 0.0456
+        - speakerReference: _emil
+          text: Make it up to my office and we'll talk about it.
+          buildTime: 0.0456
+        - speakerReference: _emil
+          text: I'll be waiting...
           buildTime: 0.0456
         perSentenceWriteToScreen: 0
         requireContinueInput: 1

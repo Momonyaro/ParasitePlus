@@ -19,6 +19,7 @@ namespace UI
         public TextMeshProUGUI walletText;
         public Sprite playerPortrait;
         public Sprite gummoPortrait;
+        public Sprite sandraPortrait;
         public bool lockMenu = false;
 
         //We need a method to show the menu, to hide the menu and a lock so that if we have sub-menus we don't hide the main status menu.
@@ -139,6 +140,9 @@ namespace UI
                     break;
                 case "_gummo":
                     portrait = gummoPortrait;
+                    break;
+                case "_sandra":
+                    portrait = sandraPortrait;
                     break;
             }
 

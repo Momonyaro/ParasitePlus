@@ -4755,9 +4755,9 @@ MonoBehaviour:
   - {fileID: 1843510408775024312}
   - {fileID: 2091653883114541964}
   portraits:
-  - {fileID: 7388399842426930641, guid: 614f6bd22542919429d9b546402c90d0, type: 3}
-  - {fileID: 8335795263187683292, guid: b2c6f7d2743f9fa49800fe16300f4e5d, type: 3}
-  - {fileID: -5484707092605373605, guid: f04b920edd274474095ef007a104faee, type: 3}
+  - {fileID: 6757282713640645180, guid: 614f6bd22542919429d9b546402c90d0, type: 3}
+  - {fileID: -5263421938431747717, guid: b2c6f7d2743f9fa49800fe16300f4e5d, type: 3}
+  - {fileID: -7481700744659933332, guid: 0fc419b9f5dc9ec47b590e6fc1f29bfe, type: 3}
   - {fileID: 1071686750602939151, guid: f04b920edd274474095ef007a104faee, type: 3}
   portrait: {fileID: 8525999790127594249}
   nameText: {fileID: 4214176576844300954}
@@ -9440,8 +9440,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 9113411779766324449}
+  color: {r: 0, g: 0, b: 0, a: 1}
+  startFadeInTime: 3
   finished: 1
   screenBlack: 0
+  playOnStart: 0
 --- !u!114 &9113411779766324449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23826,8 +23829,9 @@ MonoBehaviour:
   cardHolder: {fileID: 2918747445994226225}
   cardPrefab: {fileID: 4957577290541465932, guid: 6b4f19ba45f279246b4f204290a84122, type: 3}
   walletText: {fileID: 7890922071267738104}
-  playerPortrait: {fileID: 7388399842426930641, guid: 614f6bd22542919429d9b546402c90d0, type: 3}
-  gummoPortrait: {fileID: 8335795263187683292, guid: b2c6f7d2743f9fa49800fe16300f4e5d, type: 3}
+  playerPortrait: {fileID: 6757282713640645180, guid: 614f6bd22542919429d9b546402c90d0, type: 3}
+  gummoPortrait: {fileID: -5263421938431747717, guid: b2c6f7d2743f9fa49800fe16300f4e5d, type: 3}
+  sandraPortrait: {fileID: -7481700744659933332, guid: 0fc419b9f5dc9ec47b590e6fc1f29bfe, type: 3}
   lockMenu: 0
 --- !u!95 &380287414363075536
 Animator:

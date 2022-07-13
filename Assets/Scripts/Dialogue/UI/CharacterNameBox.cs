@@ -120,7 +120,16 @@ namespace Dialogue.UI
         public void VerifyNameAndCreateSlim()
         {
             string name = VerifyPlayerName();
+
+            for (int i = 0; i < gameStartSlimData.partyField.Length; i++)
+            {
+                if (gameStartSlimData.partyField[i] == null) continue;
+
+                gameStartSlimData.partyField[i] = gameStartSlimData.partyField[i].Copy();
+            }
+
             gameStartSlimData.playerName = name;
+            gameStartSlimData.partyField[0].entityName = name;
             
             CreateGameStartSlim();
         }

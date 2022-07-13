@@ -15,7 +15,7 @@ MonoBehaviour:
   entityName: Sandra
   entityLevel: 1
   entityId: _sandra
-  inParty: 1
+  inParty: 0
   entitySpeed: 8
   throwawayId: 220
   healthPts: {x: 18, y: 18}

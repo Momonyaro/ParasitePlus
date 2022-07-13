@@ -15,7 +15,7 @@ MonoBehaviour:
   entityName: Gummo
   entityLevel: 1
   entityId: _gummo
-  inParty: 1
+  inParty: 0
   entitySpeed: 13
   throwawayId: 0
   healthPts: {x: 25, y: 25}

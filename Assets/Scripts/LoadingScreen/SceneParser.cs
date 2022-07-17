@@ -38,8 +38,8 @@ public class SceneParser : MonoBehaviour
                 destinationName = RandomSunrise;
                 break;
 
-            case "SwanFloor1":
-                if (setNextScene.Equals("SwanFloor1"))
+            case "BeforeSwanDivision":
+                if (setNextScene.Equals("BeforeSwanDivision"))
                     break;
                 destinationName = RandomSundown;
                 break;

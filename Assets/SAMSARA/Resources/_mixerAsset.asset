@@ -20,7 +20,7 @@ MonoBehaviour:
       ratio: 1
       trackLerpOverlap: 1
       volumeGroupRef: _music
-      volume: 0.625
+      volume: 0.412
       pitch: 1
       randomPitchOffset: 0
       delay: 0
@@ -276,6 +276,22 @@ MonoBehaviour:
       outroClip: {fileID: 0}
       tracks:
       - AudioClip: {fileID: 8300000, guid: 2df5c587ee3abd748a726d295a990758, type: 3}
+  - reference: _parkBGM
+    groupIndex: 1
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _music
+      volume: 0.233
+      pitch: 1
+      randomPitchOffset: 0
+      delay: 0
+      loop: 1
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 7e87c85f4f2fc2249a690d1d24de36eb, type: 3}
   eventGroups:
   - Battle Music
   - Dungeon BGM

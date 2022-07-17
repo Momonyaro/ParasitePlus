@@ -72,6 +72,7 @@ namespace CORE
                 currentSlimData.interactableStates = slimData.interactableStates;
                 currentSlimData.playerName = slimData.playerName;
                 currentSlimData.loadSceneVariable = slimData.loadSceneVariable;
+                currentSlimData.lastButtonLayer = slimData.lastButtonLayer;
             }
             
                 
@@ -166,6 +167,7 @@ namespace CORE
                 interactableStates = currentSlimData.interactableStates,
                 playerName = currentSlimData.playerName,
                 loadSceneVariable = currentSlimData.loadSceneVariable,
+                lastButtonLayer = currentSlimData.lastButtonLayer,
             };
             
             SlimComponent.Instance.PopulateAndSendSlim(slimData);
@@ -193,6 +195,7 @@ namespace CORE
                 interactableStates = currentSlimData.interactableStates,
                 playerName = currentSlimData.playerName,
                 loadSceneVariable = currentSlimData.loadSceneVariable,
+                lastButtonLayer = currentSlimData.lastButtonLayer
             };
             
             SlimComponent.Instance.PopulateAndSendSlim(slimData);

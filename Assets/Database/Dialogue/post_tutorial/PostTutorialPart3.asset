@@ -34,6 +34,9 @@ MonoBehaviour:
   - id: 7
   - id: 8
   - id: 9
+  - id: 10
+  - id: 11
+  - id: 12
   transitionToOnEof: {fileID: 0}
   goToSceneOnEof: 1
   destinationSceneOnEof: MapMenu
@@ -142,7 +145,7 @@ MonoBehaviour:
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 1
-        waitTime: 2
+        waitTime: 1.2
     00000009:
       type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
@@ -152,3 +155,39 @@ MonoBehaviour:
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 1
+    0000000A:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox10
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _gummo
+          text: Meet me at the park tomorrow, we'll think of something.
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    0000000B:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp11
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox10
+    0000000C:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp12
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 0.5

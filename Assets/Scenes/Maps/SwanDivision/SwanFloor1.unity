@@ -8312,7 +8312,7 @@ MonoBehaviour:
     playerRotation: {x: 0, y: 270, z: 0}
   encounterProgress: 0
   randomEncounters: 1
-  encounterProgressRange: 0.1
+  encounterProgressRange: 0.08
 --- !u!114 &454105792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8352,7 +8352,7 @@ MonoBehaviour:
     playerLastPos: {x: 0, y: -3, z: 0}
     playerLastEuler: {x: 0, y: 180, z: 0}
     loadSceneVariable: 
-    lastDungeonIndex: 0
+    lastButtonLayer: 0
   dungeonManager: {fileID: 454105791}
   config: {fileID: 11400000, guid: f19491cb78d45e04ca9bacb7aac3d494, type: 2}
   mapBMGReference: _swanDivisionBGM
@@ -24407,6 +24407,7 @@ MonoBehaviour:
   onDialogueFinished:
     m_PersistentCalls:
       m_Calls: []
+  generateNewGUID: 0
   eventKey: 876ca54d-5d38-4dbb-90af-c37142e4347f
 --- !u!1001 &1679616328
 PrefabInstance:

@@ -13,10 +13,13 @@ public class WorldManager : MonoBehaviour
 
     public static int CurrentSelectionLayer = 0;
 
-    private void Start()
+    private void Awake()
     {
         worldNodes = FindObjectsOfType<WorldNode>(true);
-        WorldManager.CurrentSelectionLayer = 0;
+
+        CurrentSelectionLayer = CORE.SlimComponent.Instance.ReadNonVolatileBtnLayer;
+
+        Debug.Log(CurrentSelectionLayer);
     }
 
     private void OnEnable()
@@ -113,7 +116,7 @@ public class WorldManager : MonoBehaviour
     {
         for (int i = 0; i < worldNodes.Length; i++)
         {
-            if (worldNodes[i].IsSelected && worldNodes[i].ButtonLayer == WorldManager.CurrentSelectionLayer)
+            if (worldNodes[i].IsSelected && worldNodes[i].IsInRange(WorldManager.CurrentSelectionLayer, worldNodes[i].MinButtonLayer, worldNodes[i].MaxButtonLayer))
             {
                 worldNodes[i].ProcessBtnPress();
             }

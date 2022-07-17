@@ -4268,6 +4268,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  generateNewGUID: 0
   eventKey: cutscene/bessie:bossfight
 --- !u!114 &497966058
 MonoBehaviour:
@@ -14009,7 +14010,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1621389972
 Transform:
   m_ObjectHideFlags: 0
@@ -15811,8 +15812,8 @@ MonoBehaviour:
     playerPosition: {x: 4, y: 0, z: 6}
     playerRotation: {x: 0, y: 180, z: 0}
   encounterProgress: 0
-  randomEncounters: 0
-  encounterProgressRange: 0.1
+  randomEncounters: 1
+  encounterProgressRange: 0.07
 --- !u!114 &1830172880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15852,7 +15853,7 @@ MonoBehaviour:
     playerLastPos: {x: 0, y: 1, z: 0}
     playerLastEuler: {x: 0, y: 90, z: 0}
     loadSceneVariable: 
-    lastDungeonIndex: 0
+    lastButtonLayer: 0
   dungeonManager: {fileID: 1830172879}
   config: {fileID: 11400000, guid: f19491cb78d45e04ca9bacb7aac3d494, type: 2}
   mapBMGReference: _swanDivisionBGM

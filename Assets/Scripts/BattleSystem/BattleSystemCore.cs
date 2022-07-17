@@ -108,7 +108,7 @@ namespace BattleSystem
                 partyWallet = slimData.wallet;
                 lastPlayerPos = slimData.playerLastPos;
                 lastPlayerEulers = slimData.playerLastEuler;
-                lastDungeonIndex = slimData.lastDungeonIndex;
+                lastDungeonIndex = slimData.lastButtonLayer;
                 containerStates = slimData.containerStates;
                 eventTriggers = slimData.eventTriggers;
                 interactableStates = slimData.interactableStates;
@@ -128,7 +128,7 @@ namespace BattleSystem
                 wallet = partyWallet,
                 playerLastPos = lastPlayerPos,
                 playerLastEuler = lastPlayerEulers,
-                lastDungeonIndex = lastDungeonIndex,
+                lastButtonLayer = lastDungeonIndex,
                 containerStates = containerStates,
                 eventTriggers = eventTriggers,
                 interactableStates = interactableStates,

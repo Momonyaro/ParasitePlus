@@ -15,9 +15,10 @@ MonoBehaviour:
   entityName: Bessie
   entityLevel: 1
   entityId: _bessie
+  inParty: 0
   entitySpeed: 15
   throwawayId: 21
-  healthPts: {x: 100, y: 100}
+  healthPts: {x: 60, y: 60}
   actionPts: {x: 40, y: 40}
   weaknesses:
   - 0.5

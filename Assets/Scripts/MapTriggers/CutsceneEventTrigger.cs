@@ -10,12 +10,22 @@ namespace MapTriggers
         public bool storePersistant = false;
         public UnityEvent onDialogueFinished = new UnityEvent();
         private bool watchDialogueStatus = false;
+        public bool generateNewGUID = false;
         public string eventKey = System.Guid.NewGuid().ToString();
         private DialogueReader reader;
         bool triggered = false;
         CORE.MapManager mapManager;
 
         //This event simply takes a dialoguescriptable, places it into the dialogue reader and starts the dialogue.
+
+        private void OnValidate()
+        {
+            if (generateNewGUID)
+            {
+                eventKey = System.Guid.NewGuid().ToString();
+                generateNewGUID = false;
+            }
+        }
 
         private void Start()
         {

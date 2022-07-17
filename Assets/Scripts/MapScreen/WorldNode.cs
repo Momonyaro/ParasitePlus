@@ -12,7 +12,8 @@ public class WorldNode : MonoBehaviour
     [SerializeField] bool hidden = false;
 
     public string OnPressUIMsg = "";
-    public int ButtonLayer = 0;
+    public int MinButtonLayer = 0;
+    public int MaxButtonLayer = 0;
 
     private MapController mapController;
 
@@ -29,7 +30,13 @@ public class WorldNode : MonoBehaviour
     {
         mapController = FindObjectOfType<MapController>();
 
-        SwitchTransition(IEOnStart().GetEnumerator());
+        if (!IsInRange(WorldManager.CurrentSelectionLayer, MinButtonLayer, MaxButtonLayer))
+        {
+            Debug.Log(WorldManager.CurrentSelectionLayer);
+            gameObject.SetActive(false);
+        }
+        else
+            SwitchTransition(IEOnStart().GetEnumerator());
     }
 
     private void Update()
@@ -38,12 +45,12 @@ public class WorldNode : MonoBehaviour
 
         float distance = Vector3.Distance(cursorPos, transform.position);
 
-        if (!hidden && WorldManager.CurrentSelectionLayer != ButtonLayer)
+        if (!hidden && !IsInRange(WorldManager.CurrentSelectionLayer, MinButtonLayer, MaxButtonLayer))
         {
             SwitchTransition(IEOnHide().GetEnumerator());
             return;
         }
-        else if (hidden && WorldManager.CurrentSelectionLayer == ButtonLayer)
+        else if (hidden && IsInRange(WorldManager.CurrentSelectionLayer, MinButtonLayer, MaxButtonLayer))
         {
             SwitchTransition(IEOnStart().GetEnumerator());
             return;
@@ -58,6 +65,19 @@ public class WorldNode : MonoBehaviour
         {
             SwitchTransition(IEOnRelease().GetEnumerator());
         }
+    }
+
+    /// <summary>
+    /// Check if number is in range of min max.
+    /// </summary>
+    /// <param name="current"></param>
+    /// <param name="min">Min is the range minimum. Inclusive.</param>
+    /// <param name="max">Max is the range maximum. Inclusive.</param>
+    /// <returns></returns>
+    public bool IsInRange(int current, int min, int max)
+    {
+        if (current < min || current > max) return false;
+        return true;
     }
 
     public void ProcessBtnPress()

@@ -17,7 +17,7 @@ namespace MapTriggers
         public float interactAngleOffset = 0.1f;
         public float interactRange = .5f;
         public bool generateNewGUID = false;
-        public string guid = Guid.NewGuid().ToString();
+        public string guid = "";
 
         private Transform playerTransform;
         

@@ -37,10 +37,7 @@ namespace CORE
             {
                 dungeonManager.SetPlayer(this, player);
             }
-        }
 
-        private void Start()
-        {
             SlimComponent.Instance.ReadVolatileSlim(out SlimComponent.SlimData slimData);
             if (slimData == null || slimData.partyField.Length != 4) //Erroneous data, party should always be 4.
             {

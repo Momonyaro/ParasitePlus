@@ -16,7 +16,7 @@ public class MapInteractable : MonoBehaviour
     public bool disabled = false;
     public bool activeState = false;
     public bool generateNewGUID = false;
-    public string guid = Guid.NewGuid().ToString();
+    public string guid = "";
     public Color activeColor = Color.green;
     public Color disabledColor = Color.red;
     public string interactPromptMsg;
@@ -52,6 +52,7 @@ public class MapInteractable : MonoBehaviour
         dm.mapInteractables.Add(this);
 
         bool updateState = mm.PersistantStateExists(guid);
+        Debug.Log("found earlier state in persistant?: " + updateState);
 
         if (updateState)
             activeState = mm.GetPersistantState(guid);

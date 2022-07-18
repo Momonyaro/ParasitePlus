@@ -16,7 +16,7 @@ namespace Items
         public string animParamName = "";
         public Animator objAnimator;
         public bool regenGuid = false;
-        public string guid = Guid.NewGuid().ToString();
+        public string guid = "";
         public bool triggerActive = false;
         public bool lockTrigger = false;
         public string itemID = "";

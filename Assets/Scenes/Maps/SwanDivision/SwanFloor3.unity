@@ -7859,7 +7859,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5751458228028826835, guid: 318c61e1bb559cf48b7ece3922488940, type: 3}
       propertyPath: guid
-      value: 52b55abe-ccc5-4f59-ab7c-0112f75f1c86
+      value: swan3/interactable:button1
       objectReference: {fileID: 0}
     - target: {fileID: 5751458228028826835, guid: 318c61e1bb559cf48b7ece3922488940, type: 3}
       propertyPath: dir.x
@@ -18025,7 +18025,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5751458228028826835, guid: 318c61e1bb559cf48b7ece3922488940, type: 3}
       propertyPath: guid
-      value: b9acc3a5-684c-455a-b91b-ff6644c2bba8
+      value: swan3/interactable:button2
       objectReference: {fileID: 0}
     - target: {fileID: 5751458228028826835, guid: 318c61e1bb559cf48b7ece3922488940, type: 3}
       propertyPath: dir.z

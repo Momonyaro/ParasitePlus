@@ -31,6 +31,7 @@ namespace BattleSystem
         public Vector3 lastPlayerPos = Vector3.zero;
         public Vector3 lastPlayerEulers = Vector3.zero;
         public int lastDungeonIndex = 0;
+        public int lastBtnLayer = 0;
         public string playerName = "Yoel";
         public string bgmReference;
 
@@ -108,11 +109,11 @@ namespace BattleSystem
                 partyWallet = slimData.wallet;
                 lastPlayerPos = slimData.playerLastPos;
                 lastPlayerEulers = slimData.playerLastEuler;
-                lastDungeonIndex = slimData.lastButtonLayer;
                 containerStates = slimData.containerStates;
                 eventTriggers = slimData.eventTriggers;
                 interactableStates = slimData.interactableStates;
                 playerName = slimData.playerName;
+                lastBtnLayer = slimData.lastButtonLayer;
             }
         }
 
@@ -128,11 +129,11 @@ namespace BattleSystem
                 wallet = partyWallet,
                 playerLastPos = lastPlayerPos,
                 playerLastEuler = lastPlayerEulers,
-                lastButtonLayer = lastDungeonIndex,
                 containerStates = containerStates,
                 eventTriggers = eventTriggers,
                 interactableStates = interactableStates,
                 playerName = playerName,
+                lastButtonLayer = lastDungeonIndex,
             };
             
             SlimComponent.Instance.PopulateAndSendSlim(slimData);

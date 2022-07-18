@@ -45,7 +45,32 @@ namespace Scriptables
         {
             abilityCooldown.x = 0;
         }
-        
+
+        public AbilityScriptable Copy()
+        {
+            AbilityScriptable es = CreateInstance<AbilityScriptable>();
+            es.abilityName = abilityName;
+            es.abilityId = abilityId;
+            es.abilityDesc = abilityDesc;
+            es.abilityEffectRef = abilityEffectRef;
+            es.abilitySoundEffect = abilitySoundEffect;
+            es.hideDamageText = hideDamageText;
+            es.targetAll = targetAll;
+            es.targetFriendlies = targetFriendlies;
+            es.abilityLevelReq = abilityLevelReq;
+            es.levelScalingDamage = levelScalingDamage;
+            es.abilityCritChance = abilityCritChance;
+            es.abilityMissChance = abilityMissChance;
+            es.abilityCosts = abilityCosts;
+            es.abilityDamage = abilityDamage;
+            es.abilityCooldown = abilityCooldown;
+            es.abilityInterjects = abilityInterjects;
+            es.damageType = damageType;
+            es.abilityEffects = abilityEffects;
+
+            return es;
+        }
+
         //DEPRECATED, DO NOT USE
         public bool Execute(EntityScriptable active, EntityScriptable[] targets, Transform[] targetTransforms, int selectorIndex, BattleManager battleManager) { return true; }
         public void CreateDamageNum(int damage, Transform target, float numHeightOffset, bool showStripe) { }

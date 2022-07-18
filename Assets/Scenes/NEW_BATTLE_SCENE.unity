@@ -2846,24 +2846,26 @@ MonoBehaviour:
   - {fileID: 0}
   holdingCells: []
   partyInventory:
-  - name: test 3567
-    guid: 12090-151dgts
-    msrp: 12
+  - name: Banana
+    guid: asgasdg
+    msrp: 0
     type: 4
     minLevelReq: 0
     minFriendshipReq: 0
-    damage: 4
+    damage: 0
     defense: 0
     critChance: 0
     dodgeChance: 0
+    itemAbility: {fileID: 11400000, guid: 7a5a9b2b7fa43894fa0304baaffba707, type: 2}
     stackable: 1
-    maxStackSize: 12
-    storeItem: 1
+    maxStackSize: 99
+    storeItem: 0
   usedGroundItems: []
   partyWallet: 0
   lastPlayerPos: {x: 0, y: 0, z: 0}
   lastPlayerEulers: {x: 0, y: 0, z: 0}
   lastDungeonIndex: 0
+  lastBtnLayer: 0
   playerName: Yoel
   bgmReference: _battleBGMWolves
   destinationScene: SwanFloor1

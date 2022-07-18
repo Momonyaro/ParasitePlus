@@ -68,8 +68,10 @@ namespace Items
         public float critChance;
         public float dodgeChance;
 
+        public Scriptables.AbilityScriptable itemAbility;
+
         public bool stackable;
-        public int maxStackSize; // if (stackable && maxStackSize == 0) => no stack limit
+        public Vector2Int StackSize; // if (stackable && maxStackSize == 0) => no stack limit
 
         public bool storeItem;
 
@@ -87,7 +89,7 @@ namespace Items
             this.critChance = critChance;
             this.dodgeChance = dodgeChance;
             this.stackable = false;
-            this.maxStackSize = 0;
+            this.StackSize = Vector2Int.zero;
             this.storeItem = false;
         }
     }

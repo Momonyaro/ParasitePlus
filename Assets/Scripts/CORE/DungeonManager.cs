@@ -299,7 +299,26 @@ namespace CORE
 
                         SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_pickup", out bool success);
 
-                        items.Add(newItem);
+                        //cringe
+                        //  items.Add(newItem);
+
+                        bool foundExisting = false;
+                        for (int j = 0; j < items.Count; j++)
+                        {
+                            if (newItem.guid.Equals(items[j].guid))
+                            {
+                                if (items[j].stackable)
+                                {
+                                    foundExisting = true;
+                                    items[j].StackSize.x = Mathf.Min(items[j].StackSize.x + newItem.StackSize.x, items[j].StackSize.y);
+                                }
+                            }
+                        }
+                        if (!foundExisting)
+                        {
+                            items.Add(newItem);
+                        }
+
                         mapManager.OverwritePlayerInventory(items);
                         mapManager.currentSlimData.containerStates.Add(groundItems[i].guid);
                     }

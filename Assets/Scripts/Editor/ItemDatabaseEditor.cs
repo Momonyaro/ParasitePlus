@@ -94,10 +94,11 @@ namespace Editor
             EditorGUILayout.BeginHorizontal();
             selected.stackable = EditorGUILayout.Toggle("Stackable: ", selected.stackable);
             EditorGUI.BeginDisabledGroup(!selected.stackable);
-            selected.maxStackSize = EditorGUILayout.IntField("Max Stack:", selected.maxStackSize);
+            selected.StackSize = EditorGUILayout.Vector2IntField("Stack:", selected.StackSize);
             EditorGUI.EndDisabledGroup();
             EditorGUILayout.EndHorizontal();
-            
+            selected.itemAbility = (Scriptables.AbilityScriptable)EditorGUILayout.ObjectField("Item Ability: ", selected.itemAbility, typeof(Scriptables.AbilityScriptable), false);
+
             EditorGUIUtility.labelWidth = 250;
             
             GUILayout.Space(20);

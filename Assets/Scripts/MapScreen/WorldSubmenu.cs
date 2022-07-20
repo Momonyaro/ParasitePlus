@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class WorldSubmenu : MonoBehaviour
@@ -9,13 +10,20 @@ public class WorldSubmenu : MonoBehaviour
     public AnimationCurve lerpCurve = new AnimationCurve();
     public Image mask;
     public bool visible = false;
+    public UnityEvent onOpenSubmenu;
 
     private Coroutine transition;
+
+    private void Awake()
+    {
+        onOpenSubmenu = new UnityEvent();
+    }
 
     public void SetVisibility(bool visibility)
     {
         visible = visibility;
 
+        onOpenSubmenu.Invoke();
         SwitchTransition(IEVisibility(visible).GetEnumerator());
     }
 

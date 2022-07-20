@@ -99,10 +99,8 @@ namespace MOVEMENT
         private void OnPauseKey(InputAction.CallbackContext ctx)
         {
             if (lockPlayer) return;
-
-            lockPlayer = true;
             
-            UIManager.Instance.onUIMessage.Invoke("_toggleStatusMenu");
+            UIManager.Instance.onUIMessage.Invoke("_togglePauseMenu");
         }
 
         private IEnumerator TurnPlayer(Vector2 turnDir)

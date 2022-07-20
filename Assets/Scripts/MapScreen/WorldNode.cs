@@ -5,10 +5,10 @@ using UnityEngine;
 public class WorldNode : MonoBehaviour
 {
     //Enumerator for spawning, for hovering and clicking
-    [SerializeField] bool alwaysShowExtInfo = false;
-    [SerializeField] WorldNodeExtInfo extInfoTab;
+    [SerializeField] public bool alwaysShowExtInfo = false;
+    [SerializeField] public WorldNodeExtInfo extInfoTab;
     [SerializeField] float interactRange = 50;
-    [SerializeField] bool selected = false;
+    [SerializeField] public bool IsSelected = false;
     [SerializeField] bool hidden = false;
 
     public string OnPressUIMsg = "";
@@ -24,8 +24,6 @@ public class WorldNode : MonoBehaviour
 
     Coroutine transition;
 
-    public bool IsSelected => selected;
-
     private void Start()
     {
         mapController = FindObjectOfType<MapController>();
@@ -34,6 +32,13 @@ public class WorldNode : MonoBehaviour
         {
             Debug.Log(WorldManager.CurrentSelectionLayer);
             gameObject.SetActive(false);
+        }
+        else if (FindObjectOfType<PauseMenu>() != null)
+        {
+            if (!FindObjectOfType<PauseMenu>().visible)
+            {
+                gameObject.SetActive(false);
+            }
         }
         else
             SwitchTransition(IEOnStart().GetEnumerator());
@@ -57,11 +62,11 @@ public class WorldNode : MonoBehaviour
         }
 
 
-        if (!selected && distance <= interactRange)
+        if (!IsSelected && distance <= interactRange)
         {
             SwitchTransition(IEOnHover().GetEnumerator());
         }
-        else if (selected && distance > interactRange)
+        else if (IsSelected && distance > interactRange)
         {
             SwitchTransition(IEOnRelease().GetEnumerator());
         }
@@ -99,7 +104,7 @@ public class WorldNode : MonoBehaviour
     private IEnumerable IEOnHover()
     {
         float timer = 0;
-        selected = true;
+        IsSelected = true;
         float maxTimer = lerpCurve.keys[lerpCurve.length - 1].time;
 
         if (!alwaysShowExtInfo)
@@ -123,7 +128,7 @@ public class WorldNode : MonoBehaviour
     private IEnumerable IEOnRelease()
     {
         float timer = 0;
-        selected = false;
+        IsSelected = false;
         float maxTimer = lerpCurve.keys[lerpCurve.length - 1].time;
 
         if (!alwaysShowExtInfo)

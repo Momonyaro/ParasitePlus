@@ -37,6 +37,8 @@ public class MapController : MonoBehaviour
     {
         mapStartPos = map.rectTransform.anchoredPosition;
 
+        if (playerInput == null)
+            playerInput = FindObjectOfType<PlayerInput>(true);
 
         halfWindowWidth = Screen.width / 2;
         halfWindowHeight = Screen.height / 2;
@@ -48,8 +50,8 @@ public class MapController : MonoBehaviour
 
     private void Update()
     {
-
-        RefocusMapView();
+        if (mapCamera != null)
+            RefocusMapView();
 
         if (blockCursorMovement)
         {

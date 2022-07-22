@@ -15,6 +15,7 @@ MonoBehaviour:
   itemDatabase:
   - name: Swan-Marked Keycard
     guid: bcf757f0-c454-4277-9156-be44c60d4202
+    description: 
     msrp: 0
     type: 6
     minLevelReq: 0
@@ -29,6 +30,7 @@ MonoBehaviour:
     storeItem: 0
   - name: Banana
     guid: 993174de-f959-4343-b953-920d32992136
+    description: Bananba heal aaa
     msrp: 0
     type: 4
     minLevelReq: 0
@@ -43,6 +45,7 @@ MonoBehaviour:
     storeItem: 1
   - name: Double Door Key
     guid: aa6b26b6-d5a7-4ca9-a774-6898960fe1c5
+    description: 
     msrp: 0
     type: 6
     minLevelReq: 0

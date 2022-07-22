@@ -19,6 +19,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] NodeMessage[] nodeMessages = new NodeMessage[0];
     public bool visible = false;
     private bool dumbGate = false;
+    MOVEMENT.FPSGridPlayer lastPlayer;
 
     public static int CurrentSelectionLayer = 0;
     private Coroutine transition;
@@ -31,7 +32,14 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
+        lastPlayer = FindObjectOfType<MOVEMENT.FPSGridPlayer>();
         SetAllInvisible();
+    }
+
+    private void Update()
+    {
+        if (visible && !lastPlayer.lockPlayer)
+            lastPlayer.lockPlayer = true;
     }
 
     private void OnEnable()
@@ -55,7 +63,11 @@ public class PauseMenu : MonoBehaviour
 
         if (msg.Equals("_togglePauseMenu"))
         {
+            if (!visible && lastPlayer.lockPlayer)
+                return;
             visible = !visible;
+            FindObjectOfType<MapController>().blockCursorMovement = !visible;
+            lastPlayer.lockPlayer = visible;
             SwitchTransition(IEVisible(visible).GetEnumerator());
             return;
         }
@@ -183,7 +195,6 @@ public class PauseMenu : MonoBehaviour
 
     private IEnumerable IEVisible(bool visible)
     {
-        FindObjectOfType<MOVEMENT.FPSGridPlayer>().lockPlayer = visible;
         cursor.SetActive(visible);
         AnimationCurve curve = visible ? revealCurve : hideCurve;
 

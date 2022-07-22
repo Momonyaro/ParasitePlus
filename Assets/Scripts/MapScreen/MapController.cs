@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
 
 public enum ControllerType
@@ -21,11 +22,13 @@ public class MapController : MonoBehaviour
     private string lastControlScheme = "";
 
     public bool blockCursorMovement = false;
+    public bool autoConnectJoystick = false;
 
     private Vector2 cursorPos = Vector2.zero;
     private Vector2 joystickDelta = Vector2.zero;
     private Vector3 mapStartPos = Vector2.zero;
     private Vector3 percentage = Vector2.zero;
+    private InputAction moveAction;
 
     [SerializeField] float maxMapWiggleDist = 50;
     private int halfWindowWidth = 1920 / 2;
@@ -40,12 +43,31 @@ public class MapController : MonoBehaviour
         if (playerInput == null)
             playerInput = FindObjectOfType<PlayerInput>(true);
 
+        if (autoConnectJoystick)
+        {
+            var uiMod = FindObjectOfType<InputSystemUIInputModule>();
+            var ui = uiMod.actionsAsset.FindActionMap("Player");
+
+            moveAction = ui.FindAction("MoveFUCK");
+            moveAction.performed += RetrieveJoystick;
+            moveAction.canceled += RetrieveJoystick;
+        }
+
         halfWindowWidth = Screen.width / 2;
         halfWindowHeight = Screen.height / 2;
 
         cursorPos = new Vector2(halfWindowWidth, halfWindowHeight);
         playerCursor.rectTransform.position = cursorPos;
         Mouse.current.WarpCursorPosition(cursorPos);
+    }
+
+    private void OnDisable()
+    {
+        if (autoConnectJoystick)
+        {
+            moveAction.performed -= RetrieveJoystick;
+            moveAction.canceled -= RetrieveJoystick;
+        }
     }
 
     private void Update()
@@ -65,6 +87,8 @@ public class MapController : MonoBehaviour
 
         if (!lastControlScheme.Equals(playerInput.currentControlScheme.ToString()))
             UpdateControllerType();
+
+        ClampCursorToScreen();
     }
 
 
@@ -87,6 +111,7 @@ public class MapController : MonoBehaviour
         cursorPos += joystickDelta * joystickSensitivity * Time.deltaTime;
 
         playerCursor.rectTransform.position = cursorPos;
+        //joystickDelta = Vector2.zero;
     }
 
     private void RefocusMapView()
@@ -110,7 +135,24 @@ public class MapController : MonoBehaviour
 
     public void RetrieveJoystick(InputAction.CallbackContext context)
     {
-        joystickDelta = context.ReadValue<Vector2>();
+        Vector2 read = context.ReadValue<Vector2>();
+
+        joystickDelta = read;
+    }
+
+    private void ClampCursorToScreen()
+    {
+        Vector2 center = new Vector2(halfWindowWidth, halfWindowHeight);
+        Rect screenRect = new Rect(50, 50, halfWindowWidth * 2 - 100, halfWindowHeight * 2 - 100);
+
+        Vector2 oldPos = cursorPos;
+        cursorPos.x = Mathf.Clamp(cursorPos.x, screenRect.x, screenRect.x + screenRect.width);
+        cursorPos.y = Mathf.Clamp(cursorPos.y, screenRect.y, screenRect.y + screenRect.height);
+
+        if (oldPos != cursorPos && controllerType == ControllerType.KEYBOARD)
+            Mouse.current.WarpCursorPosition(cursorPos);
+
+        playerCursor.rectTransform.position = cursorPos;
     }
 
     private void UpdateControllerType()

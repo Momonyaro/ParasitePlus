@@ -57,6 +57,7 @@ namespace Items
     {
         public string name; // The name of the item to show in item menus
         public string guid; // id used in comparisons
+        public string description;
         public int msrp; // Buying price in stores
         public ItemType type; // Determines where the item can be used and how to sort it.
         

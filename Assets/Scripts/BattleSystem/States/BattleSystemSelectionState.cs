@@ -191,7 +191,7 @@ namespace BattleSystem.States
             {
                 if (items[i].type != ItemType.AID) continue;
                 
-                options.Add(new SelectableWheelOption($"{items[i].StackSize.x}x " + items[i].name, "_itemKey" + items[i].guid, items[i].itemAbility.abilityDesc));
+                options.Add(new SelectableWheelOption($"{items[i].StackSize.x}x " + items[i].name, "_itemKey" + items[i].guid, items[i].description));
             }
             
             bottomPanelUI.PopulateOptions(options.ToArray(), 0);

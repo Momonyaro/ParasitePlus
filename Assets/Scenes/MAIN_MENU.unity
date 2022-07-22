@@ -2605,6 +2605,7 @@ MonoBehaviour:
   joystickSensitivity: 800
   playerInput: {fileID: 1096419269}
   blockCursorMovement: 0
+  autoConnectJoystick: 0
   maxMapWiggleDist: 5
 --- !u!4 &1398881841
 Transform:
@@ -2653,6 +2654,11 @@ MonoBehaviour:
   - id: _quitGame
     type: 3
     stringValue: 
+    intValue: 0
+    targetObject: {fileID: 0}
+  - id: _testScene
+    type: 2
+    stringValue: SwanFloor1
     intValue: 0
     targetObject: {fileID: 0}
 --- !u!1 &1446837974
@@ -3553,10 +3559,11 @@ MonoBehaviour:
   alwaysShowExtInfo: 1
   extInfoTab: {fileID: 1462354808}
   interactRange: 40
-  selected: 0
+  IsSelected: 0
   hidden: 0
   OnPressUIMsg: _quitGame
-  ButtonLayer: 0
+  MinButtonLayer: 0
+  MaxButtonLayer: 0
   hoverStartScale: {x: 0.8, y: 0.8, z: 0.8}
   hoverTargetScale: {x: 1, y: 1, z: 1}
   lerpCurve:
@@ -4099,10 +4106,11 @@ MonoBehaviour:
   alwaysShowExtInfo: 1
   extInfoTab: {fileID: 80253568}
   interactRange: 80
-  selected: 0
+  IsSelected: 0
   hidden: 0
-  OnPressUIMsg: 
-  ButtonLayer: 0
+  OnPressUIMsg: _testScene
+  MinButtonLayer: 0
+  MaxButtonLayer: 0
   hoverStartScale: {x: 1.2, y: 1.2, z: 1.2}
   hoverTargetScale: {x: 1.35, y: 1.35, z: 1.35}
   lerpCurve:
@@ -4298,10 +4306,11 @@ MonoBehaviour:
   alwaysShowExtInfo: 1
   extInfoTab: {fileID: 976297325}
   interactRange: 80
-  selected: 0
+  IsSelected: 0
   hidden: 0
   OnPressUIMsg: _newGame
-  ButtonLayer: 0
+  MinButtonLayer: 0
+  MaxButtonLayer: 0
   hoverStartScale: {x: 1.2, y: 1.2, z: 1.2}
   hoverTargetScale: {x: 1.35, y: 1.35, z: 1.35}
   lerpCurve:

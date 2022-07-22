@@ -6,45 +6,109 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ItemBtn : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+public class ItemBtn : MonoBehaviour
 {
     public TextMeshProUGUI mainText;
     public TextMeshProUGUI secondText;
+    public string itemDescription;
     public Image background;
+    public AnimationCurve introFillCurve;
 
     public Color defaultCol = Color.white;
     public Color selectedCol = Color.white;
     public Color defaultTextCol = Color.black;
     public Color selectedTextCol = Color.black;
 
+    public bool hovering = false;
+    public bool active = false;
+
     public UnityEvent<string> onPress;
 
     private string storedMsg;
+    private MapController mController;
 
-    public void OnPointerClick(PointerEventData eventData)
+    private void Awake()
     {
+        mController = FindObjectOfType<MapController>();
+    }
+
+    private void Update()
+    {
+        if (!active) return;
+
+        bool inside = IsInsideRect(mController.GetCursorScreenPos);
+
+        if (!hovering && inside)
+        {
+            OnCursorEnter();
+        }
+        else if (hovering && !inside)
+            OnCursorExit();
+    }
+
+    //This won't work with gamepads, re-do
+    public void OnCursorClick()
+    {
+        if (!active) return;
         onPress.Invoke(storedMsg);
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public void OnCursorEnter()
     {
         mainText.color = selectedTextCol;
         secondText.color = selectedTextCol;
         background.color = selectedCol;
+        hovering = true;
+
+        ItemDetailWindow.Instance.CreateDetailWindow(mainText.text, itemDescription);
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public void OnCursorExit()
     {
         mainText.color = defaultTextCol;
         secondText.color = defaultTextCol;
         background.color = defaultCol;
+        hovering = false;
     }
 
-    public void SetButtonData(string title, string extra, string toStore)
+    public void SetButtonData(string title, string extra, string toStore, string itemDescription)
     {
         mainText.text = title;
         secondText.text = extra;
+        this.itemDescription = itemDescription;
         StoreMessage(toStore);
+
+        StopCoroutine(IEIntroFill());
+        StartCoroutine(IEIntroFill());
+
+        IEnumerator IEIntroFill()
+        {
+            float timer = 0;
+            float maxTime = introFillCurve.keys[introFillCurve.length - 1].time;
+
+            while (timer < maxTime)
+            {
+                background.fillAmount = introFillCurve.Evaluate(timer);
+
+                timer += Time.deltaTime;
+                yield return new WaitForEndOfFrame();
+            }
+            background.fillAmount = introFillCurve.Evaluate(maxTime);
+
+            yield break;
+        }
+    }
+
+    public bool IsInsideRect(Vector2 pos)
+    {
+        Vector2 screenPos = background.rectTransform.position;
+        Vector2 screenSizeDelta = background.rectTransform.sizeDelta;
+
+        // screenpos +- sizedelta should give us the space that the image occupies in screen space.
+
+        Rect screenRect = new Rect(screenPos - (screenSizeDelta * 0.25f), screenSizeDelta * 0.5f);
+
+        return screenRect.Contains(pos);
     }
 
     public void StoreMessage(string msg)

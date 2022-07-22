@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.UI;
 
 public class ItemMenu : MonoBehaviour
 {
@@ -12,21 +14,34 @@ public class ItemMenu : MonoBehaviour
 
     public TextMeshProUGUI noItemText;
 
-    public GameObject nextItemBtn;
-    public GameObject prevItemBtn;
+    public ItemBtn nextItemBtn;
+    public ItemBtn prevItemBtn;
 
     private List<Items.Item> lastInventory = new List<Items.Item>();
+    public InputSystemUIInputModule uiInput;
     private int currentIndex = 0;
+    private bool dumbGate = false;
+    public bool active = false;
 
+    private void Awake()
+    {
+        uiInput = FindObjectOfType<InputSystemUIInputModule>();
+    }
 
     private void OnEnable()
     {
         CORE.UIManager.Instance.onUIMessage.AddListener(ListenForMessage);
+        var ui = uiInput.actionsAsset.FindActionMap("UI");
+        ui.FindAction("Click").performed += OnMouseSubmit;
+        ui.FindAction("Submit").started += OnSubmit;
     }
 
     private void OnDisable()
     {
         CORE.UIManager.Instance.onUIMessage.RemoveListener(ListenForMessage);
+        var ui = uiInput.actionsAsset.FindActionMap("UI");
+        ui.FindAction("Click").performed -= OnMouseSubmit;
+        ui.FindAction("Submit").started -= OnSubmit;
     }
 
     public void ListenForMessage(string msg)
@@ -34,7 +49,31 @@ public class ItemMenu : MonoBehaviour
         switch (msg)
         {
             case "_openItemMenu":
+                currentIndex = 0;
+                active = true;
+                prevItemBtn.active = true;
+                nextItemBtn.active = true;
                 PopulateList();
+                break;
+            case "_closeItemMenu":
+                for (int i = 0; i < listSlots.Count; i++)
+                {
+                    listSlots[i].gameObject.SetActive(false);
+                }
+                prevItemBtn.active = false;
+                nextItemBtn.active = false;
+                active = false;
+                break;
+            case "_lastItemPage":
+                currentIndex = Mathf.Max(0, currentIndex - listSlots.Count);
+                PopulateList();
+                break;
+            case "_nextItemPage":
+                if (currentIndex + listSlots.Count < lastInventory.Count)
+                    currentIndex += listSlots.Count;
+                PopulateList();
+                break;
+            case "_openSelectCard":
                 break;
         }
     }
@@ -42,15 +81,15 @@ public class ItemMenu : MonoBehaviour
     private void PopulateList()
     {
         CORE.MapManager mapManager = FindObjectOfType<CORE.MapManager>();
-        currentIndex = 0;
 
+        //Run this through type sorting later. First by type, then by alphabetic
         lastInventory = mapManager.currentSlimData.inventory;
 
         int currentPageNumber = 1;
         int totalPageNumber = 1;
 
         if (lastInventory.Count != 0 && currentIndex != 0)
-            currentPageNumber = Mathf.CeilToInt(currentIndex / (float)lastInventory.Count);
+            currentPageNumber = Mathf.CeilToInt((currentIndex + listSlots.Count) / (float)listSlots.Count);
 
         if (lastInventory.Count != 0)
             totalPageNumber = Mathf.CeilToInt(lastInventory.Count / (float)listSlots.Count);
@@ -63,14 +102,20 @@ public class ItemMenu : MonoBehaviour
 
         pageInfoText.text = $"{currentPageNumber}/{totalPageNumber}";
 
-        nextItemBtn.SetActive((totalPageNumber > 1));   
-        prevItemBtn.SetActive((totalPageNumber > 1));
+        nextItemBtn.gameObject.SetActive((totalPageNumber > 1));
+        nextItemBtn.StoreMessage("_nextItemPage");
+        nextItemBtn.itemDescription = "Go to the next page of items.";
+        prevItemBtn.gameObject.SetActive((totalPageNumber > 1));
+        prevItemBtn.StoreMessage("_lastItemPage");
+        prevItemBtn.itemDescription = "Go to the previous page of items.";
 
         for (int i = 0; i < listSlots.Count; i++)
         {
             bool itemExists = (lastInventory.Count > currentIndex + i);
 
+            listSlots[i].onPress.RemoveAllListeners();
             listSlots[i].gameObject.SetActive(itemExists);
+            listSlots[i].active = itemExists;
 
             if (itemExists)
             {
@@ -81,9 +126,57 @@ public class ItemMenu : MonoBehaviour
                 string title = $"{multipleText}{current.name}";
                 string extra = $"<color=lightblue>{current.type}</color> ";
 
-                listSlots[i].SetButtonData(title, extra, current.guid);
+                listSlots[i].SetButtonData(title, extra, current.guid, current.description);
+                listSlots[i].onPress.AddListener(ParseItem);
             }
 
+        }
+    }
+
+    public void ParseItem(string itemGuid)
+    {
+        Debug.Log(itemGuid);
+    }
+
+    public void OnSubmit(InputAction.CallbackContext context)
+    {
+        if (!context.started) return;
+
+        SubmitAction();
+    }
+
+    public void OnMouseSubmit(InputAction.CallbackContext context)
+    {
+        if (dumbGate)
+        {
+            dumbGate = false;
+            return;
+        }
+
+        if (context.performed)
+        {
+            dumbGate = true;
+        }
+
+        SubmitAction();
+    }
+
+    public void SubmitAction()
+    {
+        if (!active) return;
+
+        if (nextItemBtn.hovering)
+            nextItemBtn.OnCursorClick();
+
+        if (prevItemBtn.hovering)
+            prevItemBtn.OnCursorClick();
+
+        for (int i = 0; i < listSlots.Count; i++)
+        {
+            if (listSlots[i].hovering)
+            {
+                listSlots[i].OnCursorClick();
+            }
         }
     }
 }

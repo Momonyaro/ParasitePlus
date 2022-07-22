@@ -58,6 +58,7 @@ namespace Editor
             EditorGUILayout.BeginVertical("HelpBox");
             
             selected.name = EditorGUILayout.TextField("Item Name:", selected.name);
+            selected.description = EditorGUILayout.TextField("Item Desc:", selected.description);
             EditorGUILayout.BeginHorizontal();
             GUILayout.TextField(selected.guid);
             if (GUILayout.Button("Generate new GUID"))

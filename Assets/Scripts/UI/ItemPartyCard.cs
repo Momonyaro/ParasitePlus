@@ -19,7 +19,7 @@ public class ItemPartyCard : MonoBehaviour
     public bool active = false;
     public bool hovering = false;
 
-    private EntityScriptable lastEntity;
+    public EntityScriptable lastEntity;
     public UnityEvent<EntityScriptable> onPress;
     private MapController mController;
 
@@ -85,16 +85,16 @@ public class ItemPartyCard : MonoBehaviour
     public void UpdateEntity(EntityScriptable entity)
     {
         lastEntity = null;
+        active = false;
+        heldMember.gameObject.SetActive(entity != null && entity.inParty);
 
-        heldMember.gameObject.SetActive(entity != null);
-
-        if (entity == null)
+        if (entity == null || !entity.inParty)
         {
-
             return;
         }
 
-        lastEntity = entity.Copy();
+        lastEntity = entity;
+        active = true;
 
         Vector2Int hp = lastEntity.GetEntityHP();
         Vector2Int ap = lastEntity.GetEntityAP();
@@ -152,12 +152,12 @@ public class ItemPartyCard : MonoBehaviour
     private void SetHPValues(int currentHp, int maxHp)
     {
         healthText.text = $"HP: {currentHp}/{maxHp}";
-        healthBar.fillAmount = currentHp / maxHp; 
+        healthBar.fillAmount = currentHp / (float)maxHp; 
     }
 
     private void SetAPValues(int currentAp, int maxAp)
     {
         actionText.text = $"AP: {currentAp}/{maxAp}";
-        actionBar.fillAmount = currentAp / maxAp;
+        actionBar.fillAmount = currentAp / (float)maxAp;
     }
 }

@@ -202,7 +202,7 @@ MonoBehaviour:
       ratio: 1
       trackLerpOverlap: 1
       volumeGroupRef: _general
-      volume: 0.56
+      volume: 0.332
       pitch: 1
       randomPitchOffset: 0
       delay: 0
@@ -283,7 +283,7 @@ MonoBehaviour:
       ratio: 1
       trackLerpOverlap: 1
       volumeGroupRef: _music
-      volume: 0.233
+      volume: 0.05
       pitch: 1
       randomPitchOffset: 0
       delay: 0
@@ -292,6 +292,54 @@ MonoBehaviour:
       outroClip: {fileID: 0}
       tracks:
       - AudioClip: {fileID: 8300000, guid: 7e87c85f4f2fc2249a690d1d24de36eb, type: 3}
+  - reference: _tramBackground
+    groupIndex: 2
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.321
+      pitch: 1
+      randomPitchOffset: 0
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 877b6a3a3f704d34aba33c5d5c60802c, type: 3}
+  - reference: _introBGM
+    groupIndex: 1
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _music
+      volume: 0.043
+      pitch: 1
+      randomPitchOffset: 0
+      delay: 0
+      loop: 1
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: f75dcbf7c9a070c46972f79c4f8e1591, type: 3}
+  - reference: _postIntroBGM
+    groupIndex: 1
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _music
+      volume: 0.03
+      pitch: 1
+      randomPitchOffset: 0
+      delay: 0
+      loop: 1
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 111d9da0842c3de4789e41be66a81be1, type: 3}
   eventGroups:
   - Battle Music
   - Dungeon BGM

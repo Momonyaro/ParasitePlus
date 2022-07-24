@@ -173,7 +173,7 @@ namespace CORE
             SceneManager.LoadScene(BattleSceneIndex);
         }
 
-        public void SwitchScene(string destinationReference)
+        public void SwitchScene(string destinationReference, bool parseDestination)
         {
             //Create slim here before we load the scene.
 
@@ -194,11 +194,19 @@ namespace CORE
                 loadSceneVariable = currentSlimData.loadSceneVariable,
                 lastButtonLayer = currentSlimData.lastButtonLayer
             };
+
+            string destination = destinationReference;
+            if (parseDestination)
+            {
+                SceneParser.ParseSceneChange(destinationReference, out string slimDestination, out destination);
+                currentSlimData.destinationScene = slimDestination;
+            }
             
             SlimComponent.Instance.PopulateAndSendSlim(slimData);
             //Perhaps trigger some script that plays a transition between the scenes using dontDestroyOnLoad?
-            Debug.Log("Loading scene: "+ currentSlimData.destinationScene);
-            SceneManager.LoadScene(destinationReference);
+            Debug.Log("Loading scene: "+ destination);
+            SceneManager.LoadScene(destination);
+
         }
 
         public List<Item> RequestPlayerInventory()

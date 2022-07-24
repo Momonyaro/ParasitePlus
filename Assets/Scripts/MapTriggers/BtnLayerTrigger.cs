@@ -6,6 +6,7 @@ public class BtnLayerTrigger : MonoBehaviour
 {
     public int newBtnLayer = 0;
     public bool changeScene = false;
+    public bool parseDestination = true;
     public string newSceneVariable = "";
 
     public void TriggerEvent()
@@ -16,7 +17,7 @@ public class BtnLayerTrigger : MonoBehaviour
         if (changeScene)
         {
 
-            mapManager.SwitchScene(newSceneVariable);
+            mapManager.SwitchScene(newSceneVariable, parseDestination);
         }
     }
 }

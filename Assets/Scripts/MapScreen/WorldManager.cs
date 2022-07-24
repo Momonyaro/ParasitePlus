@@ -65,10 +65,12 @@ public class WorldManager : MonoBehaviour
 
             case NodeMessage.MessageType.EXIT_APP:
                 Application.Quit();
+#if UNITY_EDITOR
                 if (Application.isEditor)
                 {
                     UnityEditor.EditorApplication.ExitPlaymode();
                 }
+#endif
                 break;
         }
     }

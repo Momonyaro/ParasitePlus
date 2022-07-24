@@ -9,10 +9,10 @@ using UnityEngine.UI;
 public class ApplyItemMenu : MonoBehaviour
 {
     public ItemPartyCard[] partyCards;
-    public EntityScriptable testEntity;
     public InputSystemUIInputModule uiInput;
+    public Items.Item storedItem;
     private bool dumbGate;
-    private bool active;
+    public bool active;
 
     [Header("Background")]
     public Image background;
@@ -77,7 +77,10 @@ public class ApplyItemMenu : MonoBehaviour
     {
         switch (msg)
         {
-            case "_openItemMenu":
+            case "_closeSelectMember":
+                StopCoroutine(IEIntro().GetEnumerator());
+                StopCoroutine(IEOutro().GetEnumerator());
+                StartCoroutine(IEOutro().GetEnumerator());
                 break;
         }
     }
@@ -95,17 +98,62 @@ public class ApplyItemMenu : MonoBehaviour
         }
     }
 
+    public void RevealMenu(Items.Item item)
+    {
+        storedItem = item;
+
+        StopCoroutine(IEIntro().GetEnumerator());
+        StopCoroutine(IEOutro().GetEnumerator());
+        StartCoroutine(IEIntro().GetEnumerator());
+    }
+
     public void UseItemOnEntity(EntityScriptable entity)
     {
         //Depending on item type, apply it to the entity and then refresh the item menu before closing the applymenu
+
+        ItemMenu iMenu = FindObjectOfType<ItemMenu>();
+
+        switch (storedItem.type)
+        {
+            case Items.ItemType.AID:
+                UseHealing(ref entity);
+                break;
+            default:
+                break;
+        }
+
+        iMenu.OnItemUsed(storedItem.guid);
+        storedItem = null;
+
+        StopCoroutine(IEIntro().GetEnumerator());
+        StopCoroutine(IEOutro().GetEnumerator());
+        StartCoroutine(IEOutro().GetEnumerator());
+    }
+
+    private void UseHealing(ref EntityScriptable entity)
+    {
+        Vector2Int hp = entity.GetEntityHP();
+        Vector2Int ap = entity.GetEntityAP();
+
+        Debug.Log("Healing for " + storedItem.itemAbility.abilityDamage.x + " damage.");
+
+        hp.x -= storedItem.itemAbility.abilityDamage.x;
+        hp.x = Mathf.Min(hp.x, hp.y); 
+        ap.x -= storedItem.itemAbility.abilityDamage.y;
+        ap.x = Mathf.Min(ap.x, ap.y);
+
+        entity.SetEntityHP(hp);
+        entity.SetEntityAP(ap);
     }
 
 
     private IEnumerable IEIntro()
     {
+        CORE.MapManager mapManager = FindObjectOfType<CORE.MapManager>();
+
         for (int i = 0; i < partyCards.Length; i++)
         {
-            partyCards[i].UpdateEntity(testEntity);
+            partyCards[i].UpdateEntity(mapManager.currentSlimData.partyField[i]);
             partyCards[i].onPress.AddListener(UseItemOnEntity);
         }
 
@@ -135,10 +183,46 @@ public class ApplyItemMenu : MonoBehaviour
 
     }
 
+    private IEnumerable IEOutro()
+    {
+        for (int i = 0; i < partyCards.Length; i++)
+        {
+            partyCards[i].onPress.RemoveAllListeners();
+            partyCards[i].active = false;
+        }
+
+        float timer = Mathf.Max(fadeCurve.keys[fadeCurve.length - 1].time, flairLerpCurve.keys[fadeCurve.length - 1].time);
+        float maxTime = 0;
+
+        while (timer > maxTime)
+        {
+            background.color = backgroundGradient.Evaluate(fadeCurve.Evaluate(timer));
+
+            Vector2 flairSize = backFlair.sizeDelta;
+            flairSize.y = flairLerpCurve.Evaluate(timer);
+            backFlair.sizeDelta = flairSize;
+
+            backFlair.rotation = Quaternion.Euler(0, 0, Mathf.Lerp(minMaxRotZ.x, minMaxRotZ.y, timer / maxTime));
+
+            timer -= Time.deltaTime * 2;
+            yield return new WaitForEndOfFrame();
+        }
+
+        background.color = backgroundGradient.Evaluate(fadeCurve.Evaluate(maxTime));
+        Vector2 flairSize2 = backFlair.sizeDelta;
+        flairSize2.y = flairLerpCurve.Evaluate(maxTime);
+        backFlair.sizeDelta = flairSize2;
+        backFlair.rotation = Quaternion.Euler(0, 0, minMaxRotZ.x);
+
+        CORE.UIManager.Instance.onUIMessage.Invoke("_unlockItemMenu");
+        active = false;
+    }
+
     private void HideMenu()
     {
         Color col = background.color;
         col.a = 0;
         background.color = col;
+        active = false;
     }
 }

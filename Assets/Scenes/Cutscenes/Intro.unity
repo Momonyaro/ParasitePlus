@@ -348,6 +348,56 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1087121207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1087121209}
+  - component: {fileID: 1087121208}
+  m_Layer: 0
+  m_Name: MusicBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1087121208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087121207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 944fd05c27207394f98964a12dc9cf3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventReference: _introBGM
+  playOnStart: 1
+  playLayered: 0
+  layerIndex: 0
+  playAsMusic: 1
+  transitionType: 2
+  transitionTime: 2
+--- !u!4 &1087121209
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087121207}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 735.21686, y: 517.71936, z: -511.79773}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1731278029
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,6 +513,7 @@ MonoBehaviour:
   backgroundFather: {fileID: 892642505}
   allFather: {fileID: 1731278029}
   module: {fileID: -944628639613478452, guid: 7d30e05cf43b6e54387d92a909d874f3, type: 3}
+  player: {fileID: 0}
 --- !u!114 &3610896030497349750
 MonoBehaviour:
   m_ObjectHideFlags: 0

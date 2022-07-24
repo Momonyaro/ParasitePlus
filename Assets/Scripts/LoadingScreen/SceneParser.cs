@@ -14,8 +14,14 @@ public class SceneParser : MonoBehaviour
         "FiskekyrkaSundown",
     };
 
+    static string[] travelScenes = new string[]
+    {
+        "TramScene"
+    };
+
     static string RandomSunrise => sunriseScenes[Random.Range(0, sunriseScenes.Length)];
     static string RandomSundown => sundownScenes[Random.Range(0, sundownScenes.Length)];
+    static string RandomTravel  => travelScenes[Random.Range(0, travelScenes.Length)];
 
     public static void ParseSceneChange(string sceneName, out string slimDestination, out string destinationName)
     {
@@ -42,6 +48,16 @@ public class SceneParser : MonoBehaviour
                 if (setNextScene.Equals("BeforeSwanDivision"))
                     break;
                 destinationName = RandomSundown;
+                break;
+            case "ParkMeetGummo":
+                if (setNextScene.Equals("ParkMeetGummo"))
+                    break;
+                destinationName = RandomTravel;
+                break;
+            case "END_DEMO":
+                if (setNextScene.Equals("END_DEMO"))
+                    break;
+                destinationName = RandomSunrise;
                 break;
         }
     }

@@ -77,6 +77,7 @@ MonoBehaviour:
           buildTime: 0
         perSentenceWriteToScreen: 1
         requireContinueInput: 0
+        writingSoundEvent: 
     00000002:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
@@ -92,6 +93,7 @@ MonoBehaviour:
           buildTime: 0
         perSentenceWriteToScreen: 0
         requireContinueInput: 0
+        writingSoundEvent: 
     00000003:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
@@ -127,6 +129,7 @@ MonoBehaviour:
           buildTime: 0
         perSentenceWriteToScreen: 0
         requireContinueInput: 0
+        writingSoundEvent: 
     00000006:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
@@ -161,6 +164,7 @@ MonoBehaviour:
           buildTime: 0
         perSentenceWriteToScreen: 0
         requireContinueInput: 0
+        writingSoundEvent: 
     00000009:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
@@ -194,6 +198,7 @@ MonoBehaviour:
           buildTime: 0
         perSentenceWriteToScreen: 0
         requireContinueInput: 0
+        writingSoundEvent: 
     0000000B:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
@@ -235,6 +240,7 @@ MonoBehaviour:
           buildTime: 0
         perSentenceWriteToScreen: 0
         requireContinueInput: 0
+        writingSoundEvent: 
     0000000E:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
@@ -278,6 +284,7 @@ MonoBehaviour:
           buildTime: 0
         perSentenceWriteToScreen: 0
         requireContinueInput: 0
+        writingSoundEvent: 
     00000011:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
@@ -324,3 +331,4 @@ MonoBehaviour:
           buildTime: 0
         perSentenceWriteToScreen: 0
         requireContinueInput: 0
+        writingSoundEvent: 

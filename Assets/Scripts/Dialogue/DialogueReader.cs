@@ -56,7 +56,10 @@ namespace Dialogue
         private void Update()
         {
             if (!dialogueRunning) return;
-            
+
+            if (player != null)
+                player.lockPlayer = true;
+
             lastComponent.Update(out bool endOfLife);
             
             if (endOfLife) CycleComponent();

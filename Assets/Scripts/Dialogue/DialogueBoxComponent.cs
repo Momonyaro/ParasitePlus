@@ -36,7 +36,8 @@ namespace Dialogue
 
             dialogueScriptable = parent;
 
-            playerName = SlimComponent.Instance.ReadNonVolatilePlayerName;
+            playerName = (Object.FindObjectOfType<MapManager>() != null) ? Object.FindObjectOfType<MapManager>().currentSlimData.playerName
+                : SlimComponent.Instance.ReadNonVolatilePlayerName;
             
             componentPrefab = objectPrefab;
         }

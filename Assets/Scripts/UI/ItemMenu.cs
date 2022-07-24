@@ -11,6 +11,7 @@ public class ItemMenu : MonoBehaviour
 
     public GameObject pageInfoParent;
     public TextMeshProUGUI pageInfoText;
+    public ApplyItemMenu ApplyItemMenu;
 
     public TextMeshProUGUI noItemText;
 
@@ -73,7 +74,8 @@ public class ItemMenu : MonoBehaviour
                     currentIndex += listSlots.Count;
                 PopulateList();
                 break;
-            case "_openSelectCard":
+            case "_unlockItemMenu":
+                active = true;
                 break;
         }
     }
@@ -136,6 +138,30 @@ public class ItemMenu : MonoBehaviour
     public void ParseItem(string itemGuid)
     {
         Debug.Log(itemGuid);
+
+        Items.Item item = null;
+        for (int i = 0; i < lastInventory.Count; i++)
+        {
+            if (lastInventory[i].guid.Equals(itemGuid))
+            {
+                item = lastInventory[i];
+                break;
+            }
+        }
+
+        if (item == null) return;
+
+        switch (item.type)
+        {
+            case Items.ItemType.AID:
+                ApplyItemMenu.RevealMenu(item);
+                active = false;
+                break;
+            default:
+                Debug.Log(item.name);
+                break;
+        }
+
     }
 
     public void OnSubmit(InputAction.CallbackContext context)
@@ -163,7 +189,7 @@ public class ItemMenu : MonoBehaviour
 
     public void SubmitAction()
     {
-        if (!active) return;
+        if (!active || ApplyItemMenu.active) return;
 
         if (nextItemBtn.hovering)
             nextItemBtn.OnCursorClick();
@@ -178,5 +204,29 @@ public class ItemMenu : MonoBehaviour
                 listSlots[i].OnCursorClick();
             }
         }
+    }
+
+    public void OnItemUsed(string itemId)
+    {
+        CORE.MapManager mapManager = FindObjectOfType<CORE.MapManager>();
+
+        //Run this through type sorting later. First by type, then by alphabetic
+        //lastInventory = mapManager.currentSlimData.inventory;
+        foreach (var item in lastInventory)
+        {
+            if (item.guid.Equals(itemId))
+            {
+                if (item.stackable && item.StackSize.x > 1) { item.StackSize.x--; }
+                else
+                {
+                    lastInventory.Remove(item);
+                    break;
+                }
+            }
+        }
+
+        mapManager.currentSlimData.inventory = lastInventory;
+        currentIndex = 0;
+        PopulateList();
     }
 }

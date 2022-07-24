@@ -256,7 +256,7 @@ namespace CORE
             
             while (!fadeToBlackImage.screenBlack) { yield return null; }
             
-            mapManager.SwitchScene(newSceneRef);
+            mapManager.SwitchScene(newSceneRef, false);
             
             while (!fadeToBlackImage.finished) { yield return null; }
             

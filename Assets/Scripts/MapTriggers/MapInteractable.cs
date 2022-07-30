@@ -28,6 +28,7 @@ public class MapInteractable : MonoBehaviour
 
 
     [SerializeField] private float dot;
+    [SerializeField] private float reverseDot;
     private Transform playerTransform;
 
 
@@ -61,6 +62,18 @@ public class MapInteractable : MonoBehaviour
         onActiveUpdate?.Invoke(activeState);
     }
 
+    private void Update()
+    {
+        reverseDot = Vector3.Dot(dir, playerTransform.forward);
+        bool lookingAwayFromTarget = false;
+        reverseDot = 1 - reverseDot;
+
+        if (reverseDot > 0.8f)
+            lookingAwayFromTarget = true;
+
+        transform.GetChild(0).gameObject.SetActive(lookingAwayFromTarget);
+    }
+
     public void PlayEvent()
     {
         activeState = !activeState;
@@ -75,10 +88,10 @@ public class MapInteractable : MonoBehaviour
     {
         dot = Vector3.Dot(dir, playerTransform.forward);
         bool lookingAtTarget = false;
+
         bool inRange = false;
 
-        dot += 1; // Should give us 0 since if we're looking at the door the dot product should be -1
-
+        dot += 1; // 0 when looking at object, 2 when looking away
 
         if (dot <= interactAngleOffset && dot >= -interactAngleOffset)
             lookingAtTarget = true;

@@ -595,6 +595,7 @@ GameObject:
   - component: {fileID: 261603126267936258}
   - component: {fileID: 1959833688544996306}
   - component: {fileID: 3191917496812673635}
+  - component: {fileID: 7436811112600240460}
   m_Layer: 0
   m_Name: W_DOOR_0
   m_TagString: Untagged
@@ -678,6 +679,39 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.6, y: 1.4000005, z: 0.00000040531148}
   m_Center: {x: -0.80000013, y: -0.000000011053441, z: -0.98544985}
+--- !u!114 &7436811112600240460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3191917496812673632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9059f1e4e744444f8eaf54c6ba0abab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dir: {x: 0, y: 0, z: 1}
+  calcDefaultSensorPos: 0
+  sensor: {x: -4, y: 0, z: -4}
+  calcDefaultWarpDest: 0
+  warpDest: {x: 0, y: 0, z: 0}
+  interactAngleOffset: 0.1
+  interactRange: 0.5
+  generateNewGUID: 0
+  guid: 44ed8985-d2c0-4cac-a4b7-22a1487138c7
+  triggerActive: 0
+  dot: 0
+  locked: 0
+  singleUseKey: 0
+  keyItemID: 
+  goToScene: 0
+  playSound: 1
+  sceneName: 
+  loadSceneVariable: 
+  isLockedMessage: The door is locked.
+  onUnlockMessage: Unlocked the door using $ITEM.
+  interactPromptMsg: Open Door
 --- !u!1 &3438761006369374946
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,6 +1141,7 @@ GameObject:
   - component: {fileID: 8932690887089170396}
   - component: {fileID: 3690205035432435122}
   - component: {fileID: 5088845250685459152}
+  - component: {fileID: 2882125405479069043}
   m_Layer: 0
   m_Name: S_DOOR_0
   m_TagString: Untagged
@@ -1190,6 +1225,39 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5999999, y: 1.4, z: 0.00000017881395}
   m_Center: {x: -0.8000002, y: 0.00000011920929, z: -0.9854497}
+--- !u!114 &2882125405479069043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5088845250685459153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9059f1e4e744444f8eaf54c6ba0abab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dir: {x: 0, y: 0, z: 1}
+  calcDefaultSensorPos: 0
+  sensor: {x: -4, y: 0, z: -4}
+  calcDefaultWarpDest: 0
+  warpDest: {x: 0, y: 0, z: 0}
+  interactAngleOffset: 0.1
+  interactRange: 0.5
+  generateNewGUID: 0
+  guid: 9fbe0ebf-7a83-4d2f-b61c-6f3dd8c7561f
+  triggerActive: 0
+  dot: 0
+  locked: 0
+  singleUseKey: 0
+  keyItemID: 
+  goToScene: 0
+  playSound: 1
+  sceneName: 
+  loadSceneVariable: 
+  isLockedMessage: The door is locked.
+  onUnlockMessage: Unlocked the door using $ITEM.
+  interactPromptMsg: Open Door
 --- !u!1 &5677138353994437971
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,6 +1438,7 @@ GameObject:
   - component: {fileID: 7626515893078511260}
   - component: {fileID: 6449156745970360054}
   - component: {fileID: 5694815163655493398}
+  - component: {fileID: 8848259757831038651}
   m_Layer: 0
   m_Name: E_DOOR_0
   m_TagString: Untagged
@@ -1453,6 +1522,39 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.6, y: 1.4000005, z: 0.00000040531174}
   m_Center: {x: -0.80000025, y: 0.00000010642112, z: -0.98544997}
+--- !u!114 &8848259757831038651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5694815163655493399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9059f1e4e744444f8eaf54c6ba0abab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dir: {x: 1, y: 0, z: 0}
+  calcDefaultSensorPos: 0
+  sensor: {x: -4, y: 0, z: -4}
+  calcDefaultWarpDest: 0
+  warpDest: {x: 0, y: 0, z: 0}
+  interactAngleOffset: 0.1
+  interactRange: 0.5
+  generateNewGUID: 0
+  guid: 8d6560fb-99a6-4f3d-889c-f9a24443597b
+  triggerActive: 0
+  dot: 0
+  locked: 0
+  singleUseKey: 0
+  keyItemID: 
+  goToScene: 0
+  playSound: 1
+  sceneName: 
+  loadSceneVariable: 
+  isLockedMessage: The door is locked.
+  onUnlockMessage: Unlocked the door using $ITEM.
+  interactPromptMsg: Open Door
 --- !u!1 &7162400114245014425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1870,6 +1972,7 @@ GameObject:
   - component: {fileID: 1877152870249583668}
   - component: {fileID: 5584411735912011224}
   - component: {fileID: 9142536477271147310}
+  - component: {fileID: 6656468872423446997}
   m_Layer: 0
   m_Name: N_DOOR_0
   m_TagString: Untagged
@@ -1953,3 +2056,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5999998, y: 1.4, z: 0.00000017881396}
   m_Center: {x: -0.8000001, y: 0.000000166893, z: -0.9854497}
+--- !u!114 &6656468872423446997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9142536477271147311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9059f1e4e744444f8eaf54c6ba0abab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dir: {x: 0, y: 0, z: -1}
+  calcDefaultSensorPos: 0
+  sensor: {x: -4, y: 0, z: -4}
+  calcDefaultWarpDest: 0
+  warpDest: {x: 0, y: 0, z: 0}
+  interactAngleOffset: 0.1
+  interactRange: 0.5
+  generateNewGUID: 0
+  guid: f14cce01-b3de-4866-9639-48ea4e8dd889
+  triggerActive: 0
+  dot: 0
+  locked: 0
+  singleUseKey: 0
+  keyItemID: 
+  goToScene: 0
+  playSound: 1
+  sceneName: 
+  loadSceneVariable: 
+  isLockedMessage: The door is locked.
+  onUnlockMessage: Unlocked the door using $ITEM.
+  interactPromptMsg: Open Door

@@ -14,10 +14,11 @@ public class TextAnimator : MonoBehaviour
     [Range(0, 1)] public float randCapChance = 0.5f;
     public float randCapTimer = 0.1f;
     private float _randCapTimer = 0.0f;
+    public float randCapMinMaxRandOffset = 0.00f;
 
     private void Awake()
     {
-        _randCapTimer = randCapTimer;
+        _randCapTimer = randCapTimer + Random.Range(-randCapMinMaxRandOffset, randCapMinMaxRandOffset);
     }
 
     private void Update()
@@ -40,7 +41,7 @@ public class TextAnimator : MonoBehaviour
         _randCapTimer -= Time.deltaTime;
         if (_randCapTimer <= 0)
         {
-            _randCapTimer = randCapTimer;
+            _randCapTimer = randCapTimer + Random.Range(-randCapMinMaxRandOffset, randCapMinMaxRandOffset);
             char[] txtArray = currentText.ToCharArray();
 
             for (int i = 0; i < txtArray.Length; i++)

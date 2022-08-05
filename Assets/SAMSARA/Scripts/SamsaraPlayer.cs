@@ -78,21 +78,20 @@ namespace SAMSARA
             _transitionInProgress = true;
             SamsaraAudioChannel current = currentMusicChannel;
             SamsaraAudioChannel next = null;
-            if (nextEvent != null)
-                next = CreateAudioChannel(nextEvent);
 
             float lastVolume = 0;
             float nextVolume = 0;
 
+            if (nextEvent != null)
+            {
+                next = CreateAudioChannel(nextEvent);
+                nextVolume = next.channelVolume;
+                next.channelVolume = 0;
+            }
+
             if (current != null)
             {
                 lastVolume = current.channelVolume;
-            }
-            
-            if (next != null)
-            {
-                nextVolume = next.channelVolume;
-                next.channelVolume = 0;
             }
 
             float timePassed = 0;

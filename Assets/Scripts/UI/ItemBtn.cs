@@ -101,14 +101,7 @@ public class ItemBtn : MonoBehaviour
 
     public bool IsInsideRect(Vector2 pos)
     {
-        Vector2 screenPos = background.rectTransform.position;
-        Vector2 screenSizeDelta = background.rectTransform.sizeDelta;
-
-        // screenpos +- sizedelta should give us the space that the image occupies in screen space.
-
-        Rect screenRect = new Rect(screenPos - (screenSizeDelta * 0.25f), screenSizeDelta * 0.5f);
-
-        return screenRect.Contains(pos);
+        return RectTransformUtility.RectangleContainsScreenPoint(background.rectTransform, pos);
     }
 
     public void StoreMessage(string msg)

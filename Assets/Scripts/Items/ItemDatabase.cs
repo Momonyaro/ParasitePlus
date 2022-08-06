@@ -50,6 +50,21 @@ namespace Items
 
             return bucket.ToArray();
         }
+        public Item[] GetAllStoreItems(int maxLevel)
+        {
+            List<Item> bucket = new List<Item>();
+            for (int i = 0; i < itemDatabase.Count; i++)
+            {
+                bool storeCheck = itemDatabase[i].storeItem && itemDatabase[i].minLevelReq <= maxLevel;
+
+                if (storeCheck)
+                {
+                    bucket.Add(itemDatabase[i]);
+                }
+            }
+
+            return bucket.ToArray();
+        }
     }
 
     [System.Serializable]
@@ -76,6 +91,24 @@ namespace Items
 
         public bool storeItem;
 
+        public Item(Item copy)
+        {
+            this.name = copy.name;
+            this.type = copy.type;
+            this.msrp = copy.msrp;
+            this.minLevelReq = copy.minLevelReq;
+            this.minFriendshipReq = copy.minFriendshipReq;
+            this.guid = copy.guid;
+            this.itemAbility = copy.itemAbility;
+            this.damage = copy.damage;
+            this.defense = copy.defense;
+            this.critChance = copy.critChance;
+            this.dodgeChance = copy.dodgeChance;
+            this.stackable = copy.stackable;
+            this.StackSize = copy.StackSize;
+            this.storeItem = copy.storeItem;
+        }
+
         public Item(string name, ItemType type, int msrp = 0, int minLevelReq = 0, int minFriendshipReq = 0, int damage = 0, int defense = 0, float critChance = 0, float dodgeChance = 0)
         {
             this.name = name;
@@ -83,7 +116,7 @@ namespace Items
             this.msrp = msrp;
             this.minLevelReq = minLevelReq;
             this.minFriendshipReq = minFriendshipReq;
-            guid = Guid.NewGuid().ToString();
+            guid = "";
             
             this.damage = damage;
             this.defense = defense;

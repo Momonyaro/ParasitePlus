@@ -41,6 +41,11 @@ public class SceneParser : MonoBehaviour
             case "MapMenu":
                 if (setNextScene.Equals("MapMenu"))
                     break;
+                if (setNextScene.Equals("CHRIS_STORE"))
+                {
+                    destinationName = RandomTravel;
+                    break;
+                }
                 destinationName = RandomSunrise;
                 break;
 

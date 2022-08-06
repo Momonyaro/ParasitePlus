@@ -20,7 +20,7 @@ MonoBehaviour:
       ratio: 1
       trackLerpOverlap: 1
       volumeGroupRef: _music
-      volume: 0.412
+      volume: 0.382
       pitch: 1
       randomPitchOffset: 0
       delay: 0
@@ -356,6 +356,38 @@ MonoBehaviour:
       outroClip: {fileID: 0}
       tracks:
       - AudioClip: {fileID: 8300000, guid: f9f4dd486e33f0747bb3164e9751f634, type: 3}
+  - reference: _storePurchase
+    groupIndex: 2
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.489
+      pitch: 1
+      randomPitchOffset: 0
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: a0cf210e8d1409a4aa8b26b16539a2e2, type: 3}
+  - reference: _storeAddSub
+    groupIndex: 2
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.223
+      pitch: 1.2
+      randomPitchOffset: 0.024
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: e47209c0c7e8a6f409d83ef267dfea70, type: 3}
   eventGroups:
   - Battle Music
   - Dungeon BGM

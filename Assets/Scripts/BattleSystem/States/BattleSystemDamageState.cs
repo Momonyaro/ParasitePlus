@@ -69,7 +69,8 @@ namespace BattleSystem.States
             {
                 int damage = 0;
 
-                float damScale = abilityInUse.levelScalingDamage * currentEntity.entityLevel;
+                // Equation is ->  y = damage + (scaling * sqrt(level))
+                float damScale = abilityInUse.levelScalingDamage * Mathf.Sqrt(currentEntity.entityLevel);
                 float sign = Mathf.Sign(abilityInUse.abilityDamage.x);
                 int scaledDam = Mathf.FloorToInt((Mathf.Abs(abilityInUse.abilityDamage.x) + damScale) * sign);
                 

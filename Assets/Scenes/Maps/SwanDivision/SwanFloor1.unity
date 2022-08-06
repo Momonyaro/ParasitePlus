@@ -20619,7 +20619,7 @@ MonoBehaviour:
   triggerActive: 0
   disabled: 0
   generateNewGUID: 0
-  guid: 478b8cba-d905-4e10-b953-b0d32a8ba3cb
+  guid: swan1:event/stagesetting
   onEvent:
     m_PersistentCalls:
       m_Calls:

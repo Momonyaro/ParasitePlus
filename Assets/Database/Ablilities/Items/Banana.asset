@@ -21,7 +21,7 @@ MonoBehaviour:
   targetAll: 0
   targetFriendlies: 1
   abilityLevelReq: 0
-  levelScalingDamage: 1.5
+  levelScalingDamage: 0
   abilityCritChance: 0
   abilityMissChance: 0
   abilityCosts: {x: 0, y: 0}

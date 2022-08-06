@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StoreManager : MonoBehaviour
 {
@@ -42,28 +43,42 @@ public class StoreManager : MonoBehaviour
                 currentSlim.partyField[i] = currentSlim.partyField[i].Copy();
         }
     }
-    
-    private void WritePlayerLevel(int level)
+
+    public void ExitStore()
+    {
+        currentSlim.destinationScene = "CHRIS_STORE";
+        CORE.SlimComponent.Instance.PopulateAndSendSlim(currentSlim);
+        SceneParser.ParseSceneChange("MapMenu", out string slimDestination, out string destinationName);
+        currentSlim.destinationScene = slimDestination;
+        SceneManager.LoadScene(destinationName);
+    }
+
+    public static void WritePlayerLevel(int level)
     {
         PlayerPrefs.SetInt(LastPlayerLevelPrefsKey, level);
     }
 
     //This is used to show the "NEW" tag on items the player couldn't get before.
-    private int GetLastPlayerLevel(out bool success)
+    public static int GetLastPlayerLevel(out bool success)
     {
         success = PlayerPrefs.HasKey(LastPlayerLevelPrefsKey);
         return PlayerPrefs.GetInt(LastPlayerLevelPrefsKey, 0);
     }
 }
 
-[CustomEditor(typeof(StoreManager))]
-public class StoreManagerEditor : Editor
-{
-    public override void OnInspectorGUI()
-    {
-        if (GUILayout.Button("Reset Last Player Level"))
-            PlayerPrefs.DeleteKey(StoreManager.LastPlayerLevelPrefsKey);
 
-        base.OnInspectorGUI();
+#if UNITY_EDITOR
+
+    [CustomEditor(typeof(StoreManager))]
+    public class StoreManagerEditor : Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            if (GUILayout.Button("Reset Last Player Level"))
+                PlayerPrefs.DeleteKey(StoreManager.LastPlayerLevelPrefsKey);
+
+            base.OnInspectorGUI();
+        }
     }
-}
+
+#endif

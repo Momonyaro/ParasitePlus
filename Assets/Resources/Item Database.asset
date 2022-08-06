@@ -31,7 +31,7 @@ MonoBehaviour:
   - name: Banana
     guid: 993174de-f959-4343-b953-920d32992136
     description: Bananba heal aaa
-    msrp: 0
+    msrp: 14
     type: 4
     minLevelReq: 0
     minFriendshipReq: 0

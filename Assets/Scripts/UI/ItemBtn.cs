@@ -22,7 +22,7 @@ public class ItemBtn : MonoBehaviour
     public bool hovering = false;
     public bool active = false;
 
-    public UnityEvent<string> onPress;
+    public UnityEvent<string> onPress = new UnityEvent<string>();
 
     private string storedMsg;
     private MapController mController;
@@ -46,7 +46,7 @@ public class ItemBtn : MonoBehaviour
             OnCursorExit();
     }
 
-    //This won't work with gamepads, re-do
+
     public void OnCursorClick()
     {
         if (!active) return;
@@ -56,7 +56,8 @@ public class ItemBtn : MonoBehaviour
     public void OnCursorEnter()
     {
         mainText.color = selectedTextCol;
-        secondText.color = selectedTextCol;
+        if (secondText != null)
+            secondText.color = selectedTextCol;
         background.color = selectedCol;
         hovering = true;
 
@@ -66,15 +67,22 @@ public class ItemBtn : MonoBehaviour
     public void OnCursorExit()
     {
         mainText.color = defaultTextCol;
-        secondText.color = defaultTextCol;
+        if (secondText != null)
+            secondText.color = defaultTextCol;
         background.color = defaultCol;
         hovering = false;
+    }
+
+    public void AddClickListener(UnityAction<string> eventAction)
+    {
+        onPress.AddListener(eventAction);
     }
 
     public void SetButtonData(string title, string extra, string toStore, string itemDescription)
     {
         mainText.text = title;
-        secondText.text = extra;
+        if (secondText != null)
+            secondText.text = extra;
         this.itemDescription = itemDescription;
         StoreMessage(toStore);
 

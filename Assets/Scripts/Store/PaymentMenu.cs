@@ -51,6 +51,7 @@ public class PaymentMenu : MonoBehaviour
     public void OnClose()
     {
         PlayTransition(IEClose());
+        SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_cancel", out bool success);
     }
 
     public void PrepareBuyItem(Items.Item toBuy, int inventoryAmount, int playerMoney)

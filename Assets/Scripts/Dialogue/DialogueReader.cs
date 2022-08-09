@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using MOVEMENT;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +13,7 @@ namespace Dialogue
         [Header("Dialogue Data")]
         public DialogueScriptable dialogueData;
         public bool initOnStart = false;
+        public UnityEvent onStopReading = new UnityEvent();
         
         [Space(15)]
         
@@ -144,6 +146,8 @@ namespace Dialogue
                 CORE.SlimComponent.Instance.SetNonVolatileDestination(slimDestination);
                 SceneManager.LoadScene(destination);
             }
+
+            onStopReading?.Invoke();
             
             if (player != null)
                 player.lockPlayer = false;

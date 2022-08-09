@@ -9,7 +9,10 @@ namespace BattleSystem.UI
 {
     public class BloodSpatterSprayer : MonoBehaviour
     {
-        public TextMeshProUGUI damageText;
+        public Gradient hpDamColors;
+        public Gradient apDamColors;
+        public TextMeshProUGUI hpDamageText;
+        public TextMeshProUGUI apDamageText;
         public TextMeshProUGUI weakText;
         public TextMeshProUGUI resistText;
         public float spatterRadius;

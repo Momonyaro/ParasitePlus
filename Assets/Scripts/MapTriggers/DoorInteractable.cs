@@ -28,6 +28,7 @@ namespace MapTriggers
         public string keyItemID = "";
         public bool goToScene = false;
         public bool playSound = true;
+        public string sfxReference = "_doorOpen";
         public string sceneName = "";
         public string loadSceneVariable = "";
         public string isLockedMessage = "The door is locked.";

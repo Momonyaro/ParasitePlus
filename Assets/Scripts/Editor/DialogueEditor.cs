@@ -447,7 +447,10 @@ namespace Editor
 
             if (GUILayout.Button("Insert Dialogue Line" , GUILayout.Width(150)))
             {
-                boxComponent.dialogueBoxes.Insert(index, new DialogueBoxComponent.DialogueBox());
+                boxComponent.dialogueBoxes.Insert(index, new DialogueBoxComponent.DialogueBox()
+                {
+                    buildTime = 0.0456f
+                });
                 return true;
             }
             
@@ -465,7 +468,13 @@ namespace Editor
             switch (type)
             {
                 case ComponentTypes.DIALOGUE_BOX:
-                    DialogueBoxComponent dialogueBoxComponent = new DialogueBoxComponent();
+                    DialogueBoxComponent dialogueBoxComponent = new DialogueBoxComponent()
+                    {
+                        screenPosition = new Vector2(0, -550),
+                        perSentenceWriteToScreen = false,
+                        writingSoundEvent = "_keyPress",
+                        objectPrefab = Resources.Load<GameObject>("DialogueBox")
+                    };
                     dialogueBoxComponent.reference = "_diagBox" + index;
                     lastInstance.components.Insert(index, dialogueBoxComponent);
                     EditorUtility.SetDirty(target);

@@ -32,7 +32,7 @@ public class StoreReceiptPrinter : MonoBehaviour
         //Discount is -5% at x5, -10% at x10, -15% at x15 and -20% at x20
         int discount = 0;
         int amountStack = amount;
-        while (amountStack >= 5)
+        while (amountStack >= 5 && discount < 4)
         {
             amountStack -= 5;
             discount++;

@@ -277,6 +277,7 @@ MonoBehaviour:
   randomCapitalization: 1
   randCapChance: 0.177
   randCapTimer: 1.57
+  randCapMinMaxRandOffset: 0
 --- !u!1 &46438563
 GameObject:
   m_ObjectHideFlags: 0
@@ -2840,14 +2841,15 @@ MonoBehaviour:
   - {fileID: 0}
   enemyField:
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 540bdebe1ba62404b8ec92b713d12625, type: 2}
   - {fileID: 11400000, guid: 043f562807947a944b4bba6576812e93, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 9c39519643d902946b0f1896d643a68f, type: 2}
   - {fileID: 0}
   holdingCells: []
   partyInventory:
   - name: Banana
     guid: asgasdg
+    description: 
     msrp: 0
     type: 4
     minLevelReq: 0
@@ -2858,7 +2860,7 @@ MonoBehaviour:
     dodgeChance: 0
     itemAbility: {fileID: 11400000, guid: 7a5a9b2b7fa43894fa0304baaffba707, type: 2}
     stackable: 1
-    maxStackSize: 99
+    StackSize: {x: 0, y: 0}
     storeItem: 0
   usedGroundItems: []
   partyWallet: 0

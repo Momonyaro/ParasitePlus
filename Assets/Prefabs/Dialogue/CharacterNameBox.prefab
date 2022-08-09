@@ -396,12 +396,12 @@ MonoBehaviour:
     - {fileID: 0}
     enemyField: []
     inventory: []
-    wallet: 250
+    wallet: 125
     ignoreTransformReadFlag: 1
     playerLastPos: {x: 0, y: 0, z: 0}
     playerLastEuler: {x: 0, y: 0, z: 0}
     loadSceneVariable: 
-    lastDungeonIndex: 0
+    lastButtonLayer: 0
 --- !u!1 &5679837877214112591
 GameObject:
   m_ObjectHideFlags: 0

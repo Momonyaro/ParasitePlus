@@ -126,6 +126,7 @@ namespace CORE
                 //Add new doors for the FPS sections
                 if (doorInteractables[i].triggerActive)
                 {
+                    Debug.Log(doorInteractables[i].gameObject.name);
                     if (doorInteractables[i].locked)
                     {
                         DoorInteractable locked = doorInteractables[i];
@@ -154,7 +155,7 @@ namespace CORE
                     
                     Debug.Log("Walking through Door at pos:" + doorInteractables[i].transform.position);
                     if (doorInteractables[i].playSound)
-                        SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_doorOpen", out bool success);
+                        SAMSARA.Samsara.Instance.PlaySFXRandomTrack(doorInteractables[i].sfxReference, out bool success);
 
                     if (doorInteractables[i].goToScene)
                     {
@@ -163,7 +164,7 @@ namespace CORE
                     }
                     else
                     {
-                        StartCoroutine(WaitForDoorTranstion(i, doorInteractables[i].playSound));
+                        StartCoroutine(WaitForDoorTranstion(i, (doorInteractables[i].playSound && doorInteractables[i].sfxReference.Equals("_doorOpen"))));
                     }
                     break;
                 }

@@ -113,6 +113,15 @@ public class ApplyItemMenu : MonoBehaviour
 
         ItemMenu iMenu = FindObjectOfType<ItemMenu>();
 
+        if (storedItem.itemAbility != null)
+        {
+            string sfxRef = storedItem.itemAbility.abilitySoundEffect;
+            if (!sfxRef.Equals(""))
+            {
+                SAMSARA.Samsara.Instance.PlaySFXRandomTrack(sfxRef, out bool success);
+            }    
+        }
+
         switch (storedItem.type)
         {
             case Items.ItemType.AID:

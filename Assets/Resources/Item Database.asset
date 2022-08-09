@@ -30,7 +30,7 @@ MonoBehaviour:
     storeItem: 0
   - name: Banana
     guid: 993174de-f959-4343-b953-920d32992136
-    description: Bananba heal aaa
+    description: A little potassium never hurt anybody... Restores 5 HP
     msrp: 14
     type: 4
     minLevelReq: 0
@@ -42,7 +42,7 @@ MonoBehaviour:
     itemAbility: {fileID: 11400000, guid: 7a5a9b2b7fa43894fa0304baaffba707, type: 2}
     stackable: 1
     StackSize: {x: 1, y: 99}
-    storeItem: 1
+    storeItem: 0
   - name: Double Door Key
     guid: aa6b26b6-d5a7-4ca9-a774-6898960fe1c5
     description: 
@@ -58,3 +58,64 @@ MonoBehaviour:
     stackable: 0
     StackSize: {x: 0, y: 0}
     storeItem: 0
+  - name: Cinnamon Bun
+    guid: 615f99df-58c4-4674-becb-79f361cb6ad3
+    description: A must-have confection, restores 5 HP
+    msrp: 10
+    type: 4
+    minLevelReq: 0
+    minFriendshipReq: 0
+    damage: 0
+    defense: 0
+    critChance: 0
+    dodgeChance: 0
+    itemAbility: {fileID: 11400000, guid: 9c2454b5b2c14ac46828520b28376b29, type: 2}
+    stackable: 1
+    StackSize: {x: 1, y: 25}
+    storeItem: 1
+  - name: Egg-Salmon Sandwich
+    guid: 470e0ec1-76f2-468e-9890-cadacd688215
+    description: A fresh, filling sandwich, restores 10 HP
+    msrp: 20
+    type: 4
+    minLevelReq: 3
+    minFriendshipReq: 0
+    damage: 0
+    defense: 0
+    critChance: 0
+    dodgeChance: 0
+    itemAbility: {fileID: 11400000, guid: 46aecd36c2fc48a4aaa9bca48c51e938, type: 2}
+    stackable: 1
+    StackSize: {x: 1, y: 25}
+    storeItem: 1
+  - name: Coffee
+    guid: c807abf1-0d2c-4184-926e-2123a86a32c7
+    description: Basic, but hits the spot! Restores 5 AP
+    msrp: 12
+    type: 4
+    minLevelReq: 0
+    minFriendshipReq: 0
+    damage: 0
+    defense: 0
+    critChance: 0
+    dodgeChance: 0
+    itemAbility: {fileID: 11400000, guid: 5a93a119a6b325843bf0b1bd7ff0f060, type: 2}
+    stackable: 1
+    StackSize: {x: 1, y: 25}
+    storeItem: 1
+  - name: Latte
+    guid: 5f72ba12-8869-4850-b4e7-329ca9fc7f2c
+    description: Ol' Reliable, few things beat it's frothy goodness. Restores 10
+      AP
+    msrp: 20
+    type: 4
+    minLevelReq: 3
+    minFriendshipReq: 0
+    damage: 0
+    defense: 0
+    critChance: 0
+    dodgeChance: 0
+    itemAbility: {fileID: 11400000, guid: 1af583e996107ff48980d29c56d228f4, type: 2}
+    stackable: 1
+    StackSize: {x: 1, y: 25}
+    storeItem: 1

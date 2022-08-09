@@ -1366,19 +1366,7 @@ MonoBehaviour:
     m_ActionId: 76e20017-e65b-4c5c-8d70-95962c8c842e
     m_ActionName: Player/DEBUG_START_BATTLE[/Keyboard/z]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: WorldManager, Assembly-CSharp
-        m_MethodName: OnSubmit
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 0bbf39af-ac14-4249-80f9-f5d1999987e5
     m_ActionName: Player/Interact[/Keyboard/space]
   - m_PersistentCalls:
@@ -1410,19 +1398,7 @@ MonoBehaviour:
     m_ActionId: 14a3728d-3f40-4dce-835d-7b0511c27e7b
     m_ActionName: UI/Point[/Mouse/position]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: WorldManager, Assembly-CSharp
-        m_MethodName: OnMouseSubmit
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 4b710460-1b01-4f6c-8a1c-6cf21cf4d5d2
     m_ActionName: UI/Click[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -1462,19 +1438,7 @@ MonoBehaviour:
     m_ActionId: 37e39ffe-cbd7-44f8-aafb-09be58f36c68
     m_ActionName: Turn Battle/Move Cursor[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MapController, Assembly-CSharp
-        m_MethodName: RetrieveJoystick
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 44ee6140-13b1-43a7-ac83-4b5adb0d7deb
     m_ActionName: Player/MoveFUCK[/XInputControllerWindows/leftStick]
   m_NeverAutoSwitchControlSchemes: 0

@@ -101,10 +101,11 @@ public class StoreInterface : MonoBehaviour
 
     public void OpenBuyMenu()
     {
+        SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_submit", out bool success);
         buyMode = true;
 
         fetchedInventory = 
-            new List<Items.Item>(storeInventory.GetAllStoreItems(StoreManager.GetLastPlayerLevel(out bool success)));
+            new List<Items.Item>(storeInventory.GetAllStoreItems(StoreManager.GetLastPlayerLevel(out bool success2)));
         lastPlayerInventory = FindObjectOfType<StoreManager>().currentSlim.inventory;
 
         StopAllCoroutines();
@@ -126,6 +127,7 @@ public class StoreInterface : MonoBehaviour
     public void CloseMenu()
     {
         returnButton.active = false;
+        SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_cancel", out bool success);
         ItemDetailWindow.Instance.HideDetailWindow();
         StopAllCoroutines();
         StartCoroutine(IEClose());
@@ -232,6 +234,7 @@ public class StoreInterface : MonoBehaviour
             return;
 
         SetMenuVisibility(false);
+        SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_submit", out bool success);
         FindObjectOfType<PaymentMenu>().PrepareBuyItem(item, invAmount, FindObjectOfType<StoreManager>().currentSlim.wallet);
     }
 

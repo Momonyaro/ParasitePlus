@@ -16,7 +16,7 @@ MonoBehaviour:
   abilityId: _item_banana
   abilityDesc: banana funny, haha monkey
   abilityEffectRef: _heal
-  abilitySoundEffect: 
+  abilitySoundEffect: _eating
   hideDamageText: 0
   targetAll: 0
   targetFriendlies: 1

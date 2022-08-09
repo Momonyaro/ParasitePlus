@@ -54,6 +54,7 @@ public class ItemMenu : MonoBehaviour
                 active = true;
                 prevItemBtn.active = true;
                 nextItemBtn.active = true;
+                SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_openItems", out bool success);
                 PopulateList();
                 break;
             case "_closeItemMenu":
@@ -63,6 +64,8 @@ public class ItemMenu : MonoBehaviour
                 }
                 prevItemBtn.active = false;
                 nextItemBtn.active = false;
+                SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_closeItems", out bool success2);
+                Debug.Log("closeitems: [" + success2 + "]");
                 active = false;
                 break;
             case "_lastItemPage":

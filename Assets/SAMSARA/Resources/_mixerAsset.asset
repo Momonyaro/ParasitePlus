@@ -97,10 +97,10 @@ MonoBehaviour:
     groupIndex: 3
     trackContainer:
       lerpValue: 0
-      ratio: 0.2
+      ratio: 0.16666667
       trackLerpOverlap: 1
       volumeGroupRef: _general
-      volume: 0.405
+      volume: 0.15
       pitch: 1
       randomPitchOffset: 0.033
       delay: 0
@@ -113,6 +113,7 @@ MonoBehaviour:
       - AudioClip: {fileID: 8300000, guid: 3071e48810c58d7439736f9ce386c764, type: 3}
       - AudioClip: {fileID: 8300000, guid: ab12a74b1f1f6154ab0f507500039932, type: 3}
       - AudioClip: {fileID: 8300000, guid: 0b04c929b8a3d524da80879178abcd81, type: 3}
+      - AudioClip: {fileID: 8300000, guid: 97091cfe923d1cf4a817ccd87ae7d23b, type: 3}
   - reference: _bloodSpatter
     groupIndex: 4
     trackContainer:
@@ -145,7 +146,7 @@ MonoBehaviour:
       introClip: {fileID: 0}
       outroClip: {fileID: 0}
       tracks:
-      - AudioClip: {fileID: 8300000, guid: 26f38391b68e97146a854b34bbddbf09, type: 3}
+      - AudioClip: {fileID: 8300000, guid: a6bb225ccc6fe8e47a39e7ce2adee2bf, type: 3}
   - reference: _msDoorOpen
     groupIndex: 3
     trackContainer:
@@ -165,10 +166,10 @@ MonoBehaviour:
     groupIndex: 4
     trackContainer:
       lerpValue: 0
-      ratio: 0.33333334
+      ratio: 1
       trackLerpOverlap: 1
       volumeGroupRef: _general
-      volume: 1
+      volume: 0.692
       pitch: 1
       randomPitchOffset: 0
       delay: 0
@@ -176,9 +177,7 @@ MonoBehaviour:
       introClip: {fileID: 0}
       outroClip: {fileID: 0}
       tracks:
-      - AudioClip: {fileID: 8300000, guid: 1092d7acf0c3dc34aaad956c4550da99, type: 3}
-      - AudioClip: {fileID: 8300000, guid: f0161dc92e6036c4fafa949a148ffd2c, type: 3}
-      - AudioClip: {fileID: 8300000, guid: 118f805b6f5e13741ab55af7d930ee2c, type: 3}
+      - AudioClip: {fileID: 8300000, guid: 6dbe501dc4712e9458801df1947f5358, type: 3}
   - reference: _tempOblique
     groupIndex: 5
     trackContainer:
@@ -199,7 +198,7 @@ MonoBehaviour:
     groupIndex: 6
     trackContainer:
       lerpValue: 0
-      ratio: 1
+      ratio: 0.5
       trackLerpOverlap: 1
       volumeGroupRef: _general
       volume: 0.332
@@ -211,6 +210,7 @@ MonoBehaviour:
       outroClip: {fileID: 0}
       tracks:
       - AudioClip: {fileID: 8300000, guid: a7506ebb5188cfd4ca9c096b93541658, type: 3}
+      - AudioClip: {fileID: 8300000, guid: 79c40b3bea8ccce4e9cf9a851ca5292a, type: 3}
   - reference: _pickup
     groupIndex: 3
     trackContainer:
@@ -299,7 +299,7 @@ MonoBehaviour:
       ratio: 1
       trackLerpOverlap: 1
       volumeGroupRef: _general
-      volume: 0.321
+      volume: 0.4
       pitch: 1
       randomPitchOffset: 0
       delay: 0
@@ -388,6 +388,214 @@ MonoBehaviour:
       outroClip: {fileID: 0}
       tracks:
       - AudioClip: {fileID: 8300000, guid: e47209c0c7e8a6f409d83ef267dfea70, type: 3}
+  - reference: _critShatter
+    groupIndex: 4
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.595
+      pitch: 1
+      randomPitchOffset: 0.02
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: e9cd4e7cfd1deaf4dba74efffb7093e0, type: 3}
+  - reference: _eating
+    groupIndex: 4
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _vocal
+      volume: 0.325
+      pitch: 1
+      randomPitchOffset: 0.113
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 403f1406a7079ba47983b815cfda5613, type: 3}
+  - reference: _drinking
+    groupIndex: 4
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _vocal
+      volume: 0.599
+      pitch: 1
+      randomPitchOffset: 0.087
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 93637d9c9a3372c42b2f2dbdb7eaff16, type: 3}
+  - reference: _openItems
+    groupIndex: 2
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.24
+      pitch: 1
+      randomPitchOffset: 0.063
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 60fed597f8fd8e045a3795d377c2f9db, type: 3}
+  - reference: _closeItems
+    groupIndex: 2
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.151
+      pitch: 1
+      randomPitchOffset: 0.063
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 54589a26b485fd0448eaa36b310dba6f, type: 3}
+  - reference: _cancel
+    groupIndex: 2
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.452
+      pitch: 1
+      randomPitchOffset: 0.039
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 5b8afb235e1cb464cb8a9d2ffba885d8, type: 3}
+  - reference: _submit
+    groupIndex: 2
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.468
+      pitch: 1
+      randomPitchOffset: 0.055
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 621d85200880dda448e07da932469811, type: 3}
+  - reference: _climbStairs
+    groupIndex: 3
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.557
+      pitch: 1
+      randomPitchOffset: 0.031
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 0a3cd84ea9b06ef479dcbfa82cc09d17, type: 3}
+  - reference: _playerStepThud
+    groupIndex: 3
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.2
+      pitch: 1
+      randomPitchOffset: 0.075
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: f3039446f531b3e4b8183859402813d9, type: 3}
+  - reference: _shutterGate
+    groupIndex: 6
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.55
+      pitch: 1
+      randomPitchOffset: 0.031
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: f20bb1d5913acbb43a714882d6697449, type: 3}
+  - reference: _playerTurn
+    groupIndex: 3
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.18
+      pitch: 1
+      randomPitchOffset: 0.051
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 42227f3d29cbbe143baf810e392fa590, type: 3}
+  - reference: _openMenu
+    groupIndex: 2
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.481
+      pitch: 1
+      randomPitchOffset: 0.027
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: e8d010d29adfd724cbe427d3927de4bc, type: 3}
+  - reference: _closeMenu
+    groupIndex: 2
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.456
+      pitch: 1
+      randomPitchOffset: 0.075
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 0cd720cf11e78a44fa383f548b414239, type: 3}
   eventGroups:
   - Battle Music
   - Dungeon BGM

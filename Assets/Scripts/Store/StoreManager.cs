@@ -35,6 +35,8 @@ public class StoreManager : MonoBehaviour
     {
         if (foundData.partyField.Length < 4) return;
 
+        Debug.Assert(currentSlim.lastButtonLayer == foundData.lastButtonLayer);
+
         currentSlim = foundData;
 
         for (int i = 0; i < currentSlim.partyField.Length; i++)
@@ -46,6 +48,7 @@ public class StoreManager : MonoBehaviour
 
     public void ExitStore()
     {
+        SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_doorOpen", out bool success);
         currentSlim.destinationScene = "CHRIS_STORE";
         CORE.SlimComponent.Instance.PopulateAndSendSlim(currentSlim);
         SceneParser.ParseSceneChange("MapMenu", out string slimDestination, out string destinationName);

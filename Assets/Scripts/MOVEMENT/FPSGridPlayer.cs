@@ -112,6 +112,7 @@ namespace MOVEMENT
 
             float timePassed = 0;
             float maxTime = turnLerpCurve.keys[turnLerpCurve.keys.Length - 1].time;
+            SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_playerTurn", out bool success);
 
             while (timePassed < maxTime)
             {
@@ -163,6 +164,8 @@ namespace MOVEMENT
                 finalPos = pos;
                 finalPos += transform.right * initialDir.x;
                 finalPos += transform.forward * initialDir.y;
+
+                SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_playerStepThud", out bool success);
 
                 while (timePassed < maxTime)
                 {

@@ -34,6 +34,7 @@ MonoBehaviour:
   - id: 4
   - id: 5
   - id: 6
+  - id: 7
   transitionToOnEof: {fileID: 0}
   goToSceneOnEof: 0
   destinationSceneOnEof: 
@@ -134,6 +135,18 @@ MonoBehaviour:
         requireContinueInput: 1
         writingSoundEvent: _keyPress
     00000006:
+      type: {class: PlaySoundComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _sfxEventComp6
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        soundEventRef: _shutterGate
+        playLayered: 0
+        trackLayer: -1
+    00000007:
       type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyAll2

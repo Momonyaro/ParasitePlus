@@ -1306,8 +1306,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newBtnLayer: 2
   changeScene: 1
+  useMapManager: 1
   parseDestination: 1
-  newSceneVariable: END_DEMO
+  newSceneVariable: PostSwanInjection
 --- !u!114 &391341801
 MonoBehaviour:
   m_ObjectHideFlags: 0

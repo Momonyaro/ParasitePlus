@@ -164,11 +164,13 @@ namespace Scriptables
                 entityLevel++;
                 xp -= entityXpThreshold; // Only carry-over remaining.
 
-                // Restore health delta to player
+                //Restore health delta to player
+                //Max HP gain per level is 5
                 int hpDelta = Mathf.Max(Mathf.RoundToInt( healthPts.y * Mathf.Min(1.0f / entityLevel, 5) ), 1);
                 healthPts.x += hpDelta;
                 healthPts.y += hpDelta;
 
+                //Max AP gain per level is 3
                 int apDelta = Mathf.Max(Mathf.RoundToInt(actionPts.y * Mathf.Min(1.0f / entityLevel, 3)), 1);
                 actionPts.x += apDelta;
                 actionPts.y += apDelta;

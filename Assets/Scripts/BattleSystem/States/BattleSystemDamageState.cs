@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using BattleSystem.UI;
 using Scriptables;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Random = UnityEngine.Random;
 
 namespace BattleSystem.States
 {
@@ -67,25 +69,37 @@ namespace BattleSystem.States
             bool isEnemy = battleCore.turnOrderComponent.GetFirstInLine().enemyTag;
             for (int i = 0; i < indices.Count; i++)
             {
-                int damage = 0;
+                Vector2Int damageVec = Vector2Int.zero;
 
                 // Equation is ->  y = damage + (scaling * sqrt(level))
                 float damScale = abilityInUse.levelScalingDamage * Mathf.Sqrt(currentEntity.entityLevel);
-                float sign = Mathf.Sign(abilityInUse.abilityDamage.x);
-                int scaledDam = Mathf.FloorToInt((Mathf.Abs(abilityInUse.abilityDamage.x) + damScale) * sign);
-                
-                damage = scaledDam;
+
+                float hpSign = Mathf.Sign(abilityInUse.abilityDamage.x);
+                float apSign = Mathf.Sign(abilityInUse.abilityDamage.y);
+
+                //This is used to make sure that attacks with np mp damage doesn't get a magic value due to levelscaling
+                int hpZero = Convert.ToInt32(abilityInUse.abilityDamage.x != 0);
+                int apZero = Convert.ToInt32(abilityInUse.abilityDamage.y != 0);
+
+                int scaledHpDam = Mathf.FloorToInt((Mathf.Abs(abilityInUse.abilityDamage.x) + (damScale * hpZero)) * hpSign);
+                //AP not guaranteed to be zero because we're adding the damScale
+                int scaledApDam = Mathf.FloorToInt((Mathf.Abs(abilityInUse.abilityDamage.y) + (damScale * apZero)) * apSign);
+
+                damageVec.x = scaledHpDam;
+                damageVec.y = scaledApDam;
+
                 bool crit = (Random.value < abilityInUse.abilityCritChance);
                 bool miss = (Random.value < abilityInUse.abilityMissChance) && !crit;
 
                 if (crit)
                 {
-                    damage = Mathf.RoundToInt(damage * 1.5f); // Increase damage by 1.5 if critting.
+                    damageVec.x = Mathf.FloorToInt(damageVec.x * 1.5f);
+                    damageVec.y = Mathf.FloorToInt(damageVec.y * 1.5f);
                 }
 
                 if (miss)
                 {
-                    damage = 0; // Yeah so, we like to do a little trolling.
+                    damageVec = Vector2Int.zero; // Yeah so, we like to do a little trolling.
                 }
                 
                 //How do we refer to the actual entity data of the target?
@@ -137,12 +151,16 @@ namespace BattleSystem.States
                     float targetResistance = target.weaknesses[attackTypeIndex];
                     resist = (targetResistance < 0.9f);
                     weak = (targetResistance > 1.1f);
-                    damage = Mathf.FloorToInt(damage * targetResistance);
+
+                    //Only HP damage scales with resistances
+                    damageVec.x = Mathf.FloorToInt(damageVec.x * targetResistance);
                 }
                 
 
                 Vector2Int hp = target.GetEntityHP();
-                target.SetEntityHP(new Vector2Int(Mathf.Clamp(hp.x - damage, 0, hp.y), hp.y));
+                Vector2Int ap = target.GetEntityAP();
+                target.SetEntityHP(new Vector2Int(Mathf.Clamp(hp.x - damageVec.x, 0, hp.y), hp.y));
+                target.SetEntityAP(new Vector2Int(Mathf.Clamp(ap.x - damageVec.y, 0, ap.y), ap.y));
                 target.lastAttacker = currentEntity;
 
                 Vector2 targetScreenPos;
@@ -159,8 +177,9 @@ namespace BattleSystem.States
 
                 SAMSARA.Samsara.Instance.PlaySFXRandomTrack(abilityInUse.abilitySoundEffect, out bool success);
 
+
                 damageEffectUI.CreateAbilityEffect(targetScreenPos, abilityInUse.abilityEffectRef);
-                damageEffectUI.CreateDamageSpatter(targetScreenPos, damage, crit, weak, resist, !abilityInUse.hideDamageText);
+                damageEffectUI.CreateDamageSpatter(targetScreenPos, damageVec.x, damageVec.y, crit, weak, resist, !abilityInUse.hideDamageText);
                 
                 //Check if the enemy is dead?
                 if (!target.deadTrigger)

@@ -69,6 +69,11 @@ public class SceneParser : MonoBehaviour
                     break;
                 destinationName = RandomTravel;
                 break;
+            case "MeetSandra":
+                if (setNextScene.Equals("MeetSandra"))
+                    break;
+                destinationName = RandomTravel;
+                break;
         }
     }
 }

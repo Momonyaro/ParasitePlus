@@ -15,6 +15,7 @@ public class MapInteractable : MonoBehaviour
     public bool triggerActive = false;
     public bool disabled = false;
     public bool activeState = false;
+    public bool calcDefaultSensorPos;
     public bool generateNewGUID = false;
     public string guid = "";
     public Color activeColor = Color.green;
@@ -31,13 +32,18 @@ public class MapInteractable : MonoBehaviour
     [SerializeField] private float reverseDot;
     private Transform playerTransform;
 
-
     private void OnValidate()
     {
         if (generateNewGUID)
         {
             guid = Guid.NewGuid().ToString();
             generateNewGUID = false;
+        }
+
+        if (calcDefaultSensorPos)
+        {
+            calcDefaultSensorPos = false;
+            sensor = transform.position + dir;
         }
     }
 
@@ -71,7 +77,9 @@ public class MapInteractable : MonoBehaviour
         if (reverseDot > 0.8f)
             lookingAwayFromTarget = true;
 
-        transform.GetChild(0).gameObject.SetActive(lookingAwayFromTarget);
+        int hiddenLayer = LayerMask.NameToLayer("Hidden");
+        int defaultLayer = LayerMask.NameToLayer("Default");
+        SetLayerRecursively(gameObject, (lookingAwayFromTarget) ? defaultLayer : hiddenLayer);
     }
 
     public void PlayEvent()
@@ -127,6 +135,16 @@ public class MapInteractable : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             triggerActive = false;
+        }
+    }
+
+    private void SetLayerRecursively(GameObject obj, int newLayer)
+    {
+        obj.layer = newLayer;
+
+        for (int i = 0; i < obj.transform.childCount; i++)
+        {
+            SetLayerRecursively(obj.transform.GetChild(i).gameObject, newLayer);
         }
     }
 

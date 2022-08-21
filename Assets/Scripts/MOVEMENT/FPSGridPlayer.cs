@@ -41,6 +41,12 @@ namespace MOVEMENT
             pauseAction.started += OnPauseKey;
         }
 
+        private void Start()
+        {
+            MinimapCompass.Facing nextFacing = GetNewFacing(transform.rotation.eulerAngles.y);
+            FindObjectOfType<MinimapCompass>().SetCompassFacing(nextFacing);
+        }
+
         private void OnDisable()
         {
             turnAction.started -= OnTurnKey;
@@ -109,6 +115,9 @@ namespace MOVEMENT
             Quaternion rot = transform.rotation;
             Vector3 rotVec = rot.eulerAngles;
             Quaternion nextRot = Quaternion.Euler(0, rotVec.y + (turnDir.x * 90), 0);
+
+            MinimapCompass.Facing nextFacing = GetNewFacing(nextRot.eulerAngles.y);
+            FindObjectOfType<MinimapCompass>().SetCompassFacing(nextFacing);
 
             float timePassed = 0;
             float maxTime = turnLerpCurve.keys[turnLerpCurve.keys.Length - 1].time;
@@ -278,6 +287,27 @@ namespace MOVEMENT
                 
                 sample = Quaternion.Euler(0, 90, 0) * sample;
             }
+        }
+
+        private MinimapCompass.Facing GetNewFacing(float rotY)
+        {
+            // change to range 0 - 360
+
+            MinimapCompass.Facing facing = MinimapCompass.Facing.NORTH;
+
+            // 0 = N, 90 = E, 180 = S, 270 = W
+            if (rotY > 45 && rotY < 135)
+                facing = MinimapCompass.Facing.EAST;
+            else if (rotY > 135 && rotY < 215)
+                facing = MinimapCompass.Facing.SOUTH;
+            else if (rotY > 215 && rotY < 315)
+                facing = MinimapCompass.Facing.WEST;
+            else if (rotY > 315 || rotY < 45)
+                facing = MinimapCompass.Facing.NORTH;
+
+            Debug.Log(facing);
+
+            return facing;
         }
 
         public struct RelativeCollisionStruct

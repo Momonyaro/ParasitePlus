@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateName: TutorialCommentary
   stateId: _tutComment
-  prevStateId: _reportState
+  prevStateId: _enemyBranch
   initialized: 0
   dialogueNodes:
   - speakerPortrait: {fileID: 21300000, guid: a98ec7ac1fc7a464b8cba8d4f45ed988, type: 3}
@@ -35,8 +35,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: e071411de4e75d04d9b980013834ed0b, type: 2}
     - {fileID: 11400000, guid: 9081080bec84c0f44b9a14594edfe490, type: 2}
     - {fileID: 11400000, guid: da50a6697d244104dab35dccf6a6d7cf, type: 2}
-    systemInterjects:
-    - {fileID: 11400000}
+    systemInterjects: []
     currentIndex: 4
     lastAbility: {fileID: 11400000, guid: c0dfa5d5c1ce96a489f9b7b91e57f401, type: 2}
     targetedEntities: 00000000

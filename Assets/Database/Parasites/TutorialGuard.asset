@@ -15,6 +15,10 @@ MonoBehaviour:
   entityName: Security Guard
   entityLevel: 1
   entityId: _securityGuard
+  inParty: 0
+  attackYellSfx: 
+  damageYellSfx: _male_hurt
+  deathYellSfx: _male_death
   entitySpeed: 3
   throwawayId: 0
   healthPts: {x: 30, y: 30}

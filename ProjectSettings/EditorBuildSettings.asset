@@ -27,11 +27,26 @@ EditorBuildSettings:
     path: Assets/Scenes/MapMenu/MapMenu.unity
     guid: 5ae18baca6f7a714ea292e0de2a00923
   - enabled: 1
+    path: Assets/Scenes/LoadingScreens/FiskekyrkaSundown.unity
+    guid: b51bf9a3cef8572469075cb62de1b28e
+  - enabled: 1
+    path: Assets/Scenes/LoadingScreens/FiskekyrkaSunrise.unity
+    guid: e200e8b0a3284504fb4a3dab9ab86e95
+  - enabled: 1
+    path: Assets/Scenes/LoadingScreens/TramScene.unity
+    guid: c15c6ef177329bb46afa3a20273fb6ba
+  - enabled: 1
     path: Assets/Scenes/Maps/Tutorial/SwanDungeonEscape.unity
     guid: 909330bfede8ee64b94375345aaa1759
   - enabled: 1
     path: Assets/Scenes/Cutscenes/PostTutorial.unity
     guid: 9999692b96d46ae4f89a385f51716ebe
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/ParkMeetGummo.unity
+    guid: f0bb4fc27c349a440a273114ea3d850f
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/BeforeSwanDivision.unity
+    guid: ddef8023196501f4c80dd81653561f7b
   - enabled: 1
     path: Assets/Scenes/Maps/SwanDivision/SwanFloor1.unity
     guid: 2454c83b86d92fe45b30c872debb2d89
@@ -42,21 +57,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Maps/SwanDivision/SwanFloor3.unity
     guid: 7ba579f9457efd3478916ab0c851b551
   - enabled: 1
-    path: Assets/Scenes/LoadingScreens/FiskekyrkaSundown.unity
-    guid: b51bf9a3cef8572469075cb62de1b28e
-  - enabled: 1
-    path: Assets/Scenes/LoadingScreens/FiskekyrkaSunrise.unity
-    guid: e200e8b0a3284504fb4a3dab9ab86e95
-  - enabled: 1
-    path: Assets/Scenes/LoadingScreens/TramScene.unity
-    guid: c15c6ef177329bb46afa3a20273fb6ba
-  - enabled: 1
-    path: Assets/Scenes/Cutscenes/ParkMeetGummo.unity
-    guid: f0bb4fc27c349a440a273114ea3d850f
-  - enabled: 1
-    path: Assets/Scenes/Cutscenes/BeforeSwanDivision.unity
-    guid: ddef8023196501f4c80dd81653561f7b
-  - enabled: 1
     path: Assets/Scenes/Cutscenes/AfterSwanDivision.unity
     guid: 38f8df513362ed842b52a320d63b7610
   - enabled: 1
@@ -65,5 +65,26 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cutscenes/MeetSandra.unity
     guid: 0559f569cd0245b49ade523704d8b85e
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/BeforeCraneDivision.unity
+    guid: c0d26e1a1d1055942a09e5ddf68d38ad
+  - enabled: 1
+    path: Assets/Scenes/Maps/CraneDivision/CraneFloor1.unity
+    guid: 3ba4b3edb0bd65a42ae8e13b7189af68
+  - enabled: 1
+    path: Assets/Scenes/Maps/CraneDivision/CraneFloor2.unity
+    guid: 17d99c96deb072e4594f32f8cf54b9b8
+  - enabled: 1
+    path: Assets/Scenes/Maps/CraneDivision/CraneFloor3.unity
+    guid: e5c8c643225cf6a4fa3a36de1f2b495d
+  - enabled: 1
+    path: Assets/Scenes/Maps/CraneDivision/CraneFloor4.unity
+    guid: a62c470f834983d4798a0648e7fd717a
+  - enabled: 1
+    path: Assets/Scenes/Maps/CraneDivision/CraneFloor5.unity
+    guid: 38d8678a8305f0f4f8414d8f7003bfe8
+  - enabled: 1
+    path: Assets/Scenes/Maps/CraneDivision/CraneFloor6.unity
+    guid: dc683ededa5338d408215cc8bafbb262
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 46472d8cef444da4d841f68f6280e3ef, type: 2}

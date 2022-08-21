@@ -333,6 +333,14 @@ PrefabInstance:
       value: swanFloor1/chest:banana1
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+      propertyPath: dir.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+      propertyPath: dir.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: itemID
       value: 993174de-f959-4343-b953-920d32992136
       objectReference: {fileID: 0}
@@ -12638,6 +12646,14 @@ PrefabInstance:
       value: swanFloor1/chest:banana3
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+      propertyPath: dir.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+      propertyPath: dir.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: itemID
       value: 993174de-f959-4343-b953-920d32992136
       objectReference: {fileID: 0}
@@ -18542,6 +18558,14 @@ PrefabInstance:
     - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: guid
       value: swanFloor1/chest:banana2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+      propertyPath: dir.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+      propertyPath: dir.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: itemID
@@ -25606,6 +25630,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 126507775077859873, guid: 9f5c3542b8d9f3d4993ce6cb5404ca4d, type: 3}
+      propertyPath: m_Text
+      value: Swan Division
+      objectReference: {fileID: 0}
     - target: {fileID: 126507775659805234, guid: 9f5c3542b8d9f3d4993ce6cb5404ca4d, type: 3}
       propertyPath: m_Name
       value: OverWorldCanvas
@@ -25693,6 +25721,10 @@ PrefabInstance:
     - target: {fileID: 126507775659805238, guid: 9f5c3542b8d9f3d4993ce6cb5404ca4d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126507775716930578, guid: 9f5c3542b8d9f3d4993ce6cb5404ca4d, type: 3}
+      propertyPath: m_Text
+      value: First Floor
       objectReference: {fileID: 0}
     - target: {fileID: 481886943489765405, guid: 9f5c3542b8d9f3d4993ce6cb5404ca4d, type: 3}
       propertyPath: m_AnchorMax.y

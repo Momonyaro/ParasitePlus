@@ -376,6 +376,7 @@ MonoBehaviour:
   changeScene: 1
   useMapManager: 0
   parseDestination: 1
+  writeCurrentSceneToSlim: 1
   newSceneVariable: MapMenu
 --- !u!114 &575681992
 MonoBehaviour:
@@ -389,11 +390,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8db9c9eddd3fc4faf8f66374d3b0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueData: {fileID: 11400000, guid: f568a9ea160910445a79f5f6cbf27c90, type: 2}
+  dialogueData: {fileID: 11400000, guid: b3a66b073e39d5d4e8c6145175cdcf3e, type: 2}
   initOnStart: 1
   onStopReading:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 575681991}
+        m_TargetAssemblyTypeName: BtnLayerTrigger, Assembly-CSharp
+        m_MethodName: TriggerEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   backgroundFather: {fileID: 1148942672}
   allFather: {fileID: 717353400}
   module: {fileID: -944628639613478452, guid: 7d30e05cf43b6e54387d92a909d874f3, type: 3}

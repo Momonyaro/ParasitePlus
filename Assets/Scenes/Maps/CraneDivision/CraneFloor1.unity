@@ -16204,15 +16204,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 524553445826855404, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 524553445826855404, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 524553445826855404, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 524553445826855404, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16224,7 +16224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 524553445826855404, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 524553445826855404, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
       propertyPath: m_LocalRotation.z
@@ -16236,7 +16236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 524553445826855404, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 524553445826855404, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -24265,7 +24265,16 @@ MonoBehaviour:
   enterOnUnlock: 1
   encounterTriggers: []
   eventTriggers: []
-  sceneLoadVariables: []
+  sceneLoadVariables:
+  - reference: _entranceRight
+    playerPosition: {x: -8, y: 1, z: 0}
+    playerRotation: {x: 0, y: 0, z: 0}
+  - reference: _entranceCenter
+    playerPosition: {x: -6, y: 1, z: 0}
+    playerRotation: {x: 0, y: 0, z: 0}
+  - reference: _entranceLeft
+    playerPosition: {x: -4, y: 1, z: 0}
+    playerRotation: {x: 0, y: 0, z: 0}
   encounterProgress: 0
   randomEncounters: 0
   encounterProgressRange: 0.07
@@ -24305,13 +24314,13 @@ MonoBehaviour:
     inventory: []
     wallet: 0
     ignoreTransformReadFlag: 0
-    playerLastPos: {x: 0, y: 1, z: 2}
-    playerLastEuler: {x: 0, y: 90, z: 0}
+    playerLastPos: {x: 10, y: 1, z: -2}
+    playerLastEuler: {x: 0, y: -90, z: 0}
     loadSceneVariable: 
     lastButtonLayer: 0
   dungeonManager: {fileID: 913984203}
   config: {fileID: 11400000, guid: f19491cb78d45e04ca9bacb7aac3d494, type: 2}
-  mapBMGReference: _swanDivisionBGM
+  mapBMGReference: _craneCalmBGM
   monsterManifest:
     encounters:
     - enemies:
@@ -27091,6 +27100,26 @@ PrefabInstance:
     - target: {fileID: 1445796390831312925, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882125405479069043, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: sensor.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882125405479069043, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: sensor.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882125405479069043, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: goToScene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882125405479069043, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: sceneName
+      value: CraneFloor2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882125405479069043, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: loadSceneVariable
+      value: _entranceLeft
       objectReference: {fileID: 0}
     - target: {fileID: 3191917496812673632, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -38209,6 +38238,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 126507775077859873, guid: 9f5c3542b8d9f3d4993ce6cb5404ca4d, type: 3}
+      propertyPath: m_Text
+      value: Crane Division
+      objectReference: {fileID: 0}
     - target: {fileID: 126507775659805234, guid: 9f5c3542b8d9f3d4993ce6cb5404ca4d, type: 3}
       propertyPath: m_Name
       value: OverWorldCanvas
@@ -38296,6 +38329,10 @@ PrefabInstance:
     - target: {fileID: 126507775659805238, guid: 9f5c3542b8d9f3d4993ce6cb5404ca4d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126507775716930578, guid: 9f5c3542b8d9f3d4993ce6cb5404ca4d, type: 3}
+      propertyPath: m_Text
+      value: Front Plaza
       objectReference: {fileID: 0}
     - target: {fileID: 481886943489765405, guid: 9f5c3542b8d9f3d4993ce6cb5404ca4d, type: 3}
       propertyPath: m_AnchorMax.y
@@ -45554,6 +45591,30 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2882125405479069043, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: sensor.x
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882125405479069043, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: sensor.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882125405479069043, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: sensor.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882125405479069043, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: goToScene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882125405479069043, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: sceneName
+      value: CraneFloor2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882125405479069043, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: loadSceneVariable
+      value: _entranceCenter
+      objectReference: {fileID: 0}
     - target: {fileID: 3191917496812673632, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
@@ -48929,6 +48990,30 @@ PrefabInstance:
     - target: {fileID: 1445796390831312925, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882125405479069043, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: sensor.x
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882125405479069043, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: sensor.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882125405479069043, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: sensor.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882125405479069043, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: goToScene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882125405479069043, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: sceneName
+      value: CraneFloor2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882125405479069043, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: loadSceneVariable
+      value: _entranceRight
       objectReference: {fileID: 0}
     - target: {fileID: 3191917496812673632, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
       propertyPath: m_StaticEditorFlags

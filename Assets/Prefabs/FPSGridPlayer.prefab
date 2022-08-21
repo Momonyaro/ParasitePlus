@@ -125,6 +125,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: 4f33197b7ed2b914697e4816c69dce84, type: 2}
   initOnStart: 0
+  onStopReading:
+    m_PersistentCalls:
+      m_Calls: []
   backgroundFather: {fileID: 433217172}
   allFather: {fileID: 1044005337}
   module: {fileID: -944628639613478452, guid: 7d30e05cf43b6e54387d92a909d874f3, type: 3}
@@ -255,7 +258,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 119
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0

@@ -168,6 +168,12 @@ namespace SAMSARA
             }
         }
 
+        public string GetMusicPlaying(out bool success)
+        {
+            success = false;
+            return _samsaraPlayer.GetMusicPlayingRef(out success);
+        }
+
         public void MusicStopPlaying(TransitionType transitionType, float transitionDuration, out bool success)
         {
             success = false;

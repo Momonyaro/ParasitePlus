@@ -8,6 +8,7 @@ public class BtnLayerTrigger : MonoBehaviour
     public bool changeScene = false;
     public bool useMapManager = true;
     public bool parseDestination = true;
+    public bool writeCurrentSceneToSlim = false;
     public string newSceneVariable = "";
 
     public void TriggerEvent()
@@ -37,6 +38,8 @@ public class BtnLayerTrigger : MonoBehaviour
         {
             if (parseDestination)
             {
+                if (writeCurrentSceneToSlim)
+                    CORE.SlimComponent.Instance.SetNonVolatileDestination(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
                 SceneParser.ParseSceneChange(newSceneVariable, out string slimDestination, out string destination);
                 CORE.SlimComponent.Instance.SetNonVolatileDestination(slimDestination);
                 UnityEngine.SceneManagement.SceneManager.LoadScene(destination);

@@ -31,12 +31,9 @@ namespace BattleSystem
 
         public void CloseUpOnEnemy(int enemyIndex, float timeScale, float holdTime)
         {
-            
-            /* DEBUG */
-            //enemyIndex = testIndex;
-            
             Vector3 endPos = enemyFieldCloseUpPositions[enemyIndex].position;
-            StartCoroutine(CloseUpEnumerator(originalCamPos, endPos, timeScale, holdTime));
+            Vector3 startPos = mainCam.transform.position;
+            StartCoroutine(CloseUpEnumerator(originalCamPos, startPos, endPos, timeScale, holdTime));
         }
 
         public void CameraShake(float timeScale, float magnitude)
@@ -72,7 +69,7 @@ namespace BattleSystem
             yield break;
         }
 
-        private IEnumerator CloseUpEnumerator(Vector3 startPoint, Vector3 endPoint, float timeScale, float holdTime)
+        private IEnumerator CloseUpEnumerator(Vector3 cameraOrigin, Vector3 startPoint, Vector3 endPoint, float timeScale, float holdTime)
         {
             float timePassed = 0;
             float lerpCurveLastX = closeUpLerpCurve.keys[closeUpLerpCurve.length - 1].time;
@@ -92,7 +89,7 @@ namespace BattleSystem
             
             while (timePassed < lerpCurveLastX)
             {
-                Vector3 lerped = Vector3.Lerp(mainCam.transform.position, startPoint, closeUpLerpCurve.Evaluate(timePassed));
+                Vector3 lerped = Vector3.Lerp(mainCam.transform.position, cameraOrigin, closeUpLerpCurve.Evaluate(timePassed));
                 mainCam.transform.position = lerped;
                 
                 timePassed += Time.deltaTime * timeScale;

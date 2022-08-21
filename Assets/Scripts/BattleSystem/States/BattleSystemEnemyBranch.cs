@@ -47,7 +47,23 @@ namespace BattleSystem.States
             }
             
             if (nextIsEnemy) //Replace later with enemy target state!
+            {
                 parent.SwitchActiveState("_aiTargetState");
+
+                var current = battleCore.GetNextEntity();
+
+                var personalityNode = current.GetAIComponent().GetCurrentPersonalityNode(current, battleCore.GetEntityTurnItem(current).turnsTaken);
+                personalityNode.targetComp.SetOwner(current);
+
+                if (!personalityNode.hasReadFirstLoop)
+                {
+                    personalityNode.hasReadFirstLoop = true;
+                    for (int i = 0; i < personalityNode.onFirstLoopInterjects.Count; i++)
+                    {
+                        parent.SendInterject(personalityNode.onFirstLoopInterjects[i]);
+                    }
+                }
+            }
             else
                 parent.SwitchActiveState("_selectionState");
         }

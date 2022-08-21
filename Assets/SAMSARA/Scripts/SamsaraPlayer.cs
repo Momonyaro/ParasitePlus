@@ -71,6 +71,19 @@ namespace SAMSARA
             //     and then fade in the new track (if one is set).
         }
 
+        public string GetMusicPlayingRef(out bool success)
+        {
+            success = false;
+
+            if (currentMusicChannel != null)
+            {
+                success = true;
+                return currentMusicChannel.storedAudioEvent.reference;
+            }
+
+            return "";
+        }
+
         private IEnumerator CrossFadeEnumerator(AudioEvent nextEvent, float transitionDuration)
         {
             if (_transitionInProgress) yield break;

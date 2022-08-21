@@ -277,6 +277,9 @@ namespace CORE
 
                     if (groundItems[i].hasAnimator)
                         groundItems[i].objAnimator.SetBool(groundItems[i].animParamName, true);
+
+                    if (groundItems[i].playSfx)
+                        SAMSARA.Samsara.Instance.PlaySFXRandomTrack(groundItems[i].itemSfx, out bool success);
                     
                     //Add the item to the player inventory
                     List<Item> items = mapManager.RequestPlayerInventory();

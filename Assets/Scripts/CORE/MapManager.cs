@@ -136,7 +136,8 @@ namespace CORE
                 }
             }
 
-            Samsara.Instance.MusicPlayLayered(mapBMGReference, TransitionType.CrossFade, 1.2f, out bool success);
+            if (!Samsara.Instance.GetMusicPlaying(out bool success).Equals(mapBMGReference))
+                Samsara.Instance.MusicPlayLayered(mapBMGReference, TransitionType.CrossFade, 1.2f, out success);
         }
 
         public void LoadRandomBattle()

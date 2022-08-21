@@ -22,6 +22,9 @@ namespace Scriptables
         public int entityLevel;
         public string entityId;
         public bool inParty = false;
+        public string attackYellSfx = "";
+        public string damageYellSfx = "";
+        public string deathYellSfx = "";
         public int entitySpeed;
         public int throwawayId;          //This is a thing because if we have multiple versions of the same entity, it will fetch the first one.
         [SerializeField]
@@ -219,6 +222,9 @@ namespace Scriptables
             es.entityId = entityId;
             es.entityName = entityName;
             es.entitySpeed = entitySpeed;
+            es.attackYellSfx = attackYellSfx;
+            es.damageYellSfx = damageYellSfx;
+            es.deathYellSfx = deathYellSfx;
             es.healthPts = healthPts;
             es.stats = stats;
             es.entityLevel = entityLevel;

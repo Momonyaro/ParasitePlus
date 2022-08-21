@@ -5482,7 +5482,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newBtnLayer: 1
   changeScene: 1
+  useMapManager: 1
   parseDestination: 1
+  writeCurrentSceneToSlim: 0
   newSceneVariable: SwanFloor1
 --- !u!114 &351972158
 MonoBehaviour:

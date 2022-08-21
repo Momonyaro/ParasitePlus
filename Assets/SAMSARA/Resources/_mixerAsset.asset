@@ -169,7 +169,7 @@ MonoBehaviour:
       ratio: 1
       trackLerpOverlap: 1
       volumeGroupRef: _general
-      volume: 0.692
+      volume: 0.57
       pitch: 1
       randomPitchOffset: 0
       delay: 0
@@ -395,7 +395,7 @@ MonoBehaviour:
       ratio: 1
       trackLerpOverlap: 1
       volumeGroupRef: _general
-      volume: 0.595
+      volume: 0.407
       pitch: 1
       randomPitchOffset: 0.02
       delay: 0
@@ -596,6 +596,104 @@ MonoBehaviour:
       outroClip: {fileID: 0}
       tracks:
       - AudioClip: {fileID: 8300000, guid: 0cd720cf11e78a44fa383f548b414239, type: 3}
+  - reference: _miss
+    groupIndex: 4
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.785
+      pitch: 1
+      randomPitchOffset: 0.071
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 42227f3d29cbbe143baf810e392fa590, type: 3}
+  - reference: _psiFire
+    groupIndex: 4
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.337
+      pitch: 1
+      randomPitchOffset: 0.059
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: d1fba641e57ce3d42b5ee2188459807f, type: 3}
+  - reference: _trunkOpen
+    groupIndex: 3
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.793
+      pitch: 1
+      randomPitchOffset: 0.055
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: ae72a1f021f4f9c4cb6b797f1f728f70, type: 3}
+  - reference: _male_hurt
+    groupIndex: 4
+    trackContainer:
+      lerpValue: 0
+      ratio: 0.33333334
+      trackLerpOverlap: 1
+      volumeGroupRef: _vocal
+      volume: 0.806
+      pitch: 1
+      randomPitchOffset: 0.075
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: ba73dc1f0bd56e547a6a8c4c60cb9d76, type: 3}
+      - AudioClip: {fileID: 8300000, guid: bd9147d6e97349f4aac8134c4c81b973, type: 3}
+      - AudioClip: {fileID: 8300000, guid: 661cede9703642d47b01f4bd404ff184, type: 3}
+  - reference: _male_death
+    groupIndex: 4
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _vocal
+      volume: 1
+      pitch: 1
+      randomPitchOffset: 0
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 1a416fe2d8854f649834193083177de8, type: 3}
+  - reference: _craneCalmBGM
+    groupIndex: 1
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _music
+      volume: 0.3
+      pitch: 1
+      randomPitchOffset: 0
+      delay: 0
+      loop: 1
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 4ca3aa17f09a5fe49bf203f5263d1fd3, type: 3}
   eventGroups:
   - Battle Music
   - Dungeon BGM

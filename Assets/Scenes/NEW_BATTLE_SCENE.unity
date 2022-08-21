@@ -806,7 +806,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -2841,13 +2841,13 @@ MonoBehaviour:
   - {fileID: 0}
   enemyField:
   - {fileID: 0}
-  - {fileID: 11400000, guid: 540bdebe1ba62404b8ec92b713d12625, type: 2}
-  - {fileID: 11400000, guid: 043f562807947a944b4bba6576812e93, type: 2}
-  - {fileID: 11400000, guid: 9c39519643d902946b0f1896d643a68f, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 8fbdae662914f9c4d933921567e49954, type: 2}
+  - {fileID: 0}
   - {fileID: 0}
   holdingCells: []
   partyInventory:
-  - name: Banana
+  - name: very long item name
     guid: asgasdg
     description: 
     msrp: 0
@@ -9293,7 +9293,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -10729,8 +10729,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -588, y: -0.000026047}
-  m_SizeDelta: {x: 385.39352, y: 79.464264}
+  m_AnchoredPosition: {x: -979.58563, y: -0.000026047}
+  m_SizeDelta: {x: 1168.5651, y: 79.4643}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1402218848
 MonoBehaviour:
@@ -10815,7 +10815,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -285.98502, y: 0, z: -152.34776, w: 4.3429413}
+  m_margin: {x: 0, y: 0, z: 0, w: 4.3429413}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -12315,7 +12315,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -12777,7 +12777,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1

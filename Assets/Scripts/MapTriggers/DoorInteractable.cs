@@ -102,7 +102,7 @@ namespace MapTriggers
             if (locked)
                 Gizmos.color = Color.red;
             Vector3 pos = sensor;
-            Gizmos.DrawLine(pos, pos + new Vector3(0, 0.1f, 0) + dir * 0.3f);
+            Gizmos.DrawLine(pos, pos - dir * 0.3f);
             Gizmos.DrawIcon(warpDest, "d_Import");
         }
     }

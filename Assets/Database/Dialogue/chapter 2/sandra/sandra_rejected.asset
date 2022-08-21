@@ -38,6 +38,30 @@ MonoBehaviour:
   - id: 8
   - id: 9
   - id: 10
+  - id: 11
+  - id: 12
+  - id: 13
+  - id: 14
+  - id: 15
+  - id: 16
+  - id: 17
+  - id: 18
+  - id: 19
+  - id: 20
+  - id: 21
+  - id: 22
+  - id: 23
+  - id: 24
+  - id: 25
+  - id: 26
+  - id: 27
+  - id: 28
+  - id: 29
+  - id: 30
+  - id: 31
+  - id: 32
+  - id: 33
+  - id: 34
   transitionToOnEof: {fileID: 0}
   goToSceneOnEof: 0
   destinationSceneOnEof: 
@@ -166,3 +190,344 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         backgroundImage: {fileID: -4682570417295124934, guid: b2c6f7d2743f9fa49800fe16300f4e5d, type: 3}
+    0000000B:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp11
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    0000000C:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox12
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _gummo
+          text: Hey, it's fine. Me and $Player will find some other way.
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: No, no, no. I know my father is the safest option. We just need to
+            get him evidence.
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: Well, he already didn't believe us with a live subject.
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: We need a paper trail.
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: And I might know the place to get it.
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    0000000D:
+      type: {class: SpawnObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnObjComp13
+        groupRef: 
+        objectPrefab: {fileID: 2831952547622704426, guid: 5a3baf689344a294e8907590f4b65189, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+    0000000E:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp14
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    0000000F:
+      type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyAll15
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+    00000010:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp16
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    00000011:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp17
+        groupRef: 
+        objectPrefab: {fileID: 516182194579558613, guid: b85856b991eac484abc859b90a2f4016, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        backgroundImage: {fileID: 21300000, guid: f0d49ffcb94c1454a9fb9db658586135, type: 3}
+    00000012:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp18
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    00000013:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp19
+        groupRef: 
+        objectPrefab: {fileID: 8370936115634730495, guid: 26791cb2b2860e44fb3c3960a550363b, type: 3}
+        screenPosition: {x: -350, y: 60}
+        errorAttempts: 99
+        reveal: 1
+        backgroundImage: {fileID: 8380122430856753887, guid: b5716765290e8e5448e60e1e1240e2a3, type: 3}
+    00000014:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox20
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _sandra
+          text: Meet Veronica Hughes.
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: Who is she?
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: Since Magnus, the CEO retired from public appearances. Veronica's
+            become the public face.
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: She holds events, celebrations, all of the things needed to keep
+            the politicians off your back.
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    00000015:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp21
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox20
+    00000016:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp22
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    00000017:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp23
+        groupRef: 
+        objectPrefab: {fileID: 137143869671853948, guid: dac9339ba4552654bb1a3c38fa69a291, type: 3}
+        screenPosition: {x: 110, y: -50}
+        errorAttempts: 99
+        reveal: 1
+        backgroundImage: {fileID: 7611094779091049144, guid: b5716765290e8e5448e60e1e1240e2a3, type: 3}
+    00000018:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox24
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _sandra
+          text: All these events are hosted at her Japanese garden compound.
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: So?
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: Being the public face means you hear a lot.
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: Every meeting with the press is carefully prepared and so if anyone
+            has compromising data?
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: It's her.
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    00000019:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp25
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox24
+    0000001A:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp26
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    0000001B:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox27
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _gummo
+          text: '*whistles*'
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: How much research did you do?
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: Screw you.
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: Well, what happens now?
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: You and $Player walk through the front entrance.
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: what?
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: The front is a facade, it's not in use unless there's an event.
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: Get in the front, get to Veronica's office and steal as many documents
+            as you can.
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: Since there's no events on for the next couple of days, there should
+            be minimal security.
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    0000001C:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp28
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox27
+    0000001D:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp29
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    0000001E:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox30
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _gummo
+          text: '*sigh*'
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: Well then $Player, guess we're going in a second time.
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: Go tonight, We can't guarantee a window like this again.
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: Better go immediately then.
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: Good luck.
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    0000001F:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp31
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox30
+    00000020:
+      type: {class: SpawnObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnObjComp32
+        groupRef: 
+        objectPrefab: {fileID: 2831952547622704426, guid: 5a3baf689344a294e8907590f4b65189, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+    00000021:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp33
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    00000022:
+      type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyAll34
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1

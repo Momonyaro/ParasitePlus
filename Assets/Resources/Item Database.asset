@@ -119,3 +119,33 @@ MonoBehaviour:
     stackable: 1
     StackSize: {x: 1, y: 25}
     storeItem: 1
+  - name: Lunchbox
+    guid: de208c5a-80a7-4fff-a6fb-a121fc3449a8
+    description: Some sad bastards lunch. Yours now. Heals 50HP
+    msrp: 0
+    type: 4
+    minLevelReq: 0
+    minFriendshipReq: 0
+    damage: 0
+    defense: 0
+    critChance: 0
+    dodgeChance: 0
+    itemAbility: {fileID: 11400000, guid: c4727747297f6de4491780c2ef05f409, type: 2}
+    stackable: 1
+    StackSize: {x: 1, y: 99}
+    storeItem: 0
+  - name: Energy Bar
+    guid: 5960744a-0f9b-4a77-8ffb-3c0328023e19
+    description: When you need something on the go. Heals 5HP
+    msrp: 0
+    type: 4
+    minLevelReq: 0
+    minFriendshipReq: 0
+    damage: 0
+    defense: 0
+    critChance: 0
+    dodgeChance: 0
+    itemAbility: {fileID: 11400000, guid: 86b55db5c72fe4c4eb20a2511568a839, type: 2}
+    stackable: 1
+    StackSize: {x: 1, y: 99}
+    storeItem: 0

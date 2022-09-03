@@ -9,12 +9,22 @@ public class TextAnimator : MonoBehaviour
 {
     public TextMeshProUGUI textElement;
     public TextMeshProUGUI[] textSlaves;
+
     [Header("Random Capitalization")]
     public bool randomCapitalization = false;
     [Range(0, 1)] public float randCapChance = 0.5f;
     public float randCapTimer = 0.1f;
     private float _randCapTimer = 0.0f;
     public float randCapMinMaxRandOffset = 0.00f;
+
+    [Header("Blinking Text")]
+    public bool blinkingText = false;
+    public float visibleFor = 0.2f;
+    public float invisibleFor = 0.1f;
+    private bool _visible = false;
+    private float _visibleTimer = 0.0f;
+
+
 
     private void Awake()
     {
@@ -27,6 +37,9 @@ public class TextAnimator : MonoBehaviour
         
         if (randomCapitalization)
             RandomCapitalization(ref currentText);
+
+        if (blinkingText)
+            BlinkingText(textElement);
 
         textElement.text = currentText;
 
@@ -51,5 +64,17 @@ public class TextAnimator : MonoBehaviour
 
             currentText = new string(txtArray);
         }
+    }
+
+    private void BlinkingText(TextMeshProUGUI textComponent)
+    {
+        if (_visibleTimer <= 0)
+        {
+            _visible = !_visible;
+            _visibleTimer = (_visible) ? visibleFor : invisibleFor;
+            textComponent.enabled = _visible;
+        }
+
+        _visibleTimer -= Time.deltaTime;
     }
 }

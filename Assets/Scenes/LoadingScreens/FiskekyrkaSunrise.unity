@@ -1677,12 +1677,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1efd97af19f4a6d4ba28d78008123778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transition: {fileID: 0}
   nodeMessages:
   - id: _loadNextScene
-    type: 4
+    type: 5
     stringValue: 
     intValue: 0
     targetObject: {fileID: 0}
+  saveOnAwake: 0
 --- !u!114 &1612428818
 MonoBehaviour:
   m_ObjectHideFlags: 0

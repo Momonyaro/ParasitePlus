@@ -83,6 +83,12 @@ namespace MOVEMENT
             if (!turning && !moving && !lockPlayer)
                 StartCoroutine(TurnPlayer(val));
         }
+
+        public void TurnAround()
+        {
+            if (!turning)
+                StartCoroutine(TurnPlayer(new Vector2(2, 0), true));
+        }
         
         public void OnInteractKey(InputAction.CallbackContext context)
         {
@@ -109,7 +115,7 @@ namespace MOVEMENT
             UIManager.Instance.onUIMessage.Invoke("_togglePauseMenu");
         }
 
-        private IEnumerator TurnPlayer(Vector2 turnDir)
+        private IEnumerator TurnPlayer(Vector2 turnDir, bool quiet = false)
         {
             turning = true;
             Quaternion rot = transform.rotation;
@@ -121,7 +127,9 @@ namespace MOVEMENT
 
             float timePassed = 0;
             float maxTime = turnLerpCurve.keys[turnLerpCurve.keys.Length - 1].time;
-            SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_playerTurn", out bool success);
+
+            if (!quiet)
+                SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_playerTurn", out bool success);
 
             while (timePassed < maxTime)
             {

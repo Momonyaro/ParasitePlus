@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Items;
 using MOVEMENT;
 using SAMSARA;
 using Scriptables;
+using UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -39,6 +41,10 @@ namespace CORE
             }
 
             SlimComponent.Instance.ReadVolatileSlim(out SlimComponent.SlimData slimData);
+
+            //Save to external file
+            SaveUtility.WriteToDisk(slimData);
+
             if (slimData == null || slimData.partyField.Length != 4) //Erroneous data, party should always be 4.
             {
                 //Don't replace the data, it's garbo! Use defaults
@@ -139,6 +145,34 @@ namespace CORE
             if (!Samsara.Instance.GetMusicPlaying(out bool success).Equals(mapBMGReference))
                 Samsara.Instance.MusicPlayLayered(mapBMGReference, TransitionType.CrossFade, 1.2f, out success);
         }
+
+        public void GoToNewScene(string destination, string loadSceneVar)
+        {
+            currentSlimData.destinationScene = destination;
+            currentSlimData.loadSceneVariable = loadSceneVar;
+
+            StartCoroutine(WaitForSceneTransition(destination));
+
+            IEnumerator WaitForSceneTransition(string newSceneRef)
+            {
+                SlimComponent.Instance.PopulateAndSendSlim(currentSlimData);
+                FadeToBlackImage fadeToBlackImage = FindObjectOfType<FadeToBlackImage>();
+                bool skipPlayerLock = player.lockPlayer;
+
+                if (!skipPlayerLock)
+                    player.lockPlayer = true;
+
+                fadeToBlackImage.FadeToBlack(0.3f, .8f);
+
+                while (!fadeToBlackImage.screenBlack) { yield return null; }
+
+                SwitchScene(newSceneRef, false);
+
+                yield break;
+            }
+        }
+
+        
 
         public void LoadRandomBattle()
         {

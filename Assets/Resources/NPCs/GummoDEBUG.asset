@@ -10,24 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af39f2e96d88af64ea77e06a19ccbfff, type: 3}
-  m_Name: Sandra
+  m_Name: GummoDEBUG
   m_EditorClassIdentifier: 
-  entityName: Sandra
-  entityLevel: 1
-  entityId: _sandra
-  inParty: 0
-  entitySpeed: 8
-  throwawayId: 220
-  healthPts: {x: 18, y: 18}
-  actionPts: {x: 10, y: 10}
+  entityName: Gummo $DEBUG
+  entityLevel: 4
+  entityId: _gummo
+  inParty: 1
+  attackYellSfx: 
+  damageYellSfx: 
+  deathYellSfx: 
+  entitySpeed: 13
+  throwawayId: 0
+  healthPts: {x: 35, y: 35}
+  actionPts: {x: 21, y: 21}
   weaknesses:
-  - 0.75
   - 1
-  - 0.75
-  - 0.75
+  - 0.5
+  - 1
+  - 1
   entityXp: 0
-  entityXpThreshold: 14
-  defaultAttack: {fileID: 11400000, guid: 467ec84786929b24d9e53ab9324f88d8, type: 2}
+  entityXpThreshold: 56
+  defaultAttack: {fileID: 11400000, guid: 00be9c6c0665f664fb5c95bf1a66b36f, type: 2}
   lastAttacker: {fileID: 0}
   entityAI:
     randID: -1
@@ -44,8 +47,9 @@ MonoBehaviour:
         id: 1
   onDeathInterjects: []
   deadTrigger: 0
-  stats: 000000000000000000000000000000000000000000000000
-  abilityScriptables: []
+  stats: 
+  abilityScriptables:
+  - {fileID: 11400000, guid: e2f917f02455925409309ebbf5e0711b, type: 2}
   entityEffectBuffer: []
   references:
     version: 1

@@ -109,7 +109,7 @@ namespace Scriptables
             healthPts.y = Mathf.Min(healthPts.y, config.healthCap);
             healthPts.x = Mathf.Min(healthPts.x, healthPts.y);
 
-            if (healthPts.x <= 0) deadTrigger = true;
+            deadTrigger = (healthPts.x <= 0); //Implicit resurrection from this.
         }
 
 
@@ -169,12 +169,12 @@ namespace Scriptables
 
                 //Restore health delta to player
                 //Max HP gain per level is 5
-                int hpDelta = Mathf.Max(Mathf.RoundToInt( healthPts.y * Mathf.Min(1.0f / entityLevel, 5) ), 1);
+                int hpDelta = Mathf.Min(Mathf.RoundToInt( healthPts.y * Mathf.Min(1.0f / entityLevel, 5) ), 5);
                 healthPts.x += hpDelta;
                 healthPts.y += hpDelta;
 
                 //Max AP gain per level is 3
-                int apDelta = Mathf.Max(Mathf.RoundToInt(actionPts.y * Mathf.Min(1.0f / entityLevel, 3)), 1);
+                int apDelta = Mathf.Min(Mathf.RoundToInt(actionPts.y * Mathf.Min(1.0f / entityLevel, 3)), 5);
                 actionPts.x += apDelta;
                 actionPts.y += apDelta;
 
@@ -221,6 +221,7 @@ namespace Scriptables
             es.entityEffectBuffer = entityEffectBuffer;
             es.entityId = entityId;
             es.entityName = entityName;
+            es.deadTrigger = deadTrigger;
             es.entitySpeed = entitySpeed;
             es.attackYellSfx = attackYellSfx;
             es.damageYellSfx = damageYellSfx;

@@ -15,7 +15,7 @@ MonoBehaviour:
   abilityName: Fire
   abilityId: _defaultAtk
   abilityDesc: This is the default attack.
-  abilityEffectRef: _swordSlash
+  abilityEffectRef: _gunshot
   abilitySoundEffect: _meleeBash
   hideDamageText: 0
   targetAll: 0

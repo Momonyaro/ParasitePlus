@@ -8,7 +8,9 @@ public class WorldManager : MonoBehaviour
     //Hold all the buttons and check for input, either mouse clicks, space bar or the a button.
 
     private WorldNode[] worldNodes = new WorldNode[0];
+    public UI.FadeToBlackImage transition;
     [SerializeField] NodeMessage[] nodeMessages = new NodeMessage[0];
+    public bool saveOnAwake = true;
     private bool dumbGate = false;
 
     public static int CurrentSelectionLayer = 0;
@@ -18,6 +20,16 @@ public class WorldManager : MonoBehaviour
         worldNodes = FindObjectsOfType<WorldNode>(true);
 
         CurrentSelectionLayer = CORE.SlimComponent.Instance.ReadNonVolatileBtnLayer;
+
+        if (saveOnAwake)
+        {
+            CORE.SlimComponent.Instance.ReadVolatileSlim(out var saveData);
+
+            //Save to external file
+            SaveUtility.WriteToDisk(saveData);
+
+            CORE.SlimComponent.Instance.PopulateAndSendSlim(saveData);
+        }
 
         Debug.Log(CurrentSelectionLayer);
     }
@@ -59,13 +71,43 @@ public class WorldManager : MonoBehaviour
                 GotoScene(node.stringValue);
                 break;
 
+            case NodeMessage.MessageType.FADE_TO_SCENE:
+                GotoScene(node.stringValue, 0.5f, Color.white);
+                break;
+
             case NodeMessage.MessageType.GOTO_SLIM_SCENE:
                 GotoScene(CORE.SlimComponent.Instance.ReadNonVolatileDesination);
+                break;
+
+            case NodeMessage.MessageType.LOAD_SAVE:
+                CORE.SlimComponent.SlimData loaded = SaveUtility.ReadFromDisk(out bool success);
+                if (!success) // Go to other scene
+                {
+                    GotoScene(node.stringValue);
+                    break;
+                }
+
+                CORE.SlimComponent.Instance.PopulateAndSendSlim(loaded);
+                GotoScene(loaded.destinationScene);
+                break;
+
+            case NodeMessage.MessageType.FADE_LOAD_SCENE:
+                CORE.SlimComponent.SlimData loaded2 = SaveUtility.ReadFromDisk(out bool success2);
+                if (!success2) // Go to other scene
+                {
+                    GotoScene(node.stringValue);
+                    break;
+                }
+
+                CORE.SlimComponent.Instance.PopulateAndSendSlim(loaded2);
+                GotoScene(loaded2.destinationScene, 0.5f, fadeTo: Color.black);
                 break;
 
             case NodeMessage.MessageType.EXIT_APP:
                 Application.Quit();
 #if UNITY_EDITOR
+
+                Debug.Log($"Quitter! :>: {node.id}");
                 if (Application.isEditor)
                 {
                     UnityEditor.EditorApplication.ExitPlaymode();
@@ -85,6 +127,27 @@ public class WorldManager : MonoBehaviour
     // Make it fade to black first
     private void GotoScene(string sceneValue)
     {
+        SceneParser.ParseSceneChange(sceneValue, out string slimDestination, out string destination);
+
+        CORE.SlimComponent.Instance.SetNonVolatileDestination(slimDestination);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(destination);
+    }
+
+    private void GotoScene(string sceneValue, float timer, Color fadeTo)
+    {
+        for (int i = 0; i < worldNodes.Length; i++)
+        {
+            worldNodes[i].hidden = true;
+        }
+
+        StartCoroutine(GotoSceneEnumerator(sceneValue, timer, fadeTo).GetEnumerator());
+    }
+
+    private IEnumerable GotoSceneEnumerator(string sceneValue, float timer, Color fadeTo)
+    {
+        transition.color = fadeTo;
+        transition.FadeToBlack(timer - 0.1f, 0.1f);
+        yield return new WaitForSeconds(timer);
         SceneParser.ParseSceneChange(sceneValue, out string slimDestination, out string destination);
 
         CORE.SlimComponent.Instance.SetNonVolatileDestination(slimDestination);
@@ -133,8 +196,11 @@ public class WorldManager : MonoBehaviour
             OPEN_SUBMENU,
             CLOSE_SUBMENU,
             GOTO_SCENE,
+            FADE_TO_SCENE,
             EXIT_APP,
             GOTO_SLIM_SCENE,
+            LOAD_SAVE,
+            FADE_LOAD_SCENE,
         };
 
         public string id;

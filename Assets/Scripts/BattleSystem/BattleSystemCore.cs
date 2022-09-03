@@ -80,6 +80,9 @@ namespace BattleSystem
                 if (partyField[i] == null) continue;
                 EntityScriptable copy = partyField[i].Copy();
 
+                if (copy.GetEntityHP().x == 0)
+                    copy.deadTrigger = true;
+
                 partyField[i] = copy;
             }
             
@@ -138,6 +141,11 @@ namespace BattleSystem
             
             SlimComponent.Instance.PopulateAndSendSlim(slimData);
             SceneManager.LoadScene(destinationScene);
+        }
+
+        public void GoToGameOverScene()
+        {
+            SceneManager.LoadScene("GAME_OVER");
         }
 
         public EntityScriptable GetNextEntity()

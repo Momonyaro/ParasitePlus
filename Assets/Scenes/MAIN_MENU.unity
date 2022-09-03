@@ -2645,6 +2645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1efd97af19f4a6d4ba28d78008123778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transition: {fileID: 587834275}
   nodeMessages:
   - id: _newGame
     type: 2
@@ -2652,15 +2653,16 @@ MonoBehaviour:
     intValue: 0
     targetObject: {fileID: 0}
   - id: _quitGame
-    type: 3
+    type: 4
     stringValue: 
     intValue: 0
     targetObject: {fileID: 0}
   - id: _testScene
-    type: 2
-    stringValue: SwanFloor1
+    type: 6
+    stringValue: Intro
     intValue: 0
     targetObject: {fileID: 0}
+  saveOnAwake: 0
 --- !u!1 &1446837974
 GameObject:
   m_ObjectHideFlags: 0

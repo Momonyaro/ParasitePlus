@@ -80,10 +80,12 @@ public class ItemBtn : MonoBehaviour
 
     public void SetButtonData(string title, string extra, string toStore, string itemDescription)
     {
-        mainText.text = title;
+        if (mainText != null)
+            mainText.text = title;
         if (secondText != null)
             secondText.text = extra;
-        this.itemDescription = itemDescription;
+        if (this.itemDescription != null)
+            this.itemDescription = itemDescription;
         StoreMessage(toStore);
 
         StopCoroutine(IEIntroFill());

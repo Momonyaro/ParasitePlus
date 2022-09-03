@@ -5539,7 +5539,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 372734432489691280, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 707894638975602137, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: m_IsActive
@@ -20107,7 +20107,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 372734432489691280, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 707894638975602137, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: m_IsActive
@@ -20195,7 +20195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3488771414362604763, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4835381835031168808, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: m_IsActive
@@ -24665,12 +24665,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: 2819c505e9d090545b39a7836490f367, type: 2}
-  storePersistant: 0
+  storePersistant: 1
   onDialogueFinished:
     m_PersistentCalls:
       m_Calls: []
   generateNewGUID: 0
-  eventKey: 876ca54d-5d38-4dbb-90af-c37142e4347f
+  eventKey: b206f5b1-2557-4970-8cfe-40781966be1e
 --- !u!1001 &1679616328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26248,6 +26248,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5706937221048515875, guid: 9f5c3542b8d9f3d4993ce6cb5404ca4d, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5868332816972702365, guid: 9f5c3542b8d9f3d4993ce6cb5404ca4d, type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6067613539527378559, guid: 9f5c3542b8d9f3d4993ce6cb5404ca4d, type: 3}

@@ -17,6 +17,11 @@ namespace BattleSystem.UI
         public bool finished = false;
         public LevelUpContainer[] levelUpContainers = new LevelUpContainer[3];
 
+        public Sprite playerSpr;
+        public Sprite gummoSpr;
+        public Sprite sandraSpr;
+        public Sprite siveSpr;
+
         private void OnValidate()
         {
             for (int i = 0; i < levelUpContainers.Length; i++)
@@ -29,6 +34,23 @@ namespace BattleSystem.UI
         {
             finished = false;
             int[] xpRewards = new int[party.Length];
+
+            for (int i = 0; i < party.Length; i++)
+            {
+                if (party[i] != null)
+                {
+                    Sprite selected = playerSpr;
+
+                    switch (party[i].entityId)
+                    {
+                        case "_gummo":  selected = gummoSpr;  break;
+                        case "_sandra": selected = sandraSpr; break;
+                        case "_sive":   selected = siveSpr;   break;
+                    }
+
+                    levelUpContainers[i].portrait.sprite = selected;
+                }
+            }
             
             for (int i = 0; i < levelUpContainers.Length; i++)
             {
@@ -37,8 +59,12 @@ namespace BattleSystem.UI
                     levelUpContainers[i].parent.gameObject.SetActive(false);
                     continue;
                 }
-                
-                xpRewards[i] = xpToAdd + Mathf.FloorToInt(Random.Range(-xpToAdd * randomRange, xpToAdd * randomRange));
+
+                int xpReward = xpToAdd + Mathf.FloorToInt(Random.Range(-xpToAdd * randomRange, xpToAdd * randomRange));
+                if (party[i].deadTrigger)
+                    xpReward = 0; //No exp if ye' dead
+
+                xpRewards[i] = xpReward;
             }
 
             StartCoroutine(LevelUpEnumerator(party, xpRewards));
@@ -148,6 +174,7 @@ namespace BattleSystem.UI
         [HideInInspector] public string title = "Level Up Data";
         public Transform parent;
         public Image xpBar;
+        public Image portrait;
         public TextMeshProUGUI levelNumText;
         public GameObject levelPlus;
 

@@ -9,7 +9,7 @@ public class WorldNode : MonoBehaviour
     [SerializeField] public WorldNodeExtInfo extInfoTab;
     [SerializeField] float interactRange = 50;
     [SerializeField] public bool IsSelected = false;
-    [SerializeField] bool hidden = false;
+    [SerializeField] public bool hidden = false;
 
     public string OnPressUIMsg = "";
     public int MinButtonLayer = 0;

@@ -75,7 +75,7 @@ namespace CORE
             public Vector3 playerLastPos = Vector3.zero;
             public Vector3 playerLastEuler = Vector3.zero;
             public string loadSceneVariable = "";
-            public int lastButtonLayer = 0; // Default to first piece of the dungeon
+            public int lastButtonLayer = 0;
 
             //Persistant Data storage
             public HashSet<string> eventTriggers = new HashSet<string>();

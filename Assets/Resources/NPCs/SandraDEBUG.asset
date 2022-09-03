@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af39f2e96d88af64ea77e06a19ccbfff, type: 3}
+  m_Name: SandraDEBUG
+  m_EditorClassIdentifier: 
+  entityName: Sandra $DEBUG
+  entityLevel: 4
+  entityId: _sandra
+  inParty: 1
+  attackYellSfx: 
+  damageYellSfx: 
+  deathYellSfx: 
+  entitySpeed: 8
+  throwawayId: 220
+  healthPts: {x: 0, y: 30}
+  actionPts: {x: 30, y: 30}
+  weaknesses:
+  - 0.75
+  - 1
+  - 0.75
+  - 0.75
+  entityXp: 0
+  entityXpThreshold: 56
+  defaultAttack: {fileID: 11400000, guid: 467ec84786929b24d9e53ab9324f88d8, type: 2}
+  lastAttacker: {fileID: 0}
+  entityAI:
+    randID: -1
+    personalityNodes:
+    - healthPercentLessThan: 1
+      roundsPassed: 0
+      trigger: 
+      stateAbilities: []
+      onFirstLoopInterjects: []
+      hasReadFirstLoop: 0
+      moveSelect:
+        id: 0
+      targetComp:
+        id: 1
+  onDeathInterjects: []
+  deadTrigger: 0
+  stats: 000000000000000000000000000000000000000000000000
+  abilityScriptables: []
+  entityEffectBuffer: []
+  references:
+    version: 1
+    00000000:
+      type: {class: MoveSelectCompRandom, ns: BattleSystem.AI, asm: Assembly-CSharp}
+      data:
+        componentName: Random
+    00000001:
+      type: {class: TargetCompRandom, ns: BattleSystem.AI, asm: Assembly-CSharp}
+      data:
+        owner: {fileID: 0}
+        componentName: Random

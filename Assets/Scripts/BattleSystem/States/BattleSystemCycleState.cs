@@ -58,7 +58,13 @@ namespace BattleSystem.States
                 parent.SwitchActiveState("_winState");
                 return;
             }
-            
+
+            if (CheckPlayerLossCase())
+            {
+                parent.SwitchActiveState("_lossState");
+                return;
+            }
+
             //Transfer to next state
             parent.SwitchActiveState("_enemyBranch");
         }

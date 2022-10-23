@@ -10738,7 +10738,7 @@ MonoBehaviour:
     playerRotation: {x: 0, y: 0, z: 0}
   encounterProgress: 0
   randomEncounters: 1
-  encounterProgressRange: 0.1
+  encounterProgressRange: 0.2
 --- !u!114 &1382615403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10782,6 +10782,7 @@ MonoBehaviour:
   dungeonManager: {fileID: 1382615402}
   config: {fileID: 11400000, guid: f19491cb78d45e04ca9bacb7aac3d494, type: 2}
   mapBMGReference: _craneCalmBGM
+  writeSaveOnLoad: 1
   monsterManifest:
     encounters:
     - enemies:
@@ -15287,7 +15288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1746545150001045457, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
       propertyPath: levels.Array.data[0].destinationScene
-      value: CraneFloor7
+      value: CraneFloor9
       objectReference: {fileID: 0}
     - target: {fileID: 1746545150001045457, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
       propertyPath: levels.Array.data[3].destinationScene

@@ -43,6 +43,7 @@ namespace CORE
 
             slimData = sInstance.internalSlimData;
             Destroy(sInstance.gameObject);
+            sInstance = null;
         }
 
         public string ReadNonVolatilePlayerName => internalSlimData.playerName;

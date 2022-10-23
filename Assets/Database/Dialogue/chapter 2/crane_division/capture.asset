@@ -1,0 +1,161 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae13be0447a66ed48befacfeeb4b52a4, type: 3}
+  m_Name: capture
+  m_EditorClassIdentifier: 
+  speakers:
+  - speakerName: Narrator
+    speakerReference: _narrator
+    speakerPhoto: {fileID: 7220562612368205161, guid: 62f2dfad8457c974e86da9e58d87e83c, type: 3}
+  - speakerName: Gummo
+    speakerReference: _gummo
+    speakerPhoto: {fileID: 8335795263187683292, guid: b2c6f7d2743f9fa49800fe16300f4e5d, type: 3}
+  - speakerName: Sandra
+    speakerReference: _sandra
+    speakerPhoto: {fileID: -8712306689713323440, guid: 0fc419b9f5dc9ec47b590e6fc1f29bfe, type: 3}
+  - speakerName: Sandra
+    speakerReference: _sandraGun
+    speakerPhoto: {fileID: -7481700744659933332, guid: 0fc419b9f5dc9ec47b590e6fc1f29bfe, type: 3}
+  groups:
+  - groupName: Default
+    visible: 1
+    groupReference: _default
+  components:
+  - id: 0
+  - id: 1
+  - id: 2
+  - id: 3
+  - id: 4
+  - id: 5
+  - id: 6
+  - id: 7
+  transitionToOnEof: {fileID: 0}
+  goToSceneOnEof: 0
+  destinationSceneOnEof: 
+  references:
+    version: 1
+    00000000:
+      type: {class: SpawnObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnObjComp0
+        groupRef: 
+        objectPrefab: {fileID: 642171959960661337, guid: 4307d74bb5293ad46a26850662a170f1, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+    00000001:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp1
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    00000002:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox2
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _sandra
+          text: Hey! Are you two okay?
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    00000003:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp3
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox2
+    00000004:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp4
+        groupRef: 
+        objectPrefab: {fileID: 8370936115634730495, guid: 26791cb2b2860e44fb3c3960a550363b, type: 3}
+        screenPosition: {x: 0, y: -100}
+        errorAttempts: 99
+        reveal: 1
+        backgroundImage: {fileID: -1917816709974232674, guid: 0fc419b9f5dc9ec47b590e6fc1f29bfe, type: 3}
+    00000005:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp5
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    00000006:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox6
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _sandra
+          text: I need you to get up.
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: We're not alone down here.
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: '*sigh* It feels like they threw me in the grinder.'
+          buildTime: 0.0456
+        - speakerReference: _sandraGun
+          text: They just about did.
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: Where did you get a gun?!
+          buildTime: 0.0456
+        - speakerReference: _sandraGun
+          text: The guards that caught me aren't the brightest, just left a holster
+            lying on a table before they threw me down here.
+          buildTime: 0.0456
+        - speakerReference: _sandraGun
+          text: Why they didn't check for weapons, we can only assume they didn't
+            feel the need to.
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: Shit, okay. Let's see what hellhole they've thrown us in.
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: $Player, you take the lead.
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    00000007:
+      type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyAll7
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1

@@ -22,6 +22,7 @@ namespace CORE
         public DungeonManager dungeonManager;
         public GameConfig config;
         public string mapBMGReference = "";
+        public bool writeSaveOnLoad = true;
 
         public const int BattleSceneIndex = 1;
 
@@ -43,7 +44,8 @@ namespace CORE
             SlimComponent.Instance.ReadVolatileSlim(out SlimComponent.SlimData slimData);
 
             //Save to external file
-            SaveUtility.WriteToDisk(slimData);
+            if (writeSaveOnLoad)
+                SaveUtility.WriteToDisk(slimData);
 
             if (slimData == null || slimData.partyField.Length != 4) //Erroneous data, party should always be 4.
             {

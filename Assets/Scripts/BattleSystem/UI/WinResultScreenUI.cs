@@ -30,7 +30,7 @@ namespace BattleSystem.UI
             }
         }
 
-        public void DisplayLevelUp(EntityScriptable[] party, int xpToAdd, float randomRange)
+        public void DisplayLevelUp(EntityScriptable[] party, int[] xpToAdd, float randomRange)
         {
             finished = false;
             int[] xpRewards = new int[party.Length];
@@ -49,6 +49,12 @@ namespace BattleSystem.UI
                     }
 
                     levelUpContainers[i].portrait.sprite = selected;
+
+                    int xpReward = xpToAdd[i] + Mathf.FloorToInt(Random.Range(-xpToAdd[i] * randomRange, xpToAdd[i] * randomRange));
+                    if (party[i].deadTrigger)
+                        xpReward = 0; //No exp if ye' dead
+
+                    xpRewards[i] = xpReward;
                 }
             }
             
@@ -59,12 +65,6 @@ namespace BattleSystem.UI
                     levelUpContainers[i].parent.gameObject.SetActive(false);
                     continue;
                 }
-
-                int xpReward = xpToAdd + Mathf.FloorToInt(Random.Range(-xpToAdd * randomRange, xpToAdd * randomRange));
-                if (party[i].deadTrigger)
-                    xpReward = 0; //No exp if ye' dead
-
-                xpRewards[i] = xpReward;
             }
 
             StartCoroutine(LevelUpEnumerator(party, xpRewards));

@@ -35,7 +35,7 @@ public class StoreManager : MonoBehaviour
     {
         if (foundData.partyField.Length < 4) return;
 
-        Debug.Assert(currentSlim.lastButtonLayer == foundData.lastButtonLayer);
+        //(Debug.Assert(currentSlim.lastButtonLayer == foundData.lastButtonLayer);
 
         currentSlim = foundData;
 

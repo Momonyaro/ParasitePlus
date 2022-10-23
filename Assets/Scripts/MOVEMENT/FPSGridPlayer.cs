@@ -44,7 +44,7 @@ namespace MOVEMENT
         private void Start()
         {
             MinimapCompass.Facing nextFacing = GetNewFacing(transform.rotation.eulerAngles.y);
-            FindObjectOfType<MinimapCompass>().SetCompassFacing(nextFacing);
+            FindObjectOfType<MinimapCompass>()?.SetCompassFacing(nextFacing);
         }
 
         private void OnDisable()

@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Cutscenes/Intro.unity
     guid: e70f82a30ec083c4da050355744093e6
   - enabled: 1
-    path: Assets/Scenes/MapMenu/MapMenu.unity
+    path: Assets/Scenes/MapMenu.unity
     guid: 5ae18baca6f7a714ea292e0de2a00923
   - enabled: 1
     path: Assets/Scenes/LoadingScreens/FiskekyrkaSundown.unity
@@ -95,5 +95,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Maps/CraneDivision/CraneFloor8.unity
     guid: e6ab7075dfb780b439bb09072c492206
+  - enabled: 1
+    path: Assets/Scenes/Maps/CraneDivision/CraneFloor9.unity
+    guid: d6068c2231453c04ebfda6e8c41c889e
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 46472d8cef444da4d841f68f6280e3ef, type: 2}

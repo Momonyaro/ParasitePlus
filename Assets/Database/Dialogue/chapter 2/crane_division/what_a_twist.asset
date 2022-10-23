@@ -40,7 +40,7 @@ MonoBehaviour:
   - id: 10
   - id: 11
   transitionToOnEof: {fileID: 0}
-  goToSceneOnEof: 1
+  goToSceneOnEof: 0
   destinationSceneOnEof: CraneFloor7
   references:
     version: 1

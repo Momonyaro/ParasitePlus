@@ -24297,9 +24297,9 @@ MonoBehaviour:
     lastTransformScene: 
     playerName: Yoel
     partyField:
-    - {fileID: 11400000, guid: b87cabd1880fcb14fbd07bc27dd4400d, type: 2}
-    - {fileID: 11400000, guid: 5867c1a531a1bfd4c9e7a2d934c1612d, type: 2}
-    - {fileID: 11400000, guid: 30f66e8e01da6b64081f8dfa5d87b383, type: 2}
+    - {fileID: 11400000, guid: 01419897f5b1c824a9470bca624fe2a9, type: 2}
+    - {fileID: 11400000, guid: 16d3e37296f42074f8c3edd96e408248, type: 2}
+    - {fileID: 11400000, guid: 9f3233e3ba69a484da5c92131a69d3b0, type: 2}
     - {fileID: 0}
     enemyField:
     - {fileID: 0}
@@ -24321,6 +24321,7 @@ MonoBehaviour:
   dungeonManager: {fileID: 913984203}
   config: {fileID: 11400000, guid: f19491cb78d45e04ca9bacb7aac3d494, type: 2}
   mapBMGReference: _craneCalmBGM
+  writeSaveOnLoad: 1
   monsterManifest:
     encounters:
     - enemies:

@@ -21,7 +21,7 @@ MonoBehaviour:
   deathYellSfx: 
   entitySpeed: 5
   throwawayId: 0
-  healthPts: {x: 25, y: 25}
+  healthPts: {x: 28, y: 28}
   actionPts: {x: 5, y: 5}
   weaknesses:
   - 1

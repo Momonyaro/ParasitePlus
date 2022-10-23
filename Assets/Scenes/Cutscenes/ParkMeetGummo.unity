@@ -5642,7 +5642,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newBtnLayer: 1
   changeScene: 1
+  useMapManager: 1
   parseDestination: 0
+  writeCurrentSceneToSlim: 0
   newSceneVariable: MapMenu
 --- !u!1 &316644280
 GameObject:
@@ -30591,6 +30593,7 @@ MonoBehaviour:
   dungeonManager: {fileID: 1693944275}
   config: {fileID: 11400000, guid: f19491cb78d45e04ca9bacb7aac3d494, type: 2}
   mapBMGReference: _parkBGM
+  writeSaveOnLoad: 0
   monsterManifest:
     encounters:
     - enemies:

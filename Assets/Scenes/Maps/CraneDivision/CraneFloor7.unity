@@ -2509,7 +2509,7 @@ MonoBehaviour:
     playerRotation: {x: 0, y: 180, z: 0}
   encounterProgress: 0
   randomEncounters: 1
-  encounterProgressRange: 0.1
+  encounterProgressRange: 0.2
 --- !u!114 &229979366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2529,9 +2529,9 @@ MonoBehaviour:
     lastTransformScene: 
     playerName: Yoel
     partyField:
-    - {fileID: 11400000, guid: b87cabd1880fcb14fbd07bc27dd4400d, type: 2}
-    - {fileID: 11400000, guid: 5867c1a531a1bfd4c9e7a2d934c1612d, type: 2}
-    - {fileID: 11400000, guid: 30f66e8e01da6b64081f8dfa5d87b383, type: 2}
+    - {fileID: 11400000, guid: 01419897f5b1c824a9470bca624fe2a9, type: 2}
+    - {fileID: 11400000, guid: 16d3e37296f42074f8c3edd96e408248, type: 2}
+    - {fileID: 11400000, guid: 9f3233e3ba69a484da5c92131a69d3b0, type: 2}
     - {fileID: 0}
     enemyField:
     - {fileID: 0}
@@ -2553,19 +2553,20 @@ MonoBehaviour:
   dungeonManager: {fileID: 229979365}
   config: {fileID: 11400000, guid: f19491cb78d45e04ca9bacb7aac3d494, type: 2}
   mapBMGReference: _craneCalmBGM
+  writeSaveOnLoad: 1
   monsterManifest:
     encounters:
     - enemies:
       - {fileID: 0}
-      - {fileID: 0}
       - {fileID: 11400000, guid: 01db3d1832e8be64fb97d9aeb3e30090, type: 2}
       - {fileID: 0}
+      - {fileID: 11400000, guid: bb3e8445bedbd0a4ca5e1f4e34705089, type: 2}
       - {fileID: 0}
     - enemies:
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 11400000, guid: bb3e8445bedbd0a4ca5e1f4e34705089, type: 2}
-      - {fileID: 0}
+      - {fileID: 11400000, guid: bb3e8445bedbd0a4ca5e1f4e34705089, type: 2}
       - {fileID: 0}
     - enemies:
       - {fileID: 11400000, guid: 01db3d1832e8be64fb97d9aeb3e30090, type: 2}
@@ -2578,6 +2579,12 @@ MonoBehaviour:
       - {fileID: 11400000, guid: bb3e8445bedbd0a4ca5e1f4e34705089, type: 2}
       - {fileID: 11400000, guid: 01db3d1832e8be64fb97d9aeb3e30090, type: 2}
       - {fileID: 0}
+      - {fileID: 0}
+    - enemies:
+      - {fileID: 0}
+      - {fileID: 11400000, guid: bb3e8445bedbd0a4ca5e1f4e34705089, type: 2}
+      - {fileID: 11400000, guid: 01db3d1832e8be64fb97d9aeb3e30090, type: 2}
+      - {fileID: 11400000, guid: bb3e8445bedbd0a4ca5e1f4e34705089, type: 2}
       - {fileID: 0}
 --- !u!4 &229979367
 Transform:
@@ -20291,6 +20298,103 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6038848085091597583, guid: 9806312d13d4e2c40b6e30a463953c8a, type: 3}
   m_PrefabInstance: {fileID: 1788742289}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1793403001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1793403005}
+  - component: {fileID: 1793403004}
+  - component: {fileID: 1793403003}
+  - component: {fileID: 1793403002}
+  m_Layer: 0
+  m_Name: LampPulser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1793403002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793403001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1cd4acb1882e04480ded0cea73b588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData: {fileID: 11400000, guid: c4786dfa11bb09245a5cb3ba17ddeeb1, type: 2}
+  storePersistant: 1
+  onDialogueFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  generateNewGUID: 0
+  eventKey: 7f28645e-d718-4194-8662-7fde1e04d22f
+--- !u!114 &1793403003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793403001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0159483441944d9a988e560006d3296c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptMessage: []
+  triggerActive: 0
+  disabled: 0
+  generateNewGUID: 0
+  guid: 3a096291-6684-4e8f-8944-28bd5fb03ed2
+  onEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1793403002}
+        m_TargetAssemblyTypeName: MapTriggers.CutsceneEventTrigger, Assembly-CSharp
+        m_MethodName: TriggerEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &1793403004
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793403001}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1793403005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793403001}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2005911870}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1808776154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21623,6 +21727,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2092410341}
+  - {fileID: 1793403005}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

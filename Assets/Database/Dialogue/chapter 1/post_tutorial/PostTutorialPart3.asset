@@ -19,6 +19,9 @@ MonoBehaviour:
   - speakerName: Gummo
     speakerReference: _gummo
     speakerPhoto: {fileID: 8335795263187683292, guid: b2c6f7d2743f9fa49800fe16300f4e5d, type: 3}
+  - speakerName: Anna
+    speakerReference: _anna
+    speakerPhoto: {fileID: 4642394838527890067, guid: a4d369382283cb349951e0adf6478183, type: 3}
   groups:
   - groupName: New Group
     visible: 1
@@ -37,6 +40,7 @@ MonoBehaviour:
   - id: 10
   - id: 11
   - id: 12
+  - id: 13
   transitionToOnEof: {fileID: 0}
   goToSceneOnEof: 1
   destinationSceneOnEof: MapMenu
@@ -77,11 +81,21 @@ MonoBehaviour:
         reference: _spawnBGObjComp3
         groupRef: 
         objectPrefab: {fileID: 8370936115634730495, guid: 26791cb2b2860e44fb3c3960a550363b, type: 3}
-        screenPosition: {x: 100, y: -90}
+        screenPosition: {x: 150, y: -100}
         errorAttempts: 99
         reveal: 1
         backgroundImage: {fileID: -4682570417295124934, guid: b2c6f7d2743f9fa49800fe16300f4e5d, type: 3}
     00000004:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp4
+        groupRef: 
+        objectPrefab: {fileID: 8370936115634730495, guid: 26791cb2b2860e44fb3c3960a550363b, type: 3}
+        screenPosition: {x: -120, y: -100}
+        errorAttempts: 99
+        reveal: 1
+        backgroundImage: {fileID: 7113669248012309142, guid: a4d369382283cb349951e0adf6478183, type: 3}
+    00000005:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp4
@@ -91,7 +105,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         waitTime: 1
-    00000005:
+    00000006:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox5
@@ -107,6 +121,9 @@ MonoBehaviour:
         - speakerReference: _gummo
           text: I think you made the right call coming here.
           buildTime: 0.0456
+        - speakerReference: _anna
+          text: Yes, this is horrible!
+          buildTime: 0.0456
         - speakerReference: _gummo
           text: We've gotta keep an eye out, they're gonna keep coming after you
             if your as valuable to them as it sounds.
@@ -117,7 +134,7 @@ MonoBehaviour:
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
-    00000006:
+    00000007:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp6
@@ -127,7 +144,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         waitTime: 1
-    00000007:
+    00000008:
       type: {class: SpawnObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _spawnObjComp7
@@ -136,7 +153,7 @@ MonoBehaviour:
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 1
-    00000008:
+    00000009:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp8
@@ -146,7 +163,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         waitTime: 1.2
-    00000009:
+    0000000A:
       type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyAll9
@@ -155,7 +172,7 @@ MonoBehaviour:
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 1
-    0000000A:
+    0000000B:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox10
@@ -171,7 +188,7 @@ MonoBehaviour:
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
-    0000000B:
+    0000000C:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp11
@@ -181,7 +198,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         refToDestroy: _diagBox10
-    0000000C:
+    0000000D:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp12

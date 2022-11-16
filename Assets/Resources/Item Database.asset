@@ -60,7 +60,7 @@ MonoBehaviour:
     storeItem: 0
   - name: Cinnamon Bun
     guid: 615f99df-58c4-4674-becb-79f361cb6ad3
-    description: A must-have confection, restores 5 HP
+    description: A must-have confection, restores 15 HP
     msrp: 10
     type: 4
     minLevelReq: 0
@@ -75,7 +75,7 @@ MonoBehaviour:
     storeItem: 1
   - name: Egg-Salmon Sandwich
     guid: 470e0ec1-76f2-468e-9890-cadacd688215
-    description: A fresh, filling sandwich, restores 10 HP
+    description: A fresh, filling sandwich, restores 25 HP
     msrp: 20
     type: 4
     minLevelReq: 3
@@ -90,7 +90,7 @@ MonoBehaviour:
     storeItem: 1
   - name: Coffee
     guid: c807abf1-0d2c-4184-926e-2123a86a32c7
-    description: Basic, but hits the spot! Restores 5 AP
+    description: Basic, but hits the spot! Restores 15 AP
     msrp: 12
     type: 4
     minLevelReq: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
     storeItem: 1
   - name: Latte
     guid: 5f72ba12-8869-4850-b4e7-329ca9fc7f2c
-    description: Ol' Reliable, few things beat it's frothy goodness. Restores 10
+    description: Ol' Reliable, few things beat it's frothy goodness. Restores 25
       AP
     msrp: 20
     type: 4
@@ -136,7 +136,7 @@ MonoBehaviour:
     storeItem: 0
   - name: Energy Bar
     guid: 5960744a-0f9b-4a77-8ffb-3c0328023e19
-    description: When you need something on the go. Heals 5HP
+    description: When you need something on the go. Heals 15 HP
     msrp: 0
     type: 4
     minLevelReq: 0

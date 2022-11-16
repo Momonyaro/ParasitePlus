@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Latte
   abilityId: _item_latte
-  abilityDesc: Ol' Reliable, few things beat it's frothy goodness. Restores 10 AP
+  abilityDesc: Ol' Reliable, few things beat it's frothy goodness. Restores 25 AP
   abilityEffectRef: _healAP
   abilitySoundEffect: _drinking
   hideDamageText: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
   abilityCritChance: 0
   abilityMissChance: 0
   abilityCosts: {x: 0, y: 0}
-  abilityDamage: {x: 0, y: -10}
+  abilityDamage: {x: 0, y: -25}
   abilityCooldown: {x: 0, y: 0}
   abilityInterjects: []
   damageType:

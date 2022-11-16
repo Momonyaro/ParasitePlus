@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Cinnamon Bun
   abilityId: _item_bun
-  abilityDesc: A must-have confection, restores 5 HP
+  abilityDesc: A must-have confection, restores 15 HP
   abilityEffectRef: _heal
   abilitySoundEffect: _eating
   hideDamageText: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
   abilityCritChance: 0
   abilityMissChance: 0
   abilityCosts: {x: 0, y: 0}
-  abilityDamage: {x: -5, y: 0}
+  abilityDamage: {x: -15, y: 0}
   abilityCooldown: {x: 0, y: 0}
   abilityInterjects: []
   damageType:

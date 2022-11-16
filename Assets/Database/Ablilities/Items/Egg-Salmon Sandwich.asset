@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Egg-Salmon Sandwich
   abilityId: _item_egg_salmon
-  abilityDesc: A fresh, filling sandwich, restores 10 HP
+  abilityDesc: A fresh, filling sandwich, restores 25 HP
   abilityEffectRef: _heal
   abilitySoundEffect: _eating
   hideDamageText: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
   abilityCritChance: 0
   abilityMissChance: 0
   abilityCosts: {x: 0, y: 0}
-  abilityDamage: {x: -10, y: 0}
+  abilityDamage: {x: -25, y: 0}
   abilityCooldown: {x: 0, y: 0}
   abilityInterjects: []
   damageType:

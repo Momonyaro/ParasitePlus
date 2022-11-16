@@ -40,6 +40,7 @@ MonoBehaviour:
   - id: 13
   - id: 14
   - id: 15
+  - id: 16
   transitionToOnEof: {fileID: 11400000, guid: c0cbabea91bf3f64ea97eb238f129fca, type: 2}
   goToSceneOnEof: 0
   destinationSceneOnEof: 
@@ -194,6 +195,9 @@ MonoBehaviour:
         - speakerReference: _narrator
           text: You frantically try to explain the long night so far...
           buildTime: 0.0456
+        - speakerReference: _gummo
+          text: Wait, let's go inside. Anna is here as well.
+          buildTime: 0.0456
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
@@ -217,6 +221,26 @@ MonoBehaviour:
         reveal: 1
         waitTime: 1.2
     0000000E:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox14
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _narrator
+          text: Anna was Gummo's partner and they had been together for as long as
+            you've known them.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: If anyone would help, it would be them.
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    0000000F:
       type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyAll13
@@ -225,7 +249,7 @@ MonoBehaviour:
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 1
-    0000000F:
+    00000010:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp14

@@ -256,8 +256,8 @@ MonoBehaviour:
       data:
         reference: _spawnObjComp12
         groupRef: 
-        objectPrefab: {fileID: 3721806856948404267, guid: 0b695d11a5cff064e85255cb3d5d19ff, type: 3}
-        screenPosition: {x: 0, y: 0}
+        objectPrefab: {fileID: 7281136809409914184, guid: a2dcb071dfbd55249a1d88ff13cbaed3, type: 3}
+        screenPosition: {x: 0, y: 100}
         errorAttempts: 99
         reveal: 1
     0000000D:
@@ -328,8 +328,8 @@ MonoBehaviour:
       data:
         reference: _spawnObjComp18
         groupRef: 
-        objectPrefab: {fileID: 3721806856948404267, guid: 0b695d11a5cff064e85255cb3d5d19ff, type: 3}
-        screenPosition: {x: 0, y: 0}
+        objectPrefab: {fileID: 7281136809409914184, guid: a2dcb071dfbd55249a1d88ff13cbaed3, type: 3}
+        screenPosition: {x: 400, y: -100}
         errorAttempts: 99
         reveal: 1
     00000013:
@@ -357,8 +357,8 @@ MonoBehaviour:
       data:
         reference: _spawnObjComp20
         groupRef: 
-        objectPrefab: {fileID: 3721806856948404267, guid: 0b695d11a5cff064e85255cb3d5d19ff, type: 3}
-        screenPosition: {x: 0, y: 0}
+        objectPrefab: {fileID: 7281136809409914184, guid: a2dcb071dfbd55249a1d88ff13cbaed3, type: 3}
+        screenPosition: {x: -400, y: -100}
         errorAttempts: 99
         reveal: 1
     00000016:

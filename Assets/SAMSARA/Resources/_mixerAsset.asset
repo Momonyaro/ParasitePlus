@@ -701,7 +701,7 @@ MonoBehaviour:
       ratio: 1
       trackLerpOverlap: 1
       volumeGroupRef: _music
-      volume: 0.44
+      volume: 0.55
       pitch: 1
       randomPitchOffset: 0
       delay: 1

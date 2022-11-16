@@ -48,6 +48,7 @@ public class SceneParser : MonoBehaviour
                 }
                 if (setNextScene.Equals("MeetSandra"))
                 {
+                    destinationName = RandomTravel;
                     break;
                 }
                 destinationName = RandomSunrise;
@@ -62,11 +63,6 @@ public class SceneParser : MonoBehaviour
                 if (setNextScene.Equals("ParkMeetGummo"))
                     break;
                 destinationName = RandomTravel;
-                break;
-            case "END_DEMO":
-                if (setNextScene.Equals("END_DEMO"))
-                    break;
-                destinationName = RandomSunrise;
                 break;
             case "CHRIS_STORE":
                 if (setNextScene.Equals("CHRIS_STORE"))

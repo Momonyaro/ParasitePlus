@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Energy Bar
   abilityId: _item_energy_bar
-  abilityDesc: When you need something on the go. Heals 5HP
+  abilityDesc: When you need something on the go. Heals 15 HP
   abilityEffectRef: _heal
   abilitySoundEffect: _eating
   hideDamageText: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
   abilityCritChance: 0
   abilityMissChance: 0
   abilityCosts: {x: 0, y: 0}
-  abilityDamage: {x: -5, y: 0}
+  abilityDamage: {x: -15, y: 0}
   abilityCooldown: {x: 0, y: 0}
   abilityInterjects: []
   damageType:

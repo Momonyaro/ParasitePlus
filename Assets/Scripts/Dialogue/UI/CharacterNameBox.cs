@@ -21,7 +21,7 @@ namespace Dialogue.UI
 
         private char[] playerNameArray = new char[10]
         {
-            'Y', 'o', 'e', 'l', '$', '$', '$', '$', '$', '$' // Use spaces as empty space
+            'Y', 'o', 'e', 'l', '$', '$', '$', '$', '$', '$' // Use Dollar sign as empty space
         };
 
         private readonly char[,] alphabetKeyboardGrid = new char[KeyboardHeight, KeyboardWidth]
@@ -36,12 +36,13 @@ namespace Dialogue.UI
         private const int KeyboardWidth = 13;
         private const int KeyboardHeight = 5;
 
-        public Vector2Int cursorPos = new Vector2Int(0, 0);
+        public Vector2Int cursorPos = new Vector2Int(0, 1);
         
         public GameObject inputKeyPrefab = null;
         public Transform playerNameParent = null;
         public Transform keyboardGridParent = null;
         public Transform selectionCursor = null;
+        public Transform currentKey = null;
 
         public SlimComponent.SlimData gameStartSlimData = new SlimComponent.SlimData();
 
@@ -55,6 +56,7 @@ namespace Dialogue.UI
         private void Update()
         {
             ShowCurrentNameArrayPos();
+            selectionCursor.position = currentKey.position;
         }
 
         public void MoveCursor(int x, int y)
@@ -112,9 +114,7 @@ namespace Dialogue.UI
             //Get the gameobject at the current cursorPos
             int currentKeyIndex = cursorPos.x + (cursorPos.y * (KeyboardWidth));
 
-            Transform currentChild = keyboardGridParent.GetChild(currentKeyIndex);
-
-            selectionCursor.position = currentChild.position;
+            currentKey = keyboardGridParent.GetChild(currentKeyIndex);
         }
 
         public void VerifyNameAndCreateSlim()

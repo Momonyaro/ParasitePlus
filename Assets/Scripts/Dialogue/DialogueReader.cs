@@ -73,6 +73,7 @@ namespace Dialogue
 
             lastComponent = executionQueue.Dequeue();
             Debug.Log($"Dialogue: Started Read of [" + dialogueData.name + "]");
+            dialogueData.wipeOldDataOnLoad = true;
             InitComponent(ref lastComponent);
             dialogueRunning = true;
 
@@ -132,9 +133,12 @@ namespace Dialogue
 
             if (dialogueData.transitionToOnEof != null)
             {
+
+                //if (dialogueData.wipeOldDataOnLoad)
+                    WipeOldData();
+
                 dialogueData = dialogueData.transitionToOnEof;
                 
-                WipeOldData();
                 StartDialogue();
                 return;
             }

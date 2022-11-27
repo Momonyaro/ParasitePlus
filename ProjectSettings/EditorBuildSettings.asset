@@ -101,5 +101,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cutscenes/AfterCraneDivision.unity
     guid: 2c4b913180f3ab44a8b8953404444f2b
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/InterludeStart.unity
+    guid: ea712e6d1744dc941bfbfe47ed86395e
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Interlude1.unity
+    guid: 2c509b3877abd7b45b616aefc3052340
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 46472d8cef444da4d841f68f6280e3ef, type: 2}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae13be0447a66ed48befacfeeb4b52a4, type: 3}
-  m_Name: big_snake_dead
+  m_Name: record_store_continuation
   m_EditorClassIdentifier: 
   speakers:
   - speakerName: Narrator
@@ -18,10 +18,10 @@ MonoBehaviour:
     speakerPhoto: {fileID: 7220562612368205161, guid: 62f2dfad8457c974e86da9e58d87e83c, type: 3}
   - speakerName: Gummo
     speakerReference: _gummo
-    speakerPhoto: {fileID: -5263421938431747717, guid: b2c6f7d2743f9fa49800fe16300f4e5d, type: 3}
-  - speakerName: Sandra
-    speakerReference: _sandra
-    speakerPhoto: {fileID: -7481700744659933332, guid: 0fc419b9f5dc9ec47b590e6fc1f29bfe, type: 3}
+    speakerPhoto: {fileID: 8335795263187683292, guid: b2c6f7d2743f9fa49800fe16300f4e5d, type: 3}
+  - speakerName: Anna
+    speakerReference: _anna
+    speakerPhoto: {fileID: 4642394838527890067, guid: a4d369382283cb349951e0adf6478183, type: 3}
   groups:
   - groupName: Default
     visible: 1
@@ -40,41 +40,36 @@ MonoBehaviour:
   - id: 10
   - id: 11
   - id: 12
-  - id: 13
-  - id: 14
-  - id: 15
-  - id: 16
-  - id: 17
   transitionToOnEof: {fileID: 0}
   wipeOldDataOnLoad: 1
-  goToSceneOnEof: 1
-  destinationSceneOnEof: InterludeStart
+  goToSceneOnEof: 0
+  destinationSceneOnEof: 
   references:
     version: 1
     00000000:
-      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
-      data:
-        reference: _waitComp0
-        groupRef: 
-        objectPrefab: {fileID: 0}
-        screenPosition: {x: 0, y: 0}
-        errorAttempts: 99
-        reveal: 1
-        waitTime: 1
-    00000001:
       type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _spawnBGObjComp0
         groupRef: 
         objectPrefab: {fileID: 8370936115634730495, guid: 26791cb2b2860e44fb3c3960a550363b, type: 3}
-        screenPosition: {x: 250, y: -100}
+        screenPosition: {x: -200, y: -100}
         errorAttempts: 99
         reveal: 1
-        backgroundImage: {fileID: -1917816709974232674, guid: 0fc419b9f5dc9ec47b590e6fc1f29bfe, type: 3}
+        backgroundImage: {fileID: -4682570417295124934, guid: b2c6f7d2743f9fa49800fe16300f4e5d, type: 3}
+    00000001:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp2
+        groupRef: 
+        objectPrefab: {fileID: 8370936115634730495, guid: 26791cb2b2860e44fb3c3960a550363b, type: 3}
+        screenPosition: {x: 200, y: -100}
+        errorAttempts: 99
+        reveal: 1
+        backgroundImage: {fileID: 7113669248012309142, guid: a4d369382283cb349951e0adf6478183, type: 3}
     00000002:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
-        reference: _waitComp2
+        reference: _waitComp3
         groupRef: 
         objectPrefab: {fileID: 0}
         screenPosition: {x: 0, y: 0}
@@ -82,29 +77,68 @@ MonoBehaviour:
         reveal: 1
         waitTime: 1
     00000003:
-      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
-        reference: _spawnBGObjComp1
+        reference: _diagBox4
         groupRef: 
-        objectPrefab: {fileID: 8370936115634730495, guid: 26791cb2b2860e44fb3c3960a550363b, type: 3}
-        screenPosition: {x: -140, y: -90}
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
         errorAttempts: 99
         reveal: 1
-        backgroundImage: {fileID: -4682570417295124934, guid: b2c6f7d2743f9fa49800fe16300f4e5d, type: 3}
+        dialogueBoxes:
+        - speakerReference: _gummo
+          text: Anyhow!
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: I've already found what I came here for. Have you had time to look
+            around Anna?
+          buildTime: 0.0456
+        - speakerReference: _anna
+          text: I think so, they didn't have the tape I was looking for but I'll
+            just check online instead!
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: Gummo went up to the register and bought his LP.
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
     00000004:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp5
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox4
+    00000005:
+      type: {class: PlaySoundComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _sfxEventComp5
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        soundEventRef: _storePurchase
+        playLayered: 0
+        trackLayer: -1
+    00000006:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
-        reference: _waitComp0
+        reference: _waitComp5
         groupRef: 
         objectPrefab: {fileID: 0}
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 1
         waitTime: 1
-    00000005:
+    00000007:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
-        reference: _diagBox2
+        reference: _diagBox7
         groupRef: 
         objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
         screenPosition: {x: 0, y: -550}
@@ -112,78 +146,72 @@ MonoBehaviour:
         reveal: 1
         dialogueBoxes:
         - speakerReference: _narrator
-          text: After a tough battle, Victoria's monstrous shape collapsed to the
-            floor
-          buildTime: 0.0456
-        - speakerReference: _narrator
-          text: Your party is still in shock.
+          text: Gummo was walking back to you with the same giddy smile plastered
+            on his face.
           buildTime: 0.0456
         - speakerReference: _gummo
-          text: Wait, wait... $Player, does this mean that if we hadn't gotten that
-            <color=yellow>[Stabilizing Fluid]</color> or whatever.
+          text: If you guys don't have anything else, how about we go?
           buildTime: 0.0456
-        - speakerReference: _gummo
-          text: That this would've happened to you?
+        - speakerReference: _anna
+          text: Sure, let's go!
           buildTime: 0.0456
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
-    00000006:
+    00000008:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
-        reference: _destroyComp6
+        reference: _destroyComp8
         groupRef: 
         objectPrefab: {fileID: 0}
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 1
-        refToDestroy: _diagBox2
-    00000007:
+        refToDestroy: _diagBox7
+    00000009:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
-        reference: _waitComp7
+        reference: _waitComp9
         groupRef: 
         objectPrefab: {fileID: 0}
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 1
-        waitTime: 1.2
-    00000008:
+        waitTime: 1
+    0000000A:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
-        reference: _diagBox8
+        reference: _diagBox9
         groupRef: 
         objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
         screenPosition: {x: 0, y: -550}
         errorAttempts: 99
         reveal: 1
         dialogueBoxes:
-        - speakerReference: _sandra
-          text: Let's find those documents.
+        - speakerReference: _narrator
+          text: The tram ride home was filled with warm conversation.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: And as you all got back to Gummo's apartment, he excitedly put on
+            the record and we all listned to it.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: It was a comfortable evening and for once, you slept well.
           buildTime: 0.0456
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
-    00000009:
+    0000000B:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
-        reference: _destroyComp9
+        reference: _destroyComp11
         groupRef: 
         objectPrefab: {fileID: 0}
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 1
-        refToDestroy: _diagBox8
-    0000000A:
-      type: {class: SpawnObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
-      data:
-        reference: _spawnObjComp10
-        groupRef: 
-        objectPrefab: {fileID: 2831952547622704426, guid: 5a3baf689344a294e8907590f4b65189, type: 3}
-        screenPosition: {x: 0, y: 0}
-        errorAttempts: 99
-        reveal: 1
-    0000000B:
+        refToDestroy: _diagBox9
+    0000000C:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp11
@@ -192,86 +220,4 @@ MonoBehaviour:
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 1
-        waitTime: 1
-    0000000C:
-      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
-      data:
-        reference: _diagBox12
-        groupRef: 
-        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
-        screenPosition: {x: 0, y: -550}
-        errorAttempts: 99
-        reveal: 1
-        dialogueBoxes:
-        - speakerReference: _narrator
-          text: Rifling through Veronica's numerous archives, you find tons of documents
-            of the Carnaby Foundation's projects.
-          buildTime: 0.0456
-        - speakerReference: _narrator
-          text: A treasure trove of dirt.
-          buildTime: 0.0456
-        perSentenceWriteToScreen: 0
-        requireContinueInput: 1
-        writingSoundEvent: _keyPress
-    0000000D:
-      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
-      data:
-        reference: _destroyComp13
-        groupRef: 
-        objectPrefab: {fileID: 0}
-        screenPosition: {x: 0, y: 0}
-        errorAttempts: 99
-        reveal: 1
-        refToDestroy: _diagBox12
-    0000000E:
-      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
-      data:
-        reference: _waitComp14
-        groupRef: 
-        objectPrefab: {fileID: 0}
-        screenPosition: {x: 0, y: 0}
-        errorAttempts: 99
-        reveal: 1
-        waitTime: 1
-    0000000F:
-      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
-      data:
-        reference: _diagBox15
-        groupRef: 
-        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
-        screenPosition: {x: 0, y: -550}
-        errorAttempts: 99
-        reveal: 1
-        dialogueBoxes:
-        - speakerReference: _sandra
-          text: I think we have what we came for, let's get the hell out of here
-            before more trouble shows up.
-          buildTime: 0.0456
-        - speakerReference: _gummo
-          text: I'm not gonna argue with that.
-          buildTime: 0.0456
-        - speakerReference: _gummo
-          text: Let's go.
-          buildTime: 0.0456
-        perSentenceWriteToScreen: 0
-        requireContinueInput: 1
-        writingSoundEvent: _keyPress
-    00000010:
-      type: {class: SpawnObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
-      data:
-        reference: _spawnObjComp16
-        groupRef: 
-        objectPrefab: {fileID: 2831952547622704426, guid: 5a3baf689344a294e8907590f4b65189, type: 3}
-        screenPosition: {x: 0, y: 0}
-        errorAttempts: 99
-        reveal: 1
-    00000011:
-      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
-      data:
-        reference: _waitComp17
-        groupRef: 
-        objectPrefab: {fileID: 0}
-        screenPosition: {x: 0, y: 0}
-        errorAttempts: 99
-        reveal: 1
-        waitTime: 1
+        waitTime: 0.5

@@ -3431,7 +3431,7 @@ MonoBehaviour:
   hidden: 0
   OnPressUIMsg: _quitGame
   MinButtonLayer: 0
-  MaxButtonLayer: 0
+  MaxButtonLayer: 99
   hoverStartScale: {x: 0.8, y: 0.8, z: 0.8}
   hoverTargetScale: {x: 1, y: 1, z: 1}
   lerpCurve:
@@ -3978,7 +3978,7 @@ MonoBehaviour:
   hidden: 0
   OnPressUIMsg: _testScene
   MinButtonLayer: 0
-  MaxButtonLayer: 0
+  MaxButtonLayer: 99
   hoverStartScale: {x: 1.2, y: 1.2, z: 1.2}
   hoverTargetScale: {x: 1.35, y: 1.35, z: 1.35}
   lerpCurve:
@@ -4178,7 +4178,7 @@ MonoBehaviour:
   hidden: 0
   OnPressUIMsg: _newGame
   MinButtonLayer: 0
-  MaxButtonLayer: 0
+  MaxButtonLayer: 99
   hoverStartScale: {x: 1.2, y: 1.2, z: 1.2}
   hoverTargetScale: {x: 1.35, y: 1.35, z: 1.35}
   lerpCurve:

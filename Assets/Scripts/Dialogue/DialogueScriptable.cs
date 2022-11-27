@@ -15,6 +15,7 @@ namespace Dialogue
         DESTROY_ALL,
         PLAYER_NAME_BOX,
         PLAY_SFX,
+        CHOICE,
     }
     
     [CreateAssetMenu(fileName = "DialogueAsset", menuName = "Dialogue/DialogueAsset")]
@@ -24,6 +25,7 @@ namespace Dialogue
         public Group[] groups = new Group[0];
         [SerializeReference] public List<DialogueComponent> components = new List<DialogueComponent>();
         public DialogueScriptable transitionToOnEof;
+        public bool wipeOldDataOnLoad = true;
         public bool goToSceneOnEof = false;
         public string destinationSceneOnEof = "";
 

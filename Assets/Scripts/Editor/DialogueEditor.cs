@@ -74,7 +74,18 @@ namespace Editor
                         }
                         
                         break;
-                    
+
+                    case ComponentTypes.CHOICE:
+                        DrawDefaultProperties(current, out deleteFlag);
+
+                        if (deleteFlag)
+                        {
+                            lastInstance.components.RemoveAt(i);
+                            return;
+                        }
+
+                        break;
+
                     case ComponentTypes.DESTROY:
                         DrawDefaultProperties(current, out deleteFlag);
 
@@ -186,6 +197,9 @@ namespace Editor
                 {
                     case ComponentTypes.DIALOGUE_BOX:
                         current = DrawDialogueBoxEditor((DialogueBoxComponent) current);
+                        break;
+                    case ComponentTypes.CHOICE:
+                        current = DrawChoiceEditor((ChoiceComponent) current);
                         break;
                     case ComponentTypes.SPAWN_OBJECT:
                         current = DrawSpawnEditor((SpawnObjectComponent) current);
@@ -378,6 +392,52 @@ namespace Editor
             return boxComponent;
         }
 
+        private ChoiceComponent DrawChoiceEditor(ChoiceComponent boxComponent)
+        {
+            boxComponent.reference = EditorGUILayout.TextField("Component Reference: ", boxComponent.reference);
+            EditorGUILayout.BeginHorizontal();
+            boxComponent.objectPrefab =
+                (GameObject)EditorGUILayout.ObjectField("Prefab: ", boxComponent.objectPrefab, typeof(GameObject), false);
+            EditorGUILayout.EndHorizontal();
+
+            EditorGUILayout.BeginVertical("HelpBox");
+
+            if (boxComponent.choices.Count > 0)
+                if (InsertChoice(boxComponent, 0))
+                    return boxComponent;
+
+            for (int i = 0; i < boxComponent.choices.Count; i++)
+            {
+                ChoiceComponent.ChoiceData current = boxComponent.choices[i];
+
+                EditorGUILayout.Space(10);
+                EditorGUILayout.BeginVertical("HelpBox");
+                EditorGUILayout.BeginHorizontal();
+                if (GUILayout.Button("Remove Branch"))
+                {
+                    boxComponent.choices.RemoveAt(i);
+                    break;
+                }
+                EditorGUILayout.EndHorizontal();
+                current.text = EditorGUILayout.TextArea(current.text, GUILayout.MinHeight(50));
+                current.dialogueBranch = (DialogueScriptable) EditorGUILayout.ObjectField("Transition on Eof: ", current.dialogueBranch, typeof(DialogueScriptable), false);
+                EditorGUILayout.EndVertical();
+                EditorGUILayout.Space(10);
+
+                boxComponent.choices[i] = current;
+
+                if (InsertChoice(boxComponent, i + 1))
+                    break;
+            }
+
+            if (boxComponent.choices.Count == 0)
+                if (InsertChoice(boxComponent, 0))
+                    return boxComponent;
+
+            EditorGUILayout.EndVertical();
+            return boxComponent;
+        }
+
         private string GetSpeaker(string current)
         {
             int lastSelected = 0;
@@ -458,6 +518,20 @@ namespace Editor
             return false;
         }
 
+        private bool InsertChoice(ChoiceComponent boxComponent, int index) //Return true if a new component is added
+        {
+            EditorGUILayout.BeginVertical("Box");
+
+            if (GUILayout.Button("Insert Branch", GUILayout.Width(150)))
+            {
+                boxComponent.choices.Insert(index, new ChoiceComponent.ChoiceData());
+                return true;
+            }
+
+            EditorGUILayout.EndVertical();
+            return false;
+        }
+
         private bool InsertComponent(int index) //Return true if a new component is added
         {
             EditorGUILayout.BeginVertical("HelpBox");
@@ -479,6 +553,17 @@ namespace Editor
                     lastInstance.components.Insert(index, dialogueBoxComponent);
                     EditorUtility.SetDirty(target);
                     
+                    return true;
+
+                case ComponentTypes.CHOICE:
+                    ChoiceComponent choiceComponent = new ChoiceComponent()
+                    {
+                        objectPrefab = Resources.Load<GameObject>("ThoughtPrefab")
+                    };
+                    choiceComponent.reference = "_choice" + index;
+                    lastInstance.components.Insert(index, choiceComponent);
+                    EditorUtility.SetDirty(target);
+
                     return true;
                 
                 case ComponentTypes.DESTROY:

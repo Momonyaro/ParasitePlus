@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae13be0447a66ed48befacfeeb4b52a4, type: 3}
+  m_Name: book-date-2
+  m_EditorClassIdentifier: 
+  speakers:
+  - speakerName: Narrator
+    speakerReference: _narrator
+    speakerPhoto: {fileID: 7220562612368205161, guid: 62f2dfad8457c974e86da9e58d87e83c, type: 3}
+  - speakerName: Sandra
+    speakerReference: _sandra
+    speakerPhoto: {fileID: -8712306689713323440, guid: 0fc419b9f5dc9ec47b590e6fc1f29bfe, type: 3}
+  groups:
+  - groupName: Default
+    visible: 1
+    groupReference: _default
+  components:
+  - id: 0
+  - id: 1
+  - id: 2
+  - id: 3
+  - id: 4
+  - id: 5
+  - id: 6
+  - id: 7
+  - id: 8
+  transitionToOnEof: {fileID: 0}
+  wipeOldDataOnLoad: 1
+  goToSceneOnEof: 0
+  destinationSceneOnEof: 
+  references:
+    version: 1
+    00000000:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp0
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    00000001:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp1
+        groupRef: 
+        objectPrefab: {fileID: 516182194579558613, guid: b85856b991eac484abc859b90a2f4016, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        backgroundImage: {fileID: 21300000, guid: e3d8360dd5511994f88d1413651c3fe2, type: 3}
+    00000002:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox2
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _narrator
+          text: Due to the tram being late, you arrived after Sandra at the book
+            store.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: Somewhere in this maze of books, Sandra was browsing it's walls.
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    00000003:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp3
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox2
+    00000004:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp2
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    00000005:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp4
+        groupRef: 
+        objectPrefab: {fileID: 137143869671853948, guid: dac9339ba4552654bb1a3c38fa69a291, type: 3}
+        screenPosition: {x: 0, y: -50}
+        errorAttempts: 99
+        reveal: 1
+        backgroundImage: {fileID: -1917816709974232674, guid: 0fc419b9f5dc9ec47b590e6fc1f29bfe, type: 3}
+    00000006:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp6
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    00000007:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox7
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _sandra
+          text: Hey! There you are!
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: After searching most of the store, Sandra still managed to find you
+            first.
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: I've just been looking around a bit, you can really get lost if you
+            let yourself.
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    00000008:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp8
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1

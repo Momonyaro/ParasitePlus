@@ -31,6 +31,7 @@ MonoBehaviour:
   - id: 1
   - id: 2
   - id: 3
+  - id: 4
   transitionToOnEof: {fileID: 11400000, guid: 6a756a1f149cebe468c8f04142910bca, type: 2}
   wipeOldDataOnLoad: 1
   goToSceneOnEof: 0
@@ -42,12 +43,22 @@ MonoBehaviour:
       data:
         reference: _spawnBGObjComp0
         groupRef: 
+        objectPrefab: {fileID: 516182194579558613, guid: b85856b991eac484abc859b90a2f4016, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        backgroundImage: {fileID: 21300000, guid: 4071c1008b909844992d4ba20aef2f69, type: 3}
+    00000001:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp0
+        groupRef: 
         objectPrefab: {fileID: 8370936115634730495, guid: 26791cb2b2860e44fb3c3960a550363b, type: 3}
         screenPosition: {x: -250, y: -100}
         errorAttempts: 99
         reveal: 1
         backgroundImage: {fileID: -4682570417295124934, guid: b2c6f7d2743f9fa49800fe16300f4e5d, type: 3}
-    00000001:
+    00000002:
       type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _spawnBGObjComp2
@@ -57,7 +68,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         backgroundImage: {fileID: 7113669248012309142, guid: a4d369382283cb349951e0adf6478183, type: 3}
-    00000002:
+    00000003:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp3
@@ -67,7 +78,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         waitTime: 1
-    00000003:
+    00000004:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox4

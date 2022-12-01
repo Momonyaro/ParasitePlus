@@ -47,7 +47,6 @@ MonoBehaviour:
   - id: 17
   - id: 18
   - id: 19
-  - id: 20
   transitionToOnEof: {fileID: 11400000, guid: 2bc80bb1aa8441f42b7a16335958c4d7, type: 2}
   wipeOldDataOnLoad: 0
   goToSceneOnEof: 0
@@ -106,46 +105,6 @@ MonoBehaviour:
         reveal: 1
         waitTime: 1
     00000004:
-      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
-      data:
-        reference: _spawnGummo
-        groupRef: 
-        objectPrefab: {fileID: 8370936115634730495, guid: 26791cb2b2860e44fb3c3960a550363b, type: 3}
-        screenPosition: {x: -150, y: -100}
-        errorAttempts: 99
-        reveal: 1
-        backgroundImage: {fileID: -4682570417295124934, guid: b2c6f7d2743f9fa49800fe16300f4e5d, type: 3}
-    00000005:
-      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
-      data:
-        reference: _waitComp5
-        groupRef: 
-        objectPrefab: {fileID: 0}
-        screenPosition: {x: 0, y: 0}
-        errorAttempts: 99
-        reveal: 1
-        waitTime: 1
-    00000006:
-      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
-      data:
-        reference: _spawnAnna
-        groupRef: 
-        objectPrefab: {fileID: 8370936115634730495, guid: 26791cb2b2860e44fb3c3960a550363b, type: 3}
-        screenPosition: {x: 100, y: -100}
-        errorAttempts: 99
-        reveal: 1
-        backgroundImage: {fileID: 7113669248012309142, guid: a4d369382283cb349951e0adf6478183, type: 3}
-    00000007:
-      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
-      data:
-        reference: _waitComp7
-        groupRef: 
-        objectPrefab: {fileID: 0}
-        screenPosition: {x: 0, y: 0}
-        errorAttempts: 99
-        reveal: 1
-        waitTime: 1
-    00000008:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox8
@@ -168,7 +127,7 @@ MonoBehaviour:
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
-    00000009:
+    00000005:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp9
@@ -178,7 +137,37 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         refToDestroy: _diagBox8
-    0000000A:
+    00000006:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp10
+        groupRef: 
+        objectPrefab: {fileID: 516182194579558613, guid: b85856b991eac484abc859b90a2f4016, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        backgroundImage: {fileID: 21300000, guid: 4071c1008b909844992d4ba20aef2f69, type: 3}
+    00000007:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp7
+        groupRef: 
+        objectPrefab: {fileID: 8370936115634730495, guid: 26791cb2b2860e44fb3c3960a550363b, type: 3}
+        screenPosition: {x: -200, y: -100}
+        errorAttempts: 99
+        reveal: 1
+        backgroundImage: {fileID: -4682570417295124934, guid: b2c6f7d2743f9fa49800fe16300f4e5d, type: 3}
+    00000008:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp8
+        groupRef: 
+        objectPrefab: {fileID: 8370936115634730495, guid: 26791cb2b2860e44fb3c3960a550363b, type: 3}
+        screenPosition: {x: 200, y: -100}
+        errorAttempts: 99
+        reveal: 1
+        backgroundImage: {fileID: 7113669248012309142, guid: a4d369382283cb349951e0adf6478183, type: 3}
+    00000009:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp10
@@ -188,7 +177,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         waitTime: 1
-    0000000B:
+    0000000A:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox11
@@ -213,7 +202,7 @@ MonoBehaviour:
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
-    0000000C:
+    0000000B:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp12
@@ -223,7 +212,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         refToDestroy: _diagBox11
-    0000000D:
+    0000000C:
       type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _spawnBGObjComp13
@@ -233,7 +222,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         backgroundImage: {fileID: 21300000, guid: 004492f54e11e2b4b98623d93a1bee01, type: 3}
-    0000000E:
+    0000000D:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox14
@@ -270,7 +259,7 @@ MonoBehaviour:
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
-    0000000F:
+    0000000E:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp15
@@ -280,7 +269,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         refToDestroy: _diagBox14
-    00000010:
+    0000000F:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp14
@@ -290,7 +279,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         waitTime: 1
-    00000011:
+    00000010:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox17
@@ -307,7 +296,7 @@ MonoBehaviour:
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
-    00000012:
+    00000011:
       type: {class: ChoiceComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _choice18
@@ -326,7 +315,7 @@ MonoBehaviour:
           dialogueBranch: {fileID: 11400000, guid: 2302df16964f6b94fa1a270a04607718, type: 2}
         - text: Don't know how to describe it.
           dialogueBranch: {fileID: 11400000, guid: ddaba29fe85457346b4814bbf747c41a, type: 2}
-    00000013:
+    00000012:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp19
@@ -336,7 +325,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         refToDestroy: _choice18
-    00000014:
+    00000013:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp19

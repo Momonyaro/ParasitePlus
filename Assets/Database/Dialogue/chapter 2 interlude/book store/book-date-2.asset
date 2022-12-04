@@ -33,6 +33,20 @@ MonoBehaviour:
   - id: 6
   - id: 7
   - id: 8
+  - id: 9
+  - id: 10
+  - id: 11
+  - id: 12
+  - id: 13
+  - id: 14
+  - id: 15
+  - id: 16
+  - id: 17
+  - id: 18
+  - id: 19
+  - id: 20
+  - id: 21
+  - id: 22
   transitionToOnEof: {fileID: 0}
   wipeOldDataOnLoad: 1
   goToSceneOnEof: 0
@@ -140,16 +154,241 @@ MonoBehaviour:
           text: I've just been looking around a bit, you can really get lost if you
             let yourself.
           buildTime: 0.0456
+        - speakerReference: _narrator
+          text: You notice that she's already picked out a book for herself.
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: Oh! Yeah, a manga I like put out new volume, so I picked it up...
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: It's called "I'm a spider, so what?"
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: A girl gets turned into a spider and sent to another world where
+            she has to survive...
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: Anyway!
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: Let's just look around some more!
+          buildTime: 0.0456
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
     00000008:
+      type: {class: SpawnObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnObjComp8
+        groupRef: 
+        objectPrefab: {fileID: 2831952547622704426, guid: 5a3baf689344a294e8907590f4b65189, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+    00000009:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp8
+        groupRef: _default
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    0000000A:
+      type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyAll10
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+    0000000B:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox11
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _narrator
+          text: You and Sandra walked the endless shelves.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: Picking out books they recognized, that looked bizzarre or just plain
+            funny.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: Sandra's face was glowing from how happy she seemed.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: It felt nice.
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    0000000C:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp12
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox11
+    0000000D:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp13
         groupRef: 
         objectPrefab: {fileID: 0}
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 1
         waitTime: 1
+    0000000E:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox14
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _narrator
+          text: Hours had passed and Sandra now held a sizeable mountain of books.
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: So much has happened these last few days...
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: I just want you to know that I'm here for you.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: Sandra took your hand into hers.
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: I think I'm close to a lead on what we should do next.
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: All I gotta do is make sure.
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    0000000F:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp15
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox14
+    00000010:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp16
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    00000011:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox17
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _narrator
+          text: Sandra paid for her books and the two of you walked out into the
+            evening streets.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: You went with Sandra to the Central station where her tram home goes.
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: Well...
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: See you soon...
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: Sandra leaned in and kissed you.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: ...
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    00000012:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp18
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox17
+    00000013:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp19
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    00000014:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox20
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _narrator
+          text: As she stepped onto the tram, you looked into each other's eyes.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: What a good day it's been you thought as it rode off.
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    00000015:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp21
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox20
+    00000016:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp21
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1.5

@@ -37,7 +37,6 @@ public class SceneParser : MonoBehaviour
                     break;
                 destinationName = RandomSundown;
                 break;
-
             case "MapMenu":
                 if (setNextScene.Equals("MapMenu"))
                     break;
@@ -53,7 +52,6 @@ public class SceneParser : MonoBehaviour
                 }
                 destinationName = RandomSunrise;
                 break;
-
             case "BeforeSwanDivision":
                 if (setNextScene.Equals("BeforeSwanDivision"))
                     break;
@@ -73,6 +71,11 @@ public class SceneParser : MonoBehaviour
                 if (setNextScene.Equals("MeetSandra"))
                     break;
                 destinationName = RandomTravel;
+                break;
+            case "Interlude2Tension":
+                if (setNextScene.Equals("Interlude2Tension"))
+                    break;
+                destinationName = RandomSundown;
                 break;
         }
     }

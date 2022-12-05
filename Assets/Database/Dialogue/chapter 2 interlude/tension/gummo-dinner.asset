@@ -32,6 +32,7 @@ MonoBehaviour:
   - id: 5
   - id: 6
   - id: 7
+  - id: 8
   transitionToOnEof: {fileID: 0}
   wipeOldDataOnLoad: 1
   goToSceneOnEof: 0
@@ -67,7 +68,7 @@ MonoBehaviour:
           buildTime: 0.0456
         - speakerReference: _narrator
           text: Now that food coma had fully set in, the two of you were lounging
-            in the couch on your phones.
+            on the couch looking at your phones.
           buildTime: 0.0456
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
@@ -103,7 +104,7 @@ MonoBehaviour:
         reveal: 1
         dialogueBoxes:
         - speakerReference: _narrator
-          text: Suddenly, Gummo get's a call.
+          text: Suddenly, Gummo gets a call.
           buildTime: 0.0456
         - speakerReference: _gummo
           text: '''hyello.'
@@ -168,6 +169,26 @@ MonoBehaviour:
         - speakerReference: _gummo
           text: She apparently hadn't come back home yet so they were a bit worried.
           buildTime: 0.0456
+        - speakerReference: _gummo
+          text: ...
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: Gummo again browsed his phone, but you could notice that he was concerned
+            as well...
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: Sleep had never felt so uneasy.
+          buildTime: 0.0456
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
+    00000008:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp8
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1

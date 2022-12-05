@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8db9c9eddd3fc4faf8f66374d3b0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueData: {fileID: 11400000, guid: cc5f9747a6af47f49a3eb820ec89e115, type: 2}
+  dialogueData: {fileID: 11400000, guid: 5b931320225c85a41a8d14849700a1b7, type: 2}
   initOnStart: 1
   onStopReading:
     m_PersistentCalls:

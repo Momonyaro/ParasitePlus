@@ -49,8 +49,8 @@ MonoBehaviour:
   - id: 22
   transitionToOnEof: {fileID: 0}
   wipeOldDataOnLoad: 1
-  goToSceneOnEof: 0
-  destinationSceneOnEof: 
+  goToSceneOnEof: 1
+  destinationSceneOnEof: Interlude2Tension
   references:
     version: 1
     00000000:

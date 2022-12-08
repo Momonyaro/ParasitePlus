@@ -153,7 +153,6 @@ namespace BattleSystem.States
         {
             bottomPanelUI.PopulateOptions(new []
             {
-                new SelectableWheelOption("Attack", "_attack", "Execute a default weaker attack."), 
                 new SelectableWheelOption("Skills", "_viewSkills", "View your skills."), 
                 new SelectableWheelOption("Item", "_viewItems", "View your items."), 
                 new SelectableWheelOption("Pass", "_passTurn", "Pass the current turn (get placed higher in the turn queue)."), 
@@ -164,10 +163,10 @@ namespace BattleSystem.States
         {
             EntityScriptable currentEntity = battleCore.GetNextEntity();
 
-            var options = new List<SelectableWheelOption>()
-            {
-                new SelectableWheelOption("Back", "_back", "Go back to the main options.")
-            };
+            var options = new List<SelectableWheelOption>();
+
+            AbilityScriptable def = currentEntity.defaultAttack;
+            options.Add(new SelectableWheelOption(def.abilityName, "_skillKey" + def.abilityId, def.abilityDesc));
 
             AbilityScriptable[] scriptables = currentEntity.GetEntityAbilities();
 
@@ -175,6 +174,8 @@ namespace BattleSystem.States
             {
                 options.Add(new SelectableWheelOption(scriptables[i].abilityName, "_skillKey" + scriptables[i].abilityId, scriptables[i].abilityDesc));
             }
+
+            options.Add(new SelectableWheelOption("Back", "_back", "Go back to the main options."));
 
             bottomPanelUI.PopulateOptions(options.ToArray(), 0);
         }

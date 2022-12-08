@@ -23,10 +23,21 @@ MonoBehaviour:
   - groupName: Default
     visible: 1
     groupReference: _default
-  components: []
+  components:
+  - id: 0
   transitionToOnEof: {fileID: 0}
   wipeOldDataOnLoad: 1
   goToSceneOnEof: 0
   destinationSceneOnEof: 
   references:
     version: 1
+    00000000:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp0
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1

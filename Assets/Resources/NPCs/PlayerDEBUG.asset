@@ -17,8 +17,8 @@ MonoBehaviour:
   entityId: _player
   inParty: 1
   attackYellSfx: 
-  damageYellSfx: 
-  deathYellSfx: 
+  damageYellSfx: _male_hurt
+  deathYellSfx: _male_death
   entitySpeed: 12
   throwawayId: 0
   healthPts: {x: 35, y: 35}

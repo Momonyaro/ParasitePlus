@@ -144,6 +144,9 @@ namespace Scriptables
 
         public AbilityScriptable GetAbilityByID(string abiltyId)
         {
+            if (defaultAttack.abilityId.Equals(abiltyId))
+                return defaultAttack;
+
             for (int i = 0; i < abilityScriptables.Length; i++)
             {
                 if (abilityScriptables[i].abilityId.Equals(abiltyId))

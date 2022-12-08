@@ -35,7 +35,7 @@ namespace BattleSystem.UI
                 partyCards[i].playerPortrait.SetActive(entityID.Equals("_player"));
                 partyCards[i].gummoPortrait.SetActive(entityID.Equals("_gummo"));
                 partyCards[i].sophiePortrait.SetActive(entityID.Equals("_sandra"));
-                //partyCards[i].sivePortrait.SetActive(entityID.Equals("_sive"));
+                partyCards[i].sivePortrait.SetActive(entityID.Equals("_sive"));
 
                 Vector2Int hp = party[i].GetEntityHP();
                 Vector2Int ap = party[i].GetEntityAP();

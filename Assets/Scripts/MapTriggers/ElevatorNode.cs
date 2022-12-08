@@ -113,8 +113,6 @@ public class ElevatorNode : MonoBehaviour
             //Else move the floor delta closer to zero each loop as we travel towards our destination.
             //Remember to update the ui.
         }
-
-        shaking = false;
     }
 
     private IEnumerable ElevatorShake(Vector3 startPos, Vector3 playerRight)

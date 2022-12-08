@@ -1,6 +1,7 @@
 using Scriptables;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
@@ -160,9 +161,15 @@ public class ApplyItemMenu : MonoBehaviour
     {
         CORE.MapManager mapManager = FindObjectOfType<CORE.MapManager>();
 
+        List<EntityScriptable> activeParty = mapManager.currentSlimData.partyField.Where(e => e.inParty).ToList();
+        while (activeParty.Count < partyCards.Length)
+        {
+            activeParty.Add(null);
+        }
+
         for (int i = 0; i < partyCards.Length; i++)
         {
-            partyCards[i].UpdateEntity(mapManager.currentSlimData.partyField[i]);
+            partyCards[i].UpdateEntity(activeParty[i]);
             partyCards[i].onPress.AddListener(UseItemOnEntity);
         }
 

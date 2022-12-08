@@ -16,6 +16,9 @@ MonoBehaviour:
   entityLevel: 1
   entityId: _gummo
   inParty: 0
+  attackYellSfx: 
+  damageYellSfx: _male_hurt
+  deathYellSfx: _male_death
   entitySpeed: 13
   throwawayId: 0
   healthPts: {x: 25, y: 25}

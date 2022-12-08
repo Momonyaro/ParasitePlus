@@ -8413,7 +8413,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: b87cabd1880fcb14fbd07bc27dd4400d, type: 2}
     - {fileID: 11400000, guid: 5867c1a531a1bfd4c9e7a2d934c1612d, type: 2}
     - {fileID: 11400000, guid: 30f66e8e01da6b64081f8dfa5d87b383, type: 2}
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 186b4febcbb3ddd48b5fd4fa71a62bf1, type: 2}
     enemyField:
     - {fileID: 0}
     - {fileID: 0}
@@ -8434,6 +8434,7 @@ MonoBehaviour:
   dungeonManager: {fileID: 454105791}
   config: {fileID: 11400000, guid: f19491cb78d45e04ca9bacb7aac3d494, type: 2}
   mapBMGReference: _swanDivisionBGM
+  writeSaveOnLoad: 1
   monsterManifest:
     encounters:
     - enemies:
@@ -20626,7 +20627,7 @@ MonoBehaviour:
   hasPlayer: 1
   hasGummo: 1
   hasSandra: 0
-  hasSive: 0
+  hasSive: 1
 --- !u!114 &1389334031
 MonoBehaviour:
   m_ObjectHideFlags: 0

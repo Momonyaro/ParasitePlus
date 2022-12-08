@@ -17,7 +17,6 @@ namespace BattleSystem.States
         {
             winResultScreenUI = FindObjectOfType<WinResultScreenUI>();
             
-            // SamsaraMaster.Instance.SetNextMusicTrackFromRef("_victoryTheme", out bool success);
             Samsara.Instance.MusicPlayLayered("_victoryTheme", TransitionType.CrossFade, 0.5f, out bool success);
 
             int[] enemyXp = new int[battleCore.partyField.Length];
@@ -35,6 +34,7 @@ namespace BattleSystem.States
                     //Debug.Log($"Scaling p:{battleCore.partyField[p].entityName}, lvl diff: {lvlDiff}, scaling:{scaling.ToString("F1")}");
 
                     int scaledXp = Mathf.RoundToInt(normalXp * scaling);
+                    scaledXp = Mathf.Max(scaledXp, 1); //Give at least 1 xp
 
                     enemyXp[p] += scaledXp;
                 }

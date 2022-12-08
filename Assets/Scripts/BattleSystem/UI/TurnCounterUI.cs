@@ -18,7 +18,7 @@ namespace BattleSystem.UI
                 turnBlocks[i].playerPortrait.SetActive(false);
                 turnBlocks[i].gummoPortrait.SetActive(false);
                 turnBlocks[i].sophiePortrait.SetActive(false);
-                //turnBlocks[i].sivePortrait.SetActive(false);
+                turnBlocks[i].sivePortrait.SetActive(false);
                 
                 turnBlocks[i].enemyTag.SetActive(false);
                 
@@ -31,8 +31,8 @@ namespace BattleSystem.UI
                     turnBlocks[i].gummoPortrait.SetActive(true);
                 else if (entityID.Equals("_sandra"))
                     turnBlocks[i].sophiePortrait.SetActive(true);
-                // else if (entityID.Equals("_sive"))
-                //     turnBlocks[i].sivePortrait.SetActive(true);
+                else if (entityID.Equals("_sive"))
+                    turnBlocks[i].sivePortrait.SetActive(true);
                 else
                     turnBlocks[i].enemyTag.SetActive(true);
             }

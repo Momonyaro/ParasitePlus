@@ -290,13 +290,14 @@ MonoBehaviour:
     m_RotationOrder: 4
   active: 1
   hovering: 0
+  lastEntity: {fileID: 0}
   onPress:
     m_PersistentCalls:
       m_Calls: []
   playerSprite: {fileID: 6757282713640645180, guid: 614f6bd22542919429d9b546402c90d0, type: 3}
   gummoSprite: {fileID: -5263421938431747717, guid: b2c6f7d2743f9fa49800fe16300f4e5d, type: 3}
   sandraSprite: {fileID: -7481700744659933332, guid: 0fc419b9f5dc9ec47b590e6fc1f29bfe, type: 3}
-  siveSprite: {fileID: -1413146408483224178, guid: f04b920edd274474095ef007a104faee, type: 3}
+  siveSprite: {fileID: 3092308427135561384, guid: 2d757a9c69004b946ad5c462458a35b3, type: 3}
 --- !u!1 &1109460544946246139
 GameObject:
   m_ObjectHideFlags: 0

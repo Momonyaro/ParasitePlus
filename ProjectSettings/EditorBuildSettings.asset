@@ -113,5 +113,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cutscenes/Interlude2Tension.unity
     guid: 72e628871dcd93b45863ff78042e0fe0
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Interlude3.unity
+    guid: 8604161199c0396448ee72336c584169
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 46472d8cef444da4d841f68f6280e3ef, type: 2}

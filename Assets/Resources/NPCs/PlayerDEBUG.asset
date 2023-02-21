@@ -47,6 +47,7 @@ MonoBehaviour:
         id: 1
   onDeathInterjects: []
   deadTrigger: 0
+  weapon: PSI FLARE
   stats: 
   abilityScriptables:
   - {fileID: 11400000, guid: 96a2ead7d7f11d244bf5191c1dec87a6, type: 2}

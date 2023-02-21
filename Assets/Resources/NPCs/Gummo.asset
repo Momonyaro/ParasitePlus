@@ -47,6 +47,7 @@ MonoBehaviour:
         id: 1
   onDeathInterjects: []
   deadTrigger: 0
+  weapon: GOLF CLUB
   stats: 
   abilityScriptables:
   - {fileID: 11400000, guid: e2f917f02455925409309ebbf5e0711b, type: 2}

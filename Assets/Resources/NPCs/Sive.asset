@@ -47,6 +47,7 @@ MonoBehaviour:
         id: 1
   onDeathInterjects: []
   deadTrigger: 0
+  weapon: KNIFE
   stats: 000000000000000000000000000000000000000000000000
   abilityScriptables: []
   entityEffectBuffer: []

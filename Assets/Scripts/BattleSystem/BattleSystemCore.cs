@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using CORE;
 using Items;
 using SAMSARA;
@@ -231,6 +233,34 @@ namespace BattleSystem
             if (enemyField[index] != null)
             {
                 if (overwriteExisting || enemyField[index].deadTrigger)
+                {
+                    int tempId = enemyField[index].throwawayId;
+                    turnOrderComponent.RemoveEntityFromQueue(tempId);
+
+                    turnOrderComponent.AddEntityToTurnQueue(ref entity);
+                    enemyField[index] = entity;
+                }
+            }
+            else
+            {
+                turnOrderComponent.AddEntityToTurnQueue(ref entity);
+                enemyField[index] = entity;
+            }
+        }
+
+        public void AddEntityRandomlyToBattle(EntityScriptable entity)
+        {
+            var freeIndices = enemyField.Select((value, index) => new { value, index })
+                      .Where(pair => pair.value == null || pair.value.deadTrigger)
+                      .Select(pair => pair.index)
+                      .ToList();
+
+            if (freeIndices.Count == 0) { return; }
+
+            int index = freeIndices[UnityEngine.Random.Range(0, freeIndices.Count)];
+            if (enemyField[index] != null)
+            {
+                if (enemyField[index].deadTrigger)
                 {
                     int tempId = enemyField[index].throwawayId;
                     turnOrderComponent.RemoveEntityFromQueue(tempId);

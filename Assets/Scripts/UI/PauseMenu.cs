@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
@@ -12,6 +14,7 @@ public class PauseMenu : MonoBehaviour
     public Gradient backgroundGradient;
     public CanvasGroup background;
     public GameObject cursor;
+    public UIButton[] partyCards;
     public InputSystemUIInputModule uiInput;
 
 
@@ -199,6 +202,8 @@ public class PauseMenu : MonoBehaviour
     {
         cursor.SetActive(visible);
         AnimationCurve curve = visible ? revealCurve : hideCurve;
+        partyCards.ToList().ForEach((o) => { o.active = visible; });
+        if (visible) FindObjectOfType<PauseCardUpdater>().UpdateEntities();
 
         for (int i = 0; i < worldNodes.Length; i++)
         {

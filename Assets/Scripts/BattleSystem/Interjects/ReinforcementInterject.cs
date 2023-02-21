@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace BattleSystem.Interjects
 {
-    [CreateAssetMenu(fileName = "ReinforcementInterject", menuName = "Interjects/ReinforcementInterject", order = 1)]
+    [CreateAssetMenu(fileName = "ReinforcementInterject", menuName = "Interjects/Reinforcement Interject", order = 1)]
     public class ReinforcementInterject : InterjectBase
     {
         public List<EntityScriptable> reinforcements = new List<EntityScriptable>();
@@ -37,6 +37,7 @@ namespace BattleSystem.Interjects
 
             for (int i = 0; i < entities.Count; i++)
             {
+                if (entities[i] == null) continue;
                 battleCore.AddEntityToBattle(i, entities[i]);
             }
             

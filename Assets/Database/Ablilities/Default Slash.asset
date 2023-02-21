@@ -15,7 +15,7 @@ MonoBehaviour:
   abilityName: Slash
   abilityId: _defaultAtk
   abilityDesc: 
-  abilityEffectRef: 
+  abilityEffectRef: _swordSlash
   abilitySoundEffect: 
   hideDamageText: 0
   targetAll: 0

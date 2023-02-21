@@ -44,6 +44,7 @@ namespace Scriptables
         [SerializeField] private EntityAIComponent entityAI = new EntityAIComponent();
         public List<InterjectBase> onDeathInterjects = new List<InterjectBase>();
         public bool deadTrigger;
+        public string weapon;
 
         public enum STAT
         {
@@ -122,7 +123,6 @@ namespace Scriptables
         {
             actionPts = newActionPoints;
         }
-
     
         public AbilityScriptable[] GetEntityAbilities()
         {
@@ -237,6 +237,7 @@ namespace Scriptables
             es.OverwriteAIComponent(entityAI);
             es.weaknesses = weaknesses;
             es.onDeathInterjects = onDeathInterjects;
+            es.weapon = weapon;
 
             return es;
         }

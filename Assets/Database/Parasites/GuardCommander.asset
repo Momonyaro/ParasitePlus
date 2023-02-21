@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af39f2e96d88af64ea77e06a19ccbfff, type: 3}
+  m_Name: GuardCommander
+  m_EditorClassIdentifier: 
+  entityName: Guard Commander
+  entityLevel: 4
+  entityId: _guardCommander
+  inParty: 0
+  attackYellSfx: 
+  damageYellSfx: _male_hurt
+  deathYellSfx: _male_death
+  entitySpeed: 4
+  throwawayId: 0
+  healthPts: {x: 25, y: 25}
+  actionPts: {x: 10, y: 10}
+  weaknesses:
+  - 1.5
+  - 0.5
+  - 1
+  - 1
+  entityXp: 0
+  entityXpThreshold: 0
+  defaultAttack: {fileID: 11400000, guid: 467ec84786929b24d9e53ab9324f88d8, type: 2}
+  lastAttacker: {fileID: 0}
+  entityAI:
+    randID: -1
+    personalityNodes:
+    - healthPercentLessThan: 1
+      roundsPassed: 0
+      trigger: 
+      stateAbilities: []
+      onFirstLoopInterjects: []
+      hasReadFirstLoop: 0
+      moveSelect:
+        id: 0
+      targetComp:
+        id: 1
+  onDeathInterjects: []
+  deadTrigger: 0
+  stats: 000000000000000000000000000000000000000000000000
+  abilityScriptables:
+  - {fileID: 11400000, guid: 6ca0abd2df745b74dbcd9d61f6cf9dc1, type: 2}
+  entityEffectBuffer: []
+  references:
+    version: 1
+    00000000:
+      type: {class: MoveSelectCompBurst, ns: BattleSystem.AI, asm: Assembly-CSharp}
+      data:
+        componentName: Burst
+    00000001:
+      type: {class: TargetCompRandom, ns: BattleSystem.AI, asm: Assembly-CSharp}
+      data:
+        owner: {fileID: 0}
+        componentName: Random

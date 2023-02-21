@@ -14,7 +14,7 @@ namespace BattleSystem.Interjects
 
         public override void Init()
         {
-            dialogueScreen = Object.FindObjectOfType<DialogueScreenUI>();
+            dialogueScreen = FindObjectOfType<DialogueScreenUI>();
 
             dialogueScreen.StartDialogue(dialogueNodes);
 

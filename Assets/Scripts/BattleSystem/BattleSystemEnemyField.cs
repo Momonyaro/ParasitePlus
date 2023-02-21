@@ -27,7 +27,7 @@ namespace BattleSystem
             
             for (int i = 0; i < enemies.Length; i++)
             {
-                if (enemies[i] == null) 
+                if (enemies[i] == null || enemies[i].deadTrigger) 
                 { 
                     SetShadowVisibility(i, false); 
                     continue; 

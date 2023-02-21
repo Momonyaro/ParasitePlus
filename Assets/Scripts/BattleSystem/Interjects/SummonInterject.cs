@@ -40,7 +40,7 @@ public class SummonInterject : InterjectBase
             for (int i = 0; i < entities.Count; i++)
             {
                 if (entities[i] == null) continue;
-                battleCore.AddEntityToBattle(i, entities[i]);
+                battleCore.AddEntityRandomlyToBattle(entities[i]);
             }
 
             enemyField.PopulateField(battleCore.enemyField);

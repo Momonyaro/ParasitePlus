@@ -24,7 +24,7 @@ MonoBehaviour:
   healthPts: {x: 25, y: 25}
   actionPts: {x: 12, y: 12}
   weaknesses:
-  - 1
+  - 1.5
   - 0.5
   - 1
   - 1

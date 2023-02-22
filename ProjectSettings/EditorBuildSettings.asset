@@ -116,5 +116,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cutscenes/Interlude3.unity
     guid: 8604161199c0396448ee72336c584169
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/InterludeEnd.unity
+    guid: 7671b56ecdfb1a84783a902fc1068cc4
+  - enabled: 1
+    path: Assets/Scenes/Maps/FalconDivision/FalconHarbour.unity
+    guid: 3d741dcafb7277447aa14501bc7e9ddb
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/BeforeFalconDivision.unity
+    guid: c4bff78404cdd0e4e88d7a4680a3a0ce
+  - enabled: 1
+    path: Assets/Scenes/Maps/FalconDivision/FalconRoom1.unity
+    guid: b9380f6bb54bb6d46ad5c21e1a100116
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 46472d8cef444da4d841f68f6280e3ef, type: 2}

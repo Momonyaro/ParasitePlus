@@ -21,14 +21,14 @@ MonoBehaviour:
   deathYellSfx: _male_death
   entitySpeed: 8
   throwawayId: 0
-  healthPts: {x: 25, y: 25}
+  healthPts: {x: 28, y: 25}
   actionPts: {x: 10, y: 10}
   weaknesses:
   - 1.5
   - 0.5
   - 1
   - 1
-  entityXp: 0
+  entityXp: 20
   entityXpThreshold: 0
   defaultAttack: {fileID: 11400000, guid: 467ec84786929b24d9e53ab9324f88d8, type: 2}
   lastAttacker: {fileID: 0}
@@ -47,6 +47,7 @@ MonoBehaviour:
         id: 1
   onDeathInterjects: []
   deadTrigger: 0
+  weapon: 
   stats: 000000000000000000000000000000000000000000000000
   abilityScriptables: []
   entityEffectBuffer: []

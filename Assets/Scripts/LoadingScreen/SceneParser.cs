@@ -77,6 +77,11 @@ public class SceneParser : MonoBehaviour
                     break;
                 destinationName = RandomSundown;
                 break;
+            case "InterludeEnd":
+                if (setNextScene.Equals("InterludeEnd"))
+                    break;
+                destinationName = RandomSundown;
+                break;
         }
     }
 }

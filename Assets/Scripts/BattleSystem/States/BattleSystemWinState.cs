@@ -38,6 +38,10 @@ namespace BattleSystem.States
 
                     enemyXp[p] += scaledXp;
                 }
+
+                Vector2Int hp = battleCore.partyField[p].GetEntityHP();
+                hp.x = Mathf.RoundToInt(Mathf.Max(hp.x, Mathf.Min(5, hp.y))); //After winning, wake up unconcious party members.
+                battleCore.partyField[p].SetEntityHP(hp);
             }
             
             winResultScreenUI.transform.GetChild(0).gameObject.SetActive(true);

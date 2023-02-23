@@ -149,3 +149,19 @@ MonoBehaviour:
     stackable: 1
     StackSize: {x: 1, y: 99}
     storeItem: 0
+  - name: Falcon-Marked Keycard
+    guid: 05df919d-9f40-4f71-a36e-067dd896a04d
+    description: Keycard with a big falcon on the back. Someone really likes birds...
+      Maybe this will get us  into the fort?
+    msrp: 0
+    type: 6
+    minLevelReq: 0
+    minFriendshipReq: 0
+    damage: 0
+    defense: 0
+    critChance: 0
+    dodgeChance: 0
+    itemAbility: {fileID: 0}
+    stackable: 0
+    StackSize: {x: 0, y: 0}
+    storeItem: 0

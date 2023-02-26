@@ -1,39 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &1746545149709580774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6983545946351711767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9059f1e4e744444f8eaf54c6ba0abab2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dir: {x: 0, y: 0, z: -1}
-  calcDefaultSensorPos: 0
-  sensor: {x: -16, y: 1, z: 2}
-  calcDefaultWarpDest: 0
-  warpDest: {x: -16, y: 1, z: 4}
-  interactAngleOffset: 0.1
-  interactRange: 0.5
-  generateNewGUID: 0
-  guid: 078775c9-ba1a-4908-bb22-628a17dcfb4c
-  triggerActive: 0
-  dot: 0
-  locked: 0
-  singleUseKey: 0
-  keyItemID: 
-  goToScene: 0
-  playSound: 1
-  sfxReference: _doorOpen
-  sceneName: 
-  loadSceneVariable: 
-  isLockedMessage: The door is locked.
-  onUnlockMessage: Unlocked the door using $ITEM.
-  interactPromptMsg: Call Elevator
 --- !u!1 &1746545150001045458
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aff2f5909a6859d46afff8356486afce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levels: []
+  currentFloor: 0
+  timePerFloor: 1.5
 --- !u!65 &1746545150001045456
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -92,6 +61,40 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1746545149709580774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6983545946351711767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9059f1e4e744444f8eaf54c6ba0abab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dir: {x: 0, y: 0, z: -1}
+  calcDefaultSensorPos: 0
+  sensor: {x: -16, y: 1, z: 2}
+  calcDefaultWarpDest: 0
+  warpDest: {x: -16, y: 1, z: 4}
+  interactAngleOffset: 0.1
+  interactRange: 0.5
+  generateNewGUID: 0
+  guid: 078775c9-ba1a-4908-bb22-628a17dcfb4c
+  triggerActive: 0
+  dot: 0
+  locked: 0
+  singleUseKey: 0
+  keyItemID: 
+  goToScene: 0
+  playSound: 1
+  sfxReference: _doorOpen
+  sceneName: 
+  loadSceneVariable: 
+  isLockedMessage: The door is locked.
+  onUnlockMessage: Unlocked the door using $ITEM.
+  interactPromptMsg: Call Elevator
 --- !u!1001 &1746545149623596551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -169,7 +172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d306a9dec3ae51043a26e70ab6499d24, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5050422055867433376, guid: d306a9dec3ae51043a26e70ab6499d24, type: 3}
       propertyPath: m_StaticEditorFlags

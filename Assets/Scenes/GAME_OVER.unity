@@ -2749,7 +2749,7 @@ MonoBehaviour:
   - id: _testScene
     type: 7
     stringValue: MAIN_MENU
-    intValue: 0
+    intValue: 1
     targetObject: {fileID: 0}
   saveOnAwake: 0
 --- !u!114 &1735736984

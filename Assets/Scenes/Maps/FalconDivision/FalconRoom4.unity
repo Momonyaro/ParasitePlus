@@ -6865,6 +6865,10 @@ PrefabInstance:
       propertyPath: dir.z
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 5474907615136556514, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
+      propertyPath: itemID
+      value: 5960744a-0f9b-4a77-8ffb-3c0328023e19
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
 --- !u!1001 &638686455

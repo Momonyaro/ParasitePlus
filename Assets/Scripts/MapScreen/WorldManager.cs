@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -99,6 +100,19 @@ public class WorldManager : MonoBehaviour
                     break;
                 }
 
+                if (node.intValue == 1) //Heal party after game over
+                {
+                    var party = loaded2.partyField;
+                    var healed = party.ToList();
+                    healed.ForEach(e =>
+                    {
+                        var hpMax = e.GetEntityHP().y;
+                        e.SetEntityHP(new Vector2Int(hpMax, hpMax));
+                        var apMax = e.GetEntityAP().y;
+                        e.SetEntityAP(new Vector2Int(apMax, apMax));
+                    });
+                    loaded2.partyField = healed.ToArray();
+                }
                 CORE.SlimComponent.Instance.PopulateAndSendSlim(loaded2);
                 GotoScene(loaded2.destinationScene, 0.5f, fadeTo: Color.black);
                 break;

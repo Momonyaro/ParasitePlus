@@ -60,8 +60,6 @@ namespace BattleSystem.UI
 
             rect.position = canvasPos;
 
-            Debug.Log(effect.name);
-
         }
     }
 }

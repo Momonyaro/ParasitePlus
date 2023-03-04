@@ -313,8 +313,6 @@ namespace MOVEMENT
             else if (rotY > 315 || rotY < 45)
                 facing = MinimapCompass.Facing.NORTH;
 
-            Debug.Log(facing);
-
             return facing;
         }
 

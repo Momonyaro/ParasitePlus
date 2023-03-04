@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Scriptables;
 using TMPro;
 using UnityEngine;
@@ -110,6 +111,24 @@ namespace BattleSystem.UI
             }
         }
 
+        public int SelectCard(int index, params int[] fallback)
+        {
+            Queue<int> indexQueue = new Queue<int>();
+            indexQueue.Enqueue(index);
+            fallback.ToList().ForEach(i => indexQueue.Enqueue(i));
+
+            while (indexQueue.Count > 0)
+            {
+                int current = indexQueue.Dequeue();
+                if (partyCards[current].parent.activeInHierarchy)
+                {
+                    return current;
+                }
+            }
+
+            return -1;
+        }
+
         private IEnumerator ShakeCardPortrait(int cardIndex, float timeScale, float magnitude)
         {
             UICard current = partyCards[cardIndex];
@@ -137,6 +156,11 @@ namespace BattleSystem.UI
             portraitTransform.anchoredPosition = origo;
 
             yield break;
+        }
+
+        public int[] GetValidCardIndices()
+        {
+            return partyCards.Where(card => card.parent.activeInHierarchy).Select((c, index) => index).ToArray(); //Expected output [0], [0, 1], [0, 1, 2] 
         }
         
         

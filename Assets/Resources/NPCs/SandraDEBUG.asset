@@ -15,7 +15,7 @@ MonoBehaviour:
   entityName: Sandra $DEBUG
   entityLevel: 4
   entityId: _sandra
-  inParty: 0
+  inParty: 1
   attackYellSfx: 
   damageYellSfx: 
   deathYellSfx: 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f39828721a6734fa89c2faa80c33ca, type: 3}
   m_Name: Default Shoot
   m_EditorClassIdentifier: 
-  abilityName: Fire
+  abilityName: Shoot
   abilityId: _defaultAtk
   abilityDesc: This is the default attack.
   abilityEffectRef: _gunshot

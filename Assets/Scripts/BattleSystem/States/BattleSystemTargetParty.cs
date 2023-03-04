@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using BattleSystem.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -13,6 +14,7 @@ namespace BattleSystem.States
 
         public bool returnToSelection = false;
         public bool confirmTargets = false;
+        public bool multiTarget = false;
         public int targetIndex = 0;
         
         public override void Init()
@@ -21,7 +23,14 @@ namespace BattleSystem.States
             targetingUI = FindObjectOfType<TargetingUI>();
             
             topPanelUI.SetFoldoutState(true);
-            topPanelUI.MoveToNextCard(-1, 1);
+
+            multiTarget = parent.lastAbility.targetAll;
+
+            if (multiTarget)
+                targetIndex = topPanelUI.SelectCard(index: 1, fallback: 0); //Move to card 1 (middle card)
+            else
+                targetIndex = topPanelUI.MoveToNextCard(-1, 1); //Move to card 0 ("first" card)
+
             parent.targetingParty = true;
             
             initialized = true;
@@ -31,7 +40,7 @@ namespace BattleSystem.States
         {
             Vector2 newPos = topPanelUI.GetCardPosition(targetIndex, out bool success);
             if (success) 
-                targetingUI.SetCursorPosAndVisibility(newPos, true, false);
+                targetingUI.SetCursorPosAndVisibility(newPos, true, multiTarget);
             
             endOfLife = false;
 
@@ -50,12 +59,11 @@ namespace BattleSystem.States
             if (confirmTargets)
             {
                 confirmTargets = false;
-                
+
                 //Check for selected ability targetAll
-                parent.targetedEntities = new List<int>
-                {
-                    targetIndex
-                };
+                parent.targetedEntities = (multiTarget) ?
+                    topPanelUI.GetValidCardIndices().ToList() :
+                    new List<int> { targetIndex };
                 
                 targetIndex = 0;
 
@@ -87,7 +95,8 @@ namespace BattleSystem.States
             Vector2 movementVec = obj.ReadValue<Vector2>();
             int roundX = Mathf.RoundToInt(movementVec.x);
 
-            targetIndex = topPanelUI.MoveToNextCard(targetIndex, roundX);
+            if (!multiTarget) //only allow moving if not multitargeting
+                targetIndex = topPanelUI.MoveToNextCard(targetIndex, roundX);
         }
     }
 }

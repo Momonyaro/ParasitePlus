@@ -43,6 +43,7 @@ namespace SAMSARA
 
         public Dictionary<string, AudioEvent> eventData;
         public List<string> eventGroups = new List<string>();
+        private HashSet<string> _enquedThisFrame = new HashSet<string>();
         //Here we are once again, this class again is responsible for the majority of user interaction.
         // Playing, swapping, stopping and modifying is all handled from here and sent to the correct components.
 
@@ -73,9 +74,16 @@ namespace SAMSARA
             DontDestroyOnLoad(gameObject);
         }
 
+        private void LateUpdate()
+        {
+            _enquedThisFrame.Clear();
+        }
+
         public void PlaySFXLayered(string reference, out bool success)
         {
             success = false;
+
+            if (_enquedThisFrame.Contains(reference)) return;
 
             AudioEvent fetched = GetAudioEventFromReference(reference, out bool foundEvent);
             if (foundEvent)
@@ -83,12 +91,15 @@ namespace SAMSARA
                 success = true;
                 Debug.Log("Found event with reference: " + reference);
                 _samsaraPlayer.CreateAudioChannel(fetched);
+                _enquedThisFrame.Add(reference);
             }
         }
 
         public void PlaySFXTrack(string reference, int trackIndex, out bool success)
         {
             success = false;
+
+            if (_enquedThisFrame.Contains(reference)) return;
 
             AudioEvent fetched = GetAudioEventFromReference(reference, out bool foundEvent);
             if (foundEvent)
@@ -115,6 +126,7 @@ namespace SAMSARA
                 cropped.trackContainer.UpdateTrackContainer();
                 
                 _samsaraPlayer.CreateAudioChannel(cropped);
+                _enquedThisFrame.Add(reference);
             }
         }
 
@@ -122,6 +134,7 @@ namespace SAMSARA
         {
             success = false;
             if (reference == null || reference.Equals("")) return;
+            if (_enquedThisFrame.Contains(reference)) return;
 
             AudioEvent fetched = GetAudioEventFromReference(reference, out bool foundEvent);
             if (foundEvent)
@@ -148,6 +161,7 @@ namespace SAMSARA
                 cropped.trackContainer.UpdateTrackContainer();
                 
                 _samsaraPlayer.CreateAudioChannel(cropped);
+                _enquedThisFrame.Add(reference);
             }
         }
 

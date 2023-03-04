@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerDEBUG
   m_EditorClassIdentifier: 
   entityName: Player $DEBUG
-  entityLevel: 4
+  entityLevel: 5
   entityId: _player
   inParty: 1
   attackYellSfx: 
@@ -51,6 +51,7 @@ MonoBehaviour:
   stats: 
   abilityScriptables:
   - {fileID: 11400000, guid: 96a2ead7d7f11d244bf5191c1dec87a6, type: 2}
+  - {fileID: 11400000, guid: e29a38e132299d4448e72f5efba57e26, type: 2}
   entityEffectBuffer: []
   references:
     version: 1

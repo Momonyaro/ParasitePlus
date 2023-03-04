@@ -120,11 +120,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Cutscenes/InterludeEnd.unity
     guid: 7671b56ecdfb1a84783a902fc1068cc4
   - enabled: 1
-    path: Assets/Scenes/Maps/FalconDivision/FalconHarbour.unity
-    guid: 3d741dcafb7277447aa14501bc7e9ddb
-  - enabled: 1
     path: Assets/Scenes/Cutscenes/BeforeFalconDivision.unity
     guid: c4bff78404cdd0e4e88d7a4680a3a0ce
+  - enabled: 1
+    path: Assets/Scenes/Maps/FalconDivision/FalconHarbour.unity
+    guid: 3d741dcafb7277447aa14501bc7e9ddb
   - enabled: 1
     path: Assets/Scenes/Maps/FalconDivision/FalconRoom1.unity
     guid: b9380f6bb54bb6d46ad5c21e1a100116
@@ -134,5 +134,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Maps/FalconDivision/FalconRoom3.unity
     guid: 57405b42b019dde4caa369ccfc7ffb01
+  - enabled: 1
+    path: Assets/Scenes/Maps/FalconDivision/FalconRoom4.unity
+    guid: c77765f7f45231a45a97f4468beebc10
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 46472d8cef444da4d841f68f6280e3ef, type: 2}

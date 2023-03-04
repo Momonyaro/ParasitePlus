@@ -15,7 +15,7 @@ MonoBehaviour:
   entityName: Sive
   entityLevel: 6
   entityId: _sive
-  inParty: 1
+  inParty: 0
   attackYellSfx: 
   damageYellSfx: _male_hurt
   deathYellSfx: _male_death

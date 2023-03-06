@@ -14334,6 +14334,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 902804683365864668, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7cb30f5e6d8650f4cb14db49d564e6fd, type: 2}
     - target: {fileID: 1127367250476683793, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -14511,6 +14515,10 @@ PrefabInstance:
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7625113148819053780, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7cb30f5e6d8650f4cb14db49d564e6fd, type: 2}
+    - target: {fileID: 7837893019544910531, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7cb30f5e6d8650f4cb14db49d564e6fd, type: 2}
@@ -16224,6 +16232,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5706937221048515875, guid: 9f5c3542b8d9f3d4993ce6cb5404ca4d, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5868332816972702365, guid: 9f5c3542b8d9f3d4993ce6cb5404ca4d, type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6067613539527378559, guid: 9f5c3542b8d9f3d4993ce6cb5404ca4d, type: 3}
@@ -25444,6 +25456,7 @@ MonoBehaviour:
   dungeonManager: {fileID: 1640520996}
   config: {fileID: 11400000, guid: f19491cb78d45e04ca9bacb7aac3d494, type: 2}
   mapBMGReference: _craneCalmBGM
+  writeSaveOnLoad: 1
   monsterManifest:
     encounters:
     - enemies:

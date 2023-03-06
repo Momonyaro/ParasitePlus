@@ -15077,6 +15077,7 @@ MonoBehaviour:
   dungeonManager: {fileID: 1412441779}
   config: {fileID: 11400000, guid: f19491cb78d45e04ca9bacb7aac3d494, type: 2}
   mapBMGReference: _craneCalmBGM
+  writeSaveOnLoad: 1
   monsterManifest:
     encounters:
     - enemies:
@@ -17918,6 +17919,30 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 6656468872423446997, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: sensor.x
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6656468872423446997, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: sensor.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6656468872423446997, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: sensor.z
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6656468872423446997, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: warpDest.x
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6656468872423446997, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: warpDest.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6656468872423446997, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
+      propertyPath: warpDest.z
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 7162400114245014425, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -17970,7 +17995,8 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6656468872423446997, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8a37b39f51cd87d4593789cfd894da58, type: 3}
 --- !u!4 &1732692584 stripped
 Transform:

@@ -126,7 +126,6 @@ namespace CORE
                 //Add new doors for the FPS sections
                 if (doorInteractables[i].triggerActive)
                 {
-                    Debug.Log(doorInteractables[i].gameObject.name);
                     if (doorInteractables[i].locked)
                     {
                         DoorInteractable locked = doorInteractables[i];

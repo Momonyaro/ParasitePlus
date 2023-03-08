@@ -42,7 +42,7 @@ namespace CORE
 
         private void Update()
         {
-            if (currentPlayer.lockPlayer) return;
+            if (currentPlayer.IsLocked) return;
             
             for (int i = 0; i < encounterTriggers.Count; i++)
             {
@@ -65,7 +65,8 @@ namespace CORE
             if (encounterProgress >= 1 && !startedEncounter)
             {
                 startedEncounter = true;
-                currentPlayer.lockPlayer = true;
+                //currentPlayer.lockPlayer = true;
+                currentPlayer.AddLock("DNG_MANAGER");
                 StartCoroutine(TransitionToRandomBattle());
             }
         }
@@ -78,7 +79,8 @@ namespace CORE
         private IEnumerator TransitionToBattle(EncounterTrigger trigger)
         {
             mapManager.SetEnemyField(trigger.enemyRoster);
-            currentPlayer.lockPlayer = true;
+            //currentPlayer.lockPlayer = true;
+            currentPlayer.AddLock("DNG_MANAGER");
             trigger.triggerActive = false;
             mapManager.currentSlimData.eventTriggers.Add(trigger.guid);
             
@@ -220,11 +222,10 @@ namespace CORE
         private IEnumerator WaitForDoorTranstion(int currentIndex, bool playSound)
         {
             FadeToBlackImage fadeToBlackImage = FindObjectOfType<FadeToBlackImage>();
-            bool skipPlayerLock = currentPlayer.lockPlayer;
 
-            if (!skipPlayerLock)
-                currentPlayer.lockPlayer = true;
-            
+            //currentPlayer.lockPlayer = true;
+            currentPlayer.AddLock("DNG_MANAGER");
+
             fadeToBlackImage.FadeToBlack(0.3f, .8f);
             
             while (!fadeToBlackImage.screenBlack) { yield return null; }
@@ -233,9 +234,9 @@ namespace CORE
             WarpPlayer(doorInteractables[currentIndex].warpDest, camEulers);
             
             while (!fadeToBlackImage.finished) { yield return null; }
-            
-            if (!skipPlayerLock)
-                currentPlayer.lockPlayer = false;
+
+            //currentPlayer.lockPlayer = false;
+            currentPlayer.RemoveLock("DNG_MANAGER");
 
             if (playSound)
                 SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_doorClose", out bool success);
@@ -247,11 +248,10 @@ namespace CORE
         {
             SlimComponent.Instance.PopulateAndSendSlim(mapManager.currentSlimData);
             FadeToBlackImage fadeToBlackImage = FindObjectOfType<FadeToBlackImage>();
-            bool skipPlayerLock = currentPlayer.lockPlayer;
 
-            if (!skipPlayerLock)
-                currentPlayer.lockPlayer = true;
-            
+            //currentPlayer.lockPlayer = true;
+            currentPlayer.AddLock("DNG_MANAGER");
+
             fadeToBlackImage.FadeToBlack(0.3f, .8f);
             
             while (!fadeToBlackImage.screenBlack) { yield return null; }
@@ -259,10 +259,10 @@ namespace CORE
             mapManager.SwitchScene(newSceneRef, false);
             
             while (!fadeToBlackImage.finished) { yield return null; }
-            
-            if (!skipPlayerLock)
-                currentPlayer.lockPlayer = false;
-            
+
+            //currentPlayer.lockPlayer = false;
+            currentPlayer.RemoveLock("DNG_MANAGER");
+
             yield break;
         }
         

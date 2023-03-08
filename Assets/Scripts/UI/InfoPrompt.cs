@@ -32,8 +32,8 @@ public class InfoPrompt : MonoBehaviour
         {
             return;
         }
-        
-        FindObjectOfType<FPSGridPlayer>().lockPlayer = true;
+
+        FindObjectOfType<FPSGridPlayer>().AddLock("INFO_PROMPT");
         currentMessage = new Queue<string>(promptMessage);
         
         promptText.text = currentMessage.Dequeue();
@@ -44,7 +44,7 @@ public class InfoPrompt : MonoBehaviour
     public void CreatePromptForCombat(string[] promptMessage, EncounterTrigger trigger)
     {
         isRunning = true;
-        FindObjectOfType<FPSGridPlayer>().lockPlayer = true;
+        FindObjectOfType<FPSGridPlayer>().AddLock("INFO_PROMPT");
         currentMessage = new Queue<string>(promptMessage);
         
         promptText.text = currentMessage.Dequeue();
@@ -62,7 +62,7 @@ public class InfoPrompt : MonoBehaviour
             return;
         }
         
-        FindObjectOfType<FPSGridPlayer>().lockPlayer = false;
+        FindObjectOfType<FPSGridPlayer>().RemoveLock("INFO_PROMPT");
 
         promptAnimator.SetBool(_infoPromptAnimatorVarName, false);
         isRunning = false;

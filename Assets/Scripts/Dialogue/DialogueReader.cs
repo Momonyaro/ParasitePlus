@@ -59,9 +59,6 @@ namespace Dialogue
         {
             if (!dialogueRunning) return;
 
-            if (player != null)
-                player.lockPlayer = true;
-
             lastComponent.Update(out bool endOfLife);
             
             if (endOfLife) CycleComponent();
@@ -78,7 +75,7 @@ namespace Dialogue
             dialogueRunning = true;
 
             if (player != null)
-                player.lockPlayer = true;
+                player.AddLock("DIALOGUE");
         }
 
         private void CycleComponent()
@@ -152,9 +149,9 @@ namespace Dialogue
             }
 
             onStopReading?.Invoke();
-            
+
             if (player != null)
-                player.lockPlayer = false;
+                player.RemoveLock("DIALOGUE");
             
             Debug.Log($"Dialogue: End of Read");
         }

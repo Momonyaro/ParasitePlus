@@ -39,12 +39,6 @@ public class PauseMenu : MonoBehaviour
         SetAllInvisible();
     }
 
-    private void Update()
-    {
-        if (visible && !lastPlayer.lockPlayer)
-            lastPlayer.lockPlayer = true;
-    }
-
     private void OnEnable()
     {
         CORE.UIManager.Instance.onUIMessage.AddListener(ListenForMessage);
@@ -66,11 +60,13 @@ public class PauseMenu : MonoBehaviour
 
         if (msg.Equals("_togglePauseMenu"))
         {
-            if (!visible && lastPlayer.lockPlayer)
+            if (!visible && lastPlayer.IsLocked)
                 return;
             visible = !visible;
             FindObjectOfType<MapController>().blockCursorMovement = !visible;
-            lastPlayer.lockPlayer = visible;
+            if (visible) lastPlayer.AddLock("PAUSE_MENU");
+            else lastPlayer.RemoveLock("PAUSE_MENU");
+
             SwitchTransition(IEVisible(visible).GetEnumerator());
             return;
         }

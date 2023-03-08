@@ -46,7 +46,7 @@ namespace UI
                 promptActive = true;
             }
 
-            if (dm.GetPlayer().lockPlayer)
+            if (dm.GetPlayer().IsLocked)
                 promptActive = false;
             
             promptAnimator.SetBool("Active", promptActive);

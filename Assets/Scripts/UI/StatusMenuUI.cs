@@ -56,7 +56,7 @@ namespace UI
             else
             {
                 EventSystem.current.SetSelectedGameObject(null);
-                FindObjectOfType<FPSGridPlayer>().lockPlayer = false;
+                FindObjectOfType<FPSGridPlayer>().AddLock("STATUS_MENU");
             }
             
             miniMap.SetActive(!visibility);

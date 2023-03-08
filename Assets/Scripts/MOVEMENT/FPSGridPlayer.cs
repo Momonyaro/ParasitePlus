@@ -1,6 +1,6 @@
-﻿using System;
+﻿using CORE;
 using System.Collections;
-using CORE;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -21,10 +21,15 @@ namespace MOVEMENT
         public AnimationCurve moveFailLerpCurve = new AnimationCurve();
 
         public UnityEvent onSuccessfulMove;
+        private MinimapCompass.Facing lastFacing;
 
-        public bool lockPlayer = false;
+        public HashSet<string> locks = new HashSet<string>();
         private bool turning = false;
         private bool moving = false;
+
+        public bool IsLocked => locks.Count > 0;
+        public bool IsMoving => moving;
+        public bool IsTurning => turning;
     
         private void Awake()
         {
@@ -43,8 +48,8 @@ namespace MOVEMENT
 
         private void Start()
         {
-            MinimapCompass.Facing nextFacing = GetNewFacing(transform.rotation.eulerAngles.y);
-            FindObjectOfType<MinimapCompass>()?.SetCompassFacing(nextFacing);
+            lastFacing = GetNewFacing(transform.rotation.eulerAngles.y);
+            FindObjectOfType<MinimapCompass>()?.SetCompassFacing(lastFacing);
         }
 
         private void OnDisable()
@@ -61,6 +66,18 @@ namespace MOVEMENT
             interactAction.started -= OnInteractKey;
         }
 
+        public void AddLock(string key)
+        {
+            if (!locks.Contains(key))
+                locks.Add(key);
+        }
+
+        public void RemoveLock(string key)
+        {
+            if (locks.Contains(key))
+                locks.Remove(key);
+        }
+
         // Check input, we need:
         // Forward, Backward, Strafe left & right
         // and also Turn left & right.
@@ -70,7 +87,7 @@ namespace MOVEMENT
             Vector2 rawVal = ctx.ReadValue<Vector2>();
             Vector2 val = new Vector2(Mathf.Round(rawVal.x), Mathf.Round(rawVal.y));
 
-            if (!moving && !turning && !lockPlayer)
+            if (!moving && !turning && !IsLocked)
                 StartCoroutine(MovePlayer(val));
         }
 
@@ -80,7 +97,7 @@ namespace MOVEMENT
             Vector2 rawVal = ctx.ReadValue<Vector2>();
             Vector2 val = new Vector2(Mathf.Round(rawVal.x), Mathf.Round(rawVal.y));
 
-            if (!turning && !moving && !lockPlayer)
+            if (!turning && !moving && !IsLocked)
                 StartCoroutine(TurnPlayer(val));
         }
 
@@ -94,12 +111,12 @@ namespace MOVEMENT
         {
             DungeonManager dm = FindObjectOfType<DungeonManager>();
             if (!context.started) return;
-                if (lockPlayer && InfoPrompt.Instance.PromptActive())
+                if (IsLocked && InfoPrompt.Instance.PromptActive())
                 {
                     //This should be the infoPrompt so clear it
                     InfoPrompt.Instance.ClearPrompt();
                 }
-                else if (!lockPlayer)
+                else if (!IsLocked)
                 {
                     //Check for interactable:s instead
                     dm.CheckToEnterDoorTrigger();
@@ -110,9 +127,14 @@ namespace MOVEMENT
         
         private void OnPauseKey(InputAction.CallbackContext ctx)
         {
-            if (lockPlayer) return;
+            if (IsLocked) return;
             
             UIManager.Instance.onUIMessage.Invoke("_togglePauseMenu");
+        }
+
+        public void TurnPlayerExt(Vector2 turnDir)
+        {
+            StartCoroutine(TurnPlayer(turnDir, quiet: true));
         }
 
         private IEnumerator TurnPlayer(Vector2 turnDir, bool quiet = false)
@@ -122,8 +144,8 @@ namespace MOVEMENT
             Vector3 rotVec = rot.eulerAngles;
             Quaternion nextRot = Quaternion.Euler(0, rotVec.y + (turnDir.x * 90), 0);
 
-            MinimapCompass.Facing nextFacing = GetNewFacing(nextRot.eulerAngles.y);
-            FindObjectOfType<MinimapCompass>().SetCompassFacing(nextFacing);
+            lastFacing = GetNewFacing(nextRot.eulerAngles.y);
+            FindObjectOfType<MinimapCompass>().SetCompassFacing(lastFacing);
 
             float timePassed = 0;
             float maxTime = turnLerpCurve.keys[turnLerpCurve.keys.Length - 1].time;
@@ -145,7 +167,12 @@ namespace MOVEMENT
             yield break;
         }
 
-        private IEnumerator MovePlayer(Vector2 moveDir)
+        public void MovePlayerExt(Vector2 moveDir)
+        {
+            StartCoroutine(MovePlayer(moveDir, true));
+        }
+
+        private IEnumerator MovePlayer(Vector2 moveDir, bool quiet = false)
         {
             moving = true;
             Vector2 initialDir = moveDir;
@@ -172,7 +199,7 @@ namespace MOVEMENT
 
             float maxTime = lerpCurve.keys[lerpCurve.keys.Length - 1].time;
 
-            if (Vector3.Distance(pos, finalPos) < 0.3f) 
+            if (Vector3.Distance(pos, finalPos) < 0.3f && !quiet) 
             {
                 lerpCurve = moveFailLerpCurve;
 
@@ -192,6 +219,10 @@ namespace MOVEMENT
                 }
 
                 transform.position = pos;
+            }
+            else if (Vector3.Distance(pos, finalPos) < 0.3f && quiet)
+            {
+
             }
             else
             {
@@ -260,15 +291,117 @@ namespace MOVEMENT
             return result;
         }
 
+        public void LookAt(MinimapCompass.Facing newFacing)
+        {
+            float turnDelta = GetTurnDeltaFromFacing(newFacing);
+            StartCoroutine(TurnPlayer(new Vector2(turnDelta, 0), quiet: true));
+        }
+
+        private MinimapCompass.Facing GetNewFacing(float rotY)
+        {
+            // change to range 0 - 360
+
+            MinimapCompass.Facing newFacing = MinimapCompass.Facing.NORTH;
+
+            // 0 = N, 90 = E, 180 = S, 270 = W
+            if (rotY > 45 && rotY < 135)
+                newFacing = MinimapCompass.Facing.EAST;
+            else if (rotY > 135 && rotY < 215)
+                newFacing = MinimapCompass.Facing.SOUTH;
+            else if (rotY > 215 && rotY < 315)
+                newFacing = MinimapCompass.Facing.WEST;
+            else if (rotY > 315 || rotY < 45)
+                newFacing = MinimapCompass.Facing.NORTH;
+
+            return newFacing;
+        }
+
+        private float FacingToRot(MinimapCompass.Facing facing)
+        {
+            // 0 = N, 90 = E, 180 = S, 270 = W
+
+            switch (facing)
+            {
+                default:
+                case MinimapCompass.Facing.NORTH:
+                    return 0;
+                case MinimapCompass.Facing.EAST:
+                    return 90;
+                case MinimapCompass.Facing.SOUTH:
+                    return 180;
+                case MinimapCompass.Facing.WEST:
+                    return 270;
+            }
+        }
+
+        private float GetTurnDeltaFromFacing(MinimapCompass.Facing newFacing)
+        {
+            switch(lastFacing)
+            {
+                default:
+                case MinimapCompass.Facing.NORTH:
+                    switch (newFacing) {
+                        default:
+                        case MinimapCompass.Facing.NORTH: return 0; 
+                        case MinimapCompass.Facing.EAST: return 1;  
+                        case MinimapCompass.Facing.SOUTH: return 2;
+                        case MinimapCompass.Facing.WEST: return -1;
+                    }
+                case MinimapCompass.Facing.EAST:
+                    switch (newFacing)
+                    {
+                        default:
+                        case MinimapCompass.Facing.EAST: return 0;
+                        case MinimapCompass.Facing.SOUTH: return 1;
+                        case MinimapCompass.Facing.WEST: return 2;
+                        case MinimapCompass.Facing.NORTH: return -1;
+                    }
+                case MinimapCompass.Facing.SOUTH:
+                    switch (newFacing)
+                    {
+                        default:
+                        case MinimapCompass.Facing.SOUTH: return 0;
+                        case MinimapCompass.Facing.WEST: return 1;
+                        case MinimapCompass.Facing.NORTH: return 2;
+                        case MinimapCompass.Facing.EAST: return -1;
+                    }
+                case MinimapCompass.Facing.WEST:
+                    switch (newFacing)
+                    {
+                        default:
+                        case MinimapCompass.Facing.WEST: return 0;
+                        case MinimapCompass.Facing.NORTH: return 1;
+                        case MinimapCompass.Facing.EAST: return 2;
+                        case MinimapCompass.Facing.SOUTH: return -1;
+                    }
+            }
+        }
+
+        public struct RelativeCollisionStruct
+        {
+            public bool forwardBlocked;
+            public bool backwardBlocked;
+            public bool leftBlocked;
+            public bool rightBlocked;
+
+            public RelativeCollisionStruct(bool fuck = false)
+            {
+                forwardBlocked = false;
+                backwardBlocked = false;
+                leftBlocked = false;
+                rightBlocked = false;
+            }
+        }
+
         private void OnDrawGizmos()
         {
             RelativeCollisionStruct collisionResult = CheckMovementCollision();
-            
+
             Vector3 pos = transform.position;
             Vector3 sample = transform.forward;
-            
+
             Gizmos.DrawIcon(pos, "SoftlockProjectBrowser Icon");
-            
+
             for (int i = 0; i < 4; i++)
             {
                 switch (i)
@@ -292,43 +425,8 @@ namespace MOVEMENT
                         Gizmos.DrawLine(pos, pos + sample);
                         break;
                 }
-                
+
                 sample = Quaternion.Euler(0, 90, 0) * sample;
-            }
-        }
-
-        private MinimapCompass.Facing GetNewFacing(float rotY)
-        {
-            // change to range 0 - 360
-
-            MinimapCompass.Facing facing = MinimapCompass.Facing.NORTH;
-
-            // 0 = N, 90 = E, 180 = S, 270 = W
-            if (rotY > 45 && rotY < 135)
-                facing = MinimapCompass.Facing.EAST;
-            else if (rotY > 135 && rotY < 215)
-                facing = MinimapCompass.Facing.SOUTH;
-            else if (rotY > 215 && rotY < 315)
-                facing = MinimapCompass.Facing.WEST;
-            else if (rotY > 315 || rotY < 45)
-                facing = MinimapCompass.Facing.NORTH;
-
-            return facing;
-        }
-
-        public struct RelativeCollisionStruct
-        {
-            public bool forwardBlocked;
-            public bool backwardBlocked;
-            public bool leftBlocked;
-            public bool rightBlocked;
-
-            public RelativeCollisionStruct(bool fuck = false)
-            {
-                forwardBlocked = false;
-                backwardBlocked = false;
-                leftBlocked = false;
-                rightBlocked = false;
             }
         }
     }

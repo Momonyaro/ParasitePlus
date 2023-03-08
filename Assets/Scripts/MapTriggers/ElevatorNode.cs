@@ -29,7 +29,8 @@ public class ElevatorNode : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            player.lockPlayer = true;
+            //player.lockPlayer = true;
+            player.AddLock("ELEVATOR");
         }
     }
 

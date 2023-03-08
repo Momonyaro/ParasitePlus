@@ -159,10 +159,8 @@ namespace CORE
             {
                 SlimComponent.Instance.PopulateAndSendSlim(currentSlimData);
                 FadeToBlackImage fadeToBlackImage = FindObjectOfType<FadeToBlackImage>();
-                bool skipPlayerLock = player.lockPlayer;
 
-                if (!skipPlayerLock)
-                    player.lockPlayer = true;
+                player.AddLock("MAP_MANAGER");
 
                 fadeToBlackImage.FadeToBlack(0.3f, .8f);
 

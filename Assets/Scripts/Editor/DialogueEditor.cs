@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Dialogue;
+using SAMSARA;
 using UnityEditor;
 using UnityEngine;
 
@@ -319,6 +320,10 @@ namespace Editor
             EditorGUILayout.Space(10);
             playSoundComponent.soundEventRef =
                 EditorGUILayout.TextField("Sound Event Reference: ", playSoundComponent.soundEventRef);
+            playSoundComponent.stopEvent = EditorGUILayout.Toggle("Stop Event: ", playSoundComponent.stopEvent);
+            playSoundComponent.playAsMusic = EditorGUILayout.Toggle("Play as Music: ", playSoundComponent.playAsMusic);
+            playSoundComponent.transitionType = (TransitionType)EditorGUILayout.EnumPopup("Transition Type: " ,playSoundComponent.transitionType);
+            playSoundComponent.transitionTime = EditorGUILayout.FloatField("Transition Time: ", playSoundComponent.transitionTime);
             playSoundComponent.playLayered = EditorGUILayout.Toggle("Play Layered: ", playSoundComponent.playLayered);
             if (!playSoundComponent.playLayered)
                 playSoundComponent.trackLayer = EditorGUILayout.IntField("Track Layer: ", playSoundComponent.trackLayer);

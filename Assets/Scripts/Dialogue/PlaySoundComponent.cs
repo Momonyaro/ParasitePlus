@@ -7,6 +7,10 @@ namespace Dialogue
     public class PlaySoundComponent: DialogueComponent
     {
         public string soundEventRef;
+        public bool stopEvent = false;
+        public bool playAsMusic = false;
+        public TransitionType transitionType;
+        public float transitionTime = 0.3f;
         public bool playLayered = false;
         public int trackLayer = -1;
         
@@ -15,22 +19,33 @@ namespace Dialogue
             componentPrefab = null;
 
             bool success = false;
-            if (playLayered)
+            if (playAsMusic)
             {
-                Samsara.Instance.PlaySFXLayered(soundEventRef, out success);
+                if (!stopEvent)
+                {
+                    Samsara.Instance.MusicPlayLayered(soundEventRef, transitionType, transitionTime, out success);
+                }
+                else 
+                    Samsara.Instance.MusicStopPlaying(transitionType, transitionTime, out success);
             }
             else
             {
-                if (trackLayer < 0)
+                if (playLayered)
                 {
-                    Samsara.Instance.PlaySFXRandomTrack(soundEventRef, out success);
+                    Samsara.Instance.PlaySFXLayered(soundEventRef, out success);
                 }
                 else
                 {
-                    Samsara.Instance.PlaySFXTrack(soundEventRef, trackLayer, out success);
+                    if (trackLayer < 0)
+                    {
+                        Samsara.Instance.PlaySFXRandomTrack(soundEventRef, out success);
+                    }
+                    else
+                    {
+                        Samsara.Instance.PlaySFXTrack(soundEventRef, trackLayer, out success);
+                    }
                 }
             }
-            
         }
 
         public override void Update(out bool endOfLife)

@@ -30,7 +30,6 @@ public class WorldNode : MonoBehaviour
 
         if (!IsInRange(WorldManager.CurrentSelectionLayer, MinButtonLayer, MaxButtonLayer))
         {
-            Debug.Log(WorldManager.CurrentSelectionLayer);
             gameObject.SetActive(false);
         }
         else if (FindObjectOfType<PauseMenu>() != null)

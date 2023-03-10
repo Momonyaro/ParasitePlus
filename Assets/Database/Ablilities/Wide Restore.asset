@@ -24,7 +24,7 @@ MonoBehaviour:
   levelScalingDamage: 1.5
   abilityCritChance: 0
   abilityMissChance: 0
-  abilityCosts: {x: 0, y: 0}
+  abilityCosts: {x: 12, y: 0}
   abilityDamage: {x: -7, y: 0}
   abilityCooldown: {x: 0, y: 0}
   abilityInterjects: []

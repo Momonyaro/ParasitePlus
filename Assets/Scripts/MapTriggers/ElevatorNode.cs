@@ -87,6 +87,7 @@ public class ElevatorNode : MonoBehaviour
     {
         int floorDelta = exitFloor - startFloor;
         float direction = -Mathf.Sign(floorDelta);
+        SAMSARA.Samsara.Instance.PlaySFXLayered("_elevator", out bool success);
 
         while (true)
         {
@@ -98,6 +99,7 @@ public class ElevatorNode : MonoBehaviour
 
                 //Stop for a short while before exiting.
                 yield return new WaitForSeconds(0.3f);
+                SAMSARA.Samsara.Instance.StopSFXEvent("_elevator", out success);
                 FindObjectOfType<CORE.MapManager>().GoToNewScene(levels[exitFloor].destinationScene, levels[exitFloor].sceneTransformVariable);
                 yield break; 
             }
@@ -114,6 +116,7 @@ public class ElevatorNode : MonoBehaviour
             //Else move the floor delta closer to zero each loop as we travel towards our destination.
             //Remember to update the ui.
         }
+
     }
 
     private IEnumerable ElevatorShake(Vector3 startPos, Vector3 playerRight)

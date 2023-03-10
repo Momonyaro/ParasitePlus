@@ -177,10 +177,10 @@ namespace CORE
         public void LoadRandomBattle()
         {
             currentSlimData.enemyField = monsterManifest.GetRandomEncounter().GetEnemies();
-            SwitchSceneToBattle(SceneManager.GetActiveScene().name); //Try loading into the battle
+            SwitchSceneToBattle(SceneManager.GetActiveScene().name, String.Empty); //Try loading into the battle
         }
 
-        public void SwitchSceneToBattle(string slimDestinationScene)
+        public void SwitchSceneToBattle(string slimDestinationScene, string musicRef)
         {
             //Create slim here before we load the scene.
 
@@ -200,6 +200,7 @@ namespace CORE
                 playerName = currentSlimData.playerName,
                 loadSceneVariable = currentSlimData.loadSceneVariable,
                 lastButtonLayer = currentSlimData.lastButtonLayer,
+                combatTrackRef = musicRef
             };
             
             SlimComponent.Instance.PopulateAndSendSlim(slimData);

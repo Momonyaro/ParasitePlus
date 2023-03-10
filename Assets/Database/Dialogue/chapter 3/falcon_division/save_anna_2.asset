@@ -32,6 +32,8 @@ MonoBehaviour:
   components:
   - id: 0
   - id: 1
+  - id: 2
+  - id: 3
   transitionToOnEof: {fileID: 0}
   wipeOldDataOnLoad: 1
   goToSceneOnEof: 0
@@ -58,13 +60,32 @@ MonoBehaviour:
           text: Without wasting a single second, Gummo started bashing the lock with
             his club.
           buildTime: 0.0456
-        - speakerReference: _narrator
-          text: After a few attempts he managed to get it off.
-          buildTime: 0.0456
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
     00000001:
+      type: {class: PlaySoundComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _sfxEventComp1
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        soundEventRef: _meleeBash
+        playLayered: 0
+        trackLayer: -1
+    00000002:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp1
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    00000003:
       type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyAll1

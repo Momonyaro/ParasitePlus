@@ -11,6 +11,9 @@ TextureImporter:
   - first:
       213: -5263421938431747717
     second: gummo_2
+  - first:
+      213: -6429855093277516091
+    second: gummo_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -186,7 +189,7 @@ TextureImporter:
         width: 30
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -194,6 +197,27 @@ TextureImporter:
       bones: []
       spriteID: b7917c042a194f6b0800000000000000
       internalID: -5263421938431747717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gummo_3
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 49
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce15f70cd094c6a0800000000000000
+      internalID: -6429855093277516091
       vertices: []
       indices: 
       edges: []

@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.03
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.032707367, g: 0.17875664, b: 0.46226418, a: 1}
+  m_AmbientSkyColor: {r: 0.12156863, g: 0.3254902, b: 0.7058824, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -1557,10 +1557,6 @@ PrefabInstance:
       value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 1746545149709580774, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
-      propertyPath: playSound
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1746545149709580774, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
       propertyPath: warpDest.x
       value: 29.999998
       objectReference: {fileID: 0}
@@ -1581,12 +1577,16 @@ PrefabInstance:
       value: We still haven't found Anna!
       objectReference: {fileID: 0}
     - target: {fileID: 1746545150001045457, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
+      propertyPath: currentFloor
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1746545150001045457, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
       propertyPath: levels.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1746545150001045457, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
       propertyPath: levels.Array.data[0].floorName
-      value: 1F
+      value: 2F
       objectReference: {fileID: 0}
     - target: {fileID: 1746545150001045457, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
       propertyPath: levels.Array.data[0].realFloor
@@ -1602,11 +1602,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1746545150001045457, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
       propertyPath: levels.Array.data[0].destinationScene
-      value: FalconRoom2
+      value: FalconRoom4
       objectReference: {fileID: 0}
     - target: {fileID: 1746545150001045457, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
       propertyPath: levels.Array.data[3].destinationScene
-      value: GAME_OVER
+      value: FalconRoom3
       objectReference: {fileID: 0}
     - target: {fileID: 1746545150001045457, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
       propertyPath: levels.Array.data[0].sceneTransformVariable
@@ -2568,6 +2568,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3028414301954264337, guid: 9e57cda8e775d224d822fa82ac65294a, type: 3}
   m_PrefabInstance: {fileID: 242051674}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &251192731 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1746545149709580774, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
+  m_PrefabInstance: {fileID: 97265906}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9059f1e4e744444f8eaf54c6ba0abab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &252251640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8672,7 +8683,10 @@ MonoBehaviour:
   enterOnUnlock: 1
   encounterTriggers: []
   eventTriggers: []
-  sceneLoadVariables: []
+  sceneLoadVariables:
+  - reference: _elevatorA
+    playerPosition: {x: 30, y: 1, z: -10}
+    playerRotation: {x: 0, y: 0, z: 0}
   encounterProgress: 0
   randomEncounters: 0
   encounterProgressRange: 0.07
@@ -8695,10 +8709,10 @@ MonoBehaviour:
     lastTransformScene: 
     playerName: Yoel
     partyField:
-    - {fileID: 11400000, guid: b87cabd1880fcb14fbd07bc27dd4400d, type: 2}
-    - {fileID: 11400000, guid: 5867c1a531a1bfd4c9e7a2d934c1612d, type: 2}
-    - {fileID: 11400000, guid: 30f66e8e01da6b64081f8dfa5d87b383, type: 2}
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 01419897f5b1c824a9470bca624fe2a9, type: 2}
+    - {fileID: 11400000, guid: 16d3e37296f42074f8c3edd96e408248, type: 2}
+    - {fileID: 11400000, guid: 9f3233e3ba69a484da5c92131a69d3b0, type: 2}
+    - {fileID: 11400000, guid: 186b4febcbb3ddd48b5fd4fa71a62bf1, type: 2}
     enemyField:
     - {fileID: 0}
     - {fileID: 0}
@@ -8716,6 +8730,7 @@ MonoBehaviour:
     playerLastEuler: {x: 0, y: 270, z: 0}
     loadSceneVariable: 
     lastButtonLayer: 0
+    combatTrackRef: 
   dungeonManager: {fileID: 750159058}
   config: {fileID: 11400000, guid: f19491cb78d45e04ca9bacb7aac3d494, type: 2}
   mapBMGReference: _craneCalmBGM
@@ -18561,6 +18576,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1378455533}
   - component: {fileID: 1378455534}
+  - component: {fileID: 1378455535}
   m_Layer: 0
   m_Name: SAVE_ANNA_2
   m_TagString: Untagged
@@ -18578,7 +18594,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1591329666}
   m_Father: {fileID: 810223806}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18598,9 +18615,48 @@ MonoBehaviour:
   storePersistant: 1
   onDialogueFinished:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1378455535}
+        m_TargetAssemblyTypeName: ToggleObjectTrigger, Assembly-CSharp
+        m_MethodName: Trigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1591329667}
+        m_TargetAssemblyTypeName: MapTriggers.CutsceneEventTrigger, Assembly-CSharp
+        m_MethodName: TriggerEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   generateNewGUID: 0
   eventKey: 33bf70e2-5a25-47f0-b0bd-e7940971e9aa
+--- !u!114 &1378455535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378455532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ccccc048299878409e980b9900ecd99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggleStates:
+  - go: {fileID: 1560511509}
+    isActive: 0
 --- !u!1001 &1396662507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21925,6 +21981,83 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3028414301954264337, guid: 9e57cda8e775d224d822fa82ac65294a, type: 3}
   m_PrefabInstance: {fileID: 1584129193}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1591329665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1591329666}
+  - component: {fileID: 1591329667}
+  - component: {fileID: 1591329668}
+  m_Layer: 0
+  m_Name: SAVE_ANNA_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1591329666
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591329665}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1378455533}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1591329667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591329665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1cd4acb1882e04480ded0cea73b588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData: {fileID: 11400000, guid: 016d6fe8bb659c447a28944f1aac2c9e, type: 2}
+  storePersistant: 1
+  onDialogueFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1591329668}
+        m_TargetAssemblyTypeName: KeyMasterEvent, Assembly-CSharp
+        m_MethodName: SetDoorLockState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  generateNewGUID: 0
+  eventKey: 99bcce76-1788-4f37-bb03-61cc4f5f1753
+--- !u!114 &1591329668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591329665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ce62951bd7a27469dadbf494dde257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doors:
+  - {fileID: 251192731}
 --- !u!1001 &1593258827
 PrefabInstance:
   m_ObjectHideFlags: 0

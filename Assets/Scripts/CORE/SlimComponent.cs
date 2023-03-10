@@ -77,6 +77,7 @@ namespace CORE
             public Vector3 playerLastEuler = Vector3.zero;
             public string loadSceneVariable = "";
             public int lastButtonLayer = 0;
+            public string combatTrackRef = "";
 
             //Persistant Data storage
             public HashSet<string> eventTriggers = new HashSet<string>();

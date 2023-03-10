@@ -4589,6 +4589,7 @@ MonoBehaviour:
   triggerActive: 0
   disabled: 0
   postBattleSceneName: AfterSwanDivision
+  encounterTrack: _battleBGMWolves
   generateNewGUID: 0
   guid: 06474082-8f84-4f2b-a3d8-e3f95d71f6af
   enemyRoster:
@@ -16110,9 +16111,11 @@ MonoBehaviour:
     playerLastEuler: {x: 0, y: 90, z: 0}
     loadSceneVariable: 
     lastButtonLayer: 0
+    combatTrackRef: 
   dungeonManager: {fileID: 1830172879}
   config: {fileID: 11400000, guid: f19491cb78d45e04ca9bacb7aac3d494, type: 2}
   mapBMGReference: _swanDivisionBGM
+  writeSaveOnLoad: 1
   monsterManifest:
     encounters:
     - enemies:

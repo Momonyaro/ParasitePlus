@@ -56,6 +56,8 @@ namespace BattleSystem
             
             systemStateManager.Init(this); // Start the state machine.
             
+            //Add method to grab random combat track if no reference is passed.
+
             Samsara.Instance.MusicPlayLayered(bgmReference, TransitionType.SmoothFade, 1.5f, out bool success);
         }
 
@@ -119,6 +121,10 @@ namespace BattleSystem
                 interactableStates = slimData.interactableStates;
                 playerName = slimData.playerName;
                 lastBtnLayer = slimData.lastButtonLayer;
+                if (slimData.combatTrackRef != string.Empty)
+                {
+                    bgmReference = slimData.combatTrackRef;
+                }
             }
         }
 
@@ -139,6 +145,7 @@ namespace BattleSystem
                 interactableStates = interactableStates,
                 playerName = playerName,
                 lastButtonLayer = lastDungeonIndex,
+                combatTrackRef = ""
             };
             
             SlimComponent.Instance.PopulateAndSendSlim(slimData);

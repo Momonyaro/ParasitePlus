@@ -43,7 +43,7 @@ namespace BattleSystem.States
             if (bottomPanelUI != null && !(passTargetParty || passTargetEnemy))
                 bottomPanelUI.PopulateOptions(new []
                 {
-                    new SelectableWheelOption("", "", ""), 
+                    new SelectableWheelOption("", "", "", ""), 
                 }, 0);
 
             initialized = false;
@@ -153,9 +153,9 @@ namespace BattleSystem.States
         {
             bottomPanelUI.PopulateOptions(new []
             {
-                new SelectableWheelOption("Skills", "_viewSkills", "View your skills."), 
-                new SelectableWheelOption("Item", "_viewItems", "View your items."), 
-                new SelectableWheelOption("Pass", "_passTurn", "Pass the current turn (get placed higher in the turn queue)."), 
+                new SelectableWheelOption("Skills", "", "_viewSkills", "View your skills."), 
+                new SelectableWheelOption("Item", "", "_viewItems", "View your items."), 
+                new SelectableWheelOption("Pass", "", "_passTurn", "Pass the current turn (get placed higher in the turn queue)."), 
             }, 0);
         }
 
@@ -166,16 +166,16 @@ namespace BattleSystem.States
             var options = new List<SelectableWheelOption>();
 
             AbilityScriptable def = currentEntity.defaultAttack;
-            options.Add(new SelectableWheelOption(def.abilityName, "_skillKey" + def.abilityId, def.abilityDesc));
+            options.Add(new SelectableWheelOption(def.abilityName, def.abilityCosts.x > 0 ? def.abilityCosts.x.ToString() + " AP" : "", "_skillKey" + def.abilityId, def.abilityDesc));
 
             AbilityScriptable[] scriptables = currentEntity.GetEntityAbilities();
 
             for (int i = 0; i < scriptables.Length; i++)
             {
-                options.Add(new SelectableWheelOption(scriptables[i].abilityName, "_skillKey" + scriptables[i].abilityId, scriptables[i].abilityDesc));
+                options.Add(new SelectableWheelOption(scriptables[i].abilityName, scriptables[i].abilityCosts.x > 0 ? scriptables[i].abilityCosts.x.ToString() + " AP" : "", "_skillKey" + scriptables[i].abilityId, scriptables[i].abilityDesc));
             }
 
-            options.Add(new SelectableWheelOption("Back", "_back", "Go back to the main options."));
+            options.Add(new SelectableWheelOption("Back", "", "_back", "Go back to the main options."));
 
             bottomPanelUI.PopulateOptions(options.ToArray(), 0);
         }
@@ -184,7 +184,7 @@ namespace BattleSystem.States
         {
             var options = new List<SelectableWheelOption>()
             {
-                new SelectableWheelOption("Back", "_back", "Go back to the main options.")
+                new SelectableWheelOption("Back", "", "_back", "Go back to the main options.")
             };
 
             List<Item> items = battleCore.partyInventory;
@@ -192,7 +192,7 @@ namespace BattleSystem.States
             {
                 if (items[i].type != ItemType.AID) continue;
                 
-                options.Add(new SelectableWheelOption($"{items[i].StackSize.x}x " + items[i].name, "_itemKey" + items[i].guid, items[i].description));
+                options.Add(new SelectableWheelOption($"{items[i].StackSize.x}x " + items[i].name, "", "_itemKey" + items[i].guid, items[i].description));
             }
             
             bottomPanelUI.PopulateOptions(options.ToArray(), 0);

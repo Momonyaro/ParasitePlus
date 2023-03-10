@@ -34,9 +34,9 @@ namespace BattleSystem.States
             
             bottomPanelUI.PopulateOptions(new []
             {
-                new SelectableWheelOption("Skills", "_viewSkills", "View your skills."), 
-                new SelectableWheelOption("Item", "_viewItems", "View your items."), 
-                new SelectableWheelOption("Pass", "_passTurn", "Pass the current turn (get placed higher in the turn queue)."), 
+                new SelectableWheelOption("Skills", "", "_viewSkills", "View your skills."), 
+                new SelectableWheelOption("Item", "", "_viewItems", "View your items."), 
+                new SelectableWheelOption("Pass", "", "_passTurn", "Pass the current turn (get placed higher in the turn queue)."), 
             }, 0);
             
             enemyField.WipeField();

@@ -90,7 +90,7 @@ namespace CORE
             
             while (!fadeToBlackImage.finished) { yield return null; }
             
-            mapManager.SwitchSceneToBattle(trigger.postBattleSceneName);
+            mapManager.SwitchSceneToBattle(trigger.postBattleSceneName, trigger.encounterTrack);
             
             yield break;
         }
@@ -165,7 +165,7 @@ namespace CORE
                     }
                     else
                     {
-                        StartCoroutine(WaitForDoorTranstion(i, (doorInteractables[i].playSound && doorInteractables[i].sfxReference.Equals("_doorOpen"))));
+                        StartCoroutine(WaitForDoorTranstion(i, doorInteractables[i].playSound, doorInteractables[i].sfxCloseReference));
                     }
                     break;
                 }
@@ -219,7 +219,7 @@ namespace CORE
             return null;
         }
 
-        private IEnumerator WaitForDoorTranstion(int currentIndex, bool playSound)
+        private IEnumerator WaitForDoorTranstion(int currentIndex, bool playSound, string closeSfx)
         {
             FadeToBlackImage fadeToBlackImage = FindObjectOfType<FadeToBlackImage>();
 
@@ -239,7 +239,7 @@ namespace CORE
             currentPlayer.RemoveLock("DNG_MANAGER");
 
             if (playSound)
-                SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_doorClose", out bool success);
+                SAMSARA.Samsara.Instance.PlaySFXRandomTrack(closeSfx, out bool success);
 
             yield break;
         }

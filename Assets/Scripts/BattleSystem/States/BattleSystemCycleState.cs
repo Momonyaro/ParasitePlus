@@ -35,7 +35,7 @@ namespace BattleSystem.States
             
             bottomPanelUI.PopulateOptions(new SelectableWheelOption[]
             {
-                new SelectableWheelOption("", "", ""), 
+                new SelectableWheelOption("", "", "", ""), 
             }, 0);
 
             turnCounterUI.PopulateTurnQueueUI(battleCore.GetTurnQueueAsEntities());

@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.03
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.03137255, g: 0.18039216, b: 0.4627451, a: 1}
+  m_AmbientSkyColor: {r: 0.12156863, g: 0.3254902, b: 0.7058824, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -18895,11 +18895,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1746545150001045457, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
       propertyPath: levels.Array.data[0].sceneTransformVariable
-      value: _elevatorA
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1746545150001045457, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
       propertyPath: levels.Array.data[2].sceneTransformVariable
-      value: _elevatorA
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1746545150001045457, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
       propertyPath: levels.Array.data[3].sceneTransformVariable
@@ -21002,10 +21002,10 @@ MonoBehaviour:
     lastTransformScene: 
     playerName: Yoel
     partyField:
-    - {fileID: 11400000, guid: b87cabd1880fcb14fbd07bc27dd4400d, type: 2}
-    - {fileID: 11400000, guid: 5867c1a531a1bfd4c9e7a2d934c1612d, type: 2}
-    - {fileID: 11400000, guid: 30f66e8e01da6b64081f8dfa5d87b383, type: 2}
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 01419897f5b1c824a9470bca624fe2a9, type: 2}
+    - {fileID: 11400000, guid: 16d3e37296f42074f8c3edd96e408248, type: 2}
+    - {fileID: 11400000, guid: 9f3233e3ba69a484da5c92131a69d3b0, type: 2}
+    - {fileID: 11400000, guid: 186b4febcbb3ddd48b5fd4fa71a62bf1, type: 2}
     enemyField:
     - {fileID: 0}
     - {fileID: 0}
@@ -21023,6 +21023,7 @@ MonoBehaviour:
     playerLastEuler: {x: 0, y: 0, z: 0}
     loadSceneVariable: 
     lastButtonLayer: 0
+    combatTrackRef: 
   dungeonManager: {fileID: 1907336238}
   config: {fileID: 11400000, guid: f19491cb78d45e04ca9bacb7aac3d494, type: 2}
   mapBMGReference: _craneCalmBGM

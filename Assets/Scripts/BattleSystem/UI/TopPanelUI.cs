@@ -13,7 +13,10 @@ namespace BattleSystem.UI
     {
         // Here we need to store references to the party's cards to set health and action points
         // as well as to choose to extend them or not.
-        
+
+        public Color aliveCol;
+        public Color dyingCol;
+        public Color deadCol;
         public Animator topAnimator;
         public Image backgroundPanel;
         public AnimationCurve shakeLerpCurve = new AnimationCurve();
@@ -40,6 +43,8 @@ namespace BattleSystem.UI
 
                 Vector2Int hp = party[i].GetEntityHP();
                 Vector2Int ap = party[i].GetEntityAP();
+
+                partyCards[i].background.color = (hp.x > (hp.y * 0.4f)) ? aliveCol : (hp.x > 0) ? dyingCol : deadCol;
                 
                 partyCards[i].hpText.text = hp.x.ToString();
                 partyCards[i].apText.text = ap.x.ToString();
@@ -102,7 +107,7 @@ namespace BattleSystem.UI
             {
                 if (searchIndex >= partyCards.Length) searchIndex = searchIndex % partyCards.Length;
                 if (searchIndex < 0) searchIndex = partyCards.Length - 1;
-                if (partyCards[searchIndex].parent.activeInHierarchy)
+                if (partyCards[searchIndex].parent.activeInHierarchy && partyCards[searchIndex].hpBarFill.fillAmount > 0)
                 {
                     return searchIndex;
                 }
@@ -168,6 +173,7 @@ namespace BattleSystem.UI
         private struct UICard
         {
             public GameObject parent;
+            public Image background;
             public RectTransform portraitParent;
             
             public Image hpBarFill;

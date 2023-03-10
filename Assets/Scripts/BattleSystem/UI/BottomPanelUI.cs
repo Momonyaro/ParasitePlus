@@ -13,6 +13,7 @@ namespace BattleSystem.UI
         public int currentlySelected = 0;
         
         public TextMeshProUGUI previousObjectText;
+        public TextMeshProUGUI activeApCostText;
         public TextMeshProUGUI[] optionText;
 
         public TextMeshProUGUI descriptionContainer;
@@ -59,6 +60,7 @@ namespace BattleSystem.UI
             }
 
             descriptionContainer.text = options[currentlySelected].description;
+            activeApCostText.text = options[currentlySelected].cost;
         }
 
         public void SetMenuVisibility(bool visibility)
@@ -92,12 +94,14 @@ namespace BattleSystem.UI
     public struct SelectableWheelOption
     {
         public string title;
+        public string cost;
         public string optionRef;
         public string description;
 
-        public SelectableWheelOption(string title, string optionRef, string description)
+        public SelectableWheelOption(string title, string cost, string optionRef, string description)
         {
             this.title = title;
+            this.cost = cost;
             this.optionRef = optionRef;
             this.description = description;
         }

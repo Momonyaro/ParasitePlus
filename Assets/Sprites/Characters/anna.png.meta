@@ -8,6 +8,9 @@ TextureImporter:
   - first:
       213: 4642394838527890067
     second: anna_0
+  - first:
+      213: 7217112325130132482
+    second: anna_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -170,6 +173,27 @@ TextureImporter:
       bones: []
       spriteID: 392df8952891d6040800000000000000
       internalID: 4642394838527890067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anna_2
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 0
+        width: 62
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20c997bfb65582460800000000000000
+      internalID: 7217112325130132482
       vertices: []
       indices: 
       edges: []

@@ -89,7 +89,8 @@ MonoBehaviour:
   keyItemID: 
   goToScene: 0
   playSound: 1
-  sfxReference: _doorOpen
+  sfxReference: _elevatorDoor
+  sfxCloseReference: 
   sceneName: 
   loadSceneVariable: 
   isLockedMessage: The door is locked.

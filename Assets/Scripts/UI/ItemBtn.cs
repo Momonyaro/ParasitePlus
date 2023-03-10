@@ -50,6 +50,7 @@ public class ItemBtn : MonoBehaviour
     public void OnCursorClick()
     {
         if (!active) return;
+        SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_submit", out bool success);
         onPress.Invoke(storedMsg);
     }
 

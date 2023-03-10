@@ -14,6 +14,7 @@ namespace MapTriggers
         public bool triggerActive = false;
         public bool disabled = false;
         public string postBattleSceneName = "";
+        public string encounterTrack = String.Empty;
         public bool generateNewGUID = false;
         public string guid = Guid.NewGuid().ToString();
         public EntityScriptable[] enemyRoster = new EntityScriptable[5];

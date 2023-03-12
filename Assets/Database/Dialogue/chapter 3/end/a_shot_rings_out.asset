@@ -47,6 +47,19 @@ MonoBehaviour:
   - id: 14
   - id: 15
   - id: 16
+  - id: 17
+  - id: 18
+  - id: 19
+  - id: 20
+  - id: 21
+  - id: 22
+  - id: 23
+  - id: 24
+  - id: 25
+  - id: 26
+  - id: 27
+  - id: 28
+  - id: 29
   transitionToOnEof: {fileID: 0}
   wipeOldDataOnLoad: 1
   goToSceneOnEof: 0
@@ -99,17 +112,17 @@ MonoBehaviour:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp0
-        groupRef: 
+        groupRef: _default
         objectPrefab: {fileID: 0}
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
-        reveal: 1
+        reveal: 0
         waitTime: 1
     00000004:
       type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _spawnBGObjComp1
-        groupRef: 
+        groupRef: _default
         objectPrefab: {fileID: 8048033456236989133, guid: fd8d02e76f9bbed41adc694fb5148362, type: 3}
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
@@ -119,11 +132,11 @@ MonoBehaviour:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp4
-        groupRef: 
+        groupRef: _default
         objectPrefab: {fileID: 0}
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
-        reveal: 1
+        reveal: 0
         waitTime: 5
     00000006:
       type: {class: SpawnObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
@@ -138,11 +151,11 @@ MonoBehaviour:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp6
-        groupRef: 
+        groupRef: _default
         objectPrefab: {fileID: 0}
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
-        reveal: 1
+        reveal: 0
         waitTime: 1
     00000008:
       type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
@@ -167,11 +180,11 @@ MonoBehaviour:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp9
-        groupRef: 
+        groupRef: _default
         objectPrefab: {fileID: 0}
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
-        reveal: 1
+        reveal: 0
         waitTime: 1
     0000000B:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
@@ -193,11 +206,11 @@ MonoBehaviour:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp11
-        groupRef: 
+        groupRef: _default
         objectPrefab: {fileID: 0}
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
-        reveal: 1
+        reveal: 0
         waitTime: 0.3
     0000000D:
       type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
@@ -210,16 +223,6 @@ MonoBehaviour:
         reveal: 1
         backgroundImage: {fileID: 7217112325130132482, guid: a4d369382283cb349951e0adf6478183, type: 3}
     0000000E:
-      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
-      data:
-        reference: _waitComp13
-        groupRef: 
-        objectPrefab: {fileID: 0}
-        screenPosition: {x: 0, y: 0}
-        errorAttempts: 99
-        reveal: 1
-        waitTime: 1
-    0000000F:
       type: {class: PlaySoundComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _sfxEventComp14
@@ -235,7 +238,27 @@ MonoBehaviour:
         transitionTime: 5
         playLayered: 1
         trackLayer: -1
+    0000000F:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp14
+        groupRef: _default
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 0
+        waitTime: 1
     00000010:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp15
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox9
+    00000011:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox15
@@ -245,8 +268,189 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         dialogueBoxes:
+        - speakerReference: _sive
+          text: Anna?
+          buildTime: 0.0456
+        - speakerReference: _sive
+          text: No, this can't be happening...
+          buildTime: 0.0456
         - speakerReference: _narrator
-          text: aaa
+          text: Your eyes start going to where the gunshot came from.
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    00000012:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp17
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox15
+    00000013:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp18
+        groupRef: _default
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 0
+        waitTime: 1
+    00000014:
+      type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyAll19
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+    00000015:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp20
+        groupRef: 
+        objectPrefab: {fileID: 516182194579558613, guid: b85856b991eac484abc859b90a2f4016, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        backgroundImage: {fileID: 21300000, guid: 7e59d4b3bf9780043a9189c8db338297, type: 3}
+    00000016:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp21
+        groupRef: _default
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 0
+        waitTime: 1
+    00000017:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox22
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _narrator
+          text: Sat in a corner was Gordon, sweat covering his face.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: Eyes wide open with his fear plain to see.
+          buildTime: 0.0456
+        - speakerReference: _gordon
+          text: W-who sent you!?
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: The room fell silent again.
+          buildTime: 0.0456
+        - speakerReference: _gordon
+          text: I want an answer or, or...
+          buildTime: 0.0456
+        - speakerReference: _gordon
+          text: I swear I will shoot again!
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    00000018:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp24
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox22
+    00000019:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp25
+        groupRef: _default
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 0
+        waitTime: 1
+    0000001A:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox26
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _sive
+          text: You piece of shit.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: Sive started walking towards Gordon.
+          buildTime: 0.0456
+        - speakerReference: _gordon
+          text: Hey! Hey!! Back off or I'll shoot.
+          buildTime: 0.0456
+        - speakerReference: _gordon
+          text: Who sent you!?
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: It was clear that there was no way to argue with him.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: He just couldn't imagine three kids busting into his impenetrable
+            fort, just to free some girl.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: It seemed that Gordon was also starting to get that there would be
+            no satisfactory answer.
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    0000001B:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp27
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox26
+    0000001C:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp27
+        groupRef: _default
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 0
+        waitTime: 1
+    0000001D:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox29
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _gordon
+          text: You won't get me, I won't let you.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: Without skipping a beat, Gordon put the gun to his temple.
           buildTime: 0.0456
         perSentenceWriteToScreen: 0
         requireContinueInput: 1

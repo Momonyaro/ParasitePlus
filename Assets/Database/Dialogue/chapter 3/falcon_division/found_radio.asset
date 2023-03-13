@@ -21,7 +21,7 @@ MonoBehaviour:
     speakerPhoto: {fileID: -5263421938431747717, guid: b2c6f7d2743f9fa49800fe16300f4e5d, type: 3}
   - speakerName: Gordon
     speakerReference: _gordon
-    speakerPhoto: {fileID: -7098641264140119142, guid: e08c4f0e24dc1574f964eac4fa1fdbb5, type: 3}
+    speakerPhoto: {fileID: 21300000, guid: 25335519b5cdaca4e81f84a51965e74b, type: 3}
   - speakerName: Sive
     speakerReference: _sive
     speakerPhoto: {fileID: 3092308427135561384, guid: 2d757a9c69004b946ad5c462458a35b3, type: 3}

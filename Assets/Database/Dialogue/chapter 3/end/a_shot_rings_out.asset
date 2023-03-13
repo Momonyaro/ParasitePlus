@@ -24,7 +24,7 @@ MonoBehaviour:
     speakerPhoto: {fileID: 504251504287086073, guid: 2d757a9c69004b946ad5c462458a35b3, type: 3}
   - speakerName: Gordon
     speakerReference: _gordon
-    speakerPhoto: {fileID: -7098641264140119142, guid: e08c4f0e24dc1574f964eac4fa1fdbb5, type: 3}
+    speakerPhoto: {fileID: 21300000, guid: 25335519b5cdaca4e81f84a51965e74b, type: 3}
   groups:
   - groupName: Default
     visible: 1
@@ -60,7 +60,30 @@ MonoBehaviour:
   - id: 27
   - id: 28
   - id: 29
-  transitionToOnEof: {fileID: 0}
+  - id: 30
+  - id: 31
+  - id: 32
+  - id: 33
+  - id: 34
+  - id: 35
+  - id: 36
+  - id: 37
+  - id: 38
+  - id: 39
+  - id: 40
+  - id: 41
+  - id: 42
+  - id: 43
+  - id: 44
+  - id: 45
+  - id: 46
+  - id: 47
+  - id: 48
+  - id: 49
+  - id: 50
+  - id: 51
+  - id: 52
+  transitionToOnEof: {fileID: 11400000, guid: e35bc0c0a6e98c248bc7d74d3e02b0d9, type: 2}
   wipeOldDataOnLoad: 1
   goToSceneOnEof: 0
   destinationSceneOnEof: 
@@ -449,9 +472,341 @@ MonoBehaviour:
         - speakerReference: _gordon
           text: You won't get me, I won't let you.
           buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    0000001E:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp30
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox29
+    0000001F:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp31
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    00000020:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp32
+        groupRef: 
+        objectPrefab: {fileID: 8075443021332556641, guid: 67538cdee0f02ff479a711620cdf215e, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        backgroundImage: {fileID: 21300000, guid: cbaeed03e5416aa4bae23110b63a0c7d, type: 3}
+    00000021:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp33
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 2
+    00000022:
+      type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyAll34
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+    00000023:
+      type: {class: PlaySoundComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _sfxEventComp35
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        soundEventRef: _gunshot
+        stopEvent: 0
+        playAsMusic: 0
+        transitionType: 0
+        transitionTime: 0.3
+        playLayered: 0
+        trackLayer: 0
+    00000024:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp36
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    00000025:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp37
+        groupRef: 
+        objectPrefab: {fileID: 8370936115634730495, guid: 26791cb2b2860e44fb3c3960a550363b, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        backgroundImage: {fileID: -6429855093277516091, guid: b2c6f7d2743f9fa49800fe16300f4e5d, type: 3}
+    00000026:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp38
+        groupRef: 
+        objectPrefab: {fileID: 8370936115634730495, guid: 26791cb2b2860e44fb3c3960a550363b, type: 3}
+        screenPosition: {x: 0, y: -100}
+        errorAttempts: 99
+        reveal: 1
+        backgroundImage: {fileID: 7217112325130132482, guid: a4d369382283cb349951e0adf6478183, type: 3}
+    00000027:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp39
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    00000028:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox40
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _gummo
+          text: ...
+          buildTime: 0.0456
+        - speakerReference: _sive
+          text: This can't be happening...
+          buildTime: 0.0456
+        - speakerReference: _sive
+          text: This isn't real.
+          buildTime: 0.0456
+        - speakerReference: _sive
+          text: Gummo, Tell me this isn't real.
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: ...
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: I...
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: Anna, I'm so sorry.
+          buildTime: 0.0456
+        - speakerReference: _sive
+          text: What the hell was with him!?
+          buildTime: 0.0456
         - speakerReference: _narrator
-          text: Without skipping a beat, Gordon put the gun to his temple.
+          text: Sive goes over to the desk standing in the middle of the office.
           buildTime: 0.0456
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
+    00000029:
+      type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyAll41
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+    0000002A:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp42
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    0000002B:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp43
+        groupRef: 
+        objectPrefab: {fileID: 516182194579558613, guid: b85856b991eac484abc859b90a2f4016, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        backgroundImage: {fileID: 21300000, guid: e06e4c71f7a44954dae0442949b0b3a4, type: 3}
+    0000002C:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp44
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    0000002D:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox45
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _sive
+          text: The hell?!
+          buildTime: 0.0456
+        - speakerReference: _sive
+          text: His desk is just covered in drugs, what wasn't this guy on!?
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: Suddenly, Gummo seemed to get ahold of himself.
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: Leave it, Sive.
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: We've gotta get Anna out of here.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: Gummo stood up and both he and Sive started trying to carry Anna's
+            body.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: It felt like you could do nothing, like you were some spectre.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: The situation totally intangible.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: And so, in silence, you carried her out.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: Luckily, Gordon had a small, private boat docked outside and so,
+            you helped yourselves.
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    0000002E:
+      type: {class: SpawnObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnObjComp46
+        groupRef: 
+        objectPrefab: {fileID: 2831952547622704426, guid: 5a3baf689344a294e8907590f4b65189, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+    0000002F:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp47
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    00000030:
+      type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyAll48
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+    00000031:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox49
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _narrator
+          text: As the boat carried you back towards Gothenburg, the silence was
+            thick.
+          buildTime: 0.0456
+        - speakerReference: _sive
+          text: I'm thinking of what to tell mom and dad...
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: ...
+          buildTime: 0.0456
+        - speakerReference: _sive
+          text: I think it'd be easiest if we just told them she got robbed, and
+            it got out of hand but it feels so wrong.
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: I don't know. I think you should decide this Sive, I know that I'm
+            responsible for this so I can't choose for you.
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: I won't blame you if you tell the truth.
+          buildTime: 0.0456
+        - speakerReference: _sive
+          text: No.
+          buildTime: 0.0456
+        - speakerReference: _sive
+          text: If this huge organization just hires these coke fiends to run their
+            operations, they deserve to get put down.
+          buildTime: 0.0456
+        - speakerReference: _sive
+          text: ...
+          buildTime: 0.0456
+        - speakerReference: _sive
+          text: I'm going to go with the robbery story.
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: ...
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    00000032:
+      type: {class: SpawnObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnObjComp50
+        groupRef: 
+        objectPrefab: {fileID: 2831952547622704426, guid: 5a3baf689344a294e8907590f4b65189, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+    00000033:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp51
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    00000034:
+      type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyAll52
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1

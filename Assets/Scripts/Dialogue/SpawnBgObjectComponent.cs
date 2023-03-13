@@ -14,9 +14,9 @@ namespace Dialogue
 
         public override void Update(out bool endOfLife)
         {
-            GameObject obj = GetCurrentInstance();
+            BackgroundReciever obj = GetCurrentInstance().GetComponent<BackgroundReciever>();
 
-            if (obj.GetComponent<BackgroundReciever>() != null)
+            if (obj != null)
             {
                 obj.GetComponent<BackgroundReciever>().backgroundImage.sprite = backgroundImage;
             }

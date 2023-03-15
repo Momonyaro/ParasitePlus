@@ -2759,7 +2759,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &208976317
 Transform:
   m_ObjectHideFlags: 0
@@ -8077,6 +8077,103 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3028414301954264337, guid: 9e57cda8e775d224d822fa82ac65294a, type: 3}
   m_PrefabInstance: {fileID: 670950524}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &674734159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 674734160}
+  - component: {fileID: 674734163}
+  - component: {fileID: 674734162}
+  - component: {fileID: 674734161}
+  m_Layer: 0
+  m_Name: DOOR_KNOCKER
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &674734160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674734159}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4, y: 1, z: -22}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1510168689}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &674734161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674734159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1cd4acb1882e04480ded0cea73b588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData: {fileID: 11400000, guid: 4c766d67ca0a1c049b64f20764472e18, type: 2}
+  storePersistant: 1
+  onDialogueFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  generateNewGUID: 0
+  eventKey: 41f9e810-19e1-41aa-a9b0-3e501681626e
+--- !u!114 &674734162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674734159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0159483441944d9a988e560006d3296c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptMessage: []
+  triggerActive: 0
+  disabled: 0
+  generateNewGUID: 0
+  guid: 36c94a74-5c89-4d31-9a1b-d56312ee10fb
+  onEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 674734161}
+        m_TargetAssemblyTypeName: MapTriggers.CutsceneEventTrigger, Assembly-CSharp
+        m_MethodName: TriggerEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &674734163
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674734159}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &677741112
 GameObject:
   m_ObjectHideFlags: 0
@@ -19417,7 +19514,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502988116}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10, y: 1, z: -2}
+  m_LocalPosition: {x: 30, y: 1, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1510168689}
@@ -19435,13 +19532,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e1cd4acb1882e04480ded0cea73b588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueData: {fileID: 11400000, guid: e9d568360dfe5474ab6f405466846fde, type: 2}
+  dialogueData: {fileID: 11400000, guid: c57d4ae0cbf71f24395281ccd3308695, type: 2}
   storePersistant: 1
   onDialogueFinished:
     m_PersistentCalls:
       m_Calls: []
   generateNewGUID: 0
-  eventKey: 727d410b-0f57-4c85-bd53-1f8e503226fe
+  eventKey: 534f3319-a458-434a-bb41-a70334c89b38
 --- !u!114 &1502988119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19458,7 +19555,7 @@ MonoBehaviour:
   triggerActive: 0
   disabled: 0
   generateNewGUID: 0
-  guid: 4b179b62-08c3-46ef-97a2-19a1f7d88c92
+  guid: ed769865-54e5-4333-94e3-2a15709998b7
   onEvent:
     m_PersistentCalls:
       m_Calls:
@@ -19485,8 +19582,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 7, y: 1, z: 1}
+  m_Center: {x: -1, y: 0, z: 0}
 --- !u!1 &1510168688
 GameObject:
   m_ObjectHideFlags: 0
@@ -19515,6 +19612,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1502988117}
+  - {fileID: 674734160}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20341,7 +20439,7 @@ MonoBehaviour:
     inventory: []
     wallet: 0
     ignoreTransformReadFlag: 0
-    playerLastPos: {x: 30, y: 1, z: -10}
+    playerLastPos: {x: -2, y: 1, z: -22}
     playerLastEuler: {x: 0, y: 0, z: 0}
     loadSceneVariable: 
     lastButtonLayer: 0

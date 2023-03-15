@@ -83,6 +83,13 @@ MonoBehaviour:
   - id: 50
   - id: 51
   - id: 52
+  - id: 53
+  - id: 54
+  - id: 55
+  - id: 56
+  - id: 57
+  - id: 58
+  - id: 59
   transitionToOnEof: {fileID: 11400000, guid: e35bc0c0a6e98c248bc7d74d3e02b0d9, type: 2}
   wipeOldDataOnLoad: 1
   goToSceneOnEof: 0
@@ -102,7 +109,68 @@ MonoBehaviour:
     00000001:
       type: {class: PlaySoundComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
-        reference: _sfxEventComp1
+        reference: _sfxEventComp0
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        soundEventRef: _doorOpen
+        stopEvent: 0
+        playAsMusic: 0
+        transitionType: 0
+        transitionTime: 0.3
+        playLayered: 0
+        trackLayer: -1
+    00000002:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp2
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    00000003:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox3
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _sive
+          text: Damn, why is it so dark?
+          buildTime: 0.0456
+        - speakerReference: _sive
+          text: Did he run off?!
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: Hold on, I'll get the lights.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: Searching the darkness, Gummo finally found the switch.
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    00000004:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp4
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox3
+    00000005:
+      type: {class: PlaySoundComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _sfxEventComp5
         groupRef: 
         objectPrefab: {fileID: 0}
         screenPosition: {x: 0, y: 0}
@@ -112,10 +180,45 @@ MonoBehaviour:
         stopEvent: 1
         playAsMusic: 1
         transitionType: 0
-        transitionTime: 0.3
+        transitionTime: 0
         playLayered: 0
         trackLayer: -1
-    00000002:
+    00000006:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp4
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    00000007:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox5
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _sive
+          text: There, let's have a look around.
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    00000008:
+      type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyAll7
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+    00000009:
       type: {class: PlaySoundComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _sfxEventComp1
@@ -131,7 +234,7 @@ MonoBehaviour:
         transitionTime: 0.3
         playLayered: 0
         trackLayer: 0
-    00000003:
+    0000000A:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp0
@@ -141,7 +244,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 0
         waitTime: 1
-    00000004:
+    0000000B:
       type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _spawnBGObjComp1
@@ -151,7 +254,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         backgroundImage: {fileID: 21300000, guid: 78ce022e1bf021a469ee12f2a6e4defe, type: 3}
-    00000005:
+    0000000C:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp4
@@ -161,7 +264,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 0
         waitTime: 5
-    00000006:
+    0000000D:
       type: {class: SpawnObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _spawnObjComp5
@@ -170,7 +273,7 @@ MonoBehaviour:
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 1
-    00000007:
+    0000000E:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp6
@@ -180,26 +283,26 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 0
         waitTime: 1
-    00000008:
+    0000000F:
       type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
-        reference: _destroyAll7
+        reference: 2222
         groupRef: 
         objectPrefab: {fileID: 0}
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 1
-    00000009:
+    00000010:
       type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
-        reference: _spawnBGObjComp7
+        reference: _spawnBGObjC1
         groupRef: 
         objectPrefab: {fileID: 8370936115634730495, guid: 26791cb2b2860e44fb3c3960a550363b, type: 3}
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 1
         backgroundImage: {fileID: -6429855093277516091, guid: b2c6f7d2743f9fa49800fe16300f4e5d, type: 3}
-    0000000A:
+    00000011:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp9
@@ -209,7 +312,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 0
         waitTime: 1
-    0000000B:
+    00000012:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox9
@@ -225,7 +328,7 @@ MonoBehaviour:
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
-    0000000C:
+    00000013:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp11
@@ -235,7 +338,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 0
         waitTime: 0.3
-    0000000D:
+    00000014:
       type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _spawnBGObjComp12
@@ -245,7 +348,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         backgroundImage: {fileID: 7217112325130132482, guid: a4d369382283cb349951e0adf6478183, type: 3}
-    0000000E:
+    00000015:
       type: {class: PlaySoundComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _sfxEventComp14
@@ -261,7 +364,7 @@ MonoBehaviour:
         transitionTime: 5
         playLayered: 1
         trackLayer: -1
-    0000000F:
+    00000016:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp14
@@ -271,7 +374,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 0
         waitTime: 1
-    00000010:
+    00000017:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp15
@@ -281,7 +384,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         refToDestroy: _diagBox9
-    00000011:
+    00000018:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox15
@@ -303,7 +406,7 @@ MonoBehaviour:
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
-    00000012:
+    00000019:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp17
@@ -313,7 +416,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         refToDestroy: _diagBox15
-    00000013:
+    0000001A:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp18
@@ -323,7 +426,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 0
         waitTime: 1
-    00000014:
+    0000001B:
       type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyAll19
@@ -332,7 +435,7 @@ MonoBehaviour:
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 1
-    00000015:
+    0000001C:
       type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _spawnBGObjComp20
@@ -342,7 +445,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         backgroundImage: {fileID: 21300000, guid: 7e59d4b3bf9780043a9189c8db338297, type: 3}
-    00000016:
+    0000001D:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp21
@@ -352,7 +455,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 0
         waitTime: 1
-    00000017:
+    0000001E:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox22
@@ -383,7 +486,7 @@ MonoBehaviour:
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
-    00000018:
+    0000001F:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp24
@@ -393,7 +496,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         refToDestroy: _diagBox22
-    00000019:
+    00000020:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp25
@@ -403,7 +506,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 0
         waitTime: 1
-    0000001A:
+    00000021:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox26
@@ -439,7 +542,7 @@ MonoBehaviour:
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
-    0000001B:
+    00000022:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp27
@@ -449,7 +552,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         refToDestroy: _diagBox26
-    0000001C:
+    00000023:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp27
@@ -459,7 +562,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 0
         waitTime: 1
-    0000001D:
+    00000024:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox29
@@ -475,7 +578,7 @@ MonoBehaviour:
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
-    0000001E:
+    00000025:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp30
@@ -485,7 +588,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         refToDestroy: _diagBox29
-    0000001F:
+    00000026:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp31
@@ -495,7 +598,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         waitTime: 1
-    00000020:
+    00000027:
       type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _spawnBGObjComp32
@@ -505,7 +608,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         backgroundImage: {fileID: 21300000, guid: cbaeed03e5416aa4bae23110b63a0c7d, type: 3}
-    00000021:
+    00000028:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp33
@@ -515,7 +618,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         waitTime: 2
-    00000022:
+    00000029:
       type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyAll34
@@ -524,7 +627,7 @@ MonoBehaviour:
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 1
-    00000023:
+    0000002A:
       type: {class: PlaySoundComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _sfxEventComp35
@@ -540,7 +643,7 @@ MonoBehaviour:
         transitionTime: 0.3
         playLayered: 0
         trackLayer: 0
-    00000024:
+    0000002B:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp36
@@ -550,7 +653,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         waitTime: 1
-    00000025:
+    0000002C:
       type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _spawnBGObjComp37
@@ -560,7 +663,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         backgroundImage: {fileID: -6429855093277516091, guid: b2c6f7d2743f9fa49800fe16300f4e5d, type: 3}
-    00000026:
+    0000002D:
       type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _spawnBGObjComp38
@@ -570,7 +673,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         backgroundImage: {fileID: 7217112325130132482, guid: a4d369382283cb349951e0adf6478183, type: 3}
-    00000027:
+    0000002E:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp39
@@ -580,7 +683,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         waitTime: 1
-    00000028:
+    0000002F:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox40
@@ -620,7 +723,7 @@ MonoBehaviour:
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
-    00000029:
+    00000030:
       type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyAll41
@@ -629,7 +732,7 @@ MonoBehaviour:
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 1
-    0000002A:
+    00000031:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp42
@@ -639,7 +742,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         waitTime: 1
-    0000002B:
+    00000032:
       type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _spawnBGObjComp43
@@ -649,7 +752,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         backgroundImage: {fileID: 21300000, guid: e06e4c71f7a44954dae0442949b0b3a4, type: 3}
-    0000002C:
+    00000033:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp44
@@ -659,7 +762,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         waitTime: 1
-    0000002D:
+    00000034:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox45
@@ -695,7 +798,7 @@ MonoBehaviour:
           text: The situation totally intangible.
           buildTime: 0.0456
         - speakerReference: _narrator
-          text: And so, in silence, you carried her out.
+          text: And so, in silence, the three of you carried her out.
           buildTime: 0.0456
         - speakerReference: _narrator
           text: Luckily, Gordon had a small, private boat docked outside and so,
@@ -704,7 +807,7 @@ MonoBehaviour:
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
-    0000002E:
+    00000035:
       type: {class: SpawnObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _spawnObjComp46
@@ -713,7 +816,7 @@ MonoBehaviour:
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 1
-    0000002F:
+    00000036:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp47
@@ -723,7 +826,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         waitTime: 1
-    00000030:
+    00000037:
       type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyAll48
@@ -732,7 +835,7 @@ MonoBehaviour:
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 1
-    00000031:
+    00000038:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox49
@@ -747,18 +850,13 @@ MonoBehaviour:
             thick.
           buildTime: 0.0456
         - speakerReference: _sive
-          text: I'm thinking of what to tell mom and dad...
+          text: What am I gonna tell mom and dad?
+          buildTime: 0.0456
+        - speakerReference: _sive
+          text: The police?
           buildTime: 0.0456
         - speakerReference: _gummo
           text: ...
-          buildTime: 0.0456
-        - speakerReference: _sive
-          text: I think it'd be easiest if we just told them she got robbed, and
-            it got out of hand but it feels so wrong.
-          buildTime: 0.0456
-        - speakerReference: _gummo
-          text: I don't know. I think you should decide this Sive, I know that I'm
-            responsible for this so I can't choose for you.
           buildTime: 0.0456
         - speakerReference: _gummo
           text: I won't blame you if you tell the truth.
@@ -774,7 +872,7 @@ MonoBehaviour:
           text: ...
           buildTime: 0.0456
         - speakerReference: _sive
-          text: I'm going to go with the robbery story.
+          text: I'll come up with something...
           buildTime: 0.0456
         - speakerReference: _gummo
           text: ...
@@ -782,7 +880,7 @@ MonoBehaviour:
         perSentenceWriteToScreen: 0
         requireContinueInput: 1
         writingSoundEvent: _keyPress
-    00000032:
+    00000039:
       type: {class: SpawnObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _spawnObjComp50
@@ -791,7 +889,7 @@ MonoBehaviour:
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 1
-    00000033:
+    0000003A:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp51
@@ -801,7 +899,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         waitTime: 1
-    00000034:
+    0000003B:
       type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyAll52

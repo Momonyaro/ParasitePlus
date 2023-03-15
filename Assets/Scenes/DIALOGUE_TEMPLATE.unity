@@ -546,12 +546,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3610896030497349748}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f8db9c9eddd3fc4faf8f66374d3b0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueData: {fileID: 0}
+  dialogueData: {fileID: 11400000, guid: 4c766d67ca0a1c049b64f20764472e18, type: 2}
   initOnStart: 1
   onStopReading:
     m_PersistentCalls:

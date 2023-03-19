@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec5b004abf90de4ebe98a13091753e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newBtnLayer: 5
+  newBtnLayer: 8
   changeScene: 1
   useMapManager: 0
   parseDestination: 1

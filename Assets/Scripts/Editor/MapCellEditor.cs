@@ -45,6 +45,8 @@ namespace Editor
             DrawMoveControls(selectedCells);
 
             DrawLightOptions(selectedCells);
+            DrawFloorOptions(selectedCells);
+            DrawCeilingOptions(selectedCells);
 
             EditorGUILayout.BeginVertical("HelpBox");
             DrawWallList(selectedCells);
@@ -113,6 +115,74 @@ namespace Editor
                 for (int i = 0; i < cellChildren.Count; i++)
                 {
                     if (cellChildren[i].name.Contains("LAMP_"))
+                    {
+                        bool lightState = (changeLight == 0) ? cellChildren[i].activeSelf : (changeLight == 1) ? true : false;
+                        cellChildren[i].SetActive(lightState);
+                    }
+                }
+            }
+            EditorGUILayout.EndHorizontal();
+            EditorGUILayout.EndVertical();
+        }
+
+        private void DrawFloorOptions(List<GameObject> cells)
+        {
+            EditorGUILayout.BeginVertical("Box");
+            GUILayout.Label("Cell Floor");
+            EditorGUILayout.BeginHorizontal();
+
+            int changeLight = 0;
+
+            if (GUILayout.Button("Enable Floor"))
+                changeLight = 1;
+            if (GUILayout.Button("Disable Floor"))
+                changeLight = -1;
+
+            foreach (var cell in cells)
+            {
+                List<GameObject> cellChildren = new List<GameObject>();
+                for (int i = 0; i < cell.transform.GetChild(0).childCount; i++)
+                {
+                    cellChildren.Add(cell.transform.GetChild(0).GetChild(i).gameObject);
+                }
+
+                for (int i = 0; i < cellChildren.Count; i++)
+                {
+                    if (cellChildren[i].name.Contains("FLOOR"))
+                    {
+                        bool lightState = (changeLight == 0) ? cellChildren[i].activeSelf : (changeLight == 1) ? true : false;
+                        cellChildren[i].SetActive(lightState);
+                    }
+                }
+            }
+            EditorGUILayout.EndHorizontal();
+            EditorGUILayout.EndVertical();
+        }
+
+        private void DrawCeilingOptions(List<GameObject> cells)
+        {
+            EditorGUILayout.BeginVertical("Box");
+            GUILayout.Label("Cell Ceiling");
+            EditorGUILayout.BeginHorizontal();
+
+            int changeLight = 0;
+
+            if (GUILayout.Button("Enable Ceiling"))
+                changeLight = 1;
+            if (GUILayout.Button("Disable Ceiling"))
+                changeLight = -1;
+
+            foreach (var cell in cells)
+            {
+                List<GameObject> cellChildren = new List<GameObject>();
+                for (int i = 0; i < cell.transform.GetChild(0).childCount; i++)
+                {
+                    cellChildren.Add(cell.transform.GetChild(0).GetChild(i).gameObject);
+                }
+
+                for (int i = 0; i < cellChildren.Count; i++)
+                {
+                    if (cellChildren[i].name.Contains("CEILING"))
                     {
                         bool lightState = (changeLight == 0) ? cellChildren[i].activeSelf : (changeLight == 1) ? true : false;
                         cellChildren[i].SetActive(lightState);

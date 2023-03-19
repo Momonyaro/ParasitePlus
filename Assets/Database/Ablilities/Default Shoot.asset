@@ -16,7 +16,7 @@ MonoBehaviour:
   abilityId: _defaultAtk
   abilityDesc: This is the default attack.
   abilityEffectRef: _gunshot
-  abilitySoundEffect: _meleeBash
+  abilitySoundEffect: _shootTwice
   hideDamageText: 0
   targetAll: 0
   targetFriendlies: 0

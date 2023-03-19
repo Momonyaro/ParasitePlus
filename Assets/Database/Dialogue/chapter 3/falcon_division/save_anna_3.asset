@@ -34,6 +34,9 @@ MonoBehaviour:
   - id: 1
   - id: 2
   - id: 3
+  - id: 4
+  - id: 5
+  - id: 6
   transitionToOnEof: {fileID: 0}
   wipeOldDataOnLoad: 1
   goToSceneOnEof: 0
@@ -86,6 +89,65 @@ MonoBehaviour:
         requireContinueInput: 1
         writingSoundEvent: _keyPress
     00000003:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp3
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox2
+    00000004:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp4
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    00000005:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox5
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _sive
+          text: So what now?
+          buildTime: 0.0456
+        - speakerReference: _anna
+          text: You didn't plan further than this?!
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: Okay, let's calm down.
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: There's gotta be some other way off this fort.
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: I'm guessing the guy on the radio was the big cheese, so let's find
+            where he's hiding and press him.
+          buildTime: 0.0456
+        - speakerReference: _sive
+          text: You think that'll work?
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: Don't know but what else can we do, the elevator we came from seems
+            to have been locked after we came down.
+          buildTime: 0.0456
+        - speakerReference: _sive
+          text: Okay, let's go.
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    00000006:
       type: {class: DestroyAllComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyAll3

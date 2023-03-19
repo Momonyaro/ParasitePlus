@@ -181,7 +181,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5958438921693756439, guid: d306a9dec3ae51043a26e70ab6499d24, type: 3}
       propertyPath: m_Lightmapping
-      value: 2
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: d306a9dec3ae51043a26e70ab6499d24, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d306a9dec3ae51043a26e70ab6499d24, type: 3}

@@ -140,5 +140,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Maps/FalconDivision/FalconEnd1.unity
     guid: 552736b3cbe92434f8c8830724b6a392
+  - enabled: 1
+    path: Assets/Scenes/Maps/PhoenixDivision/PhoenixRoom1.unity
+    guid: 2c35cd960b04b054c93973ba2b4e6cef
+  - enabled: 1
+    path: Assets/Scenes/Maps/PhoenixDivision/PhoenixRoom2.unity
+    guid: 21a6061f7c0946f4aac03c58f3be230e
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 46472d8cef444da4d841f68f6280e3ef, type: 2}

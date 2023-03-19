@@ -790,6 +790,89 @@ MonoBehaviour:
       outroClip: {fileID: 0}
       tracks:
       - AudioClip: {fileID: 8300000, guid: 3193e2a8f5a68584492bb359020315bc, type: 3}
+  - reference: _phoenixLobbyBGM
+    groupIndex: 1
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _music
+      volume: 0.445
+      pitch: 1
+      randomPitchOffset: 0
+      delay: 0.5
+      loop: 1
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 9ca04d9e2c258114ba04f3b816ed8ed7, type: 3}
+  - reference: _shootTwice
+    groupIndex: 4
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _general
+      volume: 0.5
+      pitch: 1
+      randomPitchOffset: 0.03
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: b00d2e84b87b92d498ce6eaed93cea21, type: 3}
+  - reference: _bessie_atk
+    groupIndex: 4
+    trackContainer:
+      lerpValue: 0
+      ratio: 0.5
+      trackLerpOverlap: 1
+      volumeGroupRef: _vocal
+      volume: 0.8
+      pitch: 1
+      randomPitchOffset: 0.04
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 4200cb1d7c902d04daea7dfe0ad28259, type: 3}
+      - AudioClip: {fileID: 8300000, guid: 10c9f87edbf130747830b3e62937e0cd, type: 3}
+  - reference: _bessie_hurt
+    groupIndex: 4
+    trackContainer:
+      lerpValue: 0
+      ratio: 0.5
+      trackLerpOverlap: 1
+      volumeGroupRef: _vocal
+      volume: 0.8
+      pitch: 1
+      randomPitchOffset: 0.04
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: f1b4b2ed3d0718c41b373657eafbbc12, type: 3}
+      - AudioClip: {fileID: 8300000, guid: bbd77b69f731fbd40b12e26f027f0091, type: 3}
+  - reference: _bessie_death
+    groupIndex: 4
+    trackContainer:
+      lerpValue: 0
+      ratio: 0.5
+      trackLerpOverlap: 1
+      volumeGroupRef: _vocal
+      volume: 0.8
+      pitch: 1
+      randomPitchOffset: 0.05
+      delay: 0
+      loop: 0
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 2fa47fd0a4df4fa4c8684fd3e2f7ffb6, type: 3}
+      - AudioClip: {fileID: 8300000, guid: 8ddaaf55679da9f4687b8505a206bdc9, type: 3}
   eventGroups:
   - Battle Music
   - Dungeon BGM

@@ -2081,13 +2081,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106688276}
-  m_LocalRotation: {x: 1, y: -0, z: -0, w: -0.00000014901163}
-  m_LocalPosition: {x: 0, y: 0, z: -0.075}
+  m_LocalRotation: {x: 0.70710796, y: -0, z: -0, w: 0.7071057}
+  m_LocalPosition: {x: 0, y: 0, z: -0.07500058}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 379677285}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!108 &106688278
 Light:
   m_ObjectHideFlags: 0
@@ -2562,13 +2562,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145231504}
-  m_LocalRotation: {x: 1, y: -0, z: -0, w: -0.00000014901163}
-  m_LocalPosition: {x: 0, y: 0, z: -0.075}
+  m_LocalRotation: {x: 0.70710796, y: -0, z: -0, w: 0.70710564}
+  m_LocalPosition: {x: 0, y: 0, z: -0.07500058}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 821364250}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!108 &145231506
 Light:
   m_ObjectHideFlags: 0
@@ -14472,13 +14472,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320355379}
-  m_LocalRotation: {x: 1, y: -0, z: -0, w: -0.00000014901163}
-  m_LocalPosition: {x: 0, y: 0, z: -0.058}
+  m_LocalRotation: {x: 0.70710796, y: -0, z: -0, w: 0.7071057}
+  m_LocalPosition: {x: 0, y: 0, z: -0.05799961}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 718821149}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!108 &1320355381
 Light:
   m_ObjectHideFlags: 0
@@ -15074,6 +15074,7 @@ MonoBehaviour:
     playerLastEuler: {x: 0, y: 180, z: 0}
     loadSceneVariable: 
     lastButtonLayer: 0
+    combatTrackRef: 
   dungeonManager: {fileID: 1412441779}
   config: {fileID: 11400000, guid: f19491cb78d45e04ca9bacb7aac3d494, type: 2}
   mapBMGReference: _craneCalmBGM
@@ -19163,13 +19164,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919850860}
-  m_LocalRotation: {x: 1, y: -0, z: -0, w: -0.00000014901163}
-  m_LocalPosition: {x: 0, y: 0, z: -0.075}
+  m_LocalRotation: {x: 0.70710796, y: -0, z: -0, w: 0.7071057}
+  m_LocalPosition: {x: 0, y: 0, z: -0.074999884}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 303403522}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!108 &1919850862
 Light:
   m_ObjectHideFlags: 0

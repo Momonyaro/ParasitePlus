@@ -4542,7 +4542,7 @@ MonoBehaviour:
   triggerActive: 0
   disabled: 0
   generateNewGUID: 0
-  guid: 56b276d5-5986-479d-8bcd-2f0fcf001d7f
+  guid: 67ed85f6-c3b2-4238-8fff-f27fc5266bbf
   onEvent:
     m_PersistentCalls:
       m_Calls:
@@ -4591,7 +4591,7 @@ MonoBehaviour:
   postBattleSceneName: AfterSwanDivision
   encounterTrack: _battleBGMWolves
   generateNewGUID: 0
-  guid: 06474082-8f84-4f2b-a3d8-e3f95d71f6af
+  guid: 3bf4e964-c350-495d-9816-b9d334abac29
   enemyRoster:
   - {fileID: 0}
   - {fileID: 0}
@@ -16090,10 +16090,10 @@ MonoBehaviour:
     lastTransformScene: 
     playerName: Yoel
     partyField:
-    - {fileID: 11400000, guid: b87cabd1880fcb14fbd07bc27dd4400d, type: 2}
-    - {fileID: 11400000, guid: 5867c1a531a1bfd4c9e7a2d934c1612d, type: 2}
+    - {fileID: 11400000, guid: 01419897f5b1c824a9470bca624fe2a9, type: 2}
+    - {fileID: 11400000, guid: 16d3e37296f42074f8c3edd96e408248, type: 2}
     - {fileID: 11400000, guid: 30f66e8e01da6b64081f8dfa5d87b383, type: 2}
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 186b4febcbb3ddd48b5fd4fa71a62bf1, type: 2}
     enemyField:
     - {fileID: 0}
     - {fileID: 0}

@@ -16,6 +16,9 @@ MonoBehaviour:
   entityLevel: 1
   entityId: _bessie
   inParty: 0
+  attackYellSfx: _bessie_atk
+  damageYellSfx: _bessie_hurt
+  deathYellSfx: _bessie_death
   entitySpeed: 15
   throwawayId: 21
   healthPts: {x: 60, y: 60}
@@ -64,7 +67,8 @@ MonoBehaviour:
       targetComp:
         id: 3
   onDeathInterjects: []
-  deadTrigger: 1
+  deadTrigger: 0
+  weapon: 
   stats: 000000000000000000000000000000000000000000000000
   abilityScriptables: []
   entityEffectBuffer: []

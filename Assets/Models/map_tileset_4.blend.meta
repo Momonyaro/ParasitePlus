@@ -3,7 +3,37 @@ guid: 3ac4950eaf435724b882f0315d4a1c43
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall_01
+    second: {fileID: 2100000, guid: 87f30d0b17bfc5d4bb172cc5a99e8cda, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall_01.002
+    second: {fileID: 2100000, guid: 5affb3e88e8b13c4b8306e768edc4283, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall_02
+    second: {fileID: 2100000, guid: 9c438f285219e9a40ad9d91499721a5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall_02.001
+    second: {fileID: 2100000, guid: f64dd69e0292fb741a14657926e5fa5e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall_02.002
+    second: {fileID: 2100000, guid: 668b3c2a23d0e36409de907d3fa2e3c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall_03
+    second: {fileID: 2100000, guid: 8fc332fd6c8907c4cbf3b27098ec5aef, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -36,7 +66,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1

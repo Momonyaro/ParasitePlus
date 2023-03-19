@@ -42,6 +42,7 @@ namespace SAMSARA
             {
                 //Create a channel and play the intro until it reads as !isPlaying.
                 AudioSource introSource = CreateTrack(intro, 0);
+                introSource.volume = 0;
                 while (introSource.isPlaying)
                 {
                     introSource.volume = trackContainer.volume * TryGetVolumeGroupValue(trackContainer.volumeGroupRef) * channelVolume;
@@ -123,6 +124,7 @@ namespace SAMSARA
             track.transform.parent = transform;
             
             tracks.Add(track.GetComponent<AudioSource>());
+            tracks[tracks.Count - 1].volume = 0;
             tracks[tracks.Count - 1].clip = clip;
             tracks[tracks.Count - 1].PlayDelayed(delay);
 

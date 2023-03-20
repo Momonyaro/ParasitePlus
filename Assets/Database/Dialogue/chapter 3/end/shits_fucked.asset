@@ -35,7 +35,7 @@ MonoBehaviour:
   - id: 2
   - id: 3
   - id: 4
-  transitionToOnEof: {fileID: 0}
+  transitionToOnEof: {fileID: 11400000, guid: 4d6129cda4fd33344a476538187896ef, type: 2}
   wipeOldDataOnLoad: 1
   goToSceneOnEof: 0
   destinationSceneOnEof: 

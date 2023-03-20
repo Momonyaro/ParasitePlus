@@ -375,8 +375,8 @@ MonoBehaviour:
   newBtnLayer: 8
   changeScene: 1
   useMapManager: 0
-  parseDestination: 1
-  writeCurrentSceneToSlim: 1
+  parseDestination: 0
+  writeCurrentSceneToSlim: 0
   newSceneVariable: MapMenu
 --- !u!114 &575681992
 MonoBehaviour:

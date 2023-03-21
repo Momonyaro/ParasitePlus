@@ -19515,13 +19515,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e1cd4acb1882e04480ded0cea73b588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueData: {fileID: 11400000, guid: 873536b7ef10a0e4091ff775cdb1781b, type: 2}
+  dialogueData: {fileID: 11400000, guid: 349527264407705449bc4b6c3f625508, type: 2}
   storePersistant: 1
   onDialogueFinished:
     m_PersistentCalls:
       m_Calls: []
   generateNewGUID: 0
-  eventKey: cbb89855-9d1e-4eff-a707-2d6df43c7c1e
+  eventKey: ad0ca1bc-ca00-407c-a140-000bdb77c101
 --- !u!114 &2067260516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19538,7 +19538,7 @@ MonoBehaviour:
   triggerActive: 0
   disabled: 0
   generateNewGUID: 0
-  guid: a739108c-8676-47ec-8072-3e307c19097a
+  guid: 56b37316-1d8d-4d4f-80c3-e93dc5cb2292
   onEvent:
     m_PersistentCalls:
       m_Calls:

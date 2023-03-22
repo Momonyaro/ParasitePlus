@@ -1,16 +1,22 @@
 fileFormatVersion: 2
-guid: 75eba6c42c50e154488b64bcf82b7807
+guid: 9c983848b7cb7ca41a771b49eb346645
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6545376100334501403
-    second: emil_carnaby_0
+      213: -4525971480923956862
+    second: carrier_0
   - first:
-      213: 4924367620109985965
-    second: emil_carnaby_1
+      213: -1824618761111688340
+    second: carrier_1
   - first:
-      213: -359136374826903733
-    second: emil_carnaby_2
+      213: 7211118463078088554
+    second: chaos_egg_2
+  - first:
+      213: -4627050840470388247
+    second: chaos_egg_3
+  - first:
+      213: 1565599500515433654
+    second: chaos_egg_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -136,13 +142,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: emil_carnaby_0
+      name: carrier_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 80
-        height: 68
+        x: 2
+        y: 44
+        width: 19
+        height: 23
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +156,62 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e10b3a9d172a25a0800000000000000
-      internalID: -6545376100334501403
+      spriteID: 2899affeae48031c0800000000000000
+      internalID: -4525971480923956862
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: emil_carnaby_1
+      name: carrier_1
       rect:
         serializedVersion: 2
-        x: 92
+        x: 26
+        y: 44
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6bac6d67e6ada6e0800000000000000
+      internalID: -1824618761111688340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chaos_egg_2
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 26
+        width: 35
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6fb709390a031460800000000000000
+      internalID: 7211118463078088554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chaos_egg_3
+      rect:
+        serializedVersion: 2
+        x: 6
         y: 14
-        width: 30
-        height: 43
+        width: 35
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,29 +219,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da86714924ed65440800000000000000
-      internalID: 4924367620109985965
+      spriteID: 9e1071896c969cfb0800000000000000
+      internalID: -4627050840470388247
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: emil_carnaby_2
+      name: chaos_egg_4
       rect:
         serializedVersion: 2
-        x: 130
-        y: 0
-        width: 80
-        height: 68
+        x: 6
+        y: 2
+        width: 35
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b475580be57140bf0800000000000000
-      internalID: -359136374826903733
+      spriteID: 6bc50c863702ab510800000000000000
+      internalID: 1565599500515433654
       vertices: []
       indices: 
       edges: []

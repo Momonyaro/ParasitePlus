@@ -88,7 +88,7 @@ public class MapController : MonoBehaviour
         if (!lastControlScheme.Equals(playerInput.currentControlScheme.ToString()))
             UpdateControllerType();
 
-        ClampCursorToScreen();
+        //ClampCursorToScreen();
     }
 
 

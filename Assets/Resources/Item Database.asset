@@ -180,3 +180,18 @@ MonoBehaviour:
     stackable: 1
     StackSize: {x: 1, y: 25}
     storeItem: 0
+  - name: Energy Drink
+    guid: 2a6edb7e-4903-4005-bf6e-0d2a85cfb7de
+    description: Why am i shaking? Restores 100 AP
+    msrp: 0
+    type: 4
+    minLevelReq: 7
+    minFriendshipReq: 0
+    damage: 0
+    defense: 0
+    critChance: 0
+    dodgeChance: 0
+    itemAbility: {fileID: 11400000, guid: f16680bafe5258949bfeb932f237321a, type: 2}
+    stackable: 1
+    StackSize: {x: 1, y: 25}
+    storeItem: 1

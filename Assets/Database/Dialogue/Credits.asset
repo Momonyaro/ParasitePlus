@@ -48,6 +48,7 @@ MonoBehaviour:
   - id: 18
   - id: 19
   transitionToOnEof: {fileID: 0}
+  wipeOldDataOnLoad: 1
   goToSceneOnEof: 0
   destinationSceneOnEof: 
   references:

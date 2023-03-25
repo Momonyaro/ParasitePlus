@@ -1533,6 +1533,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1746545149709580774, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
+      propertyPath: guid
+      value: falconRoom3:door/elevator
+      objectReference: {fileID: 0}
+    - target: {fileID: 1746545149709580774, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
       propertyPath: dir.x
       value: 0
       objectReference: {fileID: 0}
@@ -9524,7 +9528,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   generateNewGUID: 0
-  eventKey: 3bed8d85-2ce4-4a53-bee0-46f84f35b84e
+  eventKey: falconRoom3:event/radio/dialog
 --- !u!114 &810223808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9541,7 +9545,7 @@ MonoBehaviour:
   triggerActive: 0
   disabled: 0
   generateNewGUID: 0
-  guid: e0e27c27-fa7a-4784-b46e-3384a5141901
+  guid: falconRoom3:event/anna
   onEvent:
     m_PersistentCalls:
       m_Calls:
@@ -10415,7 +10419,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   generateNewGUID: 0
-  eventKey: ad1c316a-3485-4213-b3c6-7ffd77b54683
+  eventKey: falconRoom3:event/radio/dialog
 --- !u!114 &869274724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10432,7 +10436,7 @@ MonoBehaviour:
   triggerActive: 0
   disabled: 0
   generateNewGUID: 0
-  guid: d925f160-29d6-4ce9-a4ea-3fb403d9d442
+  guid: falconRoom3:event/radio
   onEvent:
     m_PersistentCalls:
       m_Calls:

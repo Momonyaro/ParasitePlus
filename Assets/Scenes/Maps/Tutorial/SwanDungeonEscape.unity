@@ -456,6 +456,7 @@ MonoBehaviour:
     playerLastEuler: {x: 0, y: 180, z: 0}
     loadSceneVariable: 
     lastButtonLayer: 0
+    combatTrackRef: 
   dungeonManager: {fileID: 63013664}
   config: {fileID: 11400000, guid: f19491cb78d45e04ca9bacb7aac3d494, type: 2}
   mapBMGReference: _swanDivisionBGM
@@ -474,7 +475,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &63013664
 MonoBehaviour:
@@ -2717,7 +2718,7 @@ Transform:
   - {fileID: 1014610250}
   - {fileID: 2080951132}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &331246701
 PrefabInstance:
@@ -2788,7 +2789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 126507775659805238, guid: 9f5c3542b8d9f3d4993ce6cb5404ca4d, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 126507775659805238, guid: 9f5c3542b8d9f3d4993ce6cb5404ca4d, type: 3}
       propertyPath: m_AnchorMax.x
@@ -10283,7 +10284,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1371380891}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &838892630
 Rigidbody:
@@ -10320,8 +10321,9 @@ MonoBehaviour:
   triggerActive: 0
   disabled: 0
   postBattleSceneName: PostTutorial
+  encounterTrack: 
   generateNewGUID: 0
-  guid: 4c4e9c0c-99e9-4114-bbda-0c425216b979
+  guid: swanTutorial:event/guard_fight
   enemyRoster:
   - {fileID: 0}
   - {fileID: 0}
@@ -12552,7 +12554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 524553445826855404, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 524553445826855404, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14268,7 +14270,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1342097928
 PrefabInstance:
@@ -14519,9 +14521,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1957996163}
   - {fileID: 838892629}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1375161715
 PrefabInstance:
@@ -19457,7 +19460,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1763428760
 PrefabInstance:
@@ -20925,7 +20928,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1371380891}
     m_Modifications:
     - target: {fileID: 4769400088678873112, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: m_Name
@@ -20933,7 +20936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873113, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873113, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20976,6 +20979,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+      propertyPath: guid
+      value: swanTutorial:chest/keycard
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: itemID
       value: bcf757f0-c454-4277-9156-be44c60d4202
       objectReference: {fileID: 0}
@@ -20992,6 +20999,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efe61711db409cd4e8897a39e16677c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1957996163 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4769400088678873113, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+  m_PrefabInstance: {fileID: 1957996161}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2001878024 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6322987903886326981, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}

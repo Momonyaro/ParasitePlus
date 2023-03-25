@@ -117,6 +117,7 @@ namespace BattleSystem.States
                 
                 passTargetParty = parent.lastAbility.targetFriendlies;
                 passTargetEnemy = !passTargetParty;
+                parent.hasItem = false;
                 return;
             }
             
@@ -126,23 +127,26 @@ namespace BattleSystem.States
                 //cropped should now contain the abilityId of what we selected. Proceed to targeting mode based on the ability
 
                 AbilityScriptable a = null;
+                Item item = null;
                 for (int i = 0; i < battleCore.partyInventory.Count; i++)
                 {
                     if (cropped.Equals(battleCore.partyInventory[i].guid))
                     {
                         Item current = battleCore.partyInventory[i];
                         a = current.itemAbility.Copy();
-                        if (current.stackable && current.StackSize.x > 1)
-                        {
-                            current.StackSize.x--;
-                        }
-                        else
-                            battleCore.partyInventory.RemoveAt(i);
-                        break;
+                        //if (current.stackable && current.StackSize.x > 1)
+                        //{
+                        //    current.StackSize.x--;
+                        //}
+                        //else
+                        //    battleCore.partyInventory.RemoveAt(i);
+                        //break;
                     }
                 }
 
                 parent.lastAbility = a;
+                parent.lastItem = item;
+                parent.hasItem = true;
                 passTargetParty = parent.lastAbility.targetFriendlies;
                 passTargetEnemy = !passTargetParty;
                 return;

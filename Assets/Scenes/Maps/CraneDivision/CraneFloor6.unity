@@ -18340,7 +18340,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   generateNewGUID: 0
-  eventKey: 59e4a041-0f26-468e-94ea-8335fdbcce6a
+  eventKey: craneFloor6:event/ambush/dialog
 --- !u!114 &1661934086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18357,7 +18357,7 @@ MonoBehaviour:
   triggerActive: 0
   disabled: 0
   generateNewGUID: 0
-  guid: f30b2b7c-6b22-4892-85f6-e1963b7a9be8
+  guid: craneFloor6:event/ambush
   onEvent:
     m_PersistentCalls:
       m_Calls:

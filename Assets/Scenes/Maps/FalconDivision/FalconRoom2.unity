@@ -1188,9 +1188,14 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1124292111}
+  - {fileID: 841463682}
+  - {fileID: 595923568}
+  - {fileID: 366208565}
+  - {fileID: 2082647501}
   - {fileID: 1770524141}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &81727983
 PrefabInstance:
@@ -4241,7 +4246,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 79586504}
     m_Modifications:
     - target: {fileID: 4769400088678873112, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: m_Name
@@ -4249,7 +4254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873113, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873113, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4292,11 +4297,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+      propertyPath: guid
+      value: falconRoom2:chest/sandwich2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: dir.x
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+      propertyPath: itemID
+      value: 470e0ec1-76f2-468e-9890-cadacd688215
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+--- !u!4 &366208565 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4769400088678873113, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+  m_PrefabInstance: {fileID: 366208564}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &368151945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5833,7 +5851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 524553445826855404, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 524553445826855404, guid: 3bb18c52e24af3c46aff1be98544d6bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6785,7 +6803,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 79586504}
     m_Modifications:
     - target: {fileID: 4769400088678873112, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: m_Name
@@ -6793,7 +6811,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873113, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873113, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6836,11 +6854,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+      propertyPath: guid
+      value: falconRoom2:chest/sandwich
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: dir.x
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+      propertyPath: itemID
+      value: 470e0ec1-76f2-468e-9890-cadacd688215
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+--- !u!4 &595923568 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4769400088678873113, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+  m_PrefabInstance: {fileID: 595923567}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &615576400
 GameObject:
   m_ObjectHideFlags: 0
@@ -7006,7 +7037,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &625322400
 PrefabInstance:
@@ -10877,7 +10908,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 79586504}
     m_Modifications:
     - target: {fileID: 4769400088678873112, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: m_Name
@@ -10885,7 +10916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873113, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873113, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10928,11 +10959,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+      propertyPath: guid
+      value: falconRoom2:chest/espresso
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: dir.x
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+      propertyPath: itemID
+      value: edfc6fc3-fb3a-43c6-b02f-9cadd72e2fb3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+--- !u!4 &841463682 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4769400088678873113, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+  m_PrefabInstance: {fileID: 841463681}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &845867176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3028414301954264337, guid: 9e57cda8e775d224d822fa82ac65294a, type: 3}
@@ -11873,7 +11917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 126507775659805238, guid: 9f5c3542b8d9f3d4993ce6cb5404ca4d, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 126507775659805238, guid: 9f5c3542b8d9f3d4993ce6cb5404ca4d, type: 3}
       propertyPath: m_AnchorMax.x
@@ -14253,7 +14297,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 79586504}
     m_Modifications:
     - target: {fileID: 5474907615136556512, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
       propertyPath: m_Name
@@ -14261,7 +14305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5474907615136556513, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5474907615136556513, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14304,11 +14348,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5474907615136556514, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
+      propertyPath: guid
+      value: falconRoom2:chest/espresso2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5474907615136556514, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
       propertyPath: dir.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5474907615136556514, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
+      propertyPath: itemID
+      value: edfc6fc3-fb3a-43c6-b02f-9cadd72e2fb3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
+--- !u!4 &1124292111 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5474907615136556513, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
+  m_PrefabInstance: {fileID: 1124292110}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1146016305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18417,7 +18474,7 @@ Transform:
   - {fileID: 189000397}
   - {fileID: 814277858}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1570706510
 PrefabInstance:
@@ -18822,6 +18879,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1746545149709580774, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
+      propertyPath: guid
+      value: falconRoom2:door/elevator
+      objectReference: {fileID: 0}
+    - target: {fileID: 1746545149709580774, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
       propertyPath: dir.x
       value: -1
       objectReference: {fileID: 0}
@@ -18911,7 +18972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1746545150001045459, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1746545150001045459, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19381,7 +19442,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1744282496
 PrefabInstance:
@@ -19644,7 +19705,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: dc6ab16fe569c7e48b19f5aab2c76b2e, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc6ab16fe569c7e48b19f5aab2c76b2e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19736,7 +19797,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 79586504}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1770524142
 MonoBehaviour:
@@ -19756,7 +19817,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   generateNewGUID: 0
-  eventKey: 3fa1765e-9204-493a-ac33-cf0a9f335c70
+  eventKey: falconRoom2:event/dark/dialog
 --- !u!114 &1770524143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19773,7 +19834,7 @@ MonoBehaviour:
   triggerActive: 0
   disabled: 0
   generateNewGUID: 0
-  guid: 6d0755f6-01f7-46a5-9e6d-6d7e1abf3853
+  guid: falconRoom2:event/dark
   onEvent:
     m_PersistentCalls:
       m_Calls:
@@ -21066,7 +21127,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1927891017
 PrefabInstance:
@@ -22975,7 +23036,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 79586504}
     m_Modifications:
     - target: {fileID: 5474907615136556512, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
       propertyPath: m_Name
@@ -22983,7 +23044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5474907615136556513, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5474907615136556513, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23026,6 +23087,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5474907615136556514, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
+      propertyPath: guid
+      value: falconRoom2:chest/lunchbox
+      objectReference: {fileID: 0}
+    - target: {fileID: 5474907615136556514, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
       propertyPath: dir.x
       value: 0
       objectReference: {fileID: 0}
@@ -23033,8 +23098,17 @@ PrefabInstance:
       propertyPath: dir.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5474907615136556514, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
+      propertyPath: itemID
+      value: de208c5a-80a7-4fff-a6fb-a121fc3449a8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
+--- !u!4 &2082647501 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5474907615136556513, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
+  m_PrefabInstance: {fileID: 2082647500}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2096325380 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3028414301954264337, guid: 9e57cda8e775d224d822fa82ac65294a, type: 3}

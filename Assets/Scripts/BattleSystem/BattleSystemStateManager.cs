@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Items;
 using Scriptables;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -16,6 +17,8 @@ namespace BattleSystem
         public int currentIndex = 0;
 
         public AbilityScriptable lastAbility;
+        [HideInInspector] public Item lastItem = null;
+        public bool hasItem = false;
         public List<int> targetedEntities = new List<int>();
         public bool targetingParty = false;
         private InterjectBase currentInterject;
@@ -34,6 +37,8 @@ namespace BattleSystem
 
         public void Init(BattleSystemCore core)
         {
+            lastItem = null;
+            hasItem = false;
             battleCore = core;
             inputActionMap = module.FindActionMap("Turn Battle");
             

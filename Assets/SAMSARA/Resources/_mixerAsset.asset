@@ -873,6 +873,22 @@ MonoBehaviour:
       tracks:
       - AudioClip: {fileID: 8300000, guid: 2fa47fd0a4df4fa4c8684fd3e2f7ffb6, type: 3}
       - AudioClip: {fileID: 8300000, guid: 8ddaaf55679da9f4687b8505a206bdc9, type: 3}
+  - reference: _battleBGMAngel
+    groupIndex: 0
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _music
+      volume: 0.802
+      pitch: 1
+      randomPitchOffset: 0
+      delay: 0.5
+      loop: 1
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: bd6d98ce49993294ab79c51398f18222, type: 3}
   eventGroups:
   - Battle Music
   - Dungeon BGM

@@ -106,10 +106,13 @@ public class WorldManager : MonoBehaviour
                     var healed = party.ToList();
                     healed.ForEach(e =>
                     {
-                        var hpMax = e.GetEntityHP().y;
-                        e.SetEntityHP(new Vector2Int(hpMax, hpMax));
-                        var apMax = e.GetEntityAP().y;
-                        e.SetEntityAP(new Vector2Int(apMax, apMax));
+                        if (e != null)
+                        {
+                            var hpMax = e.GetEntityHP().y;
+                            e.SetEntityHP(new Vector2Int(hpMax, hpMax));
+                            var apMax = e.GetEntityAP().y;
+                            e.SetEntityAP(new Vector2Int(apMax, apMax));
+                        }
                     });
                     loaded2.partyField = healed.ToArray();
                 }

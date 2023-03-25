@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerDEBUG
   m_EditorClassIdentifier: 
   entityName: Player $DEBUG
-  entityLevel: 5
+  entityLevel: 7
   entityId: _player
   inParty: 1
   attackYellSfx: 
@@ -21,8 +21,8 @@ MonoBehaviour:
   deathYellSfx: _male_death
   entitySpeed: 12
   throwawayId: 0
-  healthPts: {x: 35, y: 35}
-  actionPts: {x: 30, y: 30}
+  healthPts: {x: 50, y: 50}
+  actionPts: {x: 45, y: 45}
   weaknesses:
   - 0.5
   - 1

@@ -6978,7 +6978,7 @@ MonoBehaviour:
   postBattleSceneName: AfterCraneDivision
   encounterTrack: _battleBGMSnake
   generateNewGUID: 0
-  guid: 39ed525d-312b-400b-a590-d1649ae79b20
+  guid: craneFloor9:event/medusa/encounter
   enemyRoster:
   - {fileID: 0}
   - {fileID: 0}
@@ -7015,7 +7015,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   generateNewGUID: 0
-  eventKey: 63d32318-8174-46a9-b819-50a1e22d8b2e
+  eventKey: craneFloor9:event/medusa/dialog
 --- !u!114 &1190978091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7032,7 +7032,7 @@ MonoBehaviour:
   triggerActive: 0
   disabled: 0
   generateNewGUID: 0
-  guid: 1fd8d204-6457-42ef-8631-8032886c92c6
+  guid: craneFloor9:event/medusa
   onEvent:
     m_PersistentCalls:
       m_Calls:

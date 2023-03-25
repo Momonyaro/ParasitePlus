@@ -4542,7 +4542,7 @@ MonoBehaviour:
   triggerActive: 0
   disabled: 0
   generateNewGUID: 0
-  guid: 67ed85f6-c3b2-4238-8fff-f27fc5266bbf
+  guid: swanFloor3:event/bessie_start
   onEvent:
     m_PersistentCalls:
       m_Calls:
@@ -8116,7 +8116,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5751458228028826835, guid: 318c61e1bb559cf48b7ece3922488940, type: 3}
       propertyPath: guid
-      value: swan3/interactable:button1
+      value: swanFloor3/console:button1
       objectReference: {fileID: 0}
     - target: {fileID: 5751458228028826835, guid: 318c61e1bb559cf48b7ece3922488940, type: 3}
       propertyPath: dir.x
@@ -18284,7 +18284,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5751458228028826835, guid: 318c61e1bb559cf48b7ece3922488940, type: 3}
       propertyPath: guid
-      value: swan3/interactable:button2
+      value: swanFloor3/console:button2
       objectReference: {fileID: 0}
     - target: {fileID: 5751458228028826835, guid: 318c61e1bb559cf48b7ece3922488940, type: 3}
       propertyPath: dir.z

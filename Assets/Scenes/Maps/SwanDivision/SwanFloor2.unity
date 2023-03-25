@@ -39130,7 +39130,7 @@ MonoBehaviour:
   triggerActive: 0
   disabled: 0
   generateNewGUID: 0
-  guid: 7c3c78ec-a079-4eca-8aef-d7fe25ce0bee
+  guid: swanFloor2:event/meet_director
   onEvent:
     m_PersistentCalls:
       m_Calls:
@@ -47128,7 +47128,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5751458228028826835, guid: 318c61e1bb559cf48b7ece3922488940, type: 3}
       propertyPath: guid
-      value: swanFloor2/console:door-control
+      value: swanFloor2:console/door-control
       objectReference: {fileID: 0}
     - target: {fileID: 5751458228028826835, guid: 318c61e1bb559cf48b7ece3922488940, type: 3}
       propertyPath: dir.x

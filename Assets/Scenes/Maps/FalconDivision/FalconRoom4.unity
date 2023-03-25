@@ -3310,6 +3310,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5474907615136556514, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
+      propertyPath: guid
+      value: falconRoom4:chest/espresso
+      objectReference: {fileID: 0}
+    - target: {fileID: 5474907615136556514, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
       propertyPath: dir.x
       value: 0
       objectReference: {fileID: 0}
@@ -7176,6 +7180,10 @@ PrefabInstance:
     - target: {fileID: 5474907615136556513, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5474907615136556514, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
+      propertyPath: guid
+      value: falconRoom4:chest/energy_bar
       objectReference: {fileID: 0}
     - target: {fileID: 5474907615136556514, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
       propertyPath: dir.x
@@ -14870,6 +14878,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5474907615136556514, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
+      propertyPath: guid
+      value: falconRoom4:chest/lunchbox
+      objectReference: {fileID: 0}
+    - target: {fileID: 5474907615136556514, guid: a0294a1c50611ae4d842778ff946f8fb, type: 3}
       propertyPath: dir.x
       value: 0
       objectReference: {fileID: 0}
@@ -19356,8 +19368,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+      propertyPath: guid
+      value: falconRoom4:chest/sandwich
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: dir.x
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+      propertyPath: itemID
+      value: 470e0ec1-76f2-468e-9890-cadacd688215
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
@@ -19538,7 +19558,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   generateNewGUID: 0
-  eventKey: 534f3319-a458-434a-bb41-a70334c89b38
+  eventKey: falconRoom4:event/oh_no/dialog
 --- !u!114 &1502988119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19555,7 +19575,7 @@ MonoBehaviour:
   triggerActive: 0
   disabled: 0
   generateNewGUID: 0
-  guid: ed769865-54e5-4333-94e3-2a15709998b7
+  guid: falconRoom4:event/oh_no
   onEvent:
     m_PersistentCalls:
       m_Calls:

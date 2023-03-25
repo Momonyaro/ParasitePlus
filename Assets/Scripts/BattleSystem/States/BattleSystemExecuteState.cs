@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using BattleSystem.UI;
+using Items;
 using Scriptables;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -22,6 +23,7 @@ namespace BattleSystem.States
         
         public float delay = 0.5f;
         private float timer;
+        private bool isItem = false;
         
         public override void Init()
         {
@@ -36,6 +38,29 @@ namespace BattleSystem.States
             Debug.Log($"[StateManager] : [{stateName}] found {targetIndices.Count} targets.");
 
             AbilityScriptable lastAttack = parent.lastAbility;
+            isItem = parent.hasItem;
+            Debug.Log(isItem);
+            if ( isItem )
+            {
+                Item itm = parent.lastItem;
+                parent.lastItem = null;
+                isItem = false;
+
+                for (int i = 0; i < battleCore.partyInventory.Count; i++)
+                {
+                    if (itm.guid.Equals(battleCore.partyInventory[i].guid))
+                    {
+                        Item current = battleCore.partyInventory[i];
+                        if (current.stackable && current.StackSize.x > 1)
+                        {
+                            current.StackSize.x--;
+                        }
+                        else
+                            battleCore.partyInventory.RemoveAt(i);
+                        break;
+                    }
+                }
+            }
             EntityScriptable currentEntity = battleCore.GetNextEntity();
 
             attackPrompt.ShowAttackPrompt($"<color=yellow>{currentEntity.entityName}</color> used <color=yellow>{lastAttack.abilityName}</color>", duration: 1.2f);

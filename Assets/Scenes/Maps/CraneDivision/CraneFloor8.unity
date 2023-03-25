@@ -11571,7 +11571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6038848085034037544, guid: 9806312d13d4e2c40b6e30a463953c8a, type: 3}
       propertyPath: guid
-      value: e47e0923-d7fe-49c6-aab1-4fd936e005f2
+      value: d07c0fbf-8370-4f17-a018-304d65a9266e
       objectReference: {fileID: 0}
     - target: {fileID: 6038848085034037544, guid: 9806312d13d4e2c40b6e30a463953c8a, type: 3}
       propertyPath: dir.z
@@ -15246,6 +15246,10 @@ PrefabInstance:
     - target: {fileID: 1418803221890909283, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1746545149709580774, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
+      propertyPath: guid
+      value: craneFloor8:door/elevator
       objectReference: {fileID: 0}
     - target: {fileID: 1746545149709580774, guid: 5c2dd4daf0dd83a49884669f13737a52, type: 3}
       propertyPath: sensor.x

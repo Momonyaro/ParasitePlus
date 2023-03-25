@@ -12645,7 +12645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: guid
-      value: swanFloor1/chest:banana3
+      value: swanFloor1/chest:energy_bar
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: dir.x
@@ -12657,7 +12657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: itemID
-      value: 993174de-f959-4343-b953-920d32992136
+      value: 5960744a-0f9b-4a77-8ffb-3c0328023e19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
@@ -20628,7 +20628,7 @@ MonoBehaviour:
   hasPlayer: 1
   hasGummo: 1
   hasSandra: 0
-  hasSive: 1
+  hasSive: 0
 --- !u!114 &1389334031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20645,7 +20645,7 @@ MonoBehaviour:
   triggerActive: 0
   disabled: 0
   generateNewGUID: 0
-  guid: swan1:event/stagesetting
+  guid: swanFloor1/event:stage_setting
   onEvent:
     m_PersistentCalls:
       m_Calls:
@@ -24613,7 +24613,7 @@ MonoBehaviour:
   triggerActive: 0
   disabled: 0
   generateNewGUID: 0
-  guid: 04bad8c1-64b7-43c3-ad08-f2c1064f74e4
+  guid: swanFloor1/event:lamp_pulser
   onEvent:
     m_PersistentCalls:
       m_Calls:
@@ -32720,7 +32720,7 @@ MonoBehaviour:
   triggerActive: 0
   disabled: 0
   generateNewGUID: 0
-  guid: 7c3c78ec-a079-4eca-8aef-d7fe25ce0bee
+  guid: swanFloor1:event/enable_encounters
   onEvent:
     m_PersistentCalls:
       m_Calls:

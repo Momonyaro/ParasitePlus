@@ -30,6 +30,7 @@ MonoBehaviour:
   - 1
   entityXp: 90
   entityXpThreshold: 0
+  entityMoney: 150
   defaultAttack: {fileID: 11400000, guid: 8ee51d5d1dd0ae4499f512c1a6d314ad, type: 2}
   lastAttacker: {fileID: 0}
   entityAI:
@@ -47,6 +48,7 @@ MonoBehaviour:
         id: 1
   onDeathInterjects: []
   deadTrigger: 0
+  weapon: 
   stats: 000000000000000000000000000000000000000000000000
   abilityScriptables:
   - {fileID: 11400000, guid: 559b30df86bc9be429013436e6868f1b, type: 2}

@@ -39,6 +39,7 @@ namespace Scriptables
         
         public int entityXp;            // For enemies, this value will be the xp reward for beating it.a
         public int entityXpThreshold;   // Going over this threshold registers as a levelup.
+        public int entityMoney;
         public AbilityScriptable defaultAttack;
         public EntityScriptable lastAttacker;
         [SerializeField] private EntityAIComponent entityAI = new EntityAIComponent();
@@ -238,6 +239,7 @@ namespace Scriptables
             es.weaknesses = weaknesses;
             es.onDeathInterjects = onDeathInterjects;
             es.weapon = weapon;
+            es.entityMoney = entityMoney;
 
             return es;
         }

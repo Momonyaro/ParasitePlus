@@ -16,6 +16,8 @@ namespace BattleSystem.UI
         public float waitTime = 1.2f;
         public bool finished = false;
         public LevelUpContainer[] levelUpContainers = new LevelUpContainer[3];
+        public TextMeshProUGUI cashRewardText;
+        public TextMeshProUGUI walletText;
 
         public Sprite playerSpr;
         public Sprite gummoSpr;
@@ -28,6 +30,15 @@ namespace BattleSystem.UI
             {
                 levelUpContainers[i].title = "Level Up Data [" + i + "]";
             }
+        }
+
+        public void UpdateMoney(int reward, int wallet)
+        {
+            string rewards = $"{reward} SEK";
+            string walletString = $"Total: {wallet} SEK";
+
+            cashRewardText.text = rewards;
+            walletText.text = walletString;
         }
 
         public void DisplayLevelUp(EntityScriptable[] party, int[] xpToAdd, float randomRange)

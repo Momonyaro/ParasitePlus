@@ -15,6 +15,10 @@ MonoBehaviour:
   entityName: Goo Rat
   entityLevel: 1
   entityId: _gooRat
+  inParty: 0
+  attackYellSfx: 
+  damageYellSfx: 
+  deathYellSfx: 
   entitySpeed: 8
   throwawayId: 0
   healthPts: {x: 10, y: 10}
@@ -26,6 +30,7 @@ MonoBehaviour:
   - 1
   entityXp: 7
   entityXpThreshold: 0
+  entityMoney: 5
   defaultAttack: {fileID: 11400000, guid: 00be9c6c0665f664fb5c95bf1a66b36f, type: 2}
   lastAttacker: {fileID: 0}
   entityAI:
@@ -43,6 +48,7 @@ MonoBehaviour:
         id: 1
   onDeathInterjects: []
   deadTrigger: 0
+  weapon: 
   stats: 000000000000000000000000000000000000000000000000
   abilityScriptables:
   - {fileID: 11400000, guid: 5a713ac6777b4414aad888b5fd0b0b11, type: 2}

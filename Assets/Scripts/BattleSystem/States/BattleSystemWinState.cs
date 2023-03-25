@@ -20,6 +20,7 @@ namespace BattleSystem.States
             Samsara.Instance.MusicPlayLayered("_victoryTheme", TransitionType.CrossFade, 0.5f, out bool success);
 
             int[] enemyXp = new int[battleCore.partyField.Length];
+            int rewards = 0;
 
             for (int p = 0; p < battleCore.partyField.Length; p++)
             {
@@ -43,8 +44,17 @@ namespace BattleSystem.States
                 hp.x = Mathf.RoundToInt(Mathf.Max(hp.x, Mathf.Min(5, hp.y))); //After winning, wake up unconcious party members.
                 battleCore.partyField[p].SetEntityHP(hp);
             }
-            
+
+            for (int i = 0; i < battleCore.enemyField.Length; i++)
+            {
+                if (battleCore.enemyField[i] == null) continue;
+                rewards += battleCore.enemyField[i].entityMoney;
+            }
+
+            int wallet = battleCore.partyWallet += rewards;
+
             winResultScreenUI.transform.GetChild(0).gameObject.SetActive(true);
+            winResultScreenUI.UpdateMoney(rewards, wallet);
             winResultScreenUI.DisplayLevelUp(battleCore.GetPlayerParty(), enemyXp, randomXpRange);
             
             initialized = true;

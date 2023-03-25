@@ -8097,6 +8097,7 @@ GameObject:
   - component: {fileID: 674734163}
   - component: {fileID: 674734162}
   - component: {fileID: 674734161}
+  - component: {fileID: 674734164}
   m_Layer: 0
   m_Name: DOOR_KNOCKER
   m_TagString: Untagged
@@ -8134,7 +8135,19 @@ MonoBehaviour:
   storePersistant: 1
   onDialogueFinished:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 674734164}
+        m_TargetAssemblyTypeName: BtnLayerTrigger, Assembly-CSharp
+        m_MethodName: TriggerEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   generateNewGUID: 0
   eventKey: 41f9e810-19e1-41aa-a9b0-3e501681626e
 --- !u!114 &674734162
@@ -8182,6 +8195,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &674734164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674734159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec5b004abf90de4ebe98a13091753e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newBtnLayer: 8
+  changeScene: 1
+  useMapManager: 1
+  parseDestination: 0
+  writeCurrentSceneToSlim: 1
+  newSceneVariable: FalconEnd1
 --- !u!1 &677741112
 GameObject:
   m_ObjectHideFlags: 0
@@ -20459,7 +20490,7 @@ MonoBehaviour:
     inventory: []
     wallet: 0
     ignoreTransformReadFlag: 0
-    playerLastPos: {x: -2, y: 1, z: -22}
+    playerLastPos: {x: 30, y: 1, z: -10}
     playerLastEuler: {x: 0, y: 0, z: 0}
     loadSceneVariable: 
     lastButtonLayer: 0
@@ -20472,26 +20503,20 @@ MonoBehaviour:
     encounters:
     - enemies:
       - {fileID: 0}
-      - {fileID: 11400000, guid: 043f562807947a944b4bba6576812e93, type: 2}
       - {fileID: 0}
-      - {fileID: 11400000, guid: 043f562807947a944b4bba6576812e93, type: 2}
-      - {fileID: 0}
-    - enemies:
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 11400000, guid: 9c39519643d902946b0f1896d643a68f, type: 2}
+      - {fileID: 11400000, guid: 4e8522ef64ae24f4fa6346cd02555b85, type: 2}
       - {fileID: 0}
       - {fileID: 0}
     - enemies:
       - {fileID: 0}
+      - {fileID: 11400000, guid: 252565094fc8ee84faac20472b1eae2a, type: 2}
       - {fileID: 0}
-      - {fileID: 11400000, guid: 043f562807947a944b4bba6576812e93, type: 2}
-      - {fileID: 0}
+      - {fileID: 11400000, guid: 252565094fc8ee84faac20472b1eae2a, type: 2}
       - {fileID: 0}
     - enemies:
       - {fileID: 0}
-      - {fileID: 11400000, guid: 043f562807947a944b4bba6576812e93, type: 2}
-      - {fileID: 11400000, guid: 9c39519643d902946b0f1896d643a68f, type: 2}
+      - {fileID: 11400000, guid: 252565094fc8ee84faac20472b1eae2a, type: 2}
+      - {fileID: 11400000, guid: 4e8522ef64ae24f4fa6346cd02555b85, type: 2}
       - {fileID: 0}
       - {fileID: 0}
 --- !u!4 &1571117951

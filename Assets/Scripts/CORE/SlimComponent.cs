@@ -101,7 +101,7 @@ namespace CORE
                 Debug.Log(eventTriggerOutput);
 
                 string containersOutput = "[CONTAINERS] ::--::";
-                foreach (string key in eventTriggers)
+                foreach (string key in containerStates)
                 {
                     containersOutput += $"\n[{key}]";
                 }

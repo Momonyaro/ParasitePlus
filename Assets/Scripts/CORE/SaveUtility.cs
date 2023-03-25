@@ -65,7 +65,7 @@ public class SaveUtility : MonoBehaviour
 
             eventTriggers = ArrayToHashset<string>(saveItem.EventTriggers),
             containerStates = ArrayToHashset<string>(saveItem.ContainerStates),
-            interactableStates = ArrayToDictionary<string, bool>(saveItem.InteractableStates)
+            interactableStates = ArrayToDictionary(saveItem.InteractableStates)
         };
 
         return newData;
@@ -102,6 +102,7 @@ public class SaveUtility : MonoBehaviour
         return toReturn;
     }
 
+    [System.Serializable]
     public struct SaveItem
     {
         public string PlayerName;
@@ -120,7 +121,7 @@ public class SaveUtility : MonoBehaviour
 
         public string[] EventTriggers;
         public string[] ContainerStates;
-        public Tuple<string, bool>[] InteractableStates;
+        public FakeTuple[] InteractableStates;
 
         public SaveItem(CORE.SlimComponent.SlimData slimData)
         {
@@ -154,7 +155,7 @@ public class SaveUtility : MonoBehaviour
             //Funky event recontextualizing
             EventTriggers = HashsetToArray<string>(slimData.eventTriggers);
             ContainerStates = HashsetToArray<string>(slimData.containerStates);
-            InteractableStates = DictionaryToArray<string, bool>(slimData.interactableStates);
+            InteractableStates = DictionaryToArray(slimData.interactableStates);
         }
     
         [System.Serializable]
@@ -206,30 +207,43 @@ public class SaveUtility : MonoBehaviour
         return hashset;
     }
 
-    private static Tuple<TKey, TValue>[] DictionaryToArray<TKey, TValue>(Dictionary<TKey, TValue> dictionary)
+    private static FakeTuple[] DictionaryToArray(Dictionary<string, bool> dictionary)
     {
         if (dictionary == null)
-            return new Tuple<TKey, TValue>[0];
+            return new FakeTuple[0];
 
-        List<Tuple<TKey, TValue>> list = new List<Tuple<TKey, TValue>>();
+        List<FakeTuple> list = new List<FakeTuple>();
 
-        foreach (KeyValuePair<TKey, TValue> kvp in dictionary)
+        foreach (KeyValuePair<string, bool> kvp in dictionary)
         {
-            list.Add(new Tuple<TKey, TValue>(kvp.Key, kvp.Value));
+            list.Add(new FakeTuple(kvp.Key, kvp.Value));
         }
 
         return list.ToArray();
     }
 
-    private static Dictionary<TKey, TValue> ArrayToDictionary<TKey, TValue>(Tuple<TKey, TValue>[] array)
+    private static Dictionary<string, bool> ArrayToDictionary(FakeTuple[] array)
     {
         if (array == null)
-            return new Dictionary<TKey, TValue>();
+            return new Dictionary<string, bool>();
 
-        List<Tuple<TKey, TValue>> list = new List<Tuple<TKey, TValue>>(array);
+        List<FakeTuple> list = new List<FakeTuple>(array);
 
-        var dictionary = list.ToDictionary(x => x.Item1, x => x.Item2);
+        var dictionary = list.ToDictionary(x => x.key, x => x.value);
 
         return dictionary;
+    }
+
+    [System.Serializable]
+    public struct FakeTuple
+    {
+        public string key;
+        public bool value;
+
+        public FakeTuple(string key, bool value)
+        {
+            this.key = key;
+            this.value = value;
+        }
     }
 }

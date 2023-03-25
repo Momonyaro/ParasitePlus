@@ -35458,13 +35458,7 @@ MonoBehaviour:
   enterOnUnlock: 1
   encounterTriggers: []
   eventTriggers: []
-  sceneLoadVariables:
-  - reference: _elevatorL
-    playerPosition: {x: -2, y: 1, z: 22}
-    playerRotation: {x: 0, y: 180, z: 0}
-  - reference: _elevatorR
-    playerPosition: {x: 2, y: 1, z: 22}
-    playerRotation: {x: 0, y: 180, z: 0}
+  sceneLoadVariables: []
   encounterProgress: 0
   randomEncounters: 1
   encounterProgressRange: 0.08

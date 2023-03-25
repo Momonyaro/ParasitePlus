@@ -44,7 +44,7 @@ namespace BattleSystem.States
             {
                 Item itm = parent.lastItem;
                 parent.lastItem = null;
-                isItem = false;
+                parent.hasItem = false;
 
                 for (int i = 0; i < battleCore.partyInventory.Count; i++)
                 {

@@ -132,15 +132,9 @@ namespace BattleSystem.States
                 {
                     if (cropped.Equals(battleCore.partyInventory[i].guid))
                     {
-                        Item current = battleCore.partyInventory[i];
-                        a = current.itemAbility.Copy();
-                        //if (current.stackable && current.StackSize.x > 1)
-                        //{
-                        //    current.StackSize.x--;
-                        //}
-                        //else
-                        //    battleCore.partyInventory.RemoveAt(i);
-                        //break;
+                        item = battleCore.partyInventory[i];
+                        a = item.itemAbility.Copy();
+                        break;
                     }
                 }
 
@@ -186,10 +180,7 @@ namespace BattleSystem.States
 
         private void ConstructItemAidMenu()
         {
-            var options = new List<SelectableWheelOption>()
-            {
-                new SelectableWheelOption("Back", "", "_back", "Go back to the main options.")
-            };
+            var options = new List<SelectableWheelOption>();
 
             List<Item> items = battleCore.partyInventory;
             for (int i = 0; i < items.Count; i++)
@@ -198,7 +189,9 @@ namespace BattleSystem.States
                 
                 options.Add(new SelectableWheelOption($"{items[i].StackSize.x}x " + items[i].name, "", "_itemKey" + items[i].guid, items[i].description));
             }
-            
+
+            options.Add(new SelectableWheelOption("Back", "", "_back", "Go back to the main options."));
+
             bottomPanelUI.PopulateOptions(options.ToArray(), 0);
         }
         

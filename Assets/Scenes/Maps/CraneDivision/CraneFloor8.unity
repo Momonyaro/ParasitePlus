@@ -10738,7 +10738,7 @@ MonoBehaviour:
     playerRotation: {x: 0, y: 0, z: 0}
   encounterProgress: 0
   randomEncounters: 1
-  encounterProgressRange: 0.2
+  encounterProgressRange: 0.08
 --- !u!114 &1382615403
 MonoBehaviour:
   m_ObjectHideFlags: 0

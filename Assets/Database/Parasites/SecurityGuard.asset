@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SecurityGuard
   m_EditorClassIdentifier: 
   entityName: Security Guard
-  entityLevel: 4
+  entityLevel: 6
   entityId: _securityGuard
   inParty: 0
   attackYellSfx: 

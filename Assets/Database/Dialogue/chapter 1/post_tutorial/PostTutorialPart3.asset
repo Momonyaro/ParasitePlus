@@ -42,7 +42,8 @@ MonoBehaviour:
   - id: 12
   - id: 13
   transitionToOnEof: {fileID: 0}
-  goToSceneOnEof: 1
+  wipeOldDataOnLoad: 1
+  goToSceneOnEof: 0
   destinationSceneOnEof: MapMenu
   references:
     version: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GuardCommander
   m_EditorClassIdentifier: 
   entityName: Guard Commander
-  entityLevel: 4
+  entityLevel: 5
   entityId: _guardCommander
   inParty: 0
   attackYellSfx: 

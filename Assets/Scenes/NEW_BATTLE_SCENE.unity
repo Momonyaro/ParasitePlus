@@ -3085,18 +3085,18 @@ MonoBehaviour:
   partyField:
   - {fileID: 11400000, guid: 01419897f5b1c824a9470bca624fe2a9, type: 2}
   - {fileID: 11400000, guid: 16d3e37296f42074f8c3edd96e408248, type: 2}
-  - {fileID: 11400000, guid: 9f3233e3ba69a484da5c92131a69d3b0, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: 186b4febcbb3ddd48b5fd4fa71a62bf1, type: 2}
   enemyField:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 11400000, guid: 62c871278f515d043815c291315cd19a, type: 2}
+  - {fileID: 11400000, guid: 4e8522ef64ae24f4fa6346cd02555b85, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   holdingCells: []
   partyInventory:
-  - name: very long item name
-    guid: asgasdg
+  - name: coffee
+    guid: 
     description: 
     msrp: 0
     type: 4
@@ -3106,8 +3106,53 @@ MonoBehaviour:
     defense: 0
     critChance: 0
     dodgeChance: 0
-    itemAbility: {fileID: 11400000, guid: 7a5a9b2b7fa43894fa0304baaffba707, type: 2}
-    stackable: 1
+    itemAbility: {fileID: 0}
+    stackable: 0
+    StackSize: {x: 0, y: 0}
+    storeItem: 0
+  - name: cinnamon bun
+    guid: 
+    description: 
+    msrp: 0
+    type: 4
+    minLevelReq: 0
+    minFriendshipReq: 0
+    damage: 0
+    defense: 0
+    critChance: 0
+    dodgeChance: 0
+    itemAbility: {fileID: 0}
+    stackable: 0
+    StackSize: {x: 0, y: 0}
+    storeItem: 0
+  - name: kebab
+    guid: 
+    description: 
+    msrp: 0
+    type: 4
+    minLevelReq: 0
+    minFriendshipReq: 0
+    damage: 0
+    defense: 0
+    critChance: 0
+    dodgeChance: 0
+    itemAbility: {fileID: 0}
+    stackable: 0
+    StackSize: {x: 0, y: 0}
+    storeItem: 0
+  - name: banana
+    guid: 
+    description: 
+    msrp: 0
+    type: 4
+    minLevelReq: 0
+    minFriendshipReq: 0
+    damage: 0
+    defense: 0
+    critChance: 0
+    dodgeChance: 0
+    itemAbility: {fileID: 0}
+    stackable: 0
     StackSize: {x: 0, y: 0}
     storeItem: 0
   usedGroundItems: []
@@ -3117,7 +3162,7 @@ MonoBehaviour:
   lastDungeonIndex: 0
   lastBtnLayer: 0
   playerName: Yoel
-  bgmReference: _battleBGMAngel
+  bgmReference: _battleBGMWolves
   destinationScene: SwanFloor1
   lastTransformScene: 
 --- !u!4 &349893343
@@ -16451,7 +16496,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0
+  m_FillAmount: 0.652
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0

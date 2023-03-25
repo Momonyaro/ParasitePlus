@@ -8692,7 +8692,7 @@ MonoBehaviour:
     playerPosition: {x: 30, y: 1, z: -10}
     playerRotation: {x: 0, y: 0, z: 0}
   encounterProgress: 0
-  randomEncounters: 0
+  randomEncounters: 1
   encounterProgressRange: 0.07
 --- !u!114 &750159059
 MonoBehaviour:
@@ -8743,26 +8743,20 @@ MonoBehaviour:
     encounters:
     - enemies:
       - {fileID: 0}
-      - {fileID: 11400000, guid: 043f562807947a944b4bba6576812e93, type: 2}
       - {fileID: 0}
-      - {fileID: 11400000, guid: 043f562807947a944b4bba6576812e93, type: 2}
-      - {fileID: 0}
-    - enemies:
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 11400000, guid: 9c39519643d902946b0f1896d643a68f, type: 2}
+      - {fileID: 11400000, guid: 4e8522ef64ae24f4fa6346cd02555b85, type: 2}
       - {fileID: 0}
       - {fileID: 0}
     - enemies:
       - {fileID: 0}
+      - {fileID: 11400000, guid: 252565094fc8ee84faac20472b1eae2a, type: 2}
       - {fileID: 0}
-      - {fileID: 11400000, guid: 043f562807947a944b4bba6576812e93, type: 2}
-      - {fileID: 0}
+      - {fileID: 11400000, guid: 252565094fc8ee84faac20472b1eae2a, type: 2}
       - {fileID: 0}
     - enemies:
       - {fileID: 0}
-      - {fileID: 11400000, guid: 043f562807947a944b4bba6576812e93, type: 2}
-      - {fileID: 11400000, guid: 9c39519643d902946b0f1896d643a68f, type: 2}
+      - {fileID: 11400000, guid: 252565094fc8ee84faac20472b1eae2a, type: 2}
+      - {fileID: 11400000, guid: 4e8522ef64ae24f4fa6346cd02555b85, type: 2}
       - {fileID: 0}
       - {fileID: 0}
 --- !u!4 &750159060

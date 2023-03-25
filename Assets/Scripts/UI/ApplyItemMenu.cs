@@ -154,6 +154,8 @@ public class ApplyItemMenu : MonoBehaviour
 
         entity.SetEntityHP(hp);
         entity.SetEntityAP(ap);
+
+        FindObjectOfType<PauseCardUpdater>().UpdateEntities();
     }
 
 
@@ -161,7 +163,7 @@ public class ApplyItemMenu : MonoBehaviour
     {
         CORE.MapManager mapManager = FindObjectOfType<CORE.MapManager>();
 
-        List<EntityScriptable> activeParty = mapManager.currentSlimData.partyField.Where(e => e.inParty).ToList();
+        List<EntityScriptable> activeParty = mapManager.currentSlimData.partyField.Where(e => e != null && e.inParty).ToList();
         while (activeParty.Count < partyCards.Length)
         {
             activeParty.Add(null);

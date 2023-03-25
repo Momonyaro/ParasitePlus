@@ -385,6 +385,7 @@ MonoBehaviour:
   playerNameParent: {fileID: 5679837877214112590}
   keyboardGridParent: {fileID: 5679837875926059308}
   selectionCursor: {fileID: 4332731129420469555}
+  currentKey: {fileID: 0}
   gameStartSlimData:
     destinationScene: SwanDungeonEscape
     lastTransformScene: 
@@ -393,7 +394,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: b87cabd1880fcb14fbd07bc27dd4400d, type: 2}
     - {fileID: 11400000, guid: 5867c1a531a1bfd4c9e7a2d934c1612d, type: 2}
     - {fileID: 11400000, guid: 30f66e8e01da6b64081f8dfa5d87b383, type: 2}
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 186b4febcbb3ddd48b5fd4fa71a62bf1, type: 2}
     enemyField: []
     inventory: []
     wallet: 125
@@ -402,6 +403,7 @@ MonoBehaviour:
     playerLastEuler: {x: 0, y: 0, z: 0}
     loadSceneVariable: 
     lastButtonLayer: 0
+    combatTrackRef: 
 --- !u!1 &5679837877214112591
 GameObject:
   m_ObjectHideFlags: 0

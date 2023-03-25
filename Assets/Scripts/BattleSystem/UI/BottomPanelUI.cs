@@ -43,6 +43,7 @@ namespace BattleSystem.UI
 
         public void UpdateOptionsDisplay()
         {
+            //Set all options as blank
             previousObjectText.text = "";
             for (int i = 0; i < optionText.Length; i++)
             {
@@ -55,6 +56,7 @@ namespace BattleSystem.UI
             int q = 0;
             for (int i = currentlySelected; i < options.Length; i++)
             {
+                if (q >= optionText.Length) continue;
                 optionText[q].text = (q == 0) ? options[i].title.ToUpper() : options[i].title;
                 q++;
             }

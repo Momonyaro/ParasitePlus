@@ -486,6 +486,7 @@ GameObject:
   - component: {fileID: 3610896030497349744}
   - component: {fileID: 3610896030497349749}
   - component: {fileID: 3610896030497349745}
+  - component: {fileID: 3610896030497349754}
   - component: {fileID: 3610896030497349750}
   - component: {fileID: 3610896030497349753}
   - component: {fileID: 3610896030497349751}
@@ -511,6 +512,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: b2563199937782e41a2125ef28a38def, type: 2}
   initOnStart: 1
+  onStopReading:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3610896030497349754}
+        m_TargetAssemblyTypeName: BtnLayerTrigger, Assembly-CSharp
+        m_MethodName: TriggerEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   backgroundFather: {fileID: 892642505}
   allFather: {fileID: 1731278029}
   module: {fileID: -944628639613478452, guid: 7d30e05cf43b6e54387d92a909d874f3, type: 3}
@@ -597,3 +613,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4e3adeb8f54b37a2c5b7c04d5f680b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3610896030497349754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3610896030497349748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec5b004abf90de4ebe98a13091753e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newBtnLayer: 0
+  changeScene: 1
+  useMapManager: 1
+  parseDestination: 1
+  writeCurrentSceneToSlim: 0
+  newSceneVariable: MapMenu

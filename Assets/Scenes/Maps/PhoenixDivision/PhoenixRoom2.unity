@@ -6007,6 +6007,7 @@ GameObject:
   m_Component:
   - component: {fileID: 631642372}
   - component: {fileID: 631642373}
+  - component: {fileID: 631642374}
   m_Layer: 0
   m_Name: ev2
   m_TagString: Untagged
@@ -6044,9 +6045,39 @@ MonoBehaviour:
   storePersistant: 1
   onDialogueFinished:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 631642374}
+        m_TargetAssemblyTypeName: BtnLayerTrigger, Assembly-CSharp
+        m_MethodName: TriggerEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   generateNewGUID: 0
   eventKey: phoenixRoom2:event/confront1/dialog_2
+--- !u!114 &631642374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631642371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec5b004abf90de4ebe98a13091753e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newBtnLayer: 9
+  changeScene: 1
+  useMapManager: 1
+  parseDestination: 0
+  writeCurrentSceneToSlim: 1
+  newSceneVariable: PhoenixHaze1
 --- !u!1001 &641487772
 PrefabInstance:
   m_ObjectHideFlags: 0

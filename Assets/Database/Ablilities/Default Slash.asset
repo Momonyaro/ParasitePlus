@@ -14,23 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Slash
   abilityId: _defaultAtk
-  abilityDesc: 
+  abilityDesc: Slash at a target with your knife.
   abilityEffectRef: _swordSlash
-  abilitySoundEffect: 
+  abilitySoundEffect: _meleeBash
   hideDamageText: 0
   targetAll: 0
   targetFriendlies: 0
   abilityLevelReq: 0
-  levelScalingDamage: 1
-  abilityCritChance: 0
-  abilityMissChance: 0
+  levelScalingDamage: 1.5
+  abilityCritChance: 0.07
+  abilityMissChance: 0.25
   abilityCosts: {x: 0, y: 0}
-  abilityDamage: {x: 0, y: 0}
+  abilityDamage: {x: 8, y: 0}
   abilityCooldown: {x: 0, y: 0}
   abilityInterjects: []
   damageType:
-  - 1
-  - 1
-  - 1
+  - 0
+  - 0
+  - 0
   - 1
   abilityEffects: []

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Scriptables;
 using TMPro;
 using UnityEngine;
@@ -60,6 +61,7 @@ namespace BattleSystem.UI
                     }
 
                     levelUpContainers[i].portrait.sprite = selected;
+                    party[i].CalculateNewXpThreshold(); // to avoid funny divide by 0
 
                     int xpReward = xpToAdd[i] + Mathf.FloorToInt(Random.Range(-xpToAdd[i] * randomRange, xpToAdd[i] * randomRange));
                     if (party[i].deadTrigger)
@@ -78,7 +80,7 @@ namespace BattleSystem.UI
                 }
             }
 
-            StartCoroutine(LevelUpEnumerator(party, xpRewards));
+            StartCoroutine(LevelUpEnumerator(party.Where(e => e != null).ToArray(), xpRewards));
         }
 
         private IEnumerator LevelUpEnumerator(EntityScriptable[] party, int[] xpToAdd)
@@ -88,30 +90,24 @@ namespace BattleSystem.UI
             
             for (int i = 0; i < levelDifference.Length; i++)
             {
-                if  (party[i] == null) continue;
                 int originalLevel = party[i].entityLevel;
                 int originalXp = party[i].entityXp;
                 int originalXpThreshold = party[i].entityXpThreshold;
                 levelDifference[i] = originalLevel;
                 party[i].AddXpToEntity(xpToAdd[i]);
-
-                for (int j = 0; j < party[i].abilityScriptables.Length; j++)
-                {
-                    if  (party[i] == null) continue;
-                    party[i].abilityScriptables[j].ResetValues();
-                }
                 
                 levelDifference[i] = party[i].entityLevel - levelDifference[i]; // Should yield the amount of levels gained this level-up.
                 
-                Debug.Log($"start: {originalLevel}, end: {party[i].entityLevel}, diff: {levelDifference[i]}");
+                Debug.Log($"name: {party[i].entityName} start: {originalLevel}, end: {party[i].entityLevel}, diff: {levelDifference[i]}");
                 
                 //Debug.Assert(i != 3); // If we're reading a fourth party-member something is wrong.
                 
                 //Reset xp-bar
-                levelUpContainers[i].xpBar.fillAmount = (float) originalXp / originalXpThreshold;
+                levelUpContainers[i].xpBar.fillAmount = (float)originalXp / originalXpThreshold;
+                if (levelDifference[i] > 0) levelUpContainers[i].xpBar.fillAmount = 0;
+
                 levelUpContainers[i].levelPlus.gameObject.SetActive(false);
-                int croppedLvl = party[i].entityLevel - levelDifference[i];
-                levelUpContainers[i].levelNumText.text = croppedLvl.ToString();
+                levelUpContainers[i].levelNumText.text = originalLevel.ToString();
             }
             
             yield return new WaitForSeconds(waitTime);
@@ -125,11 +121,12 @@ namespace BattleSystem.UI
                     if (levelDifference[i] == 0)
                         continue;
 
-                    float currentFill = levelUpContainers[i].xpBar.fillAmount;
-                    currentFill = Mathf.Clamp(currentFill + (barFillSpeed * Time.deltaTime), 0, 1);
+                    float lastFill = levelUpContainers[i].xpBar.fillAmount;
+                    float currentFill = Mathf.Clamp(lastFill + (barFillSpeed * Time.deltaTime), 0, 1);
+                    Debug.Log($"lFill: {lastFill}, cFill: {currentFill}, xpBarFill: {levelUpContainers[i].xpBar.fillAmount}");
                     levelUpContainers[i].xpBar.fillAmount = currentFill;
 
-                    if (currentFill >= 0.99f)
+                    if (currentFill >= 0.95f)
                     {
                         levelUpContainers[i].xpBar.fillAmount = 0;
                         levelUpContainers[i].levelPlus.gameObject.SetActive(true);
@@ -137,6 +134,7 @@ namespace BattleSystem.UI
                         levelDifference[i]--;
                         
                         int croppedLvl = party[i].entityLevel - levelDifference[i];
+                        Debug.Log(croppedLvl + ", diff: " + levelDifference[i]);
                         levelUpContainers[i].levelNumText.text = croppedLvl.ToString();
                     }
                 }
@@ -148,6 +146,8 @@ namespace BattleSystem.UI
                     if (levelDifference[i] == 0)
                         diffAllZero--;
                 }
+
+                Debug.Log(String.Join(", ", levelDifference));
 
                 if (diffAllZero == 0)
                     lvlDiffNotZero = false;
@@ -161,6 +161,8 @@ namespace BattleSystem.UI
             {
                 for (int i = 0; i < levelUpContainers.Length; i++)
                 {
+                    if (i >= party.Length)
+                        continue;
                     if (party[i] == null)
                         continue;
                     

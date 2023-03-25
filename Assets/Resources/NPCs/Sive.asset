@@ -15,7 +15,7 @@ MonoBehaviour:
   entityName: Sive
   entityLevel: 6
   entityId: _sive
-  inParty: 0
+  inParty: 1
   attackYellSfx: 
   damageYellSfx: _male_hurt
   deathYellSfx: _male_death
@@ -29,8 +29,9 @@ MonoBehaviour:
   - 1
   - 0.75
   entityXp: 0
-  entityXpThreshold: 40
-  defaultAttack: {fileID: 11400000, guid: 00be9c6c0665f664fb5c95bf1a66b36f, type: 2}
+  entityXpThreshold: 14
+  entityMoney: 0
+  defaultAttack: {fileID: 11400000, guid: b5228bfe584515a4cad6a32a1810ebd0, type: 2}
   lastAttacker: {fileID: 0}
   entityAI:
     randID: -1

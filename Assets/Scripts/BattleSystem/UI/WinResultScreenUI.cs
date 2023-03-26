@@ -123,7 +123,6 @@ namespace BattleSystem.UI
 
                     float lastFill = levelUpContainers[i].xpBar.fillAmount;
                     float currentFill = Mathf.Clamp(lastFill + (barFillSpeed * Time.deltaTime), 0, 1);
-                    Debug.Log($"lFill: {lastFill}, cFill: {currentFill}, xpBarFill: {levelUpContainers[i].xpBar.fillAmount}");
                     levelUpContainers[i].xpBar.fillAmount = currentFill;
 
                     if (currentFill >= 0.95f)

@@ -55,7 +55,7 @@ MonoBehaviour:
       volume: 0.8
       pitch: 1
       randomPitchOffset: 0
-      delay: 0
+      delay: 0.4
       loop: 1
       introClip: {fileID: 0}
       outroClip: {fileID: 0}
@@ -889,6 +889,70 @@ MonoBehaviour:
       outroClip: {fileID: 0}
       tracks:
       - AudioClip: {fileID: 8300000, guid: bd6d98ce49993294ab79c51398f18222, type: 3}
+  - reference: _battleBGMMetal-ish
+    groupIndex: 0
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _music
+      volume: 0.634
+      pitch: 1
+      randomPitchOffset: 0
+      delay: 0.4
+      loop: 1
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 3deec14087e82ed4e8418d5b11bcbe1c, type: 3}
+  - reference: _battleBGMDuress
+    groupIndex: 0
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _music
+      volume: 0.686
+      pitch: 1
+      randomPitchOffset: 0
+      delay: 0.4
+      loop: 1
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 1a5e92116fe98d44eb2f34d90318601c, type: 3}
+  - reference: _battleBGMFrantic
+    groupIndex: 0
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _music
+      volume: 0.59
+      pitch: 1
+      randomPitchOffset: 0
+      delay: 0
+      loop: 1
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: 6d62d0317079ddb4091dce5ce80a6674, type: 3}
+  - reference: _geometryBGM
+    groupIndex: 1
+    trackContainer:
+      lerpValue: 0
+      ratio: 1
+      trackLerpOverlap: 1
+      volumeGroupRef: _music
+      volume: 0.503
+      pitch: 1
+      randomPitchOffset: 0
+      delay: 0.8
+      loop: 1
+      introClip: {fileID: 0}
+      outroClip: {fileID: 0}
+      tracks:
+      - AudioClip: {fileID: 8300000, guid: eb01ac70fb1face4f9b350623d63996a, type: 3}
   eventGroups:
   - Battle Music
   - Dungeon BGM

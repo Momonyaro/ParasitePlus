@@ -16,6 +16,8 @@ MonoBehaviour:
   abilityId: _multiStrike
   abilityDesc: Hit all entities with a weaker attack
   abilityEffectRef: _swordSlash
+  abilitySoundEffect: _meleeBash
+  hideDamageText: 0
   targetAll: 1
   targetFriendlies: 0
   abilityLevelReq: 0
@@ -24,6 +26,8 @@ MonoBehaviour:
   abilityMissChance: 0.244
   abilityCosts: {x: 3, y: 0}
   abilityDamage: {x: 3, y: 0}
+  abilityCooldown: {x: 0, y: 0}
+  abilityInterjects: []
   damageType:
   - 0
   - 1

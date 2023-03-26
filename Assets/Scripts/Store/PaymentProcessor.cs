@@ -133,7 +133,8 @@ public class PaymentProcessor : MonoBehaviour
             if (manager.currentSlim.inventory[i].guid.Equals(item.guid))
             {
                 foundInInventory = true;
-                manager.currentSlim.inventory[i].StackSize.x = amount;
+                int currentAmount = manager.currentSlim.inventory[i].StackSize.x;
+                manager.currentSlim.inventory[i].StackSize.x = Mathf.Min(currentAmount + amount, manager.currentSlim.inventory[i].StackSize.y);
                 break;
             }
         }

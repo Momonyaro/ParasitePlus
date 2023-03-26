@@ -5016,7 +5016,7 @@ MonoBehaviour:
     combatTrackRef: 
   dungeonManager: {fileID: 713037121}
   config: {fileID: 11400000, guid: f19491cb78d45e04ca9bacb7aac3d494, type: 2}
-  mapBMGReference: _craneCalmBGM
+  mapBMGReference: _phoenixLobbyBGM
   writeSaveOnLoad: 1
   monsterManifest:
     encounters:

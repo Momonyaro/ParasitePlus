@@ -55,7 +55,12 @@ MonoBehaviour:
   - id: 22
   - id: 23
   - id: 24
+  - id: 25
+  - id: 26
+  - id: 27
+  - id: 28
   transitionToOnEof: {fileID: 0}
+  wipeOldDataOnLoad: 1
   goToSceneOnEof: 0
   destinationSceneOnEof: 
   references:
@@ -324,6 +329,38 @@ MonoBehaviour:
         reveal: 1
         refToDestroy: _diagBox16
     00000012:
+      type: {class: PlaySoundComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _sfxEventComp18
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        soundEventRef: _meleeBash
+        stopEvent: 0
+        playAsMusic: 0
+        transitionType: 0
+        transitionTime: 0.3
+        playLayered: 0
+        trackLayer: -1
+    00000013:
+      type: {class: PlaySoundComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _sfxEventComp19
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        soundEventRef: _male_death
+        stopEvent: 0
+        playAsMusic: 0
+        transitionType: 0
+        transitionTime: 0.3
+        playLayered: 0
+        trackLayer: -1
+    00000014:
       type: {class: SpawnObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _spawnObjComp18
@@ -332,7 +369,7 @@ MonoBehaviour:
         screenPosition: {x: 400, y: -100}
         errorAttempts: 99
         reveal: 1
-    00000013:
+    00000015:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp19
@@ -342,7 +379,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         refToDestroy: _spawnSec1
-    00000014:
+    00000016:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp20
@@ -352,7 +389,39 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         waitTime: 1.4
-    00000015:
+    00000017:
+      type: {class: PlaySoundComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _sfxEventComp23
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        soundEventRef: _meleeBash
+        stopEvent: 0
+        playAsMusic: 0
+        transitionType: 0
+        transitionTime: 0.3
+        playLayered: 0
+        trackLayer: -1
+    00000018:
+      type: {class: PlaySoundComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _sfxEventComp24
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        soundEventRef: _male_death
+        stopEvent: 0
+        playAsMusic: 0
+        transitionType: 0
+        transitionTime: 0.3
+        playLayered: 0
+        trackLayer: -1
+    00000019:
       type: {class: SpawnObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _spawnObjComp20
@@ -361,7 +430,7 @@ MonoBehaviour:
         screenPosition: {x: -400, y: -100}
         errorAttempts: 99
         reveal: 1
-    00000016:
+    0000001A:
       type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _destroyComp21
@@ -371,7 +440,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         refToDestroy: _spawnSec2
-    00000017:
+    0000001B:
       type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _waitComp23
@@ -381,7 +450,7 @@ MonoBehaviour:
         errorAttempts: 99
         reveal: 1
         waitTime: 1.4
-    00000018:
+    0000001C:
       type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
       data:
         reference: _diagBox24

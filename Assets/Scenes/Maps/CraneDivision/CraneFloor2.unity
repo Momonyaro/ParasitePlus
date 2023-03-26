@@ -8243,6 +8243,14 @@ PrefabInstance:
       value: craneFloor2:chest/energy_bar
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+      propertyPath: dir.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+      propertyPath: dir.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: itemID
       value: 5960744a-0f9b-4a77-8ffb-3c0328023e19
       objectReference: {fileID: 0}
@@ -11681,6 +11689,14 @@ PrefabInstance:
     - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: guid
       value: craneFloor2:chest/coffee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+      propertyPath: dir.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
+      propertyPath: dir.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: itemID

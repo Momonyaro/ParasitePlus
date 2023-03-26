@@ -289,7 +289,7 @@ namespace CORE
             }
         }
 
-        public void WritePersistantData(string key, bool state)
+        public void WritePersistantState(string key, bool state)
         {
             if (currentSlimData.interactableStates.ContainsKey(key))
             {

@@ -1,3 +1,4 @@
+using CORE;
 using MOVEMENT;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,22 +13,32 @@ public class MovePlayerTrigger : MonoBehaviour
 
 
     public UnityEvent onFinished = new UnityEvent();
+    public string id = $"[scene]:event/[id]";
     public Vector3 targetPos = Vector3.zero;
     public Vector3 targetRot = Vector3.zero;
     public List<Move> moves = new List<Move>();
 
     private FPSGridPlayer player;
+    private MapManager mapManager;
     private bool triggered = false;
 
-    private void Start()
+    private void Awake()
     {
         player = FindObjectOfType<FPSGridPlayer>();
+        mapManager = FindObjectOfType<CORE.MapManager>();
     }
 
     public void Trigger()
     {
-        if (triggered) return;
+        if (triggered) return; 
+        if (mapManager.GetPersistantState(id))
+        {
+            triggered = true;
+            return;
+        }
+
         triggered = true;
+        mapManager.WritePersistantState(id, true);
 
         StartCoroutine(IEMovePlayer());
     }

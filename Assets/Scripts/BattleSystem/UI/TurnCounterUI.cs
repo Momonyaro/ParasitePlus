@@ -24,6 +24,8 @@ namespace BattleSystem.UI
                 
                 
                 string entityID = queue[i % queue.Length].entityId;
+                if (!queue[i % queue.Length].inParty)
+                    Debug.Log("Why the fuck are you here " +  entityID + "?");
 
                 if (entityID.Equals("_player"))
                     turnBlocks[i].playerPortrait.SetActive(true);

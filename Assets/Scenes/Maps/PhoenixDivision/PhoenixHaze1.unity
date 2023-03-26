@@ -15772,7 +15772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: dir.x
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: dir.y
@@ -17252,7 +17252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: dir.z
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4769400088678873114, guid: 1ff6cf0563a65f14f8625bebb6620f1d, type: 3}
       propertyPath: itemID

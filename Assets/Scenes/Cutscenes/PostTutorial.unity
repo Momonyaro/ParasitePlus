@@ -627,7 +627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newBtnLayer: 0
   changeScene: 1
-  useMapManager: 1
+  useMapManager: 0
   parseDestination: 1
   writeCurrentSceneToSlim: 0
   newSceneVariable: MapMenu

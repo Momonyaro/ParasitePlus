@@ -3090,7 +3090,7 @@ MonoBehaviour:
   enemyField:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 11400000, guid: 4e8522ef64ae24f4fa6346cd02555b85, type: 2}
+  - {fileID: 11400000, guid: dc08351eef2303e4fba088a8d3374459, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   holdingCells: []
@@ -3163,6 +3163,11 @@ MonoBehaviour:
   lastBtnLayer: 0
   playerName: Yoel
   bgmReference: _battleBGMWolves
+  randomBgmTracks:
+  - _battleBGMCanonball
+  - _battleBGMMetal-ish
+  - _battleBGMDuress
+  - _battleBGMFrantic
   destinationScene: SwanFloor1
   lastTransformScene: 
 --- !u!4 &349893343

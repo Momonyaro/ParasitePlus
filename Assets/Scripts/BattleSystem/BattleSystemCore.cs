@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using CORE;
 using Items;
 using SAMSARA;
@@ -36,6 +35,7 @@ namespace BattleSystem
         public int lastBtnLayer = 0;
         public string playerName = "Yoel";
         public string bgmReference;
+        public string[] randomBgmTracks = new string[0];
 
         //Persistant Data storage
         public HashSet<string> eventTriggers = new HashSet<string>();
@@ -124,6 +124,10 @@ namespace BattleSystem
                 if (slimData.combatTrackRef != string.Empty)
                 {
                     bgmReference = slimData.combatTrackRef;
+                }
+                else
+                {
+                    bgmReference = randomBgmTracks[UnityEngine.Random.Range(0, randomBgmTracks.Length)];
                 }
             }
         }

@@ -27,12 +27,14 @@ namespace MapTriggers
             }
         }
 
+        private void Awake()
+        {
+            mapManager = FindObjectOfType<CORE.MapManager>();
+        }
+
         private void Start()
         {
             if (!storePersistant) return;
-
-            mapManager = FindObjectOfType<CORE.MapManager>();
-
 
             if (mapManager.GetPersistantState(eventKey))
             {
@@ -49,7 +51,7 @@ namespace MapTriggers
                 if (!reader.IsRunning)
                 {
                     if (storePersistant)
-                        mapManager.WritePersistantData(eventKey, true);
+                        mapManager.WritePersistantState(eventKey, true);
                     onDialogueFinished?.Invoke();
                     watchDialogueStatus = false;
                 }
@@ -58,7 +60,15 @@ namespace MapTriggers
 
         public void TriggerEvent()
         {
-            if (triggered) return;
+            if (triggered) return; 
+            if (mapManager.GetPersistantState(eventKey))
+            {
+                triggered = true;
+                onDialogueFinished?.Invoke();
+                return;
+            }
+
+            mapManager = FindObjectOfType<CORE.MapManager>();
 
             reader = FindObjectOfType<DialogueReader>();
             reader.dialogueData = dialogueData;

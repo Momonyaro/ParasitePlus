@@ -9505,7 +9505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: cd9d774d30f06bc40b82a1f779e2ccd4, type: 2}
-  storePersistant: 0
+  storePersistant: 1
   onDialogueFinished:
     m_PersistentCalls:
       m_Calls:
@@ -9522,7 +9522,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   generateNewGUID: 0
-  eventKey: falconRoom3:event/radio/dialog
+  eventKey: falconRoom3:event/anna/dialog
 --- !u!114 &810223808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9595,6 +9595,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  id: falconRoom3:event/anna/movePlayer
   targetPos: {x: -10, y: 1, z: -2}
   targetRot: {x: 0, y: -90, z: 0}
   moves:
@@ -18639,7 +18640,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   generateNewGUID: 0
-  eventKey: 33bf70e2-5a25-47f0-b0bd-e7940971e9aa
+  eventKey: falconRoom3:event/anna/dialog2
 --- !u!114 &1378455535
 MonoBehaviour:
   m_ObjectHideFlags: 0

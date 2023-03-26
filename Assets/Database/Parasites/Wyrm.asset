@@ -16,9 +16,9 @@ MonoBehaviour:
   entityLevel: 7
   entityId: _wyrm
   inParty: 0
-  attackYellSfx: 
-  damageYellSfx: 
-  deathYellSfx: 
+  attackYellSfx: _bessie_atk
+  damageYellSfx: _bessie_hurt
+  deathYellSfx: _bessie_death
   entitySpeed: 10
   throwawayId: 0
   healthPts: {x: 30, y: 30}
@@ -30,6 +30,7 @@ MonoBehaviour:
   - 1
   entityXp: 30
   entityXpThreshold: 0
+  entityMoney: 0
   defaultAttack: {fileID: 11400000, guid: 00be9c6c0665f664fb5c95bf1a66b36f, type: 2}
   lastAttacker: {fileID: 0}
   entityAI:

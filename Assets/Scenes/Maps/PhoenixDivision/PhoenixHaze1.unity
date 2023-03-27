@@ -35521,6 +35521,24 @@ MonoBehaviour:
       - {fileID: 0}
       - {fileID: 11400000, guid: dc08351eef2303e4fba088a8d3374459, type: 2}
       - {fileID: 0}
+    - enemies:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 11400000, guid: 0cc4ba2ee261d2c4bad33a47ac6bbf6d, type: 2}
+      - {fileID: 0}
+      - {fileID: 0}
+    - enemies:
+      - {fileID: 0}
+      - {fileID: 11400000, guid: dc08351eef2303e4fba088a8d3374459, type: 2}
+      - {fileID: 11400000, guid: 0cc4ba2ee261d2c4bad33a47ac6bbf6d, type: 2}
+      - {fileID: 0}
+      - {fileID: 0}
+    - enemies:
+      - {fileID: 0}
+      - {fileID: 11400000, guid: dc08351eef2303e4fba088a8d3374459, type: 2}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 11400000, guid: 0cc4ba2ee261d2c4bad33a47ac6bbf6d, type: 2}
 --- !u!4 &1910715823
 Transform:
   m_ObjectHideFlags: 0

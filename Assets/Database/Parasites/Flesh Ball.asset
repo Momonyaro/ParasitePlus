@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af39f2e96d88af64ea77e06a19ccbfff, type: 3}
-  m_Name: Wyrm
+  m_Name: Flesh Ball
   m_EditorClassIdentifier: 
-  entityName: Wyrm
+  entityName: Ball of Flesh
   entityLevel: 7
-  entityId: _wyrm
+  entityId: _fleshBall
   inParty: 0
   attackYellSfx: _bessie_atk
   damageYellSfx: _bessie_hurt
@@ -22,11 +22,11 @@ MonoBehaviour:
   entitySpeed: 10
   throwawayId: 0
   healthPts: {x: 30, y: 30}
-  actionPts: {x: 80, y: 80}
+  actionPts: {x: 50, y: 50}
   weaknesses:
-  - 1
   - 1.5
   - 0.5
+  - 1
   - 1
   entityXp: 30
   entityXpThreshold: 0
@@ -48,7 +48,7 @@ MonoBehaviour:
         id: 1
   onDeathInterjects: []
   deadTrigger: 0
-  weapon: TEETH
+  weapon: SPIKES
   stats: 000000000000000000000000000000000000000000000000
   abilityScriptables: []
   entityEffectBuffer: []

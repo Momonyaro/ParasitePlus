@@ -8,8 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 7ba579f9457efd3478916ab0c851b551
-  m_OcclusionCullingData: {fileID: 36300000, guid: 776659e81a9571846b5269ee8ed6c1a9, type: 2}
+  m_SceneGUID: 00000000000000000000000000000000
+  m_OcclusionCullingData: {fileID: 0}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -1476,6 +1476,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6322987903886326981, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
+      propertyPath: guid
+      value: d143ad99-1015-44a4-9957-e9257569d873
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322987903886326981, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: locked
       value: 0
       objectReference: {fileID: 0}
@@ -1690,6 +1694,10 @@ PrefabInstance:
     - target: {fileID: 1214430076099632637, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1243870144901721965, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
+      propertyPath: guid
+      value: 8dae3252-a4f7-4594-a756-8f61ebdb837d
       objectReference: {fileID: 0}
     - target: {fileID: 1243870144901721965, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: sensor.x
@@ -2853,6 +2861,10 @@ PrefabInstance:
     - target: {fileID: 8137076570045318975, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342526681851149126, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
+      propertyPath: guid
+      value: 9649c101-4178-4687-b9dd-f88b12c2fc1e
       objectReference: {fileID: 0}
     - target: {fileID: 8342526681851149126, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: sensor.x
@@ -6489,6 +6501,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2500495587382708785, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
+      propertyPath: guid
+      value: 601ad04d-3901-4503-a312-9002a400f3f4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500495587382708785, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: sensor.x
       value: 12
       objectReference: {fileID: 0}
@@ -8539,6 +8555,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6322987903886326981, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
+      propertyPath: guid
+      value: 600538e4-ecd1-4c0c-8713-38612bea785d
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322987903886326981, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: locked
       value: 0
       objectReference: {fileID: 0}
@@ -10277,6 +10297,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6322987903886326981, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
+      propertyPath: guid
+      value: 2d9beefd-88ee-49f2-9c73-aafa24f003e3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322987903886326981, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: locked
       value: 0
       objectReference: {fileID: 0}
@@ -10369,6 +10393,10 @@ PrefabInstance:
     - target: {fileID: 1214430076099632637, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500495587382708785, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
+      propertyPath: guid
+      value: 9534e253-d8ed-4a1e-9f84-51e0610ef407
       objectReference: {fileID: 0}
     - target: {fileID: 2500495587382708785, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: sensor.x
@@ -11671,6 +11699,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6322987903886326981, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
+      propertyPath: guid
+      value: 2f311fc6-c5b5-4094-81ce-014a80e23cb0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322987903886326981, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: locked
       value: 1
       objectReference: {fileID: 0}
@@ -12318,6 +12350,10 @@ PrefabInstance:
     - target: {fileID: 4835381835031168808, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930026094537315170, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
+      propertyPath: guid
+      value: 0b98d22a-e0f5-4b25-9289-4e170f25891a
       objectReference: {fileID: 0}
     - target: {fileID: 4930026094537315170, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: sensor.x
@@ -14218,6 +14254,10 @@ PrefabInstance:
     - target: {fileID: 8137076570045318975, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342526681851149126, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
+      propertyPath: guid
+      value: f78eee41-0a32-47f7-b66d-14e0bd736eb5
       objectReference: {fileID: 0}
     - target: {fileID: 8342526681851149126, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: sensor.x
@@ -16508,6 +16548,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2500495587382708785, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
+      propertyPath: guid
+      value: 1703dc03-de83-48d4-ae19-b739f1f6d00d
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500495587382708785, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: sensor.x
       value: 18
       objectReference: {fileID: 0}
@@ -17314,6 +17358,10 @@ PrefabInstance:
     - target: {fileID: 4128823843486441012, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930026094537315170, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
+      propertyPath: guid
+      value: cff546f3-9e6a-46be-8d53-1466d519623c
       objectReference: {fileID: 0}
     - target: {fileID: 4930026094537315170, guid: 6ca5192fe8623f8458b2d42bc0017a23, type: 3}
       propertyPath: sensor.x

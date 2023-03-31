@@ -28,12 +28,14 @@ public class InfoPrompt : MonoBehaviour
     public void CreatePrompt(string[] promptMessage)
     {
         isRunning = true;
-        if (promptMessage.Length == 0)
+        FPSGridPlayer player = FindObjectOfType<FPSGridPlayer>();
+        if (promptMessage.Length == 0 || player.IsLocked)
         {
+            isRunning = false;
             return;
         }
 
-        FindObjectOfType<FPSGridPlayer>().AddLock("INFO_PROMPT");
+        player.AddLock("INFO_PROMPT");
         currentMessage = new Queue<string>(promptMessage);
         
         promptText.text = currentMessage.Dequeue();

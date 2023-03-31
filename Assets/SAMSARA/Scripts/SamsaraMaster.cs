@@ -17,9 +17,9 @@ namespace SAMSARA
             {
                 if (_instance == null)
                 {
-                    for (int i = 0; i < GameObject.FindObjectsOfType<SamsaraMaster>().Length; i++)
+                    for (int i = 0; i < UnityEngine.Object.FindObjectsOfType<SamsaraMaster>().Length; i++)
                     {
-                        GameObject.DestroyImmediate(GameObject.FindObjectsOfType<SamsaraMaster>()[i].gameObject, false);
+                        UnityEngine.Object.DestroyImmediate(UnityEngine.Object.FindObjectsOfType<SamsaraMaster>()[i].gameObject, false);
                     }
                     
                     _instance = new GameObject("SamsaraMaster", new[]

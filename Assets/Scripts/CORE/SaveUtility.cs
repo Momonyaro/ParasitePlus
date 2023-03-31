@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem.Controls;
 
 public class SaveUtility : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class SaveUtility : MonoBehaviour
         
         string json = JsonUtility.ToJson(save, true);
 
-        if (System.IO.File.Exists(SavePath + $"/{SaveFileName}"))
+        if (SaveExists())
         {
             string temp = System.IO.File.ReadAllText(SavePath + $"/{SaveFileName}");
             System.IO.File.WriteAllText(SavePath + $"/{OldSaveFileName}", temp);
@@ -34,7 +35,7 @@ public class SaveUtility : MonoBehaviour
     {
         success = false;
 
-        if (System.IO.File.Exists(SavePath + $"/{SaveFileName}"))
+        if (SaveExists())
         {
             string json = System.IO.File.ReadAllText(SavePath + $"/{SaveFileName}");
             SaveItem loaded = JsonUtility.FromJson<SaveItem>(json);
@@ -43,6 +44,11 @@ public class SaveUtility : MonoBehaviour
         }
 
         return null;
+    }
+
+    public static bool SaveExists()
+    {
+        return System.IO.File.Exists(SavePath + $"/{SaveFileName}");
     }
 
     private static CORE.SlimComponent.SlimData ConvertToSlimData(SaveItem saveItem)

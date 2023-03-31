@@ -22889,5 +22889,9 @@ PrefabInstance:
       propertyPath: interactPromptMsg
       value: Go Down
       objectReference: {fileID: 0}
+    - target: {fileID: 2772924696105542055, guid: e52e51fc642ddfb48953039c84911174, type: 3}
+      propertyPath: sfxCloseReference
+      value: _doorClose
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e52e51fc642ddfb48953039c84911174, type: 3}

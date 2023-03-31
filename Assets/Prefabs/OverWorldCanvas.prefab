@@ -4170,6 +4170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onHoverObject: {fileID: 187039956617692472}
   selectable: {fileID: 2244564268589649165}
+  background: {fileID: 1685687592113031104}
   hovering: 0
   active: 1
   msg: _closeStatusMenu
@@ -6513,6 +6514,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  noAnim: 0
   defaultCol: {r: 0.08627451, g: 0.34901962, b: 0.9215687, a: 1}
   selectedCol: {r: 0.037201855, g: 0.25102913, b: 0.7169812, a: 1}
   defaultTextCol: {r: 1, g: 1, b: 1, a: 1}
@@ -11018,6 +11020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onHoverObject: {fileID: 3175061876227365770}
   selectable: {fileID: 3192896370726268330}
+  background: {fileID: 3705757363620999834}
   hovering: 0
   active: 0
   msg: _openStatusMenu
@@ -13121,6 +13124,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  noAnim: 0
   defaultCol: {r: 0.08627451, g: 0.34901962, b: 0.9215687, a: 1}
   selectedCol: {r: 0.037201855, g: 0.25102913, b: 0.7169812, a: 1}
   defaultTextCol: {r: 1, g: 1, b: 1, a: 1}
@@ -17899,6 +17903,7 @@ MonoBehaviour:
   - {fileID: 2906761143617271045}
   - {fileID: 6564071333864845744}
   - {fileID: 4724607020763266527}
+  statusMenuExit: {fileID: 583108819337016197}
   uiInput: {fileID: 0}
   nodeMessages:
   - id: _openItemMenu
@@ -20003,6 +20008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onHoverObject: {fileID: 1054965182724332450}
   selectable: {fileID: 4466698477394597200}
+  background: {fileID: 5229944859599727638}
   hovering: 0
   active: 0
   msg: _openStatusMenu
@@ -20823,6 +20829,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onHoverObject: {fileID: 7567877899487371469}
   selectable: {fileID: 7996093071603154171}
+  background: {fileID: 8674575489067497062}
   hovering: 0
   active: 0
   msg: _openStatusMenu

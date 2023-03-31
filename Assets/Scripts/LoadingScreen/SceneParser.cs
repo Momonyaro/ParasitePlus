@@ -7,11 +7,13 @@ public class SceneParser : MonoBehaviour
     static string[] sunriseScenes = new string[] 
     {
         "FiskekyrkaSunrise",
+        "GothTowersSunrise"
     };
 
     static string[] sundownScenes = new string[]
     {
         "FiskekyrkaSundown",
+        "GothTowersSundown"
     };
 
     static string[] travelScenes = new string[]

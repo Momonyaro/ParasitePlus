@@ -13,6 +13,7 @@ public class ItemBtn : MonoBehaviour
     public string itemDescription;
     public Image background;
     public AnimationCurve introFillCurve;
+    public bool noAnim = false;
 
     public Color defaultCol = Color.white;
     public Color selectedCol = Color.white;
@@ -90,7 +91,8 @@ public class ItemBtn : MonoBehaviour
         StoreMessage(toStore);
 
         StopCoroutine(IEIntroFill());
-        StartCoroutine(IEIntroFill());
+        if (!noAnim)
+            StartCoroutine(IEIntroFill());
 
         IEnumerator IEIntroFill()
         {

@@ -103,7 +103,7 @@ MonoBehaviour:
           text: Hey $Player! I need some time off from the paperwork.
           buildTime: 0.0456
         - speakerReference: _sandra
-          text: How about we go to the book shop?
+          text: How about we go to the book store?
           buildTime: 0.0456
         - speakerReference: _narrator
           text: It felt like Sandra was an angel, saving you from the boring day

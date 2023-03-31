@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Banana
   abilityId: _item_banana
-  abilityDesc: banana funny, haha monkey
+  abilityDesc: A little potassium never hurt anybody... Restores 10 HP
   abilityEffectRef: _heal
   abilitySoundEffect: _eating
   hideDamageText: 0

@@ -749,10 +749,10 @@ MonoBehaviour:
       ratio: 1
       trackLerpOverlap: 1
       volumeGroupRef: _music
-      volume: 0.756
+      volume: 0.331
       pitch: 1
       randomPitchOffset: 0
-      delay: 0
+      delay: 0.4
       loop: 0
       introClip: {fileID: 0}
       outroClip: {fileID: 0}

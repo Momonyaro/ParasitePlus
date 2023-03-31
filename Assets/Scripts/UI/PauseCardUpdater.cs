@@ -36,8 +36,8 @@ public class PauseCardUpdater : MonoBehaviour
             partyCards[i].gameObject.SetActive(true);
             partyCards[i].SetValues(GetSprite(e.entityId), e.GetEntityHP().x, e.GetEntityHP().y, e.GetEntityAP().x, e.GetEntityAP().y);
             var btn = partyCards[i].GetComponent<UIButton>();
-            btn.onClick.AddListener(() => btn.SendMessage());
-            btn.onClick.AddListener(() => statusMenu.SetData(e.entityId));
+            btn.onClick.AddListener((val) => btn.SendMessage());
+            btn.onClick.AddListener((val) => statusMenu.SetData(e.entityId));
         }
     }
 

@@ -1,4 +1,6 @@
 using Dialogue;
+using MOVEMENT;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -68,7 +70,16 @@ namespace MapTriggers
                 return;
             }
 
-            mapManager = FindObjectOfType<CORE.MapManager>();
+            triggered = true;
+            StartCoroutine(TriggerWhenReady());
+        }
+
+        public void DisengageTrigger() { triggered = false; }
+
+        private IEnumerator TriggerWhenReady()
+        {
+            FPSGridPlayer player = mapManager.dungeonManager.GetPlayer();
+            while (player.IsLocked) { yield return null; }
 
             reader = FindObjectOfType<DialogueReader>();
             reader.dialogueData = dialogueData;

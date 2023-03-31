@@ -30,7 +30,7 @@ MonoBehaviour:
     storeItem: 0
   - name: Banana
     guid: 993174de-f959-4343-b953-920d32992136
-    description: A little potassium never hurt anybody... Restores 5 HP
+    description: A little potassium never hurt anybody... Restores 10 HP
     msrp: 14
     type: 4
     minLevelReq: 0

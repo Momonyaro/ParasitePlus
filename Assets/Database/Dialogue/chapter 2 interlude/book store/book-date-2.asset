@@ -367,7 +367,7 @@ MonoBehaviour:
           text: As she stepped onto the tram, you looked into each other's eyes.
           buildTime: 0.0456
         - speakerReference: _narrator
-          text: What a good day it's been you thought as it rode off.
+          text: '"What a good day it''s been." You thought as it rode off.'
           buildTime: 0.0456
         perSentenceWriteToScreen: 0
         requireContinueInput: 1

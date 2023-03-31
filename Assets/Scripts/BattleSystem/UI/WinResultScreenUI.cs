@@ -146,8 +146,6 @@ namespace BattleSystem.UI
                         diffAllZero--;
                 }
 
-                Debug.Log(String.Join(", ", levelDifference));
-
                 if (diffAllZero == 0)
                     lvlDiffNotZero = false;
 

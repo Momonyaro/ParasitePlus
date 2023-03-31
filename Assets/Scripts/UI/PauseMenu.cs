@@ -15,6 +15,7 @@ public class PauseMenu : MonoBehaviour
     public CanvasGroup background;
     public GameObject cursor;
     public UIButton[] partyCards;
+    public UIButton statusMenuExit;
     public InputSystemUIInputModule uiInput;
 
 
@@ -172,6 +173,9 @@ public class PauseMenu : MonoBehaviour
     {
         if (!visible) return;
 
+        partyCards.Where(c => c.hovering).ToList().ForEach(c => c.OnCursorClick());
+        if (statusMenuExit.hovering) statusMenuExit.OnCursorClick();
+
         for (int i = 0; i < worldNodes.Length; i++)
         {
             if (worldNodes[i].IsSelected && worldNodes[i].IsInRange(CurrentSelectionLayer, worldNodes[i].MinButtonLayer, worldNodes[i].MaxButtonLayer))
@@ -209,6 +213,13 @@ public class PauseMenu : MonoBehaviour
         float timer = 0;
         float maxTime = curve.keys[curve.keys.Length - 1].time;
 
+
+        if (visible)
+            for (int i = 0; i < worldNodes.Length; i++)
+            {
+                worldNodes[i].gameObject.SetActive(visible);
+            }
+
         while (timer < maxTime)
         {
             var aa = curve.Evaluate(timer);
@@ -219,11 +230,11 @@ public class PauseMenu : MonoBehaviour
         }
         background.alpha = (curve.Evaluate(maxTime));
 
-
-        for (int i = 0; i < worldNodes.Length; i++)
-        {
-            worldNodes[i].gameObject.SetActive(visible);
-        }
+        if (!visible)
+            for (int i = 0; i < worldNodes.Length; i++)
+            {
+                worldNodes[i].gameObject.SetActive(visible);
+            }
 
         yield break;
     }

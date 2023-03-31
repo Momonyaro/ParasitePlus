@@ -137,6 +137,7 @@ MonoBehaviour:
   goToScene: 0
   playSound: 1
   sfxReference: _climbStairs
+  sfxCloseReference: 
   sceneName: 
   loadSceneVariable: 
   isLockedMessage: The door is locked.

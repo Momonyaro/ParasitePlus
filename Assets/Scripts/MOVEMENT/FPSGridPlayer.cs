@@ -22,6 +22,7 @@ namespace MOVEMENT
 
         public UnityEvent onSuccessfulMove;
         private MinimapCompass.Facing lastFacing;
+        private Vector3 lastMove = Vector3.zero;
 
         public HashSet<string> locks = new HashSet<string>();
         private bool turning = false;
@@ -42,6 +43,7 @@ namespace MOVEMENT
 
             turnAction.started += OnTurnKey;
             walkAction.performed += OnMoveKey;
+            walkAction.canceled += OnMoveKey;
             interactAction.started += OnInteractKey;
             pauseAction.started += OnPauseKey;
         }
@@ -56,14 +58,18 @@ namespace MOVEMENT
         {
             turnAction.started -= OnTurnKey;
             walkAction.performed -= OnMoveKey;
+            walkAction.canceled -= OnMoveKey;
             interactAction.started -= OnInteractKey;
+            pauseAction.started -= OnPauseKey;
         }
         
         private void OnDestroy()
         {
             turnAction.started -= OnTurnKey;
             walkAction.performed -= OnMoveKey;
+            walkAction.canceled -= OnMoveKey;
             interactAction.started -= OnInteractKey;
+            pauseAction.started -= OnPauseKey;
         }
 
         public void AddLock(string key)
@@ -78,6 +84,13 @@ namespace MOVEMENT
                 locks.Remove(key);
         }
 
+        private void Update()
+        {
+
+            if (!moving && !turning && !IsLocked)
+                StartCoroutine(MovePlayer(lastMove));
+        }
+
         // Check input, we need:
         // Forward, Backward, Strafe left & right
         // and also Turn left & right.
@@ -85,10 +98,8 @@ namespace MOVEMENT
         private void OnMoveKey(InputAction.CallbackContext ctx)
         {
             Vector2 rawVal = ctx.ReadValue<Vector2>();
-            Vector2 val = new Vector2(Mathf.Round(rawVal.x), Mathf.Round(rawVal.y));
+            lastMove = new Vector2(Mathf.Round(rawVal.x), Mathf.Round(rawVal.y));
 
-            if (!moving && !turning && !IsLocked)
-                StartCoroutine(MovePlayer(val));
         }
 
         private void OnTurnKey(InputAction.CallbackContext ctx)
@@ -127,7 +138,7 @@ namespace MOVEMENT
         
         private void OnPauseKey(InputAction.CallbackContext ctx)
         {
-            if (IsLocked) return;
+            if (IsLocked && !locks.Contains("PAUSE_MENU")) return;
             
             UIManager.Instance.onUIMessage.Invoke("_togglePauseMenu");
         }
@@ -174,6 +185,8 @@ namespace MOVEMENT
 
         private IEnumerator MovePlayer(Vector2 moveDir, bool quiet = false)
         {
+            if (moveDir == Vector2.zero) { yield break; }
+
             moving = true;
             Vector2 initialDir = moveDir;
 

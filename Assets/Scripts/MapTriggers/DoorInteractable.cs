@@ -20,7 +20,8 @@ namespace MapTriggers
         public string guid = "";
 
         private Transform playerTransform;
-        
+        private MapManager mapManager;
+
         public bool triggerActive = false;
         [SerializeField] private float dot;
         public bool locked = false;
@@ -62,6 +63,7 @@ namespace MapTriggers
         private void Awake()
         {
             playerTransform = FindObjectOfType<FPSGridPlayer>().transform;
+            mapManager = FindObjectOfType<MapManager>();
         }
 
         private void Start()
@@ -72,6 +74,12 @@ namespace MapTriggers
                 return;
             
             dm.doorInteractables.Add(this);
+
+            if (mapManager.currentSlimData.interactableStates.ContainsKey(guid))
+            {
+                var value = mapManager.currentSlimData.interactableStates[guid];
+                locked = value;
+            }
         }
 
         private void Update()

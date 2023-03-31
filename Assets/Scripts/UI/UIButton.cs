@@ -2,20 +2,29 @@ using CORE;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.XR;
 using UnityEngine.UI;
 
 namespace UI
 {
-    public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+    public class UIButton : MonoBehaviour
     {
         public GameObject onHoverObject;
         public Selectable selectable;
+        public Image background;
         public bool hovering = false;
         public bool active = true;
         public string msg = "";
-        public UnityEvent onClick = new UnityEvent();
+        public UnityEvent<string> onClick = new UnityEvent<string>();
         public UnityEvent onHover = new UnityEvent();
         public UnityEvent onHoverEnd = new UnityEvent();
+
+        private MapController mController;
+
+        private void Awake()
+        {
+            mController = FindObjectOfType<MapController>();
+        }
 
         private void Start()
         {
@@ -30,7 +39,18 @@ namespace UI
             bool currentlySelected = (EventSystem.current.currentSelectedGameObject == selectable.gameObject);
 
             if (!active) return;
-            onHoverObject.SetActive(currentlySelected || hovering);
+            onHoverObject.SetActive(currentlySelected || hovering); 
+            
+            if (!active) return;
+
+            bool inside = IsInsideRect(mController.GetCursorScreenPos);
+
+            if (!hovering && inside)
+            {
+                OnCursorEnter();
+            }
+            else if (hovering && !inside)
+                OnCursorExit();
         }
 
         public void SendMessage()
@@ -38,25 +58,27 @@ namespace UI
             UIManager.Instance.onUIMessage.Invoke(msg);
         }
 
-        public void OnPointerEnter(PointerEventData eventData)
+        public void OnCursorClick()
         {
             if (!active) return;
+            SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_submit", out bool success);
+            onClick.Invoke(msg);
+        }
+
+        public void OnCursorEnter()
+        {
             hovering = true;
-            onHover.Invoke();
         }
 
-        public void OnPointerExit(PointerEventData eventData)
+        public void OnCursorExit()
         {
-            if (!active) return;
             hovering = false;
-            onHoverEnd.Invoke();
         }
 
-        public void OnPointerClick(PointerEventData eventData)
+
+        public bool IsInsideRect(Vector2 pos)
         {
-            if (!active) return;
-            //Here we send the message to the UI manager.
-            onClick.Invoke();
+            return RectTransformUtility.RectangleContainsScreenPoint(background.rectTransform, pos);
         }
     }
 }

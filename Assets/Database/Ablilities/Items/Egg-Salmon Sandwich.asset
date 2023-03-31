@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f39828721a6734fa89c2faa80c33ca, type: 3}
   m_Name: Egg-Salmon Sandwich
   m_EditorClassIdentifier: 
-  abilityName: Egg-Salmon Sandwich
+  abilityName: Sandwich
   abilityId: _item_egg_salmon
   abilityDesc: A fresh, filling sandwich, restores 25 HP
   abilityEffectRef: _heal

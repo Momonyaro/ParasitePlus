@@ -94,6 +94,7 @@ namespace Items
         public Item(Item copy)
         {
             this.name = copy.name;
+            this.description = copy.description;
             this.type = copy.type;
             this.msrp = copy.msrp;
             this.minLevelReq = copy.minLevelReq;

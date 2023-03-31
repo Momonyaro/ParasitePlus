@@ -144,7 +144,8 @@ namespace CORE
 
                             string itemKeyword = $"<color=yellow>[{keyItem.name}]</color>";
                             string treatedMsg = locked.onUnlockMessage.Replace("$ITEM", itemKeyword);
-                            InfoPrompt.Instance.CreatePrompt(new []{treatedMsg});
+                            if (!doorInteractables[i].goToScene)
+                                InfoPrompt.Instance.CreatePrompt(new []{treatedMsg});
                             if (!enterOnUnlock) break;
                         }
                         else

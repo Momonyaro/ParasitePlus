@@ -29,6 +29,7 @@ public class MapController : MonoBehaviour
     private Vector3 mapStartPos = Vector2.zero;
     private Vector3 percentage = Vector2.zero;
     private InputAction moveAction;
+    private const bool clampToScreenArea = true;
 
     [SerializeField] float maxMapWiggleDist = 50;
     private int halfWindowWidth = 1920 / 2;
@@ -88,7 +89,8 @@ public class MapController : MonoBehaviour
         if (!lastControlScheme.Equals(playerInput.currentControlScheme.ToString()))
             UpdateControllerType();
 
-        //ClampCursorToScreen();
+        if (clampToScreenArea)
+            ClampCursorToScreen();
     }
 
 
@@ -142,15 +144,10 @@ public class MapController : MonoBehaviour
 
     private void ClampCursorToScreen()
     {
-        Vector2 center = new Vector2(halfWindowWidth, halfWindowHeight);
-        Rect screenRect = new Rect(50, 50, halfWindowWidth * 2 - 100, halfWindowHeight * 2 - 100);
+        Rect screenRect = new Rect(0, 0, halfWindowWidth * 2, halfWindowHeight * 2);
 
-        Vector2 oldPos = cursorPos;
         cursorPos.x = Mathf.Clamp(cursorPos.x, screenRect.x, screenRect.x + screenRect.width);
         cursorPos.y = Mathf.Clamp(cursorPos.y, screenRect.y, screenRect.y + screenRect.height);
-
-        if (oldPos != cursorPos && controllerType == ControllerType.KEYBOARD)
-            Mouse.current.WarpCursorPosition(cursorPos);
 
         playerCursor.rectTransform.position = cursorPos;
     }

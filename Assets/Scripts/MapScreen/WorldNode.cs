@@ -10,6 +10,7 @@ public class WorldNode : MonoBehaviour
     [SerializeField] float interactRange = 50;
     [SerializeField] public bool IsSelected = false;
     [SerializeField] public bool hidden = false;
+    [SerializeField] public bool usePauseMenu = false;
 
     public string OnPressUIMsg = "";
     public int MinButtonLayer = 0;
@@ -49,17 +50,19 @@ public class WorldNode : MonoBehaviour
 
         float distance = Vector3.Distance(cursorPos, transform.position);
 
-        if (!hidden && !IsInRange(WorldManager.CurrentSelectionLayer, MinButtonLayer, MaxButtonLayer))
+        if (!usePauseMenu)
         {
-            SwitchTransition(IEOnHide().GetEnumerator());
-            return;
+            if (!hidden && !IsInRange(WorldManager.CurrentSelectionLayer, MinButtonLayer, MaxButtonLayer))
+            {
+                SwitchTransition(IEOnHide().GetEnumerator());
+                return;
+            }
+            else if (hidden && IsInRange(WorldManager.CurrentSelectionLayer, MinButtonLayer, MaxButtonLayer))
+            {
+                SwitchTransition(IEOnStart().GetEnumerator());
+                return;
+            }
         }
-        else if (hidden && IsInRange(WorldManager.CurrentSelectionLayer, MinButtonLayer, MaxButtonLayer))
-        {
-            SwitchTransition(IEOnStart().GetEnumerator());
-            return;
-        }
-
 
         if (!IsSelected && distance <= interactRange)
         {

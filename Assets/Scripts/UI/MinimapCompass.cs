@@ -75,8 +75,8 @@ public class MinimapCompass : MonoBehaviour
                 switch(current) {
                     case Facing.NORTH: return nPos;
                     case Facing.SOUTH: return sPos;
-                    case Facing.EAST: return ePos;
-                    case Facing.WEST: return wPos;
+                    case Facing.EAST: return wPos;
+                    case Facing.WEST: return ePos;
                     default: return Vector2.zero;
                 }
 
@@ -84,8 +84,8 @@ public class MinimapCompass : MonoBehaviour
                 switch (current) {
                     case Facing.NORTH: return sPos;
                     case Facing.SOUTH: return nPos;
-                    case Facing.EAST: return wPos;
-                    case Facing.WEST: return ePos;
+                    case Facing.EAST: return ePos;
+                    case Facing.WEST: return wPos;
                     default: return Vector2.zero;
                 }
 
@@ -93,8 +93,8 @@ public class MinimapCompass : MonoBehaviour
                 switch (current) {
                     case Facing.NORTH: return wPos;
                     case Facing.SOUTH: return ePos;
-                    case Facing.EAST: return nPos;
-                    case Facing.WEST: return sPos;
+                    case Facing.EAST: return sPos;
+                    case Facing.WEST: return nPos;
                     default: return Vector2.zero;
                 }
 
@@ -102,8 +102,8 @@ public class MinimapCompass : MonoBehaviour
                 switch (current) {
                     case Facing.NORTH: return ePos;
                     case Facing.SOUTH: return wPos;
-                    case Facing.EAST: return sPos;
-                    case Facing.WEST: return nPos;
+                    case Facing.EAST: return nPos;
+                    case Facing.WEST: return sPos;
                     default: return Vector2.zero; }
 
             default: return Vector2.zero;

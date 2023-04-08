@@ -113,7 +113,7 @@ MonoBehaviour:
         dialogueBoxes:
         - speakerReference: _narrator
           text: After a tough battle, Victoria's monstrous shape collapsed to the
-            floor
+            floor.
           buildTime: 0.0456
         - speakerReference: _narrator
           text: Your party is still in shock.

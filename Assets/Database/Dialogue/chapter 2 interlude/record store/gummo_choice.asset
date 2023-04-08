@@ -43,7 +43,7 @@ MonoBehaviour:
       data:
         reference: _spawnBGObjComp0
         groupRef: 
-        objectPrefab: {fileID: 516182194579558613, guid: b85856b991eac484abc859b90a2f4016, type: 3}
+        objectPrefab: {fileID: 2336303232637448136, guid: 913b714e090c27147b0e1f2a1e83d1e9, type: 3}
         screenPosition: {x: 0, y: 0}
         errorAttempts: 99
         reveal: 1

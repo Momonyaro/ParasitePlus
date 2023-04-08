@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Flare
   abilityId: _defaultAtk
-  abilityDesc: Strike your enemy with your flames.
+  abilityDesc: Strike a single target with your flames.
   abilityEffectRef: _flare
   abilitySoundEffect: _psiFire
   hideDamageText: 0

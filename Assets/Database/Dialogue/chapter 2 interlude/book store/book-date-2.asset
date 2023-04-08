@@ -161,11 +161,11 @@ MonoBehaviour:
           text: Oh! Yeah, a manga I like put out new volume, so I picked it up...
           buildTime: 0.0456
         - speakerReference: _sandra
-          text: It's called "I'm a spider, so what?"
+          text: It's called "So, My Occultist Boyfriend and I got Sent to Another
+            World, Now What?"
           buildTime: 0.0456
         - speakerReference: _sandra
-          text: A girl gets turned into a spider and sent to another world where
-            she has to survive...
+          text: Bit of a mouthful, huh?
           buildTime: 0.0456
         - speakerReference: _sandra
           text: Anyway!

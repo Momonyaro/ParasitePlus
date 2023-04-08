@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Shoot
   abilityId: _defaultAtk
-  abilityDesc: This is the default attack.
+  abilityDesc: Fires two shots at a single target.
   abilityEffectRef: _gunshot
   abilitySoundEffect: _shootTwice
   hideDamageText: 0

@@ -16,13 +16,13 @@ MonoBehaviour:
   abilityId: _backup
   abilityDesc: A commander tries to radio for some help. You're clearly too much
     for them to handle.
-  abilityEffectRef: _flare
+  abilityEffectRef: 
   abilitySoundEffect: 
   hideDamageText: 1
-  targetAll: 0
+  targetAll: 1
   targetFriendlies: 1
   abilityLevelReq: 0
-  levelScalingDamage: 1
+  levelScalingDamage: 0
   abilityCritChance: 0
   abilityMissChance: 0
   abilityCosts: {x: 1, y: 0}

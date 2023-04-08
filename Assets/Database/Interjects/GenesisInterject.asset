@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d13ccf52c7c4d54a8c00279d219b076, type: 3}
+  m_Name: GenesisInterject
+  m_EditorClassIdentifier: 
+  stateName: Genesis Interject
+  stateId: _genesis
+  prevStateId: _restState
+  initialized: 0
+  dialogueNodes: []
+  battleCore: {fileID: 0}
+  parent:
+    systemStates:
+    - {fileID: 11400000, guid: 901bbff2202f5b84bb09ea343fd062b3, type: 2}
+    - {fileID: 11400000, guid: be3c4ce369ae4684a90af192ed36dfa3, type: 2}
+    - {fileID: 11400000, guid: 2588cf1bd35d8bf4280e1eb0f9dbeabf, type: 2}
+    - {fileID: 11400000, guid: 3880a84438f2c274e9d2d0d7e94c9d42, type: 2}
+    - {fileID: 11400000, guid: 55bcd767db317a34b98f8ba1dbfac8e2, type: 2}
+    - {fileID: 11400000, guid: 863c80b9f1ec42c469c3176f250ecf14, type: 2}
+    - {fileID: 11400000, guid: 10d815eed7c74154cafd66b99297fcfa, type: 2}
+    - {fileID: 11400000, guid: abf0e3893e4177d4a9396b60ff2aea34, type: 2}
+    - {fileID: 11400000, guid: e071411de4e75d04d9b980013834ed0b, type: 2}
+    - {fileID: 11400000, guid: 9081080bec84c0f44b9a14594edfe490, type: 2}
+    - {fileID: 11400000, guid: da50a6697d244104dab35dccf6a6d7cf, type: 2}
+    - {fileID: 11400000, guid: 480ea616cf7aaa3409868e960adf505f, type: 2}
+    systemInterjects: []
+    currentIndex: 4
+    lastAbility: {fileID: 11400000, guid: 5323cd1a25a68b84cbccf51faa84b9cc, type: 2}
+    lastItem:
+      name: 
+      guid: 
+      description: 
+      msrp: 0
+      type: 0
+      minLevelReq: 0
+      minFriendshipReq: 0
+      damage: 0
+      defense: 0
+      critChance: 0
+      dodgeChance: 0
+      itemAbility: {fileID: 0}
+      stackable: 0
+      StackSize: {x: 0, y: 0}
+      storeItem: 0
+    hasItem: 0
+    targetedEntities: 
+    targetingParty: 1
+    module: {fileID: -944628639613478452, guid: 7d30e05cf43b6e54387d92a909d874f3, type: 3}
+  transitionPrefab: {fileID: 1094099435558462943, guid: c2a22cc2a12b1dd438820f9f47ba6ae1, type: 3}
+  transitionParent: {fileID: 0}
+  timerLength: 2

@@ -11,6 +11,9 @@ TextureImporter:
   - first:
       213: -359136374826903733
     second: emil_carnaby_2
+  - first:
+      213: 776543942426718647
+    second: emil_carnaby_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -186,7 +189,7 @@ TextureImporter:
         width: 80
         height: 68
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -194,6 +197,27 @@ TextureImporter:
       bones: []
       spriteID: b475580be57140bf0800000000000000
       internalID: -359136374826903733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emil_carnaby_3
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 0
+        width: 69
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b173d0f996d6ca00800000000000000
+      internalID: 776543942426718647
       vertices: []
       indices: 
       edges: []

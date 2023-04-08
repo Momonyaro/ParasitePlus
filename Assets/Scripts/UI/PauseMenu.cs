@@ -15,7 +15,9 @@ public class PauseMenu : MonoBehaviour
     public CanvasGroup background;
     public GameObject cursor;
     public UIButton[] partyCards;
+    public SettingsMenu settingsMenu;
     public UIButton statusMenuExit;
+    public UIButton settingsExit;
     public InputSystemUIInputModule uiInput;
 
 
@@ -173,8 +175,11 @@ public class PauseMenu : MonoBehaviour
     {
         if (!visible) return;
 
-        partyCards.Where(c => c.hovering).ToList().ForEach(c => c.OnCursorClick());
-        if (statusMenuExit.hovering) statusMenuExit.OnCursorClick();
+        partyCards.Where(c => c.hovering && CurrentSelectionLayer == 0).ToList().ForEach(c => c.OnCursorClick());
+        if (statusMenuExit.hovering && CurrentSelectionLayer == 2) statusMenuExit.OnCursorClick();
+        if (settingsExit.hovering && CurrentSelectionLayer == 3) settingsExit.OnCursorClick();
+
+        settingsMenu.listButtons.Where(c => c.hovering).ToList().ForEach(c => c.OnCursorClick());
 
         for (int i = 0; i < worldNodes.Length; i++)
         {

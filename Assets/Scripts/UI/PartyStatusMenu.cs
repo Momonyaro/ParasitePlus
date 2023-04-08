@@ -17,6 +17,10 @@ public class PartyStatusMenu : MonoBehaviour
     public TextMeshProUGUI tLvl;
     public TextMeshProUGUI tWeapon;
 
+    [Header("Skill List")]
+    public GameObject skillItemPrefab;
+    public Transform skillListParent;
+
     public Image[] weaknesses = new Image[0];
 
     public Sprite buffIco, weakIco, normIco;
@@ -52,6 +56,20 @@ public class PartyStatusMenu : MonoBehaviour
             var iconPack = GetWeaknessIcon(found.weaknesses[i]);
             weaknesses[i].sprite = iconPack.icon;
             weaknesses[i].color = iconPack.color;
+        }
+
+        while (skillListParent.childCount > 0)
+        {
+            DestroyImmediate(skillListParent.GetChild(0).gameObject);
+        }
+
+        var skills = found.GetEntityAbilities(includeDefault: true);
+        foreach (var skill in skills)
+        {
+            Transform skillItem = Instantiate(skillItemPrefab, skillListParent).transform;
+            skillItem.GetChild(0).GetComponent<TextMeshProUGUI>().text = skill.abilityName;
+            skillItem.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = skill.abilityCosts.x.ToString();
+            skillItem.GetChild(2).GetComponent<TextMeshProUGUI>().text = skill.abilityDesc;
         }
     }
 

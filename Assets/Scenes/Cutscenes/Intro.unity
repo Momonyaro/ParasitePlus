@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 944fd05c27207394f98964a12dc9cf3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventReference: _introBGM
+  eventReference: _goreBGM1
   playOnStart: 1
   playLayered: 0
   layerIndex: 0
@@ -510,6 +510,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: 4f33197b7ed2b914697e4816c69dce84, type: 2}
   initOnStart: 1
+  onStopReading:
+    m_PersistentCalls:
+      m_Calls: []
   backgroundFather: {fileID: 892642505}
   allFather: {fileID: 1731278029}
   module: {fileID: -944628639613478452, guid: 7d30e05cf43b6e54387d92a909d874f3, type: 3}

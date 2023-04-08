@@ -45,7 +45,8 @@ namespace BattleSystem.UI
                 Vector2Int ap = party[i].GetEntityAP();
 
                 partyCards[i].background.color = (hp.x > (hp.y * 0.4f)) ? aliveCol : (hp.x > 0) ? dyingCol : deadCol;
-                
+                partyCards[i].isDead = hp.x <= 0;
+
                 partyCards[i].hpText.text = hp.x.ToString();
                 partyCards[i].apText.text = ap.x.ToString();
 
@@ -165,7 +166,7 @@ namespace BattleSystem.UI
 
         public int[] GetValidCardIndices()
         {
-            return partyCards.Where(card => card.parent.activeInHierarchy).Select((c, index) => index).ToArray(); //Expected output [0], [0, 1], [0, 1, 2] 
+            return partyCards.Where(card => card.parent.activeInHierarchy && !card.isDead).Select((c, index) => index).ToArray(); //Expected output [0], [0, 1], [0, 1, 2] 
         }
         
         
@@ -188,6 +189,7 @@ namespace BattleSystem.UI
             public GameObject sivePortrait;
             
             public GameObject activeTag;
+            public bool isDead;
         }
     }
 }

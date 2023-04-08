@@ -127,7 +127,7 @@ MonoBehaviour:
           buildTime: 0.0456
         - speakerReference: _gummo
           text: We've gotta keep an eye out, they're gonna keep coming after you
-            if your as valuable to them as it sounds.
+            if you're as valuable to them as it sounds.
           buildTime: 0.0456
         - speakerReference: _gummo
           text: Let's chill out for now and we'll come up with a plan tomorrow.

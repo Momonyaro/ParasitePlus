@@ -73,7 +73,7 @@ MonoBehaviour:
     stackable: 1
     StackSize: {x: 1, y: 25}
     storeItem: 1
-  - name: Egg-Salmon Sandwich
+  - name: Sandwich
     guid: 470e0ec1-76f2-468e-9890-cadacd688215
     description: A fresh, filling sandwich, restores 25 HP
     msrp: 20
@@ -183,7 +183,7 @@ MonoBehaviour:
   - name: Energy Drink
     guid: 2a6edb7e-4903-4005-bf6e-0d2a85cfb7de
     description: Why am i shaking? Restores 100 AP
-    msrp: 0
+    msrp: 80
     type: 4
     minLevelReq: 7
     minFriendshipReq: 0

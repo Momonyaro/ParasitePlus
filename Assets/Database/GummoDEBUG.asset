@@ -30,6 +30,7 @@ MonoBehaviour:
   - 1
   entityXp: 0
   entityXpThreshold: 56
+  entityMoney: 0
   defaultAttack: {fileID: 11400000, guid: 00be9c6c0665f664fb5c95bf1a66b36f, type: 2}
   lastAttacker: {fileID: 0}
   entityAI:

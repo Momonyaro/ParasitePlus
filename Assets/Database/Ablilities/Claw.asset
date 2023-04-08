@@ -16,7 +16,7 @@ MonoBehaviour:
   abilityId: _claw
   abilityDesc: A slashing attack that damages a single target
   abilityEffectRef: _claw
-  abilitySoundEffect: 
+  abilitySoundEffect: _claws
   hideDamageText: 0
   targetAll: 0
   targetFriendlies: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Lunge
   abilityId: _lunge
-  abilityDesc: Lunge at the enemy, dealing higher than average damage with a higher
+  abilityDesc: Lunge at the target, dealing higher than average damage with a higher
     chance to miss.
   abilityEffectRef: _dash
   abilitySoundEffect: _meleeBash

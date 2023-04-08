@@ -21,7 +21,7 @@ MonoBehaviour:
   deathYellSfx: 
   entitySpeed: 10
   throwawayId: 0
-  healthPts: {x: 200, y: 200}
+  healthPts: {x: 999, y: 999}
   actionPts: {x: 200, y: 200}
   weaknesses:
   - 1
@@ -30,6 +30,7 @@ MonoBehaviour:
   - 1
   entityXp: 0
   entityXpThreshold: 0
+  entityMoney: 0
   defaultAttack: {fileID: 11400000, guid: 9f52a2e1516901144b267ae8a71c5313, type: 2}
   lastAttacker: {fileID: 0}
   entityAI:
@@ -43,6 +44,17 @@ MonoBehaviour:
       hasReadFirstLoop: 0
       moveSelect:
         id: 0
+      targetComp:
+        id: 1
+    - healthPercentLessThan: 0.77
+      roundsPassed: 0
+      trigger: 
+      stateAbilities:
+      - {fileID: 11400000, guid: 5323cd1a25a68b84cbccf51faa84b9cc, type: 2}
+      onFirstLoopInterjects: []
+      hasReadFirstLoop: 0
+      moveSelect:
+        id: 2
       targetComp:
         id: 1
   onDeathInterjects: []
@@ -62,3 +74,7 @@ MonoBehaviour:
       data:
         owner: {fileID: 0}
         componentName: Random
+    00000002:
+      type: {class: MoveSelectCompBurst, ns: BattleSystem.AI, asm: Assembly-CSharp}
+      data:
+        componentName: Burst

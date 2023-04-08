@@ -16,9 +16,9 @@ MonoBehaviour:
   entityLevel: 5
   entityId: _medusa
   inParty: 0
-  attackYellSfx: 
-  damageYellSfx: 
-  deathYellSfx: 
+  attackYellSfx: _medusa_atk
+  damageYellSfx: _medusa_hurt
+  deathYellSfx: _medusa_death
   entitySpeed: 15
   throwawayId: 0
   healthPts: {x: 120, y: 120}

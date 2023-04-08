@@ -47,7 +47,7 @@ MonoBehaviour:
   - id: 17
   - id: 18
   - id: 19
-  transitionToOnEof: {fileID: 11400000, guid: 2bc80bb1aa8441f42b7a16335958c4d7, type: 2}
+  transitionToOnEof: {fileID: 0}
   wipeOldDataOnLoad: 0
   goToSceneOnEof: 0
   destinationSceneOnEof: 
@@ -308,7 +308,7 @@ MonoBehaviour:
         finished: 1
         choices:
         - text: Rock and or Metal
-          dialogueBranch: {fileID: 0}
+          dialogueBranch: {fileID: 11400000, guid: 1ac0fa5fbd073ea4fb370f15aaab7784, type: 2}
         - text: Jazz
           dialogueBranch: {fileID: 11400000, guid: 2bc80bb1aa8441f42b7a16335958c4d7, type: 2}
         - text: Same as Gummo

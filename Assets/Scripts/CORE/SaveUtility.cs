@@ -51,6 +51,16 @@ public class SaveUtility : MonoBehaviour
         return System.IO.File.Exists(SavePath + $"/{SaveFileName}");
     }
 
+    public static void WipeSave()
+    {
+        if (SaveExists())
+        {
+            string temp = System.IO.File.ReadAllText(SavePath + $"/{SaveFileName}");
+            System.IO.File.WriteAllText(SavePath + $"/{OldSaveFileName}", temp);
+            System.IO.File.Delete(SavePath + $"/{SaveFileName}");
+        }
+    }
+
     private static CORE.SlimComponent.SlimData ConvertToSlimData(SaveItem saveItem)
     {
         CORE.SlimComponent.SlimData newData = new CORE.SlimComponent.SlimData()

@@ -1,0 +1,247 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae13be0447a66ed48befacfeeb4b52a4, type: 3}
+  m_Name: end_end1
+  m_EditorClassIdentifier: 
+  speakers:
+  - speakerName: Narrator
+    speakerReference: _narrator
+    speakerPhoto: {fileID: 7220562612368205161, guid: 62f2dfad8457c974e86da9e58d87e83c, type: 3}
+  - speakerName: Gummo
+    speakerReference: _gummo
+    speakerPhoto: {fileID: 8335795263187683292, guid: b2c6f7d2743f9fa49800fe16300f4e5d, type: 3}
+  - speakerName: Sandra
+    speakerReference: _sandra
+    speakerPhoto: {fileID: -8712306689713323440, guid: 0fc419b9f5dc9ec47b590e6fc1f29bfe, type: 3}
+  groups:
+  - groupName: Default
+    visible: 1
+    groupReference: _default
+  components:
+  - id: 0
+  - id: 1
+  - id: 2
+  - id: 3
+  - id: 4
+  - id: 5
+  - id: 6
+  - id: 7
+  - id: 8
+  - id: 9
+  - id: 10
+  - id: 11
+  - id: 12
+  - id: 13
+  - id: 14
+  transitionToOnEof: {fileID: 0}
+  wipeOldDataOnLoad: 1
+  goToSceneOnEof: 0
+  destinationSceneOnEof: 
+  references:
+    version: 1
+    00000000:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp0
+        groupRef: 
+        objectPrefab: {fileID: 8370936115634730495, guid: 26791cb2b2860e44fb3c3960a550363b, type: 3}
+        screenPosition: {x: -250, y: -100}
+        errorAttempts: 99
+        reveal: 1
+        backgroundImage: {fileID: -6429855093277516091, guid: b2c6f7d2743f9fa49800fe16300f4e5d, type: 3}
+    00000001:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp1
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 0.4
+    00000002:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp1
+        groupRef: 
+        objectPrefab: {fileID: 8370936115634730495, guid: 26791cb2b2860e44fb3c3960a550363b, type: 3}
+        screenPosition: {x: 400, y: -80}
+        errorAttempts: 99
+        reveal: 1
+        backgroundImage: {fileID: -6566565056647640264, guid: 0fc419b9f5dc9ec47b590e6fc1f29bfe, type: 3}
+    00000003:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp3
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 0.4
+    00000004:
+      type: {class: SpawnBgObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnBGObjComp4
+        groupRef: 
+        objectPrefab: {fileID: 8370936115634730495, guid: 26791cb2b2860e44fb3c3960a550363b, type: 3}
+        screenPosition: {x: 0, y: -130}
+        errorAttempts: 99
+        reveal: 1
+        backgroundImage: {fileID: 776543942426718647, guid: 75eba6c42c50e154488b64bcf82b7807, type: 3}
+    00000005:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp5
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 0.5
+    00000006:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox6
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _narrator
+          text: Suddenly, you were back in reality.
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: Oh god, what?
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: I'm feeling sick...
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    00000007:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp7
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox6
+    00000008:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp8
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1
+    00000009:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox9
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _narrator
+          text: In the middle of the room, Emil laid dead.
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: Did, did we do this?
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: Somehow, besides a nasty headache. You'd been spared whatever Gummo
+            and Sandra were going through.
+          buildTime: 0.0456
+        - speakerReference: _sandra
+          text: You should keep going, we'll catch up in a bit.
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: Y-yeah, you go on ahead.
+          buildTime: 0.0456
+        - speakerReference: _gummo
+          text: Find Magnus.
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    0000000A:
+      type: {class: SpawnObjectComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _spawnObjComp10
+        groupRef: 
+        objectPrefab: {fileID: 2831952547622704426, guid: 5a3baf689344a294e8907590f4b65189, type: 3}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+    0000000B:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp11
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 1.2
+    0000000C:
+      type: {class: DialogueBoxComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _diagBox12
+        groupRef: 
+        objectPrefab: {fileID: 2964010957064510909, guid: 09cdd98664cddee40a3aa4a59ee489ea, type: 3}
+        screenPosition: {x: 0, y: -550}
+        errorAttempts: 99
+        reveal: 1
+        dialogueBoxes:
+        - speakerReference: _narrator
+          text: After making sure they were okay, you worked up the courage to go
+            on.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: The building was still eerily empty. Chairs, desks all sat there
+            without a purpose.
+          buildTime: 0.0456
+        - speakerReference: _narrator
+          text: It was dead.
+          buildTime: 0.0456
+        perSentenceWriteToScreen: 0
+        requireContinueInput: 1
+        writingSoundEvent: _keyPress
+    0000000D:
+      type: {class: DestroyComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _destroyComp13
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        refToDestroy: _diagBox12
+    0000000E:
+      type: {class: WaitComponent, ns: Dialogue, asm: Assembly-CSharp}
+      data:
+        reference: _waitComp14
+        groupRef: 
+        objectPrefab: {fileID: 0}
+        screenPosition: {x: 0, y: 0}
+        errorAttempts: 99
+        reveal: 1
+        waitTime: 0.5

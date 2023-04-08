@@ -41,7 +41,7 @@ namespace BattleSystem.UI
             return options[currentlySelected].optionRef;
         }
 
-        public void UpdateOptionsDisplay()
+        public void UpdateOptionsDisplay(bool hidePlayer = false)
         {
             //Set all options as blank
             previousObjectText.text = "";

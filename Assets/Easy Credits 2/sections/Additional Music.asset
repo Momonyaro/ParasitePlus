@@ -14,10 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SectionTitle: Additional Music
   Content:
-  - Name: Macroblank
-  - Name: ' - Bounce Back                             --           Dialog Track'
-  - Name: ' - Slide and Glide                        --           Dialog Track'
-  - Name: ' - Running out of Time               --           Dialog Track'
+  - Name: <b><i>G O R E</i></b>
+  - Name: ' - Life Expectancy                             --           Dialog Track'
+  - Name: ' - Moment of Clarity                        --           Dialog Track'
+  - Name: ' - Out of Body Experience              --           Dialog Track'
+  - Name: ' - You''ll Forget This                          --           Dialog Track'
+  - Name: ' - Inevitable Destruction                 --           Dialog Track'
+  - Name: ' - Secret Lovers                                 --           Dialog Track'
   - Name: ' '
   - Name: Oblique Occasions
   - Name: ' - On the Wavelengths              --           Title Track'

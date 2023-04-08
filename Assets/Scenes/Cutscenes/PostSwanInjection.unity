@@ -412,7 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 944fd05c27207394f98964a12dc9cf3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventReference: _introBGM
+  eventReference: _outOfBodyBGM
   playOnStart: 1
   playLayered: 0
   layerIndex: 0
@@ -616,4 +616,5 @@ MonoBehaviour:
   changeScene: 1
   useMapManager: 0
   parseDestination: 1
+  writeCurrentSceneToSlim: 0
   newSceneVariable: MapMenu

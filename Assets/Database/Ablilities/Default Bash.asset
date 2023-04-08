@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Bash
   abilityId: _defaultAtk
-  abilityDesc: This is the default attack.
+  abilityDesc: Hit a single enemy with your club.
   abilityEffectRef: _swordSlash
   abilitySoundEffect: _meleeBash
+  hideDamageText: 0
   targetAll: 0
   targetFriendlies: 0
   abilityLevelReq: 0

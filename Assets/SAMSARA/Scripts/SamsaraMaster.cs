@@ -62,6 +62,7 @@ namespace SAMSARA
             List<AudioEvent> cached = new List<AudioEvent>(mixerAsset.audioEvents);
             eventData = new Dictionary<string, AudioEvent>();
 
+            UpdateVolumeGroups();
             for (int i = 0; i < mixerAsset.audioEvents.Count; i++)
             {
                 eventData.Add(cached[i].reference, cached[i]);
@@ -212,6 +213,23 @@ namespace SAMSARA
             if (success)
             {
                 eventData[audioEvent.reference] = audioEvent;
+            }
+        }
+
+        public void UpdateVolumeGroups()
+        {
+            var mixer = mixerAsset;
+            var volumeGroups = mixer.volumeGroups;
+
+            foreach (var group in volumeGroups)
+            {
+                string key = $"volume{group.reference}";
+                if (PlayerPrefs.HasKey(key))
+                {
+                    group.groupVolume = PlayerPrefs.GetFloat(key);
+                    continue;
+                }
+                PlayerPrefs.SetFloat(key, group.groupVolume);
             }
         }
     }

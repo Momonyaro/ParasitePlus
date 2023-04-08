@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Multi-Strike
   abilityId: _multiStrike
-  abilityDesc: Hit all entities with a weaker attack
+  abilityDesc: Hit all targets with a weaker attack
   abilityEffectRef: _swordSlash
   abilitySoundEffect: _meleeBash
   hideDamageText: 0

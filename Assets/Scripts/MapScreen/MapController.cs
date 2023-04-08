@@ -41,6 +41,16 @@ public class MapController : MonoBehaviour
     {
         mapStartPos = map.rectTransform.anchoredPosition;
 
+        if (PlayerPrefs.HasKey(SettingsManager.CURSOR_SPEED_ID))
+        {
+            joystickSensitivity = PlayerPrefs.GetInt(SettingsManager.CURSOR_SPEED_ID);
+        }
+        else
+        {
+            Debug.Log("joystick " + joystickSensitivity);
+            PlayerPrefs.SetInt(SettingsManager.CURSOR_SPEED_ID, Mathf.FloorToInt(joystickSensitivity));
+        }
+
         if (playerInput == null)
             playerInput = FindObjectOfType<PlayerInput>(true);
 
@@ -91,6 +101,11 @@ public class MapController : MonoBehaviour
 
         if (clampToScreenArea)
             ClampCursorToScreen();
+    }
+
+    public void ForceUpdateCursorSpeed()
+    {
+        joystickSensitivity = PlayerPrefs.GetInt(SettingsManager.CURSOR_SPEED_ID);
     }
 
 

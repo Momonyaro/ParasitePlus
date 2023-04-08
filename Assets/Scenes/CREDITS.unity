@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 348297660}
+  - component: {fileID: 348297661}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -153,6 +154,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &348297661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348297659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9cef081f1c6534b808d926a9afa3b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &543211186
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,7 +241,7 @@ RectTransform:
   m_GameObject: {fileID: 555171739}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.011376564, y: 0.011376564, z: 0.011376564}
+  m_LocalScale: {x: 0.009259259, y: 0.009259259, z: 0.009259259}
   m_Children: []
   m_Father: {fileID: 6686661828602269376}
   m_RootOrder: 0
@@ -236,7 +249,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 1}
-  m_SizeDelta: {x: 1563, y: 879}
+  m_SizeDelta: {x: 1920.0001, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &817548068
 GameObject:
@@ -435,31 +448,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fileName: Credits
   data:
-  - Created by,Battle Effects,Additional Music,Asset Sources,Special Thanks,In Memory
-    of
-  - Sebastian "Momonyaro" Alkstrand,Hirad Salmend,Macroblank,OpenGameArt.org,Ebba
-    & Oscar Alkstrand,Kurt Nilsson (1942 - 2023)
-  - ',, - Bounce Back                             --           Dialog Track,SoundDictionary.info,Lars
+  - Created by,Battle Effects,Music,Additional Music,Asset Sources,Special Thanks,In
+    Memory of
+  - Sebastian "Momonyaro" Alkstrand,Hirad Salmend,Sebastian Alkstrand,<b><i>G O R
+    E</i></b>,OpenGameArt.org,Ebba & Oscar Alkstrand,Kurt Nilsson (1942 - 2023)
+  - ',,, - Life Expectancy                             --           Dialog Track,SoundDictionary.info,Lars
     & Linda Alkstrand,"The best grandfather I could''ve asked for."'
-  - ',, - Slide and Glide                        --           Dialog Track,Oblique
-    Occasions,Linus Alfredsson,'
-  - ',, - Running out of Time               --           Dialog Track,Google Images,Siw
-    Nilsson,'
-  - ',, ,, ,'
-  - ',,Oblique Occasions,,Albin Dahlheim,'
-  - ',, - On the Wavelengths              --           Title Track,,Benjamin Larsson,'
-  - ',, - Saint Sebastian                       --           Shop Menu Track,,Christoffer
-    Cederfeldt,'
-  - ',, - Bimodal                                     --           Map Screen Track,,Jonathan
-    Ormark Hallin,'
-  - ',,,, ,'
-  - ',,,,Ember Paw Games AB,'
-  - ',,,, ,'
-  - ',,,, ,'
-  - ',,,, ,'
-  - ',,,, ,'
-  - ',,,, ,'
-  - ',,,, ,'
+  - ',,, - Moment of Clarity                        --           Dialog Track,Oblique
+    Occasions,Linus Alfredsson, '
+  - ',,, - Out of Body Experience              --           Dialog Track,Google Images,Siw
+    Nilsson, '
+  - ',,, - You''ll Forget This                          --           Dialog Track,,
+    ,'
+  - ',,, - Inevitable Destruction                 --           Dialog Track,,Albin
+    Dahlheim,'
+  - ',,, - Secret Lovers                                 --           Dialog Track,,Benjamin
+    Larsson,'
+  - ',,, ,,Christoffer Cederfeldt,'
+  - ',,,Oblique Occasions,,Jonathan Ormark Hallin,'
+  - ',,, - On the Wavelengths              --           Title Track,, ,'
+  - ',,, - Saint Sebastian                       --           Shop Menu Track,, ,'
+  - ',,, - Bimodal                                     --           Map Screen Track,,
+    ,'
+  - ',,,,, ,'
+  - ',,,,, ,'
+  - ',,,,, ,'
   startingPassComplete: 1
   startDelay: 0
   backgroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -548,6 +561,7 @@ MonoBehaviour:
   SectionElements:
   - SectionElement: {fileID: 11400000, guid: 37366ad61d71425408f6a2ad2f568681, type: 2}
   - SectionElement: {fileID: 11400000, guid: b5dfb16c22b3d604abe4ac1d183f922a, type: 2}
+  - SectionElement: {fileID: 11400000, guid: fe4361604d1ffbc4da97346bcdf2905f, type: 2}
   - SectionElement: {fileID: 11400000, guid: 058978d0c11de17408821a9c32024d8c, type: 2}
   - SectionElement: {fileID: 11400000, guid: 090e77d7aa7bbb140a3bacf5bbb6179e, type: 2}
   - SectionElement: {fileID: 11400000, guid: 59ae53062361aa14d9862c89a26f7f41, type: 2}

@@ -14,6 +14,7 @@ namespace UI
         public Image background;
         public bool hovering = false;
         public bool active = true;
+        public bool sendViaManager = false;
         public string msg = "";
         public UnityEvent<string> onClick = new UnityEvent<string>();
         public UnityEvent onHover = new UnityEvent();
@@ -28,7 +29,8 @@ namespace UI
 
         private void Start()
         {
-            onHoverObject.SetActive(false);
+            if (onHoverObject != null)
+                onHoverObject.SetActive(false);
 
             if (selectable == null)
                 selectable = GetComponent<Selectable>();
@@ -39,7 +41,8 @@ namespace UI
             bool currentlySelected = (EventSystem.current.currentSelectedGameObject == selectable.gameObject);
 
             if (!active) return;
-            onHoverObject.SetActive(currentlySelected || hovering); 
+            if (onHoverObject != null)
+                onHoverObject.SetActive(currentlySelected || hovering); 
             
             if (!active) return;
 
@@ -60,8 +63,10 @@ namespace UI
 
         public void OnCursorClick()
         {
-            if (!active) return;
+            if (!active && !hovering) return;
             SAMSARA.Samsara.Instance.PlaySFXRandomTrack("_submit", out bool success);
+            if (sendViaManager)
+                UIManager.Instance.onUIMessage.Invoke(msg);
             onClick.Invoke(msg);
         }
 

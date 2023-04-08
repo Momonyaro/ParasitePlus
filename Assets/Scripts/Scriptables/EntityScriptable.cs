@@ -125,9 +125,12 @@ namespace Scriptables
             actionPts = newActionPoints;
         }
     
-        public AbilityScriptable[] GetEntityAbilities()
+        public AbilityScriptable[] GetEntityAbilities(bool includeDefault = false)
         {
             var toReturn = new List<AbilityScriptable>();
+
+            if (includeDefault)
+                toReturn.Add(defaultAttack);
 
             for (int i = 0; i < abilityScriptables.Length; i++)
             {

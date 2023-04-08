@@ -3520,9 +3520,10 @@ MonoBehaviour:
     playerLastEuler: {x: 0, y: 90, z: 0}
     loadSceneVariable: 
     lastButtonLayer: 0
+    combatTrackRef: 
   dungeonManager: {fileID: 1197072277}
   config: {fileID: 11400000, guid: f19491cb78d45e04ca9bacb7aac3d494, type: 2}
-  mapBMGReference: _postIntroBGM
+  mapBMGReference: _secretLoversBGM
   writeSaveOnLoad: 0
   monsterManifest:
     encounters:
